@@ -1,0 +1,45 @@
+[project]
+name = "mard"
+version = "0.1.0"
+description = "Metadata-Augmented Recursive Decomposition — a metadata envelope that accumulates across recursive language model calls"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.7",
+]
+
+[project.optional-dependencies]
+# Split out because the measurement tracks (T3) and corpus track (T4) do not
+# need each other's heavy native dependencies to run their own suites.
+ingest = ["pymupdf>=1.24", "pdfplumber>=0.11"]
+eval = ["numpy>=1.26"]
+dev = ["pytest>=8.0", "ruff>=0.5", "mypy>=1.10"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["runlog", "ingest", "envelope", "plan", "orchestrate", "eval", "corpus"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM"]
+
+[tool.ruff.format]
+# Code samples in README.md and the handoff docs are written to be read, not
+# executed. Letting the formatter explode aligned keyword arguments onto one
+# line each makes the docs worse and produces diff noise on every run.
+exclude = ["*.md"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+# Third-party PDF and model SDKs ship no stubs; failing on those would train
+# everyone to ignore mypy output, which defeats the point of running it.
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
