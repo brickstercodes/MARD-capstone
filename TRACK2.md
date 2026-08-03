@@ -6,7 +6,7 @@ Local mirror of the GitHub board. GitHub is authoritative; this file is for
 working offline and for seeing the whole track on one screen. Tick here as you
 go, sync to GitHub when convenient.
 
-**Last synced with GitHub:** 2 August 2026
+**Last synced with GitHub:** 3 August 2026
 
 ---
 
@@ -15,7 +15,7 @@ go, sync to GitHub when convenient.
 | | |
 |---|---|
 | Block | **W0** · Wed 29 Jul – **Sun 9 Aug** |
-| Days left | 7 |
+| Days left | 6 |
 | Milestone | W0, due 9 Aug |
 | Next freeze | 🔒 **Feature freeze A · Sun 23 Aug** — absolute |
 | Current issue | [#11](https://github.com/brickstercodes/MARD-capstone/issues/11) · status **Ready** · labelled `blocker` |
@@ -30,34 +30,44 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
 
 - [x] **Repo scaffolded** — package tree per CONTEXT.md §4.1, `pyproject.toml`,
       `.gitignore`, `README.md`, `CLAUDE.md`
-- [ ] **Pushed** — nothing has been committed yet; repo still has zero commits
-- [ ] **RLM library installed and running its own examples end-to-end**
-      (`github.com/alexzhang13/rlm`) — 👉 **run `./scripts/bootstrap_rlm.sh`**;
-      it clones, installs, records the commit SHA and tees evidence to
-      `runs/_bootstrap/`. Needs a machine with network, so it has to be yours.
+- [x] **Pushed** — `track2/w0-scaffolding-runlog`, 2 commits (`1cf2118`,
+      `eaaedd4`). **`main` is still empty** — merge before anyone clones without
+      naming the branch.
+- [x] **RLM library installed** (`github.com/alexzhang13/rlm`) — vendored as a
+      working copy at `.vendor/rlm`, pinned to `72d6940`, installed as
+      `rlms==0.1.3`. Evidence in `runs/_bootstrap/`, attached to #11.
+- [ ] **RLM examples run end-to-end** — 14 in `.vendor/rlm/examples`. 🚧
+      **Blocked on keys, not broken.** Start with `quickstart.py` and
+      `logger_example.py`; read `depth_metadata_example.py` regardless — the
+      base library already ships something depth/metadata-shaped and CONTEXT.md
+      §1.2 says the contribution has to be distinguishable from it.
 - [ ] **API keys provisioned** — yours to do; keys never enter this repo
 - [ ] **Rate-limit budget documented**
 - [ ] **Spend cap set** — 🚧 blocked on the number, but the *mechanism* is built:
       `SpendCap.from_env()` reads `MARD_SPEND_CAP_USD` and **refuses to run
       without it**. When Anugrah answers, it is one `export`, not new code.
 - [x] **Logging harness captures envelope state, transcript, token count,
-      config snapshot, seed** — `runlog/`, 9/9 core + 9/9 budget tests green
-- [ ] **Track 3 has confirmed the harness meets their needs** — 👉 send Arav
-      ([@FalseAdvertising](https://github.com/FalseAdvertising))
-      `docs/TRACK3_HANDOFF.md`; it ends in a sign-off checklist. Ask for a reply
-      **before 9 Aug** — after that, changes land in a week he needs it working.
+      config snapshot, seed** — `runlog/`, 9 core + 11 budget tests green,
+      ruff and mypy clean
+- [x] **Handoff sent to Track 3** — `docs/TRACK3_HANDOFF.md`, posted to #11 on
+      3 Aug, [@FalseAdvertising](https://github.com/FalseAdvertising) mentioned
+- [ ] **Track 3 has confirmed the harness meets their needs** — ⏳ awaiting
+      Arav's reply. Asked for it **before 9 Aug**; after that, changes land in a
+      week he needs it working. Chase on Thu 6 Aug if nothing has come back.
 
 ### Blocked on
 
 | What | Who | Ticket |
 |---|---|---|
 | Compute / API budget ceiling — the spend cap needs a number | Anugrah | [#46](https://github.com/brickstercodes/MARD-capstone/issues/46) |
+| Harness sign-off — sent 3 Aug, reply wanted before 9 Aug | Arav | [#11](https://github.com/brickstercodes/MARD-capstone/issues/11) |
+| API keys — nothing in `.vendor/rlm/examples` runs without them | me | [#11](https://github.com/brickstercodes/MARD-capstone/issues/11) |
 
 ### Owed to others this block
 
 | To | What | Why it matters |
 |---|---|---|
-| Track 3 (Arav) | Logging harness, working, by 9 Aug | Every number in both manuscripts passes through it |
+| Track 3 (Arav) | Logging harness, working, by 9 Aug | Every number in both manuscripts passes through it — **delivered 3 Aug, awaiting sign-off** |
 
 ### What `runlog/` already does
 
@@ -69,9 +79,9 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
 | `runlog/pricing.py` | `RateCard` / `ModelRate` with provenance; stale rates refused |
 | `runlog/budget.py` | `SpendCap` + `SpendLedger` — campaign ceiling, risk #5 |
 | `scripts/bootstrap_rlm.sh` | Clone, install and evidence the RLM base library |
-| `scripts/check.sh` | ruff format · ruff check · mypy · pytest |
+| `scripts/check.sh` | ruff format · ruff check · mypy · pytest; refuses to run outside the venv |
 | `docs/TRACK3_HANDOFF.md` | What Arav needs to sign off on #11 |
-| `tests/` | 18 tests, failure-mode focused |
+| `tests/` | 20 tests, failure-mode focused |
 
 Three deliberate behaviours worth knowing before you rely on it:
 
@@ -93,6 +103,9 @@ from costing money. Caught by the 60-writer/10-reader test.
 `eval/` shadows the Python builtin `eval`. Kept as-is to match CONTEXT.md §4.1
 so the tree matches the document everyone navigates by. Rename to `evaluation/`
 now if we're going to — after Track 3 starts importing it, it stops being free.
+
+**Still unasked as of 3 Aug.** Send it with #46 in one message — both are his,
+and the rename window closes the moment Arav starts building against the tree.
 
 ---
 
