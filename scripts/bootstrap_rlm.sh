@@ -68,10 +68,23 @@ echo
 
 echo "--- 2. install it ---"
 "${PY}" -m pip install -e "${VENDOR_DIR}"
+
+# An editable install resolves through a .pth file, and CPython 3.14's
+# site.addpackage skips any .pth carrying the macOS hidden flag — silently, with
+# no warning and a zero exit. It happened here between 3 and 4 Aug 2026 and cost
+# a day: `import rlm` was dead while the whole test suite stayed green, because
+# pytest puts the repo root on sys.path. Clearing the flag is idempotent and
+# cheap; diagnosing it a second time is not.
+SITE_PACKAGES="$("${PY}" -c 'import sysconfig; print(sysconfig.get_paths()["purelib"])')"
+if command -v chflags >/dev/null 2>&1; then
+  chflags nohidden "${SITE_PACKAGES}"/__editable__* 2>/dev/null || true
+fi
 echo
 
 echo "--- 3. import check ---"
-"${PY}" -c "import rlm; print('rlm imported from', rlm.__file__)"
+# From / rather than here: run in the repo root, this passes on sys.path[0]
+# alone and proves nothing about the install.
+(cd / && "${PY}" -c "import rlm; print('rlm imported from', rlm.__file__)")
 echo
 
 echo "--- 4. list the examples we are expected to run ---"

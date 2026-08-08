@@ -44,6 +44,23 @@ if [[ ${#MISSING[@]} -gt 0 ]]; then
   exit 1
 fi
 
+# Both `mard` and `rlms` are editable installs, which resolve through a .pth file
+# in site-packages. CPython 3.14's site.addpackage silently skips a .pth carrying
+# the macOS hidden flag, and something on this machine set that flag the day
+# after bootstrap — `import rlm` broke while every test still passed, because
+# pytest puts the repo root on sys.path and masks it. Import from somewhere else
+# so cwd cannot cover for a broken install.
+IMPORT_PROBE="$(cd / && "${VENV_BIN}/python" -c 'import rlm, runlog' 2>&1)" || {
+  echo "!! The editable installs are not importable outside the repo root."
+  echo "${IMPORT_PROBE}"
+  echo
+  echo "   Most likely the .pth files are flagged hidden and site skips them:"
+  echo "     ls -lO \"\${VIRTUAL_ENV}\"/lib/python*/site-packages/__editable__*"
+  echo "     chflags nohidden \"\${VIRTUAL_ENV}\"/lib/python*/site-packages/__editable__*"
+  echo "   Otherwise reinstall:  pip install -e '.[dev]' && pip install -e .vendor/rlm"
+  exit 1
+}
+
 STATUS=0
 run() {
   # Headers name the tool, not its absolute path in the venv.
