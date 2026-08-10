@@ -24,14 +24,14 @@ This is the single place that answers three questions for anyone picking up this
 
 Straight from `CONTEXT.md` §4.2, restated here with current status so this log doesn't drift out of sync with the source of truth.
 
-| # | Open decision | Owner | Deadline | Status as of 2 Aug |
+| # | Open decision | Owner | Deadline | Status as of 10 Aug |
 |---|---|---|---|---|
-| 1 | Track → person assignment for Tracks 2–4 | Anugrah | W0 | **Still open.** §3.3's Parth/Arav/Tanish allocation is a suggestion only. |
+| 1 | Track → person assignment for Tracks 2–4 | Anugrah | W0 | **Closed, 10 Aug.** Track 1 = Anugrah Shetty. Track 2 = Parth. Track 3 = Arav (GitHub: falseadverstising). Track 4 = Tanish ("Tanz"). No longer a suggestion — this is the confirmed roster; all track-scoped docs and issue assignments should use these names going forward. |
 | 4 | Venue | Faculty (Dr. Sweta) | at review | Open. Deadline table exists (`CONTEXT.md` §3.1); not yet raised with her. |
 | 5 | Whether Manuscript A goes to an archival venue | Faculty | before A is submitted | Open. Flagged as urgent in `CONTEXT.md` §3.1 — costs nothing to ask now, expensive to discover in October. |
 | 6 | Guide review windows | Dr. Sweta's availability | — | Assumed Mon 31 Aug–Tue 1 Sep (A) and Wed 23 Sep (B); not confirmed. If she needs longer, **A's scope gets cut, not the date.** |
 
-Items 2, 3, 7 from `CONTEXT.md` §4.2 (model pair, budget ceiling, Pareto framing) are now closed — see §1 above.
+Items 2, 3, 7 from `CONTEXT.md` §4.2 (model pair, budget ceiling, Pareto framing) are now closed — see §1 above. Item 1 (track assignment) closed 10 Aug — see row above.
 
 ---
 
@@ -44,18 +44,18 @@ This is the part `CONTEXT.md` doesn't have yet, because these are blockers this 
 - **The working Vertex AI Gemini client code from your other project.** The reference RLM library (`github.com/alexzhang13/rlm`) has no Vertex AI path — its `GeminiClient` is hardcoded to the direct API-key flow (`GEMINI_API_KEY` via `google-genai`), not `vertexai=True`/project/location. You said you have a prior project with working Vertex Gemini code. **This needs to actually be handed to Track 2** — pointed at, pasted, or the repo shared — before Track 2 can port it into a patched `GeminiClient`. Nothing further can happen on the orchestration side without it. If it turns out that code doesn't transfer cleanly (different SDK version, different auth flow), Track 2 needs to know that early, not discover it in W1.
 - **Confirmation that the ₹75,000 figure is a hard ceiling Track 2 can build a spend-cap against**, not a soft target — `docs/12-MODEL_PAIR.md` treats it as hard. If there's any flex, say so before Track 2 sizes W6's run volume against it.
 
-### 3b. From Track 2 (once named — see §2 item 1)
+### 3b. From Track 2 (Parth)
 
 - **Port the Vertex Gemini client** described above. This is now a concrete W0/W1 task, not an assumption — sized and confirmed feasible before end of W0 if possible, since it blocks "RLM library installed and running its own examples" (`CONTEXT.md` §3.3 Track 2 W0).
 - **Structured logging + config-snapshot harness**, as already assigned in `CONTEXT.md` §3.3 — `docs/30-MEASUREMENT_PROTOCOL.md` §7 now specifies *what* must be captured (envelope state, transcripts, token counts, config snapshot, seed); Track 2 still owns *how*.
 
-### 3c. From Track 3 (once named)
+### 3c. From Track 3 (Arav)
 
 - **Read `docs/30-MEASUREMENT_PROTOCOL.md` in full** — this is the literal DoD item still open ("Track 3 has read it"). Track 1 cannot close this alone; it needs a confirmation back.
 - **Reproduce the GDM-MRCR v2 (8-needle) number for `gemini-3.6-flash` directly on Vertex** as the new sanity check (replaces the now-unreachable GPT-5 base-paper reproduction — see `docs/12-MODEL_PAIR.md` "Consequences → Negative," item 1). Do this before trusting any MARD-specific measurement.
 - **Fix and write down the exact BrowseComp-Plus query subset and OOLONG negative-control subset** — unchanged from `CONTEXT.md` §3.3, restated here because it's still outstanding.
 
-### 3d. From Track 4 (once named)
+### 3d. From Track 4 (Tanish)
 
 - Nothing new surfaced this session beyond what `CONTEXT.md` §3.3 already assigns (licensing confirmation, deadline table, LaTeX repo setup).
 
