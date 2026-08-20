@@ -17,6 +17,7 @@ from orchestrate import (
     Artefact,
     BuilderBrief,
     BuiltSpan,
+    IncompleteArtefactError,
     Provenance,
     StubBuilder,
     briefs_for,
@@ -141,16 +142,6 @@ def test_a_failing_builder_is_not_silently_swallowed(plan, logger):
         execute_plan_sync(plan, FailingBuilder(), logger)
 
 
-def test_join_sorts_spans_that_arrive_shuffled():
-    spans = [
-        BuiltSpan(concept_id=f"c{i}", position=i, text=str(i), provenance=_p(i)) for i in (3, 1, 2)
-    ]
-    artefact = join_in_plan_order(spans, "ostep")
-    assert isinstance(artefact, Artefact)
-    assert artefact.concept_order == ("c1", "c2", "c3")
-    assert artefact.text == "1\n\n2\n\n3"
-
-
 def test_the_run_is_logged_with_the_join_order_and_provenance(plan, logger):
     artefact = execute_plan_sync(plan, StubBuilder(), logger)
     logger.close()
@@ -171,6 +162,55 @@ def test_a_run_cannot_be_executed_without_a_logger(plan):
     # has to be a type error rather than a habit anyone can fall out of.
     with pytest.raises(TypeError):
         execute_plan_sync(plan, StubBuilder())  # type: ignore[call-arg]
+
+
+def test_join_sorts_spans_that_arrive_shuffled(plan):
+    spans = [_span(concept_id, position) for position, concept_id in _slots(plan)][::-1]
+    artefact = join_in_plan_order(spans, plan)
+    assert isinstance(artefact, Artefact)
+    assert artefact.concept_order == plan.ordered_concept_ids
+
+
+def test_a_missing_span_stops_the_join_and_names_what_is_missing(plan):
+    # W2's failure isolation is what produces this. A five-sixths artefact that
+    # reads as complete would be found in a measurement, not here.
+    slots = _slots(plan)
+    spans = [_span(concept_id, position) for position, concept_id in slots[:-1]]
+    with pytest.raises(IncompleteArtefactError) as err:
+        join_in_plan_order(spans, plan)
+    assert "no span for position" in str(err.value)
+    assert slots[-1][1] in str(err.value)
+
+
+def test_two_spans_claiming_one_slot_stop_the_join(plan):
+    slots = _slots(plan)
+    spans = [_span(concept_id, position) for position, concept_id in slots]
+    spans.append(_span(slots[0][1], slots[0][0]))
+    with pytest.raises(IncompleteArtefactError) as err:
+        join_in_plan_order(spans, plan)
+    assert "more than one span claims" in str(err.value)
+
+
+def test_a_span_that_built_the_wrong_concept_stops_the_join(plan):
+    slots = _slots(plan)
+    spans = [_span(concept_id, position) for position, concept_id in slots]
+    spans[0] = _span("some-other-concept", slots[0][0])
+    with pytest.raises(IncompleteArtefactError) as err:
+        join_in_plan_order(spans, plan)
+    assert "wrong concept" in str(err.value)
+
+
+def _slots(plan) -> list[tuple[int, str]]:
+    return [
+        (step.position, step.concept_id)
+        for step in sorted(plan.study_sequence, key=lambda s: s.position)
+    ]
+
+
+def _span(concept_id: str, position: int) -> BuiltSpan:
+    return BuiltSpan(
+        concept_id=concept_id, position=position, text=concept_id, provenance=_p(position)
+    )
 
 
 def _p(position: int) -> Provenance:

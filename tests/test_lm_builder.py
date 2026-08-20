@@ -3,9 +3,16 @@
 The point of these is the seam, not the text: `LmBuilder` is typed against a
 structural `LanguageModel` protocol rather than against the RLM library, so the
 one thing worth proving is that the library's own client actually satisfies it.
-That is what `MockLM` is doing here — it is the RLM library's class, not a
-double we wrote to agree with ourselves (TRACK2.md: `LocalREPL` + `MockLM` runs
-the whole path with no keys).
+That is what `MockLM` is doing here — it is the RLM library's class, not a double
+we wrote to agree with ourselves (TRACK2.md: `LocalREPL` + `MockLM` runs the
+whole path with no keys).
+
+These tests do not skip when `import rlm` fails. `.vendor/rlm` is gitignored, so
+a clone that has never run `scripts/bootstrap_rlm.sh` legitimately has no library
+to test against and skipping is honest. A vendored copy that is present but not
+importable is a different thing entirely — that is the editable-install breakage
+of 4 Aug, and a skip there deletes the only test of the seam while the suite
+still reports green.
 """
 
 from __future__ import annotations
@@ -21,16 +28,41 @@ from plan import EXAMPLE_PLAN_PATH, load_master_plan
 from runlog import RunLogger
 
 VENDORED_RLM = Path(__file__).resolve().parents[1] / ".vendor" / "rlm"
+MOCK_LM_PATH = VENDORED_RLM / "tests" / "mock_lm.py"
+
+
+def _import_rlm_or_explain() -> None:
+    """Make the vendored library importable, or say which of the two cases this is."""
+    try:
+        import rlm  # noqa: F401
+    except ImportError:
+        pass
+    else:
+        return
+
+    if not VENDORED_RLM.exists():
+        pytest.skip(
+            f"no vendored RLM at {VENDORED_RLM} - run scripts/bootstrap_rlm.sh to test the seam"
+        )
+
+    # Present but not importable: the editable install is broken, not absent.
+    # Import it from the vendored tree so the seam is still tested; check.sh is
+    # what fails on the broken install, loudly, in one place.
+    sys.path.insert(0, str(VENDORED_RLM))
+    try:
+        import rlm  # noqa: F401
+    except ImportError as err:  # pragma: no cover - a vendored copy that cannot load at all
+        pytest.fail(f"vendored RLM at {VENDORED_RLM} exists but will not import: {err}")
 
 
 def _mock_lm_class():
     """Load the RLM library's own MockLM, which ships in its tests rather than its package."""
-    pytest.importorskip("rlm", reason="the vendored RLM editable install is not importable")
-    spec = importlib.util.spec_from_file_location(
-        "_rlm_mock_lm", VENDORED_RLM / "tests" / "mock_lm.py"
-    )
+    _import_rlm_or_explain()
+    if not MOCK_LM_PATH.exists():
+        pytest.fail(f"vendored RLM has no MockLM at {MOCK_LM_PATH}")
+    spec = importlib.util.spec_from_file_location("_rlm_mock_lm", MOCK_LM_PATH)
     if spec is None or spec.loader is None:
-        pytest.skip(f"no MockLM at {VENDORED_RLM}")
+        pytest.fail(f"could not load MockLM from {MOCK_LM_PATH}")
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)

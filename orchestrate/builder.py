@@ -74,6 +74,17 @@ class BuiltSpan:
     provenance: Provenance
 
 
+class IncompleteArtefactError(RuntimeError):
+    """Raised when the spans do not account for exactly one per Master Plan step.
+
+    W2 adds per-builder retry and failure isolation, and isolation is precisely
+    the feature that produces a run with a span missing. Without this the join
+    would hand back a short artefact that reads as complete, and the first place
+    anyone noticed would be a measurement. Dropping a builder has to be a
+    decision someone made and recorded, not something the join absorbs.
+    """
+
+
 @dataclass(frozen=True)
 class Artefact:
     """The joined result: spans in Master-Plan order."""
@@ -154,9 +165,70 @@ def briefs_for(plan: MasterPlan) -> tuple[BuilderBrief, ...]:
     return tuple(briefs)
 
 
-def join_in_plan_order(spans: Sequence[BuiltSpan], document_id: str) -> Artefact:
-    """Join: Master-Plan order, whatever order the builders finished in."""
-    return Artefact(document_id=document_id, spans=tuple(sorted(spans, key=lambda s: s.position)))
+def join_in_plan_order(spans: Sequence[BuiltSpan], plan: MasterPlan) -> Artefact:
+    """Join: Master-Plan order, whatever order the builders finished in.
+
+    Takes the plan rather than a document id so the join can check that it was
+    handed one span per step. Sorting an incomplete set succeeds quietly, which
+    is the wrong failure mode for the thing that produces the measured artefact.
+    """
+    by_position: dict[int, BuiltSpan] = {}
+    duplicates: list[int] = []
+    for span in spans:
+        if span.position in by_position:
+            duplicates.append(span.position)
+        by_position[span.position] = span
+
+    expected = {step.position: step.concept_id for step in plan.study_sequence}
+    missing = sorted(expected.keys() - by_position.keys())
+    unexpected = sorted(by_position.keys() - expected.keys())
+    mismatched = sorted(
+        position
+        for position, span in by_position.items()
+        if position in expected and span.concept_id != expected[position]
+    )
+
+    if duplicates or missing or unexpected or mismatched:
+        raise IncompleteArtefactError(
+            _join_failure(plan, sorted(set(duplicates)), missing, unexpected, mismatched)
+        )
+
+    ordered = tuple(by_position[position] for position in sorted(by_position))
+    return Artefact(document_id=plan.document_id, spans=ordered)
+
+
+def _join_failure(
+    plan: MasterPlan,
+    duplicates: Sequence[int],
+    missing: Sequence[int],
+    unexpected: Sequence[int],
+    mismatched: Sequence[int],
+) -> str:
+    parts = [
+        f"cannot join {plan.document_id}: the spans do not match the Master Plan's "
+        f"{len(plan.study_sequence)} steps"
+    ]
+    if missing:
+        named = ", ".join(f"{position} ({_concept_at(plan, position)})" for position in missing)
+        parts.append(f"  no span for position(s): {named}")
+    if duplicates:
+        parts.append(f"  more than one span claims position(s): {_numbers(duplicates)}")
+    if unexpected:
+        parts.append(f"  span(s) at position(s) the plan does not have: {_numbers(unexpected)}")
+    if mismatched:
+        parts.append(f"  span(s) built the wrong concept for position(s): {_numbers(mismatched)}")
+    return "\n".join(parts)
+
+
+def _numbers(positions: Sequence[int]) -> str:
+    return ", ".join(str(position) for position in positions)
+
+
+def _concept_at(plan: MasterPlan, position: int) -> str:
+    for step in plan.study_sequence:
+        if step.position == position:
+            return step.concept_id
+    return "unknown"
 
 
 async def execute_plan(plan: MasterPlan, builder: Builder, logger: RunLogger) -> Artefact:
@@ -175,7 +247,7 @@ async def execute_plan(plan: MasterPlan, builder: Builder, logger: RunLogger) ->
     )
 
     spans = await asyncio.gather(*(builder.build(brief) for brief in briefs))
-    artefact = join_in_plan_order(spans, plan.document_id)
+    artefact = join_in_plan_order(spans, plan)
 
     logger.log_event(
         "tier2_join",

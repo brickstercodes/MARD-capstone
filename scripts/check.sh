@@ -46,13 +46,27 @@ fi
 
 # Both `mard` and `rlms` are editable installs, which resolve through a .pth file
 # in site-packages. CPython 3.14's site.addpackage silently skips a .pth carrying
-# the macOS hidden flag, and something on this machine set that flag the day
-# after bootstrap — `import rlm` broke while every test still passed, because
-# pytest puts the repo root on sys.path and masks it. Import from somewhere else
-# so cwd cannot cover for a broken install.
-IMPORT_PROBE="$(cd / && "${VENV_BIN}/python" -c 'import rlm, runlog' 2>&1)" || {
-  echo "!! The editable installs are not importable outside the repo root."
+# the macOS hidden flag, and something on this machine sets that flag — it came
+# back on 20 Aug within minutes of being cleared. `import rlm` breaks while every
+# test still passes, because pytest puts the repo root on sys.path and masks it.
+#
+# Two things can cover for a broken install, so the probe defeats both: cwd (by
+# running from /) and PYTHONPATH (by clearing it). `.venv/bin/activate` on this
+# machine exports a PYTHONPATH pointing at the repo and .vendor/rlm, which makes
+# every other command in an activated shell succeed against an install that is
+# not actually working. A probe that inherits it reports what the crutch does,
+# not what a teammate's clone will do.
+IMPORT_PROBE="$(cd / && env -u PYTHONPATH "${VENV_BIN}/python" -c '
+import rlm, runlog
+print(rlm.__file__)
+print(runlog.__file__)
+' 2>&1)" || {
+  echo "!! The editable installs do not work on their own."
   echo "${IMPORT_PROBE}"
+  echo
+  echo "   This is checked without PYTHONPATH on purpose. If your shell works but"
+  echo "   this does not, the PYTHONPATH exported by .venv/bin/activate is the"
+  echo "   only reason — and it is not in the repo, so nobody else has it."
   echo
   echo "   Most likely the .pth files are flagged hidden and site skips them:"
   echo "     ls -lO \"\${VIRTUAL_ENV}\"/lib/python*/site-packages/__editable__*"
