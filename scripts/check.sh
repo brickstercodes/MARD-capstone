@@ -85,7 +85,8 @@ run() {
 
 run "${VENV_BIN}/ruff" format --check .
 run "${VENV_BIN}/ruff" check .
-run "${VENV_BIN}/mypy" runlog plan orchestrate
+# Targets come from pyproject `files`, so this stays correct as packages are added.
+  run "${VENV_BIN}/mypy"
 run "${VENV_BIN}/pytest" -q
 
 echo

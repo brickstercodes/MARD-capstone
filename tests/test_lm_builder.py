@@ -20,6 +20,7 @@ from __future__ import annotations
 import importlib.util
 import sys
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -55,7 +56,7 @@ def _import_rlm_or_explain() -> None:
         pytest.fail(f"vendored RLM at {VENDORED_RLM} exists but will not import: {err}")
 
 
-def _mock_lm_class():
+def _mock_lm_class() -> type[Any]:
     """Load the RLM library's own MockLM, which ships in its tests rather than its package."""
     _import_rlm_or_explain()
     if not MOCK_LM_PATH.exists():
@@ -66,7 +67,8 @@ def _mock_lm_class():
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
-    return module.MockLM
+    mock_lm: type[Any] = module.MockLM
+    return mock_lm
 
 
 @pytest.fixture
@@ -114,7 +116,7 @@ def test_the_model_is_asked_for_one_section_and_told_not_to_summarise(plan):
             assert other not in prompt
 
 
-def _brief(plan, index: int) -> BuilderBrief:
+def _brief(plan: Any, index: int) -> BuilderBrief:
     from orchestrate import briefs_for
 
     return briefs_for(plan)[index]

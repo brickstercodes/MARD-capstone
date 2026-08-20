@@ -21,6 +21,14 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 packages = ["runlog", "ingest", "envelope", "plan", "orchestrate", "eval", "corpus"]
 
+[tool.setuptools.package-data]
+# EXAMPLE_PLAN.json is the worked example of the Tier 1 → Tier 2 contract and
+# `plan.EXAMPLE_PLAN_PATH` points at it. Without this it ships only in an
+# editable install, so the path would break in exactly the place it matters most
+# — the reproducibility artefact, which is installed from a wheel by someone who
+# has never seen this repo.
+plan = ["*.json"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py310"
@@ -37,9 +45,19 @@ exclude = ["*.md"]
 [tool.mypy]
 python_version = "3.10"
 strict = true
+# Tests are type-checked too — a test that no longer matches the code it covers
+# is how a green suite starts lying. They are not held to full annotation
+# coverage: pytest fixtures are untyped by convention, and annotating every
+# `def test_x(plan, logger)` buys nothing the assertions do not already say.
+files = ["runlog", "plan", "orchestrate", "tests"]
 # Third-party PDF and model SDKs ship no stubs; failing on those would train
 # everyone to ignore mypy output, which defeats the point of running it.
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

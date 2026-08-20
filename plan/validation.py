@@ -23,6 +23,7 @@ delete the result Track 3 exists to report.
 
 from __future__ import annotations
 
+import re
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
@@ -52,6 +53,14 @@ PLACEHOLDERS = frozenset(
 MIN_DIRECTIVE_CHARS = 12
 """A directive has to name a concept and say what to do with it. Below this it
 cannot be doing both, and a builder handed it will invent the rest."""
+
+_PLACEHOLDER_PREFIX = re.compile(
+    rf"^({'|'.join(re.escape(word) for word in sorted(PLACEHOLDERS))})\b[\s:;,.\-]*",
+    re.IGNORECASE,
+)
+"""`TODO: write this later` is long enough to clear the length floor and is not
+an exact match for any placeholder, but it is still a builder brief that briefs
+nobody."""
 
 
 @dataclass(frozen=True)
@@ -106,13 +115,21 @@ def check_master_plan(plan: MasterPlan) -> tuple[PlanViolation, ...]:
         )
 
     violations.extend(_check_sequence_covers_graph(plan))
-    violations.extend(_check_sequence_positions(plan))
+    position_violations = tuple(_check_sequence_positions(plan))
+    violations.extend(position_violations)
     violations.extend(_check_directives(plan))
-    # Checking order against a cyclic graph reports one violation per edge in the
-    # cycle and buries the real problem, which the cycle report already names.
-    if cycle is None:
+
+    # Everything below reads a concept's place in the sequence. Two guards, both
+    # for the same reason: a check whose input is already known to be broken
+    # produces one violation per concept and buries the report that matters.
+    #
+    #  - a cyclic graph makes every edge in the loop an ordering violation
+    #  - a sequence numbered 1, 3, 7 has no meaningful positions at all, so
+    #    every rationale disagrees with it and every concept looks moved
+    positions_usable = not position_violations
+    if cycle is None and positions_usable:
         violations.extend(_check_sequence_respects_edges(plan))
-    violations.extend(_check_rationale(plan))
+    violations.extend(_check_rationale(plan, positions_usable=positions_usable))
     return tuple(violations)
 
 
@@ -249,7 +266,7 @@ def _check_directives(plan: MasterPlan) -> Iterable[PlanViolation]:
 
 def _check_instruction(*, text: str, code: str, where: str, noun: str) -> Iterable[PlanViolation]:
     stripped = text.strip().strip(".!?-_ ").lower()
-    if stripped in PLACEHOLDERS:
+    if stripped in PLACEHOLDERS or _PLACEHOLDER_PREFIX.match(text.strip()):
         yield PlanViolation(
             code=code,
             where=where,
@@ -284,7 +301,7 @@ def _check_sequence_respects_edges(plan: MasterPlan) -> Iterable[PlanViolation]:
             )
 
 
-def _check_rationale(plan: MasterPlan) -> Iterable[PlanViolation]:
+def _check_rationale(plan: MasterPlan, *, positions_usable: bool) -> Iterable[PlanViolation]:
     known = plan.concept_graph.concept_ids
     plan_index = {concept_id: i for i, concept_id in enumerate(plan.ordered_concept_ids)}
     book_index = {concept_id: i for i, concept_id in enumerate(plan.book_ordered_concept_ids)}
@@ -305,11 +322,14 @@ def _check_rationale(plan: MasterPlan) -> Iterable[PlanViolation]:
                 message="explained more than once; a concept makes at most one move",
             )
         explained.add(note.concept_id)
-        yield from _check_note_agrees_with_plan(plan, note, plan_index)
+        if positions_usable:
+            yield from _check_note_agrees_with_plan(plan, note, plan_index)
 
     # The reordering is the claim (O5). A concept that moved without a stated
     # reason is a result nobody can defend in review, so it is refused here
     # rather than discovered during the write-up.
+    if not positions_usable:
+        return
     for concept_id, position in plan_index.items():
         if concept_id in explained or concept_id not in book_index:
             continue

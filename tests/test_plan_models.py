@@ -9,9 +9,12 @@ different from what Tier 1 emitted.
 
 from __future__ import annotations
 
+import pathlib
+
 import pytest
 from pydantic import ValidationError
 
+import plan as plan_package
 from plan import Concept, ConceptEdge, ConceptGraph, MasterPlan, ReorderNote, SourceSpan, StudyStep
 
 
@@ -57,6 +60,16 @@ def _plan() -> MasterPlan:
             ),
         ),
     )
+
+
+def test_the_worked_example_ships_with_the_package():
+    # It ships only in an editable install unless pyproject declares it as
+    # package data, and `EXAMPLE_PLAN_PATH` is what the reproducibility artefact
+    # resolves — the one context where nobody has the repo.
+    from plan import EXAMPLE_PLAN_PATH
+
+    assert EXAMPLE_PLAN_PATH.exists()
+    assert EXAMPLE_PLAN_PATH.parent == pathlib.Path(plan_package.__file__).parent
 
 
 def test_plan_survives_a_json_round_trip_unchanged():
@@ -118,7 +131,7 @@ def test_a_span_cannot_end_before_it_starts():
 
 def test_edge_direction_is_named_so_it_cannot_be_swapped_positionally():
     with pytest.raises(TypeError):
-        ConceptEdge("processes", "scheduling", "inferred")  # type: ignore[misc]
+        ConceptEdge("processes", "scheduling", "inferred")  # type: ignore[call-arg]
 
 
 def test_plan_order_and_book_order_are_both_recoverable():

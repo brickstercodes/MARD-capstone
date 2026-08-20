@@ -181,6 +181,30 @@ def test_a_real_directive_passes():
     assert _codes(_plan(concepts=concepts, sequence=sequence)) == set()
 
 
+@pytest.mark.parametrize(
+    "directive",
+    ["TODO: write this later", "TBD - fill in from chapter 4", "FIXME add detail here"],
+)
+def test_placeholder_text_with_an_excuse_attached_is_still_placeholder(directive):
+    # Long enough to clear the length floor and not an exact match for any
+    # placeholder, but still a brief that briefs nobody.
+    concepts = (_concept("processes", 0),)
+    sequence = (StudyStep(position=1, concept_id="processes", directive=directive),)
+    assert "placeholder_directive" in _codes(_plan(concepts=concepts, sequence=sequence))
+
+
+def test_broken_positions_do_not_cascade_into_every_concept():
+    # Positions 1, 3, 5 make every concept look moved and every rationale look
+    # wrong. One report about the numbering beats six about its consequences.
+    concepts = tuple(_concept(f"concept-{n}", n) for n in range(3))
+    sequence = tuple(
+        StudyStep(position=1 + 2 * n, concept_id=f"concept-{n}", directive="Explain it fully.")
+        for n in range(3)
+    )
+    violations = check_master_plan(_plan(concepts=concepts, sequence=sequence))
+    assert [v.code for v in violations] == ["sequence_positions"]
+
+
 def test_a_placeholder_reordering_reason_is_rejected():
     rationale = (
         ReorderNote(
