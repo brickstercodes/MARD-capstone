@@ -56,32 +56,47 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
       "The editable-install trap" below. It is working again via a local
       `PYTHONPATH` workaround; the root cause is a process on this Mac, not the
       repo.
-- [ ] **RLM examples run end-to-end** — 14 in `.vendor/rlm/examples`. 🚧
-      **Blocked on the Vertex path, not broken.** Keys arrived 10 Aug but are
-      unconfirmed here, and the examples target the direct-API `GeminiClient`
-      that `docs/15`'s patch replaces — so this box needs both boxes above it
-      first. All 14 surveyed and classified in
-      `docs/RLM_BASELINE_SURVEY.md` §1. Five of them run on container or sandbox
-      runtimes MARD does not use — recommend skipping; the local REPL is what we
-      run on, and adopting Docker would be a change to CONTEXT.md §4.1's stack,
-      not a detail.
-      The useful part is the `MockLM` pattern those examples demonstrate:
-      **verified 20 Aug that `LocalREPL` runs keyless** — code execution,
-      `llm_query`, batched queries and recursive `rlm_query` — with no provider
-      call and no container. That means W1's stub builder and W2's fork-join can
-      be built and tested with zero API spend and zero rate-limit exposure.
-      The distinguishability question is answered in §2 of that doc, and the
-      answer turned out to matter for the paper: the base library's metadata
-      flows **upward** and is observational, MARD's envelope flows **downward**
-      and is operative. Verified in source, `rlm/core/rlm.py:824` and `:836`.
-      There is a `root_prompt` slot that invites the objection *"you just used
-      `root_prompt`"* — §2.3 has the rebuttal. **Track 1 needs this for O1.**
-- [ ] **API keys provisioned** — service-account JSON sent directly by Anugrah on
-      10 Aug. **Not yet confirmed working in this environment.** Set
-      `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION=global`,
-      `GOOGLE_APPLICATION_CREDENTIALS_JSON` in `.env` and run
-      `python test_vertex_auth.py`. Use `global`, not `us-central1` — Anugrah hit
-      a 404 there. Keys never enter this repo.
+- [x] **RLM examples run end-to-end** — on our stack, 20 Aug, evidence in
+      `runs/_bootstrap/rlm_vertex_*.log`. **The 14 examples cannot be run as
+      written**: 9 are hardcoded to `OPENAI_API_KEY` / `PORTKEY_API_KEY`, and 5
+      target container or sandbox runtimes MARD does not use. Buying an OpenAI
+      key would prove the library works on a stack we will never run on.
+      `scripts/verify_rlm_vertex.py` runs what the three examples that matter
+      actually test, against `backend="gemini"` with `use_vertex=True`:
+      **needle-in-a-haystack** (quickstart — the base paper's core mechanism,
+      context searched with code rather than attention), **trajectory capture**
+      (logger_example), and **depth>1 recursion** (depth_metadata). All three
+      pass on Tier 1 and Tier 2. Full survey in `docs/RLM_BASELINE_SURVEY.md`.
+      The distinguishability answer is now demonstrated rather than only read:
+      the child's trajectory flows **up** into the parent's metadata, and
+      nothing flows **down** — `rlm.py:824` hands the child a fresh empty
+      logger, `rlm.py:836` passes `root_prompt=None`. That gap is MARD.
+      **Track 1 needs this for O1.**
+
+      ⚠️ **Found a crash that will bite W3.** The first run failed
+      intermittently with `TypeError: expected string or bytes-like object, got
+      'NoneType'`. Cause: `GeminiClient.completion` returns `response.text`,
+      which the SDK sets to `None` when the model emits no text part — a safety
+      block, a MAX_TOKENS finish with nothing produced, or a function-call-only
+      candidate. That `None` reaches `find_code_blocks`, which calls
+      `re.finditer(pattern, None)` and dies. Upstream never sees it because the
+      OpenAI client returns `""` in the same situation, so **this is specific to
+      our Vertex path**.
+      Patched in the vendored copy: both return sites now go through
+      `_text_or_empty`, which returns `""` and prints the finish reason. RLM
+      then finds no code blocks and iterates again — the right behaviour when
+      one call in a few hundred comes back empty during W6. **This is an
+      addition to `docs/15`'s patch and Track 1 should fold it in.**
+
+      Note `cost=unreported` in the logs — the RLM client's own cost tracking
+      yields nothing for Gemini. Harmless for us: `runlog` prices runs from
+      `RateCard`, not from the client.
+- [x] **API keys provisioned** — **confirmed working 20 Aug.**
+      `test_vertex_auth.py` passes end to end: project
+      `gen-lang-client-0468294301`, `location=global`, real completion against
+      `gemini-3.6-flash`, tokens reported. `location=global` is required —
+      `us-central1` 404s for this model. Keys live in `.env` only; never in this
+      repo.
 - [x] **Vertex client patch re-applied locally** — `docs/15-…` →
       `.vendor/rlm/rlm/clients/gemini.py`, applied 20 Aug. `use_vertex=True`
       path added; `completion`/`acompletion`/cost tracking untouched, so
