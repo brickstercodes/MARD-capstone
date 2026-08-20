@@ -71,7 +71,7 @@ run() {
 
 run "${VENV_BIN}/ruff" format --check .
 run "${VENV_BIN}/ruff" check .
-run "${VENV_BIN}/mypy" runlog
+run "${VENV_BIN}/mypy" runlog plan orchestrate
 run "${VENV_BIN}/pytest" -q
 
 echo

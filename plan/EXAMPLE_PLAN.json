@@ -1,0 +1,140 @@
+{
+  "schema_version": "1",
+  "document_id": "ostep",
+  "run_id": null,
+  "concept_graph": {
+    "concepts": [
+      {
+        "id": "processes",
+        "label": "The Process Abstraction",
+        "source": {"section_id": "ch04", "book_position": 0, "page_start": 31, "page_end": 40},
+        "aliases": ["process", "process abstraction"]
+      },
+      {
+        "id": "process-api",
+        "label": "The Process API",
+        "source": {"section_id": "ch05", "book_position": 1, "page_start": 41, "page_end": 50},
+        "aliases": ["fork", "exec", "wait"]
+      },
+      {
+        "id": "limited-direct-execution",
+        "label": "Limited Direct Execution",
+        "source": {"section_id": "ch06", "book_position": 2, "page_start": 51, "page_end": 64},
+        "aliases": ["LDE", "trap", "mode switch"]
+      },
+      {
+        "id": "cpu-scheduling",
+        "label": "CPU Scheduling",
+        "source": {"section_id": "ch07", "book_position": 3, "page_start": 65, "page_end": 74},
+        "aliases": ["scheduling", "FIFO", "SJF", "round robin"]
+      },
+      {
+        "id": "multi-level-feedback",
+        "label": "The Multi-Level Feedback Queue",
+        "source": {"section_id": "ch08", "book_position": 4, "page_start": 75, "page_end": 86},
+        "aliases": ["MLFQ"]
+      },
+      {
+        "id": "address-spaces",
+        "label": "The Abstraction: Address Spaces",
+        "source": {"section_id": "ch13", "book_position": 5, "page_start": 121, "page_end": 128},
+        "aliases": ["address space", "virtual memory"]
+      }
+    ],
+    "edges": [
+      {
+        "prerequisite": "processes",
+        "dependent": "process-api",
+        "evidence": "cross_reference",
+        "quote": "we discussed the process abstraction in the previous chapter",
+        "located_at": {"section_id": "ch05", "book_position": 1, "page_start": 41, "page_end": 41}
+      },
+      {
+        "prerequisite": "processes",
+        "dependent": "limited-direct-execution",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "processes",
+        "dependent": "address-spaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limited-direct-execution",
+        "dependent": "cpu-scheduling",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "cpu-scheduling",
+        "dependent": "multi-level-feedback",
+        "evidence": "cross_reference",
+        "quote": "the schedulers we saw in the previous chapter",
+        "located_at": {"section_id": "ch08", "book_position": 4, "page_start": 75, "page_end": 75}
+      }
+    ]
+  },
+  "study_sequence": [
+    {
+      "position": 1,
+      "concept_id": "processes",
+      "directive": "Define what a process is and how it differs from a program. Cover process state and the state transitions."
+    },
+    {
+      "position": 2,
+      "concept_id": "process-api",
+      "directive": "Explain fork, exec and wait, and why the API separates process creation from program loading."
+    },
+    {
+      "position": 3,
+      "concept_id": "address-spaces",
+      "directive": "Introduce the address space as the second virtualisation the OS provides, alongside the process. Assume the process abstraction is known; assume nothing about paging."
+    },
+    {
+      "position": 4,
+      "concept_id": "limited-direct-execution",
+      "directive": "Explain how the OS keeps control of the CPU while running user code: traps, mode switches and the timer interrupt."
+    },
+    {
+      "position": 5,
+      "concept_id": "cpu-scheduling",
+      "directive": "Cover FIFO, SJF and round robin, with the turnaround and response time metrics that separate them."
+    },
+    {
+      "position": 6,
+      "concept_id": "multi-level-feedback",
+      "directive": "Build MLFQ from the limitations of the simple policies covered immediately before this."
+    }
+  ],
+  "reordering_rationale": [
+    {
+      "concept_id": "address-spaces",
+      "from_book_position": 5,
+      "to_plan_position": 3,
+      "reason": "Its only prerequisite is the process abstraction, and teaching the OS's two core virtualisations next to each other means the reader meets the pattern once rather than twice, nine chapters apart."
+    },
+    {
+      "concept_id": "limited-direct-execution",
+      "from_book_position": 2,
+      "to_plan_position": 4,
+      "reason": "Displaced one position by address-spaces moving up. Its own prerequisite, processes, still precedes it."
+    },
+    {
+      "concept_id": "cpu-scheduling",
+      "from_book_position": 3,
+      "to_plan_position": 5,
+      "reason": "Displaced one position by address-spaces moving up. Still follows limited-direct-execution, which it depends on."
+    },
+    {
+      "concept_id": "multi-level-feedback",
+      "from_book_position": 4,
+      "to_plan_position": 6,
+      "reason": "Displaced one position by address-spaces moving up. Still follows the simple scheduling policies it is built from."
+    }
+  ]
+}

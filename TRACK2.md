@@ -16,26 +16,31 @@ go, sync to GitHub when convenient.
 |---|---|
 | Today | **Thu 20 Aug 2026** |
 | Nominal block | **W2** · Mon 17 – Sun 23 Aug · [#13](https://github.com/brickstercodes/MARD-capstone/issues/13) · **day 4 of 7** |
-| Actually open | **W0** ([#11](https://github.com/brickstercodes/MARD-capstone/issues/11), closed 9 Aug) and **W1** ([#12](https://github.com/brickstercodes/MARD-capstone/issues/12), whole week passed, nothing built) |
+| Actually open | **W2** ([#13](https://github.com/brickstercodes/MARD-capstone/issues/13)) — W1 ([#12](https://github.com/brickstercodes/MARD-capstone/issues/12)) delivered 20 Aug, nine days late |
 | Next freeze | 🔒 **Feature freeze A · Sun 23 Aug — 3 days** — absolute |
 
-**Read this before planning the week.** W0 closed 11 days ago and W1 passed
-without a commit — `plan/` and `orchestrate/` are still bare `__init__.py`. W1
-and W2 are both due Sunday, and Feature freeze A is absolute: after it, a change
-to the pipeline invalidates every number measured before it.
+**Read this before planning the week.** W1 landed on 20 Aug, nine days late but
+complete: `plan/` and `orchestrate/` are real, 79 tests pass, `check.sh` is
+green. W2 is due Sunday alongside Feature freeze A, which is absolute — after it,
+a change to the pipeline invalidates every number measured before it.
 
-Two things make this less bad than it reads, and one makes it worse.
-
-- **Better:** the decisions that were blocking are all answered — spend cap,
-  model pair, `eval/` naming, ablation scope (see below). And W1 needs no keys:
-  `LocalREPL` + `MockLM` runs the whole REPL path offline.
-- **Better:** the harness that Track 3 is blocked on has been delivered since
-  3 Aug.
-- **Worse:** W2's last box is *"end-to-end run completes on the primary
-  document."* That needs `ingest/` (T4) and `envelope/` (T1), and **both are
-  still empty on `main`.** No track has written pipeline code. This is not a
-  Track 2 problem and cannot be solved inside Track 2 — escalate rather than
-  absorb.
+- **W2's remaining work is Track 2's own:** bounded worker pool, per-builder
+  retry, failure isolation. The `Builder` interface is already async and the
+  join is already order-preserving, so the pool goes in underneath without
+  changing callers.
+- **W2's last box cannot close this week.** It is *"end-to-end run completes on
+  the primary document,"* which needs `ingest/` (T4) and `envelope/` (T1). As of
+  20 Aug **both are still bare `__init__.py` on `main`; T4 has never committed to
+  this repo.** Not a Track 2 problem and not solvable inside Track 2 — escalate
+  rather than absorb.
+- **Two things other tracks have to agree to**, both introduced by the schema
+  and neither inferable from CONTEXT.md:
+  - T4: `SourceSpan` needs `section_id`, `book_position`, `page_start`,
+    `page_end` out of `ingest/`.
+  - T1: the boundary requires a `ReorderNote` for every concept whose plan
+    position differs from its book position, so the scout prompt has to produce
+    one per move. T3 should know `evidence` separates `cross_reference` from
+    `inferred` edges before scorers are written.
 
 ---
 
@@ -251,9 +256,22 @@ asked Track 1 in W0 is still open.
 Master Plan Pydantic schema · loud-failing validation at the tier boundary ·
 **stub Tier 2 builder consuming a hand-written plan**
 
-- [ ] `plan/` Pydantic models — concept graph, ordered study sequence, rationale
-- [ ] Validation that fails loudly rather than passing a malformed plan to N builders
-- [ ] Stub builder that eats a hand-written plan
+- [x] `plan/` Pydantic models — concept graph, ordered study sequence, rationale.
+      `plan/models.py`. Edge direction is named (`prerequisite`/`dependent`) not
+      positional, every concept carries a `book_position` so O5 can compare book
+      order against plan order without re-parsing, and `extra="forbid"` means an
+      unexpected key from Tier 1 is a rejection rather than a silent drop.
+- [x] Validation that fails loudly rather than passing a malformed plan to N
+      builders. `plan/validation.py`: cycles, dangling edge endpoints, sequence
+      that is not a permutation of the graph, a concept taught before its
+      prerequisite, placeholder directives, rationale that disagrees with the
+      sequence, and a move with no stated reason. Every violation is collected
+      rather than the first — the error message is Tier 1's repair prompt.
+- [x] Stub builder that eats a hand-written plan. `plan/EXAMPLE_PLAN.json` is the
+      worked example (six OSTEP concepts, one real reorder); `orchestrate/` forks
+      one brief per step, joins in Master-Plan order regardless of completion
+      order, and puts a provenance pointer on every span. `LmBuilder` proves the
+      same interface against the RLM library's own `MockLM`, offline, no keys.
 
 > The stub is the point: it fixes the contract before Track 1 can generate a real
 > plan, so you are never blocked waiting on the envelope.
