@@ -82,12 +82,24 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
       `GOOGLE_APPLICATION_CREDENTIALS_JSON` in `.env` and run
       `python test_vertex_auth.py`. Use `global`, not `us-central1` — Anugrah hit
       a 404 there. Keys never enter this repo.
-- [ ] **Vertex client patch re-applied locally** — `docs/15-…` →
-      `.vendor/rlm/rlm/clients/gemini.py`. `.vendor/` is gitignored, so this did
-      **not** arrive with the merge. Nothing real runs against either model until
-      it is applied. `docs/12` §Consequences names this a Track 2 task, and its
-      verification-debt item 2 — whether the port preserves upstream's
-      retry/backend abstraction — is ours to close too.
+- [x] **Vertex client patch re-applied locally** — `docs/15-…` →
+      `.vendor/rlm/rlm/clients/gemini.py`, applied 20 Aug. `use_vertex=True`
+      path added; `completion`/`acompletion`/cost tracking untouched, so
+      `docs/12`'s verification-debt item 2 (does the port preserve upstream's
+      retry/backend abstraction) is closed by construction — the switch lives
+      entirely in `__init__`.
+      Verified both paths still fail loudly: no `GEMINI_API_KEY` on the direct
+      path, no `GOOGLE_CLOUD_PROJECT` on the Vertex path.
+      **`.vendor/` is gitignored — re-apply after every `bootstrap_rlm.sh`.**
+      Revert with `git -C .vendor/rlm checkout rlm/clients/gemini.py`.
+
+      ⚠️ **One inconsistency, left as-is deliberately.** The patch defaults
+      `location` to `us-central1`, but Anugrah's #11 comment says
+      `gemini-3.6-flash` 404s there and to use `global`, and `docs/15` itself
+      flags billing location as unverified. Following the patch as written
+      rather than silently changing Track 1's spec — **pass `location="global"`
+      explicitly at every call site** until Track 1 confirms which default is
+      right.
 - [x] **Rate-limit budget documented** — `docs/RATE_LIMIT_BUDGET.md`, updated
       20 Aug against the frozen pair. Demand side complete and now costed with
       real ablation numbers. Supply side is named but empty: **Vertex quotas are
