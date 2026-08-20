@@ -15,12 +15,13 @@ you notice immediately. A rate-limit breach degrades it silently — retries
 inflate wall-clock, a run dies at hour six of a matrix, and the hole in the table
 gets discovered on the day the manuscript is due.
 
-> **Status.** The demand side below is derived and stands on its own. The supply
-> side cannot be filled in until API keys exist and the model pair is decided
-> ([#44](https://github.com/brickstercodes/MARD-capstone/issues/44)) — provider
-> limits are per-account and per-tier, so there is no honest number to write yet.
-> The table is specified, not populated. Populating it is one sitting once keys
-> land, and it must happen **before W3**, not before W6.
+> **Status, 20 Aug.** The model pair is frozen (`docs/12-MODEL_PAIR.md`) and the
+> ablation scope is resolved (`docs/14-W0_RESPONSES_TO_TRACK2.md`), so §1 and
+> §2's rows are now named rather than placeholders. **The quota numbers are
+> still empty**, and they no longer depend on a decision — Vertex AI limits are
+> per-project and readable only from the Google Cloud console by whoever holds
+> the project. That is one sitting, and it must happen **before W3**, not before
+> W6.
 
 ---
 
@@ -34,27 +35,37 @@ Both figures come straight from CONTEXT.md §2.1 and §3.3.
 |---|---|---|
 | **Manuscript A** (W3, 24–27 Aug) | 1 document · MARD vs vanilla RLM · negative control on flat context · 1 ablation · 3 seeds | ~15 |
 | **Manuscript B** (W6, 7–13 Sep) | 4 documents × 5 systems × 3 seeds | **60** |
-| **B, ablations** | see §1.2 — count is not yet determined | 36+ |
+| **B, ablations A2 + A3** | 2 × 4 documents × 3 seeds — see §1.2 | **24** |
+| **B, ablation A4** (depth sweep) | depth ∈ {0,1,2,3} × 4 documents × 3 seeds | **48** before dedup |
 
 The 5 systems are 4 baselines + MARD (§2.2 item 2): full-context, naive chunking,
 embedding RAG, vanilla RLM, MARD.
 
-### 1.2 Two open questions that change the run count materially
+### 1.2 Ablation scope — resolved, with one arithmetic conflict left
 
-Both are Track 1/Track 3 calls, not mine, and both are cheap to answer now and
-expensive to answer in W6.
+Both questions raised here on 8 Aug were answered by Track 1 in
+`docs/14-W0_RESPONSES_TO_TRACK2.md` and `docs/31-ABLATIONS.md`:
 
-1. **Is the depth sweep inside the ablation grid or beside it?** §2.1 lists the
-   grid as *"envelope removed · plan withheld from Tier 2 · reordering disabled ·
-   depth swept"* — four items. §3.3's W6 row says *"the ablation grid **and**
-   depth sweep"* — two things. If the sweep is separate and has *k* depth
-   settings, that is an extra *k* × documents × seeds runs that nothing has
-   budgeted for.
-2. **Do ablations run on all 4 documents or a subset?** Nothing in CONTEXT.md
-   says. All four gives 3 × 4 × 3 = 36 runs; one document gives 9. The
-   difference is 27 runs of frontier-model traffic in the tightest week.
+1. **The depth sweep is inside the four-item grid, not beside it.** A1 envelope
+   removed · A2 plan withheld · A3 reordering disabled · A4 depth swept.
+   CONTEXT.md §3.3's wording was calling out the grid's one multi-valued member,
+   not announcing a fifth axis.
+2. **Ablations run on all 4 documents**, layered on the 4 × 5 × 3 matrix. The
+   expensive reading, confirmed deliberately rather than discovered in W6.
 
-Raised with Track 1 — see §6.
+**The conflict.** `docs/14` §4 computes the non-sweep ablations as *"3 non-sweep
+ablations × 4 docs × 3 seeds = 36 runs."* But `docs/31` §A1 states that **A1 and
+the vanilla-RLM control are the same run** — *"do not implement or execute it
+twice"* — and vanilla RLM is already one of the 5 systems in the 60-run matrix.
+
+If A1 is the control, the non-sweep ablations are **A2 and A3 only: 2 × 4 × 3 =
+24 runs, not 36.** The two documents were written the same week and disagree by
+12 runs of Tier 1 traffic.
+
+The 24-run reading is the one used in §1.1 above, because `docs/31` is the
+ablation register and it is explicit. **Flagged for Track 1 to confirm** — see
+§6. It is a saving, not a shortfall, so the risk of being wrong here is
+under-provisioning rather than overspend.
 
 ### 1.3 Requests per run
 
@@ -114,8 +125,11 @@ what "resumable runs" has to mean.
 
 ## 2. Supply — what the providers will give us
 
-**Unfillable until keys are provisioned.** Limits are per-account, per-tier and
-change with spend history; there is no number that is honest to write today.
+**The pair is frozen; the quotas are not yet read.** Vertex AI limits are
+per-project, not per-model-tier, and they are visible only in the Google Cloud
+console under IAM & Admin → Quotas for the project holding the ₹90,000 credit
+balance. Nobody but the credential holder can read them, so this table stays
+empty until Track 2 opens that console — it is no longer waiting on a decision.
 
 The discipline is the same one `runlog.pricing.RateCard` already enforces for
 prices, for the same reason — §4.3 rule 4, and the "15–25× cost reduction" claim
@@ -127,15 +141,35 @@ that died with the rate it rested on:
 - It is re-checked when it is more than 30 days old. W0 → W6 is five weeks, so
   whatever gets written here in August **must be re-read in September**.
 
-| Provider | Model / endpoint | Requests/min | Tokens/min | Concurrency | Read on | Source |
+| Role | Model | Requests/min | Tokens/min | Concurrency | Read on | Source |
 |---|---|---|---|---|---|---|
-| — | frontier tier (Tier 1 root) | — | — | — | — | — |
-| — | budget tier (Tier 2 builders) | — | — | — | — | — |
-| — | embeddings (RAG baseline) | — | — | — | — | — |
-| local | vLLM / open weights | n/a | n/a | GPU-bound | — | — |
+| **Tier 1 — the Scout** (root) | `gemini-3.6-flash` | — | — | — | — | GCP console → Quotas |
+| **Tier 2 — the Swarm** (builders) | `gemini-3.1-flash-lite` | — | — | — | — | GCP console → Quotas |
+| Embeddings (RAG baseline) | not yet chosen — Track 3, W5 | — | — | — | — | — |
+| Local | vLLM / open weights | n/a | n/a | GPU-bound | — | — |
 
-Models are named **only at selection time** (§2.3 — named 2024-era models are a
-dead claim). Until #44 lands, these rows stay "frontier tier" and "budget tier".
+**Vertex AI only.** No AI Studio, no Gemini Developer API — the credit balance is
+redeemable through Vertex alone (`docs/12-MODEL_PAIR.md`). Anything that
+authenticates against the direct API path is measuring an account we cannot
+spend from.
+
+Two Vertex-specific things that do not apply to a plain API key, both of which
+change how this table is filled:
+
+- **Use `location=global`, not a region.** `gemini-3.6-flash` returns 404 on
+  `us-central1` for this project. Quotas are also reported per location, so a
+  quota read against the wrong location describes a path we never use.
+- **Quotas are per-project and shared across models.** Tier 1 and Tier 2 are not
+  separate buckets by default the way two different providers would be. That
+  undercuts §3's "ceiling per model pool" design unless the console shows
+  otherwise — **check this first**, because it decides whether the W2 worker pool
+  needs one semaphore or three.
+
+Naming models here is now correct rather than a dead claim (CONTEXT.md §2.3 says
+name them *at selection time*; selection happened 2 Aug). Prices are deliberately
+not repeated in this document — they live in `docs/12-MODEL_PAIR.md` with their
+source URLs, and reach the code through `runlog.pricing.RateCard`, which refuses
+a rate older than 30 days. Two copies of a price is how one of them goes stale.
 
 ---
 
@@ -192,17 +226,19 @@ measured number in the O6 cost model.
 
 ## 5. What is not covered here
 
-- **Dollars.** `runlog.budget.SpendCap` / `SpendLedger`, ceiling pending
-  [#46](https://github.com/brickstercodes/MARD-capstone/issues/46).
-- **Which models.** [#44](https://github.com/brickstercodes/MARD-capstone/issues/44),
-  Anugrah's call.
-- **GPU capacity for the vLLM path.** Not costed anywhere yet. If §1.4 is adopted,
-  it needs an owner.
+- **Dollars.** `runlog.budget.SpendCap` / `SpendLedger`. **Ceiling answered:**
+  `MARD_SPEND_CAP_USD=780` — ₹75,000 at ₹95.13/USD on 9 Aug, rounded down
+  deliberately (`docs/14-W0_RESPONSES_TO_TRACK2.md` §1). Track 1 flags that the
+  rate itself goes stale on the same 30-day rule `RateCard` enforces, and W6
+  lands 29 days out — **re-read the exchange rate before the matrix runs.**
+- **Which models.** Answered — `docs/12-MODEL_PAIR.md`.
+- **GPU capacity for the vLLM path.** Still not costed anywhere. If §1.4 is
+  adopted, it needs an owner.
 
 ## 6. Asks
 
 | # | Ask | Who | By |
 |---|---|---|---|
-| 1 | Resolve §1.2 — is the depth sweep inside the ablation grid, and how many documents do ablations run on? | Track 1 / Track 3 | before W5 |
-| 2 | Confirm §1.4 — ablations on local open weights rather than API | Track 3 | before W5 |
-| 3 | Keys, so §2 can be populated | me | before W3 |
+| 1 | **Confirm §1.2's arithmetic** — `docs/14` §4 counts 3 non-sweep ablations (36 runs); `docs/31` §A1 says A1 *is* the vanilla control and must not run twice (24 runs). Which? | Track 1 | before W5 |
+| 2 | Confirm §1.4 — ablations on local open weights rather than API. Track 1 has endorsed the lever; the decision is Track 2 + Track 3's to take | Track 3 | before W5 |
+| 3 | Read the Vertex quotas from the GCP console and fill §2, including whether Tier 1 and Tier 2 share one project-level bucket | me | **before W3** |

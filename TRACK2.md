@@ -6,7 +6,7 @@ Local mirror of the GitHub board. GitHub is authoritative; this file is for
 working offline and for seeing the whole track on one screen. Tick here as you
 go, sync to GitHub when convenient.
 
-**Last synced with GitHub:** 8 August 2026
+**Last synced with GitHub:** 20 August 2026
 
 ---
 
@@ -14,16 +14,28 @@ go, sync to GitHub when convenient.
 
 | | |
 |---|---|
-| Block | **W0** · Wed 29 Jul – **Sun 9 Aug** |
-| Days left | **1** |
-| Milestone | W0, due 9 Aug |
-| Next freeze | 🔒 **Feature freeze A · Sun 23 Aug** — absolute |
-| Current issue | [#11](https://github.com/brickstercodes/MARD-capstone/issues/11) · status **Ready** · labelled `blocker` |
+| Today | **Thu 20 Aug 2026** |
+| Nominal block | **W2** · Mon 17 – Sun 23 Aug · [#13](https://github.com/brickstercodes/MARD-capstone/issues/13) · **day 4 of 7** |
+| Actually open | **W0** ([#11](https://github.com/brickstercodes/MARD-capstone/issues/11), closed 9 Aug) and **W1** ([#12](https://github.com/brickstercodes/MARD-capstone/issues/12), whole week passed, nothing built) |
+| Next freeze | 🔒 **Feature freeze A · Sun 23 Aug — 3 days** — absolute |
 
-**Overdue as of 8 Aug:** the Thu 6 Aug chase to Arav did not happen and there is
-still no reply on #11 since the 3 Aug handoff. The question to Anugrah has never
-been asked — [#46](https://github.com/brickstercodes/MARD-capstone/issues/46) has
-zero comments. Both are one message each and both gate a W0 box.
+**Read this before planning the week.** W0 closed 11 days ago and W1 passed
+without a commit — `plan/` and `orchestrate/` are still bare `__init__.py`. W1
+and W2 are both due Sunday, and Feature freeze A is absolute: after it, a change
+to the pipeline invalidates every number measured before it.
+
+Two things make this less bad than it reads, and one makes it worse.
+
+- **Better:** the decisions that were blocking are all answered — spend cap,
+  model pair, `eval/` naming, ablation scope (see below). And W1 needs no keys:
+  `LocalREPL` + `MockLM` runs the whole REPL path offline.
+- **Better:** the harness that Track 3 is blocked on has been delivered since
+  3 Aug.
+- **Worse:** W2's last box is *"end-to-end run completes on the primary
+  document."* That needs `ingest/` (T4) and `envelope/` (T1), and **both are
+  still empty on `main`.** No track has written pipeline code. This is not a
+  Track 2 problem and cannot be solved inside Track 2 — escalate rather than
+  absorb.
 
 ---
 
@@ -35,24 +47,26 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
 
 - [x] **Repo scaffolded** — package tree per CONTEXT.md §4.1, `pyproject.toml`,
       `.gitignore`, `README.md`, `CLAUDE.md`
-- [x] **Pushed** — `track2/w0-scaffolding-runlog`, 2 commits (`1cf2118`,
-      `eaaedd4`). **`main` is still empty** — merge before anyone clones without
-      naming the branch.
+- [x] **Pushed** — and **merged into `main` on 10 Aug** (`d6208b5`), together
+      with Track 1's W0. `main` is no longer empty; a plain clone works.
 - [x] **RLM library installed** (`github.com/alexzhang13/rlm`) — vendored as a
       working copy at `.vendor/rlm`, pinned to `72d6940`, installed as
       `rlms==0.1.3`. Evidence in `runs/_bootstrap/`, attached to #11.
-      ⚠️ **The install silently broke on 4 Aug and was repaired on 8 Aug** — see
+      ⚠️ **The install silently broke on 4 Aug and was repaired on 20 Aug** — see
       "The editable-install trap" below. It is working again via a local
       `PYTHONPATH` workaround; the root cause is a process on this Mac, not the
       repo.
 - [ ] **RLM examples run end-to-end** — 14 in `.vendor/rlm/examples`. 🚧
-      **Blocked on keys, not broken.** All 14 surveyed and classified in
+      **Blocked on the Vertex path, not broken.** Keys arrived 10 Aug but are
+      unconfirmed here, and the examples target the direct-API `GeminiClient`
+      that `docs/15`'s patch replaces — so this box needs both boxes above it
+      first. All 14 surveyed and classified in
       `docs/RLM_BASELINE_SURVEY.md` §1. Five of them run on container or sandbox
       runtimes MARD does not use — recommend skipping; the local REPL is what we
       run on, and adopting Docker would be a change to CONTEXT.md §4.1's stack,
       not a detail.
       The useful part is the `MockLM` pattern those examples demonstrate:
-      **verified on 8 Aug that `LocalREPL` runs keyless** — code execution,
+      **verified 20 Aug that `LocalREPL` runs keyless** — code execution,
       `llm_query`, batched queries and recursive `rlm_query` — with no provider
       call and no container. That means W1's stub builder and W2's fork-join can
       be built and tested with zero API spend and zero rate-limit exposure.
@@ -62,42 +76,61 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
       and is operative. Verified in source, `rlm/core/rlm.py:824` and `:836`.
       There is a `root_prompt` slot that invites the objection *"you just used
       `root_prompt`"* — §2.3 has the rebuttal. **Track 1 needs this for O1.**
-- [ ] **API keys provisioned** — yours to do; keys never enter this repo
-- [x] **Rate-limit budget documented** — `docs/RATE_LIMIT_BUDGET.md`. Demand side
-      derived and complete; supply side is a specified-but-empty table, because
-      provider limits are per-account and per-tier and there is no honest number
-      to write before keys exist and #44 lands. **Fill it before W3, not W6.**
-      Two open questions surfaced that change the W6 run count materially —
-      whether the depth sweep sits inside the ablation grid, and whether
-      ablations run on all 4 documents. Both are Track 1/3 calls; see §6 of the
-      doc.
-- [ ] **Spend cap set** — 🚧 blocked on the number, but the *mechanism* is built:
-      `SpendCap.from_env()` reads `MARD_SPEND_CAP_USD` and **refuses to run
-      without it**. When Anugrah answers, it is one `export`, not new code.
+- [ ] **API keys provisioned** — service-account JSON sent directly by Anugrah on
+      10 Aug. **Not yet confirmed working in this environment.** Set
+      `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION=global`,
+      `GOOGLE_APPLICATION_CREDENTIALS_JSON` in `.env` and run
+      `python test_vertex_auth.py`. Use `global`, not `us-central1` — Anugrah hit
+      a 404 there. Keys never enter this repo.
+- [ ] **Vertex client patch re-applied locally** — `docs/15-…` →
+      `.vendor/rlm/rlm/clients/gemini.py`. `.vendor/` is gitignored, so this did
+      **not** arrive with the merge. Nothing real runs against either model until
+      it is applied. `docs/12` §Consequences names this a Track 2 task, and its
+      verification-debt item 2 — whether the port preserves upstream's
+      retry/backend abstraction — is ours to close too.
+- [x] **Rate-limit budget documented** — `docs/RATE_LIMIT_BUDGET.md`, updated
+      20 Aug against the frozen pair. Demand side complete and now costed with
+      real ablation numbers. Supply side is named but empty: **Vertex quotas are
+      per-project and readable only from the GCP console**, so filling §2 needs
+      the credential holder, not a decision. Do it before W3.
+      One thing to settle: `docs/14` §4 and `docs/31` §A1 disagree by 12 runs on
+      whether A1 counts separately from the vanilla control. Flagged in §6.
+- [ ] **Spend cap set** — **the number arrived: `MARD_SPEND_CAP_USD=780`**
+      (₹75,000 at ₹95.13/USD on 9 Aug, rounded down — `docs/14` §1).
+      `SpendCap.from_env()` verified 20 Aug: it accepts 780 with provenance and
+      still refuses when the var is unset. **All that remains is exporting it in
+      an environment that persists** — it is not set anywhere yet, so the box
+      stays open.
+      Track 1 flags that the exchange rate goes stale on the same 30-day rule
+      `RateCard` enforces, and W6 lands 29 days out: **re-read the rate before
+      the matrix runs.**
 - [x] **Logging harness captures envelope state, transcript, token count,
       config snapshot, seed** — `runlog/`, 9 core + 11 budget tests green,
       ruff and mypy clean
 - [x] **Handoff sent to Track 3** — `docs/TRACK3_HANDOFF.md`, posted to #11 on
       3 Aug, [@FalseAdvertising](https://github.com/FalseAdvertising) mentioned
-- [ ] **Track 3 has confirmed the harness meets their needs** — ⏳ still nothing
-      from Arav as of 8 Aug. **The Thu 6 Aug chase did not happen.** Five days
-      of silence on a `blocker` box with one day left. Chase today; if there is
-      no reply by the 9th, raise it at the Friday gate rather than carrying it
-      quietly into W1.
+- [ ] **Track 3 has confirmed the harness meets their needs** — ⏳ **17 days,
+      no reply on the harness.** Arav is not silent — he posted on 16 Aug that
+      the BrowseComp-Plus (n=20) and OOLONG (n=50) subsets are frozen and
+      hash-stamped (#19/#47) — he just has not answered this. The chase planned
+      for 6 Aug never happened.
+      He is now building against a harness he has not signed off on, and
+      Feature freeze A is Sunday. Escalate at the gate rather than chasing
+      again.
 
 ### The editable-install trap
 
-Recorded because it cost a day and will recur on any machine that does the same
-thing.
+Recorded because it cost sixteen days and will recur on any machine that does
+the same thing.
 
-`import rlm` died on **4 Aug** and nobody noticed until **8 Aug**. Something on
+`import rlm` died on **4 Aug** and nobody noticed until **20 Aug**. Something on
 this Mac recursively re-applies the macOS hidden flag to everything under this
 repo's dot-directories — `.venv`, `.vendor`, `.git`, the caches — within seconds
 of it being cleared. CPython 3.14's `site.addpackage` **silently skips hidden
 `.pth` files**, and both editable installs (`mard`, `rlms`) resolve through a
 `.pth`. No warning, no error, exit code zero.
 
-It survived four days because **`pytest` puts the repo root on `sys.path`**, so
+It survived sixteen days because **`pytest` puts the repo root on `sys.path`**, so
 all 20 tests passed and `./scripts/check.sh` stayed green while the install was
 dead for anything run from another directory. Arav would have hit it on his first
 script outside the repo root.
@@ -119,17 +152,19 @@ the import probe. On a normal clone the guard still does its job.
 
 | What | Who | Ticket |
 |---|---|---|
-| Compute / API budget ceiling — the spend cap needs a number. **Never asked — #46 has zero comments.** | Anugrah | [#46](https://github.com/brickstercodes/MARD-capstone/issues/46) |
-| Harness sign-off — sent 3 Aug, no reply in 5 days, wanted before 9 Aug | Arav | [#11](https://github.com/brickstercodes/MARD-capstone/issues/11) |
-| API keys — 12 of the 14 examples need them | me | [#11](https://github.com/brickstercodes/MARD-capstone/issues/11) |
-| Model pair — the rate-limit table cannot name a tier's limits without it | Anugrah | [#44](https://github.com/brickstercodes/MARD-capstone/issues/44) |
-| Depth sweep & ablation breadth — changes the W6 run count by ~27 runs | Track 1 / Track 3 | `docs/RATE_LIMIT_BUDGET.md` §1.2 |
+| ~~Compute / API budget ceiling~~ — **answered**, $780. #46 itself still has zero comments; Anugrah replied on #11 and in `docs/14` instead | — | done |
+| Harness sign-off — sent 3 Aug, **17 days, still no reply on the harness**. Arav posted 16 Aug about the frozen eval subsets (#19/#47) but not this | Arav | [#11](https://github.com/brickstercodes/MARD-capstone/issues/11) |
+| API keys — JSON received 10 Aug, **not yet confirmed working here** | me | [#11](https://github.com/brickstercodes/MARD-capstone/issues/11) |
+| ~~Model pair~~ — **answered**, `gemini-3.6-flash` / `gemini-3.1-flash-lite`, Vertex-only | — | done |
+| ~~Depth sweep & ablation breadth~~ — **answered**; one 12-run arithmetic conflict left between `docs/14` §4 and `docs/31` §A1 | Track 1 | `docs/RATE_LIMIT_BUDGET.md` §6 |
+| Vertex quotas for §2 of the rate-limit budget — needs GCP console access | me | before W3 |
+| `ingest/` and `envelope/` — W2's end-to-end box cannot close without them | T4 / T1 | [#13](https://github.com/brickstercodes/MARD-capstone/issues/13) |
 
 ### Owed to others this block
 
 | To | What | Why it matters |
 |---|---|---|
-| Track 3 (Arav) | Logging harness, working, by 9 Aug | Every number in both manuscripts passes through it — **delivered 3 Aug, awaiting sign-off** |
+| Track 3 (Arav) | Logging harness, working | Every number in both manuscripts passes through it — **delivered 3 Aug, still awaiting sign-off 17 days on** |
 
 ### What `runlog/` already does
 
@@ -162,16 +197,17 @@ truncates before it fills, and a concurrent reader during the W6 matrix got a
 JSON decode error — a crash in the one component whose job is to stop crashes
 from costing money. Caught by the 60-writer/10-reader test.
 
-### Open question for Anugrah
+### Open question for Anugrah — closed
 
-`eval/` shadows the Python builtin `eval`. Kept as-is to match CONTEXT.md §4.1
-so the tree matches the document everyone navigates by. Rename to `evaluation/`
-now if we're going to — after Track 3 starts importing it, it stops being free.
+**Answered 9 Aug — `docs/14-W0_RESPONSES_TO_TRACK2.md` §3. Keep `eval/` as named.**
+Matching CONTEXT.md §4.1's tree beats the builtin-shadowing risk, which is a lint
+concern rather than a correctness one; renaming would churn `pyproject.toml`'s
+`packages` list, the `eval` extras group, and whatever Track 3 is about to
+import. Closed — do not raise it again.
 
-**Still unasked as of 8 Aug** — five days later, and W1 starts Monday. Send it
-with #46 in one message; both are his, and the rename window closes the moment
-Arav starts building against the tree. A draft is ready in
-`docs/drafts/` — it needs sending, not writing.
+The other three W0 asks were answered in the same document: the spend cap
+(§1, $780), the model pair (§2), and the ablation scope (§4). Nothing Track 2
+asked Track 1 in W0 is still open.
 
 ---
 
