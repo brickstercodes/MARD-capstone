@@ -122,7 +122,13 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
       the credential holder, not a decision. Do it before W3.
       One thing to settle: `docs/14` §4 and `docs/31` §A1 disagree by 12 runs on
       whether A1 counts separately from the vanilla control. Flagged in §6.
-- [ ] **Spend cap set** — **the number arrived: `MARD_SPEND_CAP_USD=780`**
+- [x] **Spend cap set** — **`MARD_SPEND_CAP_USD=780`, live in
+      `.venv/bin/activate` since 20 Aug** with `SET_BY` / `SET_ON` / `NOTE` so
+      the ledger records who set it and when.
+      Deliberately **not** in `.env`: nothing in `runlog` calls `load_dotenv`,
+      so a `.env` entry would silently not apply and the cap would appear set
+      while `SpendCap.from_env()` kept refusing.
+      Origin: **the number arrived as `MARD_SPEND_CAP_USD=780`**
       (₹75,000 at ₹95.13/USD on 9 Aug, rounded down — `docs/14` §1).
       `SpendCap.from_env()` verified 20 Aug: it accepts 780 with provenance and
       still refuses when the var is unset. **All that remains is exporting it in
