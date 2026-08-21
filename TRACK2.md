@@ -57,10 +57,15 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
 - [x] **RLM library installed** (`github.com/alexzhang13/rlm`) — vendored as a
       working copy at `.vendor/rlm`, pinned to `72d6940`, installed as
       `rlms==0.1.3`. Evidence in `runs/_bootstrap/`, attached to #11.
-      ⚠️ **The install silently broke on 4 Aug and was repaired on 20 Aug** — see
-      "The editable-install trap" below. It is working again via a local
-      `PYTHONPATH` workaround; the root cause is a process on this Mac, not the
-      repo.
+      ⚠️ **The install silently broke on 4 Aug. Root cause found 20 Aug and
+      fixed properly** — see "The editable-install trap" below. It was iCloud
+      Drive: the repo lived on the Desktop, which is synced, and the file
+      provider flags every dot-file `hidden`. CPython 3.14's `site.addpackage`
+      skips a hidden `.pth`, so `import rlm` died while every test still passed.
+      The repo now lives at `~/dev/Capstonee`, outside the synced tree. The
+      `PYTHONPATH` workaround is gone and is not needed — `scripts/check.sh`
+      now probes with `PYTHONPATH` cleared, so a broken install fails loudly
+      instead of being masked by a local crutch.
 - [x] **RLM examples run end-to-end** — on our stack, 20 Aug, evidence in
       `runs/_bootstrap/rlm_vertex_*.log`. **The 14 examples cannot be run as
       written**: 9 are hardcoded to `OPENAI_API_KEY` / `PORTKEY_API_KEY`, and 5
@@ -77,6 +82,17 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
       nothing flows **down** — `rlm.py:824` hands the child a fresh empty
       logger, `rlm.py:836` passes `root_prompt=None`. That gap is MARD.
       **Track 1 needs this for O1.**
+
+      **This is the install, not the control.** Track 2's W0 asks whether the
+      library runs on our stack; that is answered and closed. The **vanilla RLM
+      control** — the same library driven end-to-end as a measured baseline, with
+      the token/call/cost accounting wrapper and one reproduced base-paper number
+      — is **Track 3's W1** (`CONTEXT.md` §3.3, [#20](https://github.com/brickstercodes/MARD-capstone/issues/20)),
+      and it is not started as of 20 Aug. The two get confused because both are
+      called "getting RLM running". They are different deliverables: one produces
+      a working import plus evidence, the other produces a scored run every
+      comparison in both papers is measured against. `runlog.RunLogger` — the
+      harness Track 3 needs for it — has been delivered since 3 Aug.
 
       ⚠️ **Found a crash that will bite W3.** The first run failed
       intermittently with `TypeError: expected string or bytes-like object, got
@@ -161,30 +177,43 @@ Labelled `blocker`: **Track 3 cannot start W1 without the logging harness.**
 Recorded because it cost sixteen days and will recur on any machine that does
 the same thing.
 
-`import rlm` died on **4 Aug** and nobody noticed until **20 Aug**. Something on
-this Mac recursively re-applies the macOS hidden flag to everything under this
-repo's dot-directories — `.venv`, `.vendor`, `.git`, the caches — within seconds
-of it being cleared. CPython 3.14's `site.addpackage` **silently skips hidden
-`.pth` files**, and both editable installs (`mard`, `rlms`) resolve through a
-`.pth`. No warning, no error, exit code zero.
+`import rlm` died on **4 Aug** and nobody noticed until **20 Aug**.
+
+**Root cause, found 20 Aug: iCloud Drive.** The repo lived in `~/Desktop`, and
+"Desktop & Documents Folders" sync was on — `~/Library/Mobile Documents/com~apple~CloudDocs/Desktop`
+is a symlink to it. The iCloud file provider flags every dot-file and
+dot-directory it syncs as `hidden`, recursively, and **re-applies the flag as it
+re-syncs** — it came back twice within minutes of being cleared. CPython 3.14's
+`site.addpackage` **silently skips a hidden `.pth`**, and both editable installs
+(`mard`, `rlms`) resolve through one. No warning, no error, exit code zero.
+
+The evidence was unambiguous once the scope was checked: `.git`, `.venv`,
+`.vendor` and `.gitignore` were all flagged, across four unrelated Desktop
+projects — while `~/.zshrc` and `~/.ssh` were untouched. Home is not synced;
+Desktop is.
 
 It survived sixteen days because **`pytest` puts the repo root on `sys.path`**, so
-all 20 tests passed and `./scripts/check.sh` stayed green while the install was
-dead for anything run from another directory. Arav would have hit it on his first
+every test passed and `./scripts/check.sh` stayed green while the install was dead
+for anything run from another directory. Arav would have hit it on his first
 script outside the repo root.
 
-- **Guarded** — `scripts/check.sh` now imports `rlm` and `runlog` from `/` before
-  it lints, and `scripts/bootstrap_rlm.sh` does its import check from `/` too.
-  Testing an install from the directory that supplies the package proves nothing.
-- **Worked around locally** — `PYTHONPATH` in `.venv/bin/activate`, which bypasses
-  `.pth` entirely. Gitignored, so it does not reach anyone else.
-- **Not fixed** — the process setting the flag is still unidentified. No folder
-  action, no crontab, no `WatchPaths` agent, no login item. Next step is
-  `sudo fs_usage -w -f filesys | grep -i chflags` while clearing the flag in
-  another terminal.
+- **Fixed at the source** — the repo now lives at `~/dev/Capstonee`, outside the
+  synced tree, with the inherited flags cleared and the venv rebuilt. A fresh
+  venv comes out clean and `import rlm` works from `/` with no help.
+- **Guard made honest** — `scripts/check.sh` probes with `env -u PYTHONPATH`. It
+  already ran from `/` so cwd could not mask a dead install, but it inherited the
+  `PYTHONPATH` that `.venv/bin/activate` exported, so it reported what the local
+  crutch did rather than what a teammate's clone would do. That crutch is gone
+  and is not needed.
+- **Silent skip removed** — `tests/test_lm_builder.py` used `importorskip`, so a
+  broken install turned the only test of the RLM seam into a skip inside a green
+  suite. A vendored copy that is present but not importable now loads from the
+  vendored tree and the test still runs; only a genuinely un-bootstrapped clone
+  skips.
 
-Note the workaround defeats the guard *on this machine* — `PYTHONPATH` satisfies
-the import probe. On a normal clone the guard still does its job.
+**If this recurs, check the folder before the machine.** Anything under `~/Desktop`
+or `~/Documents` on a Mac with iCloud Drive sync will do this to `.venv` and
+`.git` — and syncing `.git` risks worse than a broken import.
 
 ### Blocked on
 
