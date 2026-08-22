@@ -8,6 +8,12 @@ runs/*
 corpus/parsed/
 corpus/raw/
 
+# Per-document derived parse data (~16MB across the corpus) — reproducible from
+# the ingest pipeline and large enough that whether it belongs in git (vs.
+# git-lfs) is still undecided. The small artefacts derived from it (sections,
+# chapters, skeleton, outline, traces, quality reports) stay tracked.
+corpus/*/document.*
+
 # Secrets. The spend cap lives in config; the keys never do.
 # Glob rather than the exact name: an editor backup, a .env.local or a hand-made
 # .env.bak is the same credential with a different suffix, and the narrow rule

@@ -1,0 +1,71 @@
+{
+  "doc_id": "introcs",
+  "source_file": "Introduction_To_Computer_Science_-_WEB.pdf",
+  "page_count": 939,
+  "body_font_size": 9.0,
+  "block_counts": {
+    "front_matter": 216,
+    "boilerplate": 1178,
+    "caption": 574,
+    "heading": 1403,
+    "body": 7315
+  },
+  "role_counts": {
+    "learning_objectives": 61,
+    "key_terms": 14,
+    "review_questions": 28,
+    "references": 1,
+    "summary": 1
+  },
+  "heading_level_counts": {
+    "level_1": 120,
+    "level_4": 902,
+    "level_3": 378,
+    "level_2": 3
+  },
+  "extractable_chars": 2507564,
+  "chars_after_cleaning": 2432812,
+  "boilerplate_chars_removed": 44983,
+  "low_text_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    152,
+    568,
+    764,
+    820,
+    920,
+    926,
+    939
+  ],
+  "pages_with_no_heading": 323,
+  "raw_text_lines": 34772,
+  "math_loss_signals": {
+    "orphan_punctuation": 1052,
+    "line_ends_in_operator": 385,
+    "line_ends_in_connective": 13,
+    "lone_symbol_line": 462
+  },
+  "math_loss_rate_per_1k_lines": 30.3,
+  "content_start_page": 19,
+  "front_matter_blocks": 216,
+  "outline_entries": 129,
+  "outline_max_depth": 2,
+  "pages_outside_outline_coverage": 6,
+  "warnings": []
+}

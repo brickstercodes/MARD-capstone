@@ -1,0 +1,782 @@
+{
+  "document_id": "physics1",
+  "chapter_count": 34,
+  "explored_by_pass1": 17,
+  "excluded_unnumbered": [],
+  "excluded_as_repeat": [
+    {
+      "chapter_id": "physics1.ch01",
+      "pages": [
+        895,
+        896
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch02",
+      "pages": [
+        896,
+        899
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch03",
+      "pages": [
+        899,
+        905
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch04",
+      "pages": [
+        905,
+        910
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch05",
+      "pages": [
+        910,
+        915
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch06",
+      "pages": [
+        915,
+        917
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch07",
+      "pages": [
+        918,
+        919
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch08",
+      "pages": [
+        919,
+        921
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch09",
+      "pages": [
+        921,
+        925
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch10",
+      "pages": [
+        925,
+        928
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch11",
+      "pages": [
+        928,
+        932
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch12",
+      "pages": [
+        932,
+        934
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch13",
+      "pages": [
+        934,
+        937
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch14",
+      "pages": [
+        937,
+        940
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch15",
+      "pages": [
+        940,
+        941
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch16",
+      "pages": [
+        941,
+        947
+      ]
+    },
+    {
+      "chapter_id": "physics1.ch17",
+      "pages": [
+        947,
+        959
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter_id": "physics1.ch01",
+      "number": 1,
+      "title": "1.1 The Scope and Scale of Physics",
+      "book_position": 0,
+      "page_start": 18,
+      "page_end": 53,
+      "char_count": 115157,
+      "section_ids": [
+        "physics1.1-1-the-scope-and-scale-of-physics",
+        "physics1.1-2-units-and-standards",
+        "physics1.1-3-unit-conversion",
+        "physics1.1-4-dimensional-analysis",
+        "physics1.1-5-estimates-and-fermi-calculations",
+        "physics1.1-6-significant-figures",
+        "physics1.1-7-solving-problems-in-physics",
+        "physics1.chapter-review"
+      ],
+      "is_repeat": false,
+      "page_count": 36,
+      "density": 3198.8,
+      "section_count": 8
+    },
+    {
+      "chapter_id": "physics1.ch02",
+      "number": 2,
+      "title": "2.1 Scalars and Vectors",
+      "book_position": 1,
+      "page_start": 54,
+      "page_end": 109,
+      "char_count": 113168,
+      "section_ids": [
+        "physics1.2-1-scalars-and-vectors",
+        "physics1.2-2-coordinate-systems-and-components-of-a-vector",
+        "physics1.2-3-algebra-of-vectors",
+        "physics1.2-4-products-of-vectors",
+        "physics1.chapter-review-2"
+      ],
+      "is_repeat": false,
+      "page_count": 56,
+      "density": 2020.9,
+      "section_count": 5
+    },
+    {
+      "chapter_id": "physics1.ch03",
+      "number": 3,
+      "title": "3.1 Position, Displacement, and Average Velocity",
+      "book_position": 2,
+      "page_start": 110,
+      "page_end": 159,
+      "char_count": 111347,
+      "section_ids": [
+        "physics1.3-1-position-displacement-and-average-velocity",
+        "physics1.3-2-instantaneous-velocity-and-speed",
+        "physics1.3-3-average-and-instantaneous-acceleration",
+        "physics1.3-4-motion-with-constant-acceleration",
+        "physics1.3-5-free-fall",
+        "physics1.3-6-finding-velocity-and-displacement-from-acceleration",
+        "physics1.chapter-review-3"
+      ],
+      "is_repeat": false,
+      "page_count": 50,
+      "density": 2226.9,
+      "section_count": 7
+    },
+    {
+      "chapter_id": "physics1.ch04",
+      "number": 4,
+      "title": "4.1 Displacement and Velocity Vectors",
+      "book_position": 3,
+      "page_start": 160,
+      "page_end": 205,
+      "char_count": 91193,
+      "section_ids": [
+        "physics1.4-1-displacement-and-velocity-vectors",
+        "physics1.4-2-acceleration-vector",
+        "physics1.4-3-projectile-motion",
+        "physics1.4-4-uniform-and-nonuniform-circular-motion",
+        "physics1.4-5-relative-motion-in-one-and-two-dimensions",
+        "physics1.chapter-review-4"
+      ],
+      "is_repeat": false,
+      "page_count": 46,
+      "density": 1982.5,
+      "section_count": 6
+    },
+    {
+      "chapter_id": "physics1.ch05",
+      "number": 5,
+      "title": "5.1 Forces",
+      "book_position": 4,
+      "page_start": 206,
+      "page_end": 261,
+      "char_count": 127774,
+      "section_ids": [
+        "physics1.5-1-forces",
+        "physics1.5-2-newton-s-first-law",
+        "physics1.5-3-newton-s-second-law",
+        "physics1.5-4-mass-and-weight",
+        "physics1.5-5-newton-s-third-law",
+        "physics1.5-6-common-forces",
+        "physics1.5-7-drawing-free-body-diagrams",
+        "physics1.chapter-review-5"
+      ],
+      "is_repeat": false,
+      "page_count": 56,
+      "density": 2281.7,
+      "section_count": 8
+    },
+    {
+      "chapter_id": "physics1.ch06",
+      "number": 6,
+      "title": "6.1 Solving Problems with Newton’s Laws",
+      "book_position": 5,
+      "page_start": 261,
+      "page_end": 323,
+      "char_count": 135520,
+      "section_ids": [
+        "physics1.6-1-solving-problems-with-newton-s-laws",
+        "physics1.6-2-friction",
+        "physics1.6-3-centripetal-force",
+        "physics1.6-4-drag-force-and-terminal-speed",
+        "physics1.chapter-review-6"
+      ],
+      "is_repeat": false,
+      "page_count": 63,
+      "density": 2151.1,
+      "section_count": 5
+    },
+    {
+      "chapter_id": "physics1.ch07",
+      "number": 7,
+      "title": "7.1 Work",
+      "book_position": 6,
+      "page_start": 324,
+      "page_end": 353,
+      "char_count": 75239,
+      "section_ids": [
+        "physics1.7-1-work",
+        "physics1.7-2-kinetic-energy",
+        "physics1.7-3-work-energy-theorem",
+        "physics1.7-4-power",
+        "physics1.chapter-review-7"
+      ],
+      "is_repeat": false,
+      "page_count": 30,
+      "density": 2508.0,
+      "section_count": 5
+    },
+    {
+      "chapter_id": "physics1.ch08",
+      "number": 8,
+      "title": "8.1 Potential Energy of a System",
+      "book_position": 7,
+      "page_start": 353,
+      "page_end": 391,
+      "char_count": 96808,
+      "section_ids": [
+        "physics1.8-1-potential-energy-of-a-system",
+        "physics1.8-2-conservative-and-non-conservative-forces",
+        "physics1.8-3-conservation-of-energy",
+        "physics1.8-4-potential-energy-diagrams-and-stability",
+        "physics1.8-5-sources-of-energy",
+        "physics1.chapter-review-8"
+      ],
+      "is_repeat": false,
+      "page_count": 39,
+      "density": 2482.3,
+      "section_count": 6
+    },
+    {
+      "chapter_id": "physics1.ch09",
+      "number": 9,
+      "title": "9.1 Linear Momentum",
+      "book_position": 8,
+      "page_start": 392,
+      "page_end": 463,
+      "char_count": 135459,
+      "section_ids": [
+        "physics1.9-1-linear-momentum",
+        "physics1.9-2-impulse-and-collisions",
+        "physics1.9-3-conservation-of-linear-momentum",
+        "physics1.9-4-types-of-collisions",
+        "physics1.9-5-collisions-in-multiple-dimensions",
+        "physics1.9-6-center-of-mass",
+        "physics1.9-7-rocket-propulsion",
+        "physics1.chapter-review-9"
+      ],
+      "is_repeat": false,
+      "page_count": 72,
+      "density": 1881.4,
+      "section_count": 8
+    },
+    {
+      "chapter_id": "physics1.ch10",
+      "number": 10,
+      "title": "10.1 Rotational Variables",
+      "book_position": 9,
+      "page_start": 464,
+      "page_end": 527,
+      "char_count": 129095,
+      "section_ids": [
+        "physics1.10-1-rotational-variables",
+        "physics1.10-2-rotation-with-constant-angular-acceleration",
+        "physics1.10-3-relating-angular-and-translational-quantities",
+        "physics1.10-4-moment-of-inertia-and-rotational-kinetic-energy",
+        "physics1.10-5-calculating-moments-of-inertia",
+        "physics1.10-6-torque",
+        "physics1.10-7-newton-s-second-law-for-rotation",
+        "physics1.10-8-work-and-power-for-rotational-motion",
+        "physics1.chapter-review-10"
+      ],
+      "is_repeat": false,
+      "page_count": 64,
+      "density": 2017.1,
+      "section_count": 9
+    },
+    {
+      "chapter_id": "physics1.ch11",
+      "number": 11,
+      "title": "11.1 Rolling Motion",
+      "book_position": 10,
+      "page_start": 528,
+      "page_end": 565,
+      "char_count": 79692,
+      "section_ids": [
+        "physics1.11-1-rolling-motion",
+        "physics1.11-2-angular-momentum",
+        "physics1.11-3-conservation-of-angular-momentum",
+        "physics1.11-4-precession-of-a-gyroscope",
+        "physics1.chapter-review-11"
+      ],
+      "is_repeat": false,
+      "page_count": 38,
+      "density": 2097.2,
+      "section_count": 5
+    },
+    {
+      "chapter_id": "physics1.ch12",
+      "number": 12,
+      "title": "12.1 Conditions for Static Equilibrium",
+      "book_position": 11,
+      "page_start": 566,
+      "page_end": 611,
+      "char_count": 100116,
+      "section_ids": [
+        "physics1.12-1-conditions-for-static-equilibrium",
+        "physics1.12-2-examples-of-static-equilibrium",
+        "physics1.12-3-stress-strain-and-elastic-modulus",
+        "physics1.12-4-elasticity-and-plasticity",
+        "physics1.chapter-review-12"
+      ],
+      "is_repeat": false,
+      "page_count": 46,
+      "density": 2176.4,
+      "section_count": 5
+    },
+    {
+      "chapter_id": "physics1.ch13",
+      "number": 13,
+      "title": "13.1 Newton's Law of Universal Gravitation",
+      "book_position": 12,
+      "page_start": 611,
+      "page_end": 666,
+      "char_count": 138749,
+      "section_ids": [
+        "physics1.13-1-newton-s-law-of-universal-gravitation",
+        "physics1.13-2-gravitation-near-earth-s-surface",
+        "physics1.13-3-gravitational-potential-energy-and-total-energy",
+        "physics1.13-4-satellite-orbits-and-energy",
+        "physics1.13-5-kepler-s-laws-of-planetary-motion",
+        "physics1.13-6-tidal-forces",
+        "physics1.13-7-einstein-s-theory-of-gravity",
+        "physics1.chapter-review-13"
+      ],
+      "is_repeat": false,
+      "page_count": 56,
+      "density": 2477.7,
+      "section_count": 8
+    },
+    {
+      "chapter_id": "physics1.ch14",
+      "number": 14,
+      "title": "14.1 Fluids, Density, and Pressure",
+      "book_position": 13,
+      "page_start": 666,
+      "page_end": 721,
+      "char_count": 130624,
+      "section_ids": [
+        "physics1.14-1-fluids-density-and-pressure",
+        "physics1.14-2-measuring-pressure",
+        "physics1.14-3-pascal-s-principle-and-hydraulics",
+        "physics1.14-4-archimedes-principle-and-buoyancy",
+        "physics1.14-5-fluid-dynamics",
+        "physics1.14-6-bernoulli-s-equation",
+        "physics1.14-7-viscosity-and-turbulence",
+        "physics1.chapter-review-14"
+      ],
+      "is_repeat": false,
+      "page_count": 56,
+      "density": 2332.6,
+      "section_count": 8
+    },
+    {
+      "chapter_id": "physics1.ch15",
+      "number": 15,
+      "title": "15.1 Simple Harmonic Motion",
+      "book_position": 14,
+      "page_start": 722,
+      "page_end": 763,
+      "char_count": 88504,
+      "section_ids": [
+        "physics1.15-1-simple-harmonic-motion",
+        "physics1.15-2-energy-in-simple-harmonic-motion",
+        "physics1.15-3-comparing-simple-harmonic-motion-and-circular-motion",
+        "physics1.15-4-pendulums",
+        "physics1.15-5-damped-oscillations",
+        "physics1.15-6-forced-oscillations",
+        "physics1.chapter-review-15"
+      ],
+      "is_repeat": false,
+      "page_count": 42,
+      "density": 2107.2,
+      "section_count": 7
+    },
+    {
+      "chapter_id": "physics1.ch16",
+      "number": 16,
+      "title": "16.1 Traveling Waves",
+      "book_position": 15,
+      "page_start": 764,
+      "page_end": 820,
+      "char_count": 131020,
+      "section_ids": [
+        "physics1.16-1-traveling-waves",
+        "physics1.16-2-mathematics-of-waves",
+        "physics1.16-3-wave-speed-on-a-stretched-string",
+        "physics1.16-4-energy-and-power-of-a-wave",
+        "physics1.16-5-interference-of-waves",
+        "physics1.16-6-standing-waves-and-resonance",
+        "physics1.chapter-review-16"
+      ],
+      "is_repeat": false,
+      "page_count": 57,
+      "density": 2298.6,
+      "section_count": 7
+    },
+    {
+      "chapter_id": "physics1.ch17",
+      "number": 17,
+      "title": "17.1 Sound Waves",
+      "book_position": 16,
+      "page_start": 820,
+      "page_end": 895,
+      "char_count": 130806,
+      "section_ids": [
+        "physics1.17-1-sound-waves",
+        "physics1.17-2-speed-of-sound",
+        "physics1.17-3-sound-intensity",
+        "physics1.17-4-normal-modes-of-a-standing-sound-wave",
+        "physics1.17-5-sources-of-musical-sound",
+        "physics1.17-6-beats",
+        "physics1.17-7-the-doppler-effect",
+        "physics1.17-8-shock-waves",
+        "physics1.chapter-review-17"
+      ],
+      "is_repeat": false,
+      "page_count": 76,
+      "density": 1721.1,
+      "section_count": 9
+    },
+    {
+      "chapter_id": "physics1.ch01",
+      "number": 1,
+      "title": "Chapter 1",
+      "book_position": 17,
+      "page_start": 895,
+      "page_end": 896,
+      "char_count": 4698,
+      "section_ids": [
+        "physics1.chapter-1"
+      ],
+      "is_repeat": true,
+      "page_count": 2,
+      "density": 2349.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch02",
+      "number": 2,
+      "title": "Chapter 2",
+      "book_position": 18,
+      "page_start": 896,
+      "page_end": 899,
+      "char_count": 1942,
+      "section_ids": [
+        "physics1.chapter-2"
+      ],
+      "is_repeat": true,
+      "page_count": 4,
+      "density": 485.5,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch03",
+      "number": 3,
+      "title": "Chapter 3",
+      "book_position": 19,
+      "page_start": 899,
+      "page_end": 905,
+      "char_count": 5953,
+      "section_ids": [
+        "physics1.chapter-3"
+      ],
+      "is_repeat": true,
+      "page_count": 7,
+      "density": 850.4,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch04",
+      "number": 4,
+      "title": "Chapter 4",
+      "book_position": 20,
+      "page_start": 905,
+      "page_end": 910,
+      "char_count": 3447,
+      "section_ids": [
+        "physics1.chapter-4"
+      ],
+      "is_repeat": true,
+      "page_count": 6,
+      "density": 574.5,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch05",
+      "number": 5,
+      "title": "Chapter 5",
+      "book_position": 21,
+      "page_start": 910,
+      "page_end": 915,
+      "char_count": 4995,
+      "section_ids": [
+        "physics1.chapter-5"
+      ],
+      "is_repeat": true,
+      "page_count": 6,
+      "density": 832.5,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch06",
+      "number": 6,
+      "title": "Chapter 6",
+      "book_position": 22,
+      "page_start": 915,
+      "page_end": 917,
+      "char_count": 6556,
+      "section_ids": [
+        "physics1.chapter-6"
+      ],
+      "is_repeat": true,
+      "page_count": 3,
+      "density": 2185.3,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch07",
+      "number": 7,
+      "title": "Chapter 7",
+      "book_position": 23,
+      "page_start": 918,
+      "page_end": 919,
+      "char_count": 3525,
+      "section_ids": [
+        "physics1.chapter-7"
+      ],
+      "is_repeat": true,
+      "page_count": 2,
+      "density": 1762.5,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch08",
+      "number": 8,
+      "title": "Chapter 8",
+      "book_position": 24,
+      "page_start": 919,
+      "page_end": 921,
+      "char_count": 3577,
+      "section_ids": [
+        "physics1.chapter-8"
+      ],
+      "is_repeat": true,
+      "page_count": 3,
+      "density": 1192.3,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch09",
+      "number": 9,
+      "title": "Chapter 9",
+      "book_position": 25,
+      "page_start": 921,
+      "page_end": 925,
+      "char_count": 8045,
+      "section_ids": [
+        "physics1.chapter-9"
+      ],
+      "is_repeat": true,
+      "page_count": 5,
+      "density": 1609.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch10",
+      "number": 10,
+      "title": "Chapter 10",
+      "book_position": 26,
+      "page_start": 925,
+      "page_end": 928,
+      "char_count": 3647,
+      "section_ids": [
+        "physics1.chapter-10"
+      ],
+      "is_repeat": true,
+      "page_count": 4,
+      "density": 911.8,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch11",
+      "number": 11,
+      "title": "Chapter 11",
+      "book_position": 27,
+      "page_start": 928,
+      "page_end": 932,
+      "char_count": 5940,
+      "section_ids": [
+        "physics1.chapter-11"
+      ],
+      "is_repeat": true,
+      "page_count": 5,
+      "density": 1188.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch12",
+      "number": 12,
+      "title": "Chapter 12",
+      "book_position": 28,
+      "page_start": 932,
+      "page_end": 934,
+      "char_count": 1580,
+      "section_ids": [
+        "physics1.chapter-12"
+      ],
+      "is_repeat": true,
+      "page_count": 3,
+      "density": 526.7,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch13",
+      "number": 13,
+      "title": "Chapter 13",
+      "book_position": 29,
+      "page_start": 934,
+      "page_end": 937,
+      "char_count": 10042,
+      "section_ids": [
+        "physics1.chapter-13"
+      ],
+      "is_repeat": true,
+      "page_count": 4,
+      "density": 2510.5,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch14",
+      "number": 14,
+      "title": "Chapter 14",
+      "book_position": 30,
+      "page_start": 937,
+      "page_end": 940,
+      "char_count": 9201,
+      "section_ids": [
+        "physics1.chapter-14"
+      ],
+      "is_repeat": true,
+      "page_count": 4,
+      "density": 2300.2,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch15",
+      "number": 15,
+      "title": "Chapter 15",
+      "book_position": 31,
+      "page_start": 940,
+      "page_end": 941,
+      "char_count": 4557,
+      "section_ids": [
+        "physics1.chapter-15"
+      ],
+      "is_repeat": true,
+      "page_count": 2,
+      "density": 2278.5,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch16",
+      "number": 16,
+      "title": "Chapter 16",
+      "book_position": 32,
+      "page_start": 941,
+      "page_end": 947,
+      "char_count": 7511,
+      "section_ids": [
+        "physics1.chapter-16"
+      ],
+      "is_repeat": true,
+      "page_count": 7,
+      "density": 1073.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "physics1.ch17",
+      "number": 17,
+      "title": "Chapter 17",
+      "book_position": 33,
+      "page_start": 947,
+      "page_end": 959,
+      "char_count": 15180,
+      "section_ids": [
+        "physics1.chapter-17",
+        "physics1.c-cavendish-601-center-of-gravity-556-center-of-mass-423-cen",
+        "physics1.g-galileo-127-600-gases-654-gauge-pressure-665-geiger-411-ge",
+        "physics1.i-i-beams-580-ideal-banking-279-ideal-fluid-678-impulse-382",
+        "physics1.j-joule-313",
+        "physics1.l-laminar-flow-679-law-12-law-of-conservation-of-angular",
+        "physics1.o-orbital-period-617-orbital-speed-617-order-of-magnitude-8",
+        "physics1.p-parallel-axis-480-parallel-vectors-44-parallel-axis-theore",
+        "physics1.t-tail-to-head-geometric",
+        "physics1.v-vector-components-54-vector-equation-45-vector-product-76",
+        "physics1.y-young-s-modulus-576-811"
+      ],
+      "is_repeat": true,
+      "page_count": 13,
+      "density": 1167.7,
+      "section_count": 11
+    }
+  ]
+}

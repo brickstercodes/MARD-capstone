@@ -1,0 +1,781 @@
+{
+  "doc_id": "introcs",
+  "provenance": "pdf_bookmark_outline",
+  "warning": "Publisher metadata, not a derived skeleton. Feeding this to Pass 0 would report the publisher's table of contents as MARD's output. Track 1 owns that decision; see ingest/outline.py.",
+  "entries": [
+    {
+      "level": 1,
+      "title": "Contents",
+      "start_page": 7,
+      "end_page": 10
+    },
+    {
+      "level": 1,
+      "title": "Preface",
+      "start_page": 11,
+      "end_page": 18
+    },
+    {
+      "level": 2,
+      "title": "About OpenStax",
+      "start_page": 11,
+      "end_page": 18
+    },
+    {
+      "level": 1,
+      "title": "Chapter 1 Introduction to Computer Science",
+      "start_page": 19,
+      "end_page": 48
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "level": 2,
+      "title": "1.1 Computer Science",
+      "start_page": 20,
+      "end_page": 29
+    },
+    {
+      "level": 2,
+      "title": "1.2 Computer Science across the Disciplines",
+      "start_page": 30,
+      "end_page": 34
+    },
+    {
+      "level": 2,
+      "title": "1.3 Computer Science and the Future of Society",
+      "start_page": 35,
+      "end_page": 42
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 43,
+      "end_page": 48
+    },
+    {
+      "level": 1,
+      "title": "Chapter 2 Computational Thinking and Design Reusability",
+      "start_page": 49,
+      "end_page": 98
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 49,
+      "end_page": 49
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 49,
+      "end_page": 49
+    },
+    {
+      "level": 2,
+      "title": "2.1 Computational Thinking",
+      "start_page": 50,
+      "end_page": 61
+    },
+    {
+      "level": 2,
+      "title": "2.2 Architecting Solutions with Adaptive Design Reuse in Mind",
+      "start_page": 62,
+      "end_page": 80
+    },
+    {
+      "level": 2,
+      "title": "2.3 Evolving Architectures into Useable Products",
+      "start_page": 81,
+      "end_page": 90
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 91,
+      "end_page": 98
+    },
+    {
+      "level": 1,
+      "title": "Chapter 3 Data Structures and Algorithms",
+      "start_page": 99,
+      "end_page": 152
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 99,
+      "end_page": 99
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 99,
+      "end_page": 99
+    },
+    {
+      "level": 2,
+      "title": "3.1 Introduction to Data Structures and Algorithms",
+      "start_page": 99,
+      "end_page": 106
+    },
+    {
+      "level": 2,
+      "title": "3.2 Algorithm Design and Discovery",
+      "start_page": 107,
+      "end_page": 113
+    },
+    {
+      "level": 2,
+      "title": "3.3 Formal Properties of Algorithms",
+      "start_page": 114,
+      "end_page": 119
+    },
+    {
+      "level": 2,
+      "title": "3.4 Algorithmic Paradigms",
+      "start_page": 120,
+      "end_page": 125
+    },
+    {
+      "level": 2,
+      "title": "3.5 Sample Algorithms by Problem",
+      "start_page": 126,
+      "end_page": 132
+    },
+    {
+      "level": 2,
+      "title": "3.6 Computer Science Theory",
+      "start_page": 133,
+      "end_page": 137
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 138,
+      "end_page": 152
+    },
+    {
+      "level": 1,
+      "title": "Chapter 4 Linguistic Realization of Algorithms: Low-Level Programming Languages",
+      "start_page": 153,
+      "end_page": 202
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 153,
+      "end_page": 153
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 153,
+      "end_page": 153
+    },
+    {
+      "level": 2,
+      "title": "4.1 Models of Computation",
+      "start_page": 154,
+      "end_page": 165
+    },
+    {
+      "level": 2,
+      "title": "4.2 Building C Programs",
+      "start_page": 166,
+      "end_page": 182
+    },
+    {
+      "level": 2,
+      "title": "4.3 Parallel Programming Models",
+      "start_page": 183,
+      "end_page": 188
+    },
+    {
+      "level": 2,
+      "title": "4.4 Applications of Programming Models",
+      "start_page": 189,
+      "end_page": 191
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 192,
+      "end_page": 202
+    },
+    {
+      "level": 1,
+      "title": "Chapter 5 Hardware Realizations of Algorithms: Computer Systems Design",
+      "start_page": 203,
+      "end_page": 248
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 203,
+      "end_page": 203
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 203,
+      "end_page": 203
+    },
+    {
+      "level": 2,
+      "title": "5.1 Computer Systems Organization",
+      "start_page": 204,
+      "end_page": 207
+    },
+    {
+      "level": 2,
+      "title": "5.2 Computer Levels of Abstraction",
+      "start_page": 208,
+      "end_page": 214
+    },
+    {
+      "level": 2,
+      "title": "5.3 Machine-Level Information Representation",
+      "start_page": 215,
+      "end_page": 220
+    },
+    {
+      "level": 2,
+      "title": "5.4 Machine-Level Program Representation",
+      "start_page": 221,
+      "end_page": 226
+    },
+    {
+      "level": 2,
+      "title": "5.5 Memory Hierarchy",
+      "start_page": 227,
+      "end_page": 235
+    },
+    {
+      "level": 2,
+      "title": "5.6 Processor Architectures",
+      "start_page": 236,
+      "end_page": 239
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 240,
+      "end_page": 248
+    },
+    {
+      "level": 1,
+      "title": "Chapter 6 Infrastructure Abstraction Layer: Operating Systems",
+      "start_page": 249,
+      "end_page": 306
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 249,
+      "end_page": 249
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 249,
+      "end_page": 249
+    },
+    {
+      "level": 2,
+      "title": "6.1 What Is an Operating System?",
+      "start_page": 250,
+      "end_page": 255
+    },
+    {
+      "level": 2,
+      "title": "6.2 Fundamental OS Concepts",
+      "start_page": 256,
+      "end_page": 266
+    },
+    {
+      "level": 2,
+      "title": "6.3 Processes and Concurrency",
+      "start_page": 267,
+      "end_page": 276
+    },
+    {
+      "level": 2,
+      "title": "6.4 Memory Management",
+      "start_page": 277,
+      "end_page": 283
+    },
+    {
+      "level": 2,
+      "title": "6.5 File Systems",
+      "start_page": 284,
+      "end_page": 288
+    },
+    {
+      "level": 2,
+      "title": "6.6 Reliability and Security",
+      "start_page": 289,
+      "end_page": 294
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 295,
+      "end_page": 306
+    },
+    {
+      "level": 1,
+      "title": "Chapter 7 High-Level Programming Languages",
+      "start_page": 307,
+      "end_page": 368
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 307,
+      "end_page": 307
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 307,
+      "end_page": 307
+    },
+    {
+      "level": 2,
+      "title": "7.1 Programming Language Foundations",
+      "start_page": 308,
+      "end_page": 320
+    },
+    {
+      "level": 2,
+      "title": "7.2 Programming Language Constructs",
+      "start_page": 321,
+      "end_page": 340
+    },
+    {
+      "level": 2,
+      "title": "7.3 Alternative Programming Models",
+      "start_page": 341,
+      "end_page": 349
+    },
+    {
+      "level": 2,
+      "title": "7.4 Programming Language Implementation",
+      "start_page": 350,
+      "end_page": 356
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 357,
+      "end_page": 368
+    },
+    {
+      "level": 1,
+      "title": "Chapter 8 Data Management",
+      "start_page": 369,
+      "end_page": 438
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 369,
+      "end_page": 369
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 369,
+      "end_page": 369
+    },
+    {
+      "level": 2,
+      "title": "8.1 Data Management Focus",
+      "start_page": 370,
+      "end_page": 375
+    },
+    {
+      "level": 2,
+      "title": "8.2 Data Management Systems",
+      "start_page": 376,
+      "end_page": 381
+    },
+    {
+      "level": 2,
+      "title": "8.3 Relational Database Management Systems",
+      "start_page": 382,
+      "end_page": 399
+    },
+    {
+      "level": 2,
+      "title": "8.4 Nonrelational Database Management Systems",
+      "start_page": 400,
+      "end_page": 406
+    },
+    {
+      "level": 2,
+      "title": "8.5 Data Warehousing, Data Lakes, and Business Intelligence",
+      "start_page": 407,
+      "end_page": 411
+    },
+    {
+      "level": 2,
+      "title": "8.6 Data Management for Shallow and Deep Learning Applications",
+      "start_page": 412,
+      "end_page": 421
+    },
+    {
+      "level": 2,
+      "title": "8.7 Informatics and Data Management",
+      "start_page": 422,
+      "end_page": 423
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 424,
+      "end_page": 438
+    },
+    {
+      "level": 1,
+      "title": "Chapter 9 Software Engineering",
+      "start_page": 439,
+      "end_page": 510
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 439,
+      "end_page": 439
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 439,
+      "end_page": 439
+    },
+    {
+      "level": 2,
+      "title": "9.1 Software Engineering Fundamentals",
+      "start_page": 440,
+      "end_page": 449
+    },
+    {
+      "level": 2,
+      "title": "9.2 Software Engineering Process",
+      "start_page": 450,
+      "end_page": 477
+    },
+    {
+      "level": 2,
+      "title": "9.3 Special Topics",
+      "start_page": 478,
+      "end_page": 499
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 500,
+      "end_page": 510
+    },
+    {
+      "level": 1,
+      "title": "Chapter 10 Enterprise and Solution Architectures Management",
+      "start_page": 511,
+      "end_page": 568
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 511,
+      "end_page": 511
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 511,
+      "end_page": 511
+    },
+    {
+      "level": 2,
+      "title": "10.1 Patterns Management",
+      "start_page": 512,
+      "end_page": 519
+    },
+    {
+      "level": 2,
+      "title": "10.2 Enterprise Architecture Management Frameworks",
+      "start_page": 520,
+      "end_page": 554
+    },
+    {
+      "level": 2,
+      "title": "10.3 Solution Architecture Management",
+      "start_page": 555,
+      "end_page": 559
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 560,
+      "end_page": 568
+    },
+    {
+      "level": 1,
+      "title": "Chapter 11 Web Applications Development",
+      "start_page": 569,
+      "end_page": 668
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 569,
+      "end_page": 569
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 569,
+      "end_page": 569
+    },
+    {
+      "level": 2,
+      "title": "11.1 Modern Web Applications Architectures",
+      "start_page": 570,
+      "end_page": 587
+    },
+    {
+      "level": 2,
+      "title": "11.2 Sample Responsive WAD with Bootstrap and Django",
+      "start_page": 588,
+      "end_page": 613
+    },
+    {
+      "level": 2,
+      "title": "11.3 Sample Responsive WAD with Bootstrap/React and Node",
+      "start_page": 614,
+      "end_page": 628
+    },
+    {
+      "level": 2,
+      "title": "11.4 Sample Responsive WAD with Bootstrap/React and Django",
+      "start_page": 629,
+      "end_page": 633
+    },
+    {
+      "level": 2,
+      "title": "11.5 Sample Native WAD with React Native and Node or Django",
+      "start_page": 634,
+      "end_page": 646
+    },
+    {
+      "level": 2,
+      "title": "11.6 Sample Ethereum Blockchain Web 2.0/Web 3.0 Application",
+      "start_page": 647,
+      "end_page": 659
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 660,
+      "end_page": 668
+    },
+    {
+      "level": 1,
+      "title": "Chapter 12 Cloud-Native Applications Development",
+      "start_page": 669,
+      "end_page": 764
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 669,
+      "end_page": 669
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 669,
+      "end_page": 669
+    },
+    {
+      "level": 2,
+      "title": "12.1 Introduction to Cloud-Native Applications",
+      "start_page": 670,
+      "end_page": 693
+    },
+    {
+      "level": 2,
+      "title": "12.2 Cloud-Based and Cloud-Native Applications Deployment Technologies",
+      "start_page": 694,
+      "end_page": 714
+    },
+    {
+      "level": 2,
+      "title": "12.3 Example PaaS and FaaS Deployments of Cloud-Native Applications",
+      "start_page": 715,
+      "end_page": 753
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 754,
+      "end_page": 764
+    },
+    {
+      "level": 1,
+      "title": "Chapter 13 Hybrid Multicloud Digital Solutions Development",
+      "start_page": 765,
+      "end_page": 820
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 765,
+      "end_page": 765
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 765,
+      "end_page": 765
+    },
+    {
+      "level": 2,
+      "title": "13.1 Hybrid Multicloud Solutions and Cloud Mashups",
+      "start_page": 766,
+      "end_page": 769
+    },
+    {
+      "level": 2,
+      "title": "13.2 Big Cloud IaaS Mainstream Capabilities",
+      "start_page": 770,
+      "end_page": 777
+    },
+    {
+      "level": 2,
+      "title": "13.3 Big Cloud PaaS Mainstream Capabilities",
+      "start_page": 778,
+      "end_page": 793
+    },
+    {
+      "level": 2,
+      "title": "13.4 Towards Intelligent Autonomous Networked Super Systems",
+      "start_page": 794,
+      "end_page": 808
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 809,
+      "end_page": 820
+    },
+    {
+      "level": 1,
+      "title": "Chapter 14 Cyber Resources Qualities and Cyber Computing Governance",
+      "start_page": 821,
+      "end_page": 920
+    },
+    {
+      "level": 2,
+      "title": "Chapter Outline",
+      "start_page": 821,
+      "end_page": 821
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "start_page": 821,
+      "end_page": 821
+    },
+    {
+      "level": 2,
+      "title": "14.1 Cyber Resources Management Frameworks",
+      "start_page": 822,
+      "end_page": 842
+    },
+    {
+      "level": 2,
+      "title": "14.2 Cybersecurity Deep Dive",
+      "start_page": 843,
+      "end_page": 902
+    },
+    {
+      "level": 2,
+      "title": "14.3 Governing the Use of Cyber Resources",
+      "start_page": 903,
+      "end_page": 909
+    },
+    {
+      "level": 2,
+      "title": "Chapter Review",
+      "start_page": 910,
+      "end_page": 920
+    },
+    {
+      "level": 1,
+      "title": "Appendix A Appendix A: Network Design Application of Algorithms",
+      "start_page": 921,
+      "end_page": 926
+    },
+    {
+      "level": 2,
+      "title": "Introduction to Data Communications and Networks",
+      "start_page": 921,
+      "end_page": 921
+    },
+    {
+      "level": 2,
+      "title": "Network Edge and Core",
+      "start_page": 922,
+      "end_page": 922
+    },
+    {
+      "level": 2,
+      "title": "Network Layers and Service Models",
+      "start_page": 923,
+      "end_page": 923
+    },
+    {
+      "level": 2,
+      "title": "Internet Network Protocols",
+      "start_page": 923,
+      "end_page": 923
+    },
+    {
+      "level": 2,
+      "title": "Wireless and Mobile Networks",
+      "start_page": 924,
+      "end_page": 924
+    },
+    {
+      "level": 2,
+      "title": "Distributed and Decentralized Systems",
+      "start_page": 924,
+      "end_page": 924
+    },
+    {
+      "level": 2,
+      "title": "History of the Internet and Inner-Workings",
+      "start_page": 925,
+      "end_page": 926
+    },
+    {
+      "level": 1,
+      "title": "Index",
+      "start_page": 927,
+      "end_page": 939
+    }
+  ]
+}

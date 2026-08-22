@@ -1,0 +1,25 @@
+{
+  "pass": 0,
+  "prompt_version": "pass0-topics-v1",
+  "section_count": 143,
+  "provenance": "derived_from_text",
+  "degenerate": false,
+  "labeller": "NoOpTopicLabeller",
+  "prompt_chars": 14795,
+  "topics_requested": 143,
+  "topics_accepted": 0,
+  "topics_invented_and_dropped": [],
+  "labelled_fraction": 0.0,
+  "estimated_render_tokens": 2297,
+  "envelope": {
+    "document_id": "physics1",
+    "provenance": "derived_from_text",
+    "skeleton_sections": 143,
+    "findings_total": 0,
+    "findings_shown": 0,
+    "target_section_id": null,
+    "has_directive": false,
+    "is_stripped": false,
+    "rendered_chars": 9208
+  }
+}

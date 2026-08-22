@@ -1,0 +1,359 @@
+{
+  "document_id": "physics1",
+  "chapters_explored": 17,
+  "concepts_accepted": 0,
+  "edges_accepted": 0,
+  "final_envelope": {
+    "document_id": "physics1",
+    "provenance": "derived_from_text",
+    "skeleton_sections": 143,
+    "findings_total": 17,
+    "findings_shown": 12,
+    "target_section_id": null,
+    "has_directive": false,
+    "is_stripped": false,
+    "rendered_chars": 10050
+  },
+  "chapters": [
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch01",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11070,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 0,
+        "findings_shown": 0,
+        "target_section_id": "physics1.ch01",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9464
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch02",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10952,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 1,
+        "findings_shown": 1,
+        "target_section_id": "physics1.ch02",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9545
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch03",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11321,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 2,
+        "findings_shown": 2,
+        "target_section_id": "physics1.ch03",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9632
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch04",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11248,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 3,
+        "findings_shown": 3,
+        "target_section_id": "physics1.ch04",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9709
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch05",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11251,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 4,
+        "findings_shown": 4,
+        "target_section_id": "physics1.ch05",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9759
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch06",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11238,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 5,
+        "findings_shown": 5,
+        "target_section_id": "physics1.ch06",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9838
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch07",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11161,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 6,
+        "findings_shown": 6,
+        "target_section_id": "physics1.ch07",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9886
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch08",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11488,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 7,
+        "findings_shown": 7,
+        "target_section_id": "physics1.ch08",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9958
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch09",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11590,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 8,
+        "findings_shown": 8,
+        "target_section_id": "physics1.ch09",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 10017
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch10",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11917,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 9,
+        "findings_shown": 9,
+        "target_section_id": "physics1.ch10",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 10082
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch11",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11526,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 10,
+        "findings_shown": 10,
+        "target_section_id": "physics1.ch11",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 10141
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch12",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11693,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 11,
+        "findings_shown": 11,
+        "target_section_id": "physics1.ch12",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 10219
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch13",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 12042,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 12,
+        "findings_shown": 12,
+        "target_section_id": "physics1.ch13",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 10301
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch14",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11968,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 13,
+        "findings_shown": 12,
+        "target_section_id": "physics1.ch14",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 10326
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch15",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11906,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 14,
+        "findings_shown": 12,
+        "target_section_id": "physics1.ch15",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 10331
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch16",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11849,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 15,
+        "findings_shown": 12,
+        "target_section_id": "physics1.ch16",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 10303
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "physics1.ch17",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 11860,
+      "envelope": {
+        "document_id": "physics1",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 143,
+        "findings_total": 16,
+        "findings_shown": 12,
+        "target_section_id": "physics1.ch17",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 10282
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    }
+  ]
+}

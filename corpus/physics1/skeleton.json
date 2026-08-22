@@ -1,0 +1,1296 @@
+{
+  "document_id": "physics1",
+  "provenance": "derived_from_text",
+  "section_count": 143,
+  "labelled_fraction": 0.0,
+  "estimated_render_tokens": 2297,
+  "sections": [
+    {
+      "section_id": "physics1.1-1-the-scope-and-scale-of-physics",
+      "title": "1.1 The Scope and Scale of Physics",
+      "book_position": 0,
+      "page_start": 18,
+      "page_end": 24,
+      "density": 3193.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.1-2-units-and-standards",
+      "title": "1.2 Units and Standards",
+      "book_position": 1,
+      "page_start": 24,
+      "page_end": 30,
+      "density": 2113.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.1-3-unit-conversion",
+      "title": "1.3 Unit Conversion",
+      "book_position": 2,
+      "page_start": 30,
+      "page_end": 32,
+      "density": 2369.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.1-4-dimensional-analysis",
+      "title": "1.4 Dimensional Analysis",
+      "book_position": 3,
+      "page_start": 32,
+      "page_end": 35,
+      "density": 2346.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.1-5-estimates-and-fermi-calculations",
+      "title": "1.5 Estimates and Fermi Calculations",
+      "book_position": 4,
+      "page_start": 35,
+      "page_end": 38,
+      "density": 2618.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.1-6-significant-figures",
+      "title": "1.6 Significant Figures",
+      "book_position": 5,
+      "page_start": 38,
+      "page_end": 42,
+      "density": 3112.4,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.1-7-solving-problems-in-physics",
+      "title": "1.7 Solving Problems in Physics",
+      "book_position": 6,
+      "page_start": 42,
+      "page_end": 44,
+      "density": 2438.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review",
+      "title": "Chapter Review",
+      "book_position": 7,
+      "page_start": 45,
+      "page_end": 53,
+      "density": 3130.4,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.2-1-scalars-and-vectors",
+      "title": "2.1 Scalars and Vectors",
+      "book_position": 8,
+      "page_start": 54,
+      "page_end": 65,
+      "density": 2202.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.2-2-coordinate-systems-and-components-of-a-vector",
+      "title": "2.2 Coordinate Systems and Components of a Vector",
+      "book_position": 9,
+      "page_start": 65,
+      "page_end": 75,
+      "density": 1768.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.2-3-algebra-of-vectors",
+      "title": "2.3 Algebra of Vectors",
+      "book_position": 10,
+      "page_start": 75,
+      "page_end": 83,
+      "density": 1616.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.2-4-products-of-vectors",
+      "title": "2.4 Products of Vectors",
+      "book_position": 11,
+      "page_start": 84,
+      "page_end": 95,
+      "density": 1759.9,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-2",
+      "title": "Chapter Review",
+      "book_position": 12,
+      "page_start": 96,
+      "page_end": 109,
+      "density": 2258.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.3-1-position-displacement-and-average-velocity",
+      "title": "3.1 Position, Displacement, and Average Velocity",
+      "book_position": 13,
+      "page_start": 110,
+      "page_end": 114,
+      "density": 1709.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.3-2-instantaneous-velocity-and-speed",
+      "title": "3.2 Instantaneous Velocity and Speed",
+      "book_position": 14,
+      "page_start": 114,
+      "page_end": 119,
+      "density": 1718.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.3-3-average-and-instantaneous-acceleration",
+      "title": "3.3 Average and Instantaneous Acceleration",
+      "book_position": 15,
+      "page_start": 119,
+      "page_end": 127,
+      "density": 1659.9,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.3-4-motion-with-constant-acceleration",
+      "title": "3.4 Motion with Constant Acceleration",
+      "book_position": 16,
+      "page_start": 127,
+      "page_end": 138,
+      "density": 1853.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.3-5-free-fall",
+      "title": "3.5 Free Fall",
+      "book_position": 17,
+      "page_start": 138,
+      "page_end": 144,
+      "density": 1720.9,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.3-6-finding-velocity-and-displacement-from-acceleration",
+      "title": "3.6 Finding Velocity and Displacement from Acceleration",
+      "book_position": 18,
+      "page_start": 144,
+      "page_end": 147,
+      "density": 1230.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-3",
+      "title": "Chapter Review",
+      "book_position": 19,
+      "page_start": 148,
+      "page_end": 159,
+      "density": 3195.3,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.4-1-displacement-and-velocity-vectors",
+      "title": "4.1 Displacement and Velocity Vectors",
+      "book_position": 20,
+      "page_start": 160,
+      "page_end": 167,
+      "density": 1374.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.4-2-acceleration-vector",
+      "title": "4.2 Acceleration Vector",
+      "book_position": 21,
+      "page_start": 167,
+      "page_end": 172,
+      "density": 1328.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.4-3-projectile-motion",
+      "title": "4.3 Projectile Motion",
+      "book_position": 22,
+      "page_start": 172,
+      "page_end": 182,
+      "density": 1799.4,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.4-4-uniform-and-nonuniform-circular-motion",
+      "title": "4.4 Uniform and Nonuniform Circular Motion",
+      "book_position": 23,
+      "page_start": 182,
+      "page_end": 189,
+      "density": 1327.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.4-5-relative-motion-in-one-and-two-dimensions",
+      "title": "4.5 Relative Motion in One and Two Dimensions",
+      "book_position": 24,
+      "page_start": 189,
+      "page_end": 193,
+      "density": 1612.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-4",
+      "title": "Chapter Review",
+      "book_position": 25,
+      "page_start": 194,
+      "page_end": 205,
+      "density": 2812.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.5-1-forces",
+      "title": "5.1 Forces",
+      "book_position": 26,
+      "page_start": 206,
+      "page_end": 210,
+      "density": 2328.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.5-2-newton-s-first-law",
+      "title": "5.2 Newton's First Law",
+      "book_position": 27,
+      "page_start": 210,
+      "page_end": 214,
+      "density": 2381.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.5-3-newton-s-second-law",
+      "title": "5.3 Newton's Second Law",
+      "book_position": 28,
+      "page_start": 214,
+      "page_end": 223,
+      "density": 1976.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.5-4-mass-and-weight",
+      "title": "5.4 Mass and Weight",
+      "book_position": 29,
+      "page_start": 224,
+      "page_end": 226,
+      "density": 2207.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.5-5-newton-s-third-law",
+      "title": "5.5 Newton’s Third Law",
+      "book_position": 30,
+      "page_start": 226,
+      "page_end": 232,
+      "density": 1753.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.5-6-common-forces",
+      "title": "5.6 Common Forces",
+      "book_position": 31,
+      "page_start": 232,
+      "page_end": 242,
+      "density": 1942.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.5-7-drawing-free-body-diagrams",
+      "title": "5.7 Drawing Free-Body Diagrams",
+      "book_position": 32,
+      "page_start": 242,
+      "page_end": 246,
+      "density": 1616.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-5",
+      "title": "Chapter Review",
+      "book_position": 33,
+      "page_start": 247,
+      "page_end": 261,
+      "density": 2408.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.6-1-solving-problems-with-newton-s-laws",
+      "title": "6.1 Solving Problems with Newton’s Laws",
+      "book_position": 34,
+      "page_start": 261,
+      "page_end": 276,
+      "density": 1913.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.6-2-friction",
+      "title": "6.2 Friction",
+      "book_position": 35,
+      "page_start": 277,
+      "page_end": 288,
+      "density": 2006.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.6-3-centripetal-force",
+      "title": "6.3 Centripetal Force",
+      "book_position": 36,
+      "page_start": 288,
+      "page_end": 296,
+      "density": 2241.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.6-4-drag-force-and-terminal-speed",
+      "title": "6.4 Drag Force and Terminal Speed",
+      "book_position": 37,
+      "page_start": 296,
+      "page_end": 304,
+      "density": 1570.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-6",
+      "title": "Chapter Review",
+      "book_position": 38,
+      "page_start": 305,
+      "page_end": 323,
+      "density": 2448.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.7-1-work",
+      "title": "7.1 Work",
+      "book_position": 39,
+      "page_start": 324,
+      "page_end": 332,
+      "density": 2162.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.7-2-kinetic-energy",
+      "title": "7.2 Kinetic Energy",
+      "book_position": 40,
+      "page_start": 332,
+      "page_end": 335,
+      "density": 2495.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.7-3-work-energy-theorem",
+      "title": "7.3 Work-Energy Theorem",
+      "book_position": 41,
+      "page_start": 335,
+      "page_end": 339,
+      "density": 2001.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.7-4-power",
+      "title": "7.4 Power",
+      "book_position": 42,
+      "page_start": 340,
+      "page_end": 342,
+      "density": 1549.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-7",
+      "title": "Chapter Review",
+      "book_position": 43,
+      "page_start": 343,
+      "page_end": 353,
+      "density": 2830.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.8-1-potential-energy-of-a-system",
+      "title": "8.1 Potential Energy of a System",
+      "book_position": 44,
+      "page_start": 353,
+      "page_end": 362,
+      "density": 1877.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.8-2-conservative-and-non-conservative-forces",
+      "title": "8.2 Conservative and Non-Conservative Forces",
+      "book_position": 45,
+      "page_start": 362,
+      "page_end": 365,
+      "density": 2099.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.8-3-conservation-of-energy",
+      "title": "8.3 Conservation of Energy",
+      "book_position": 46,
+      "page_start": 365,
+      "page_end": 371,
+      "density": 2016.9,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.8-4-potential-energy-diagrams-and-stability",
+      "title": "8.4 Potential Energy Diagrams and Stability",
+      "book_position": 47,
+      "page_start": 371,
+      "page_end": 375,
+      "density": 1890.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.8-5-sources-of-energy",
+      "title": "8.5 Sources of Energy",
+      "book_position": 48,
+      "page_start": 375,
+      "page_end": 378,
+      "density": 2613.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-8",
+      "title": "Chapter Review",
+      "book_position": 49,
+      "page_start": 379,
+      "page_end": 391,
+      "density": 2739.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.9-1-linear-momentum",
+      "title": "9.1 Linear Momentum",
+      "book_position": 50,
+      "page_start": 392,
+      "page_end": 393,
+      "density": 1146.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.9-2-impulse-and-collisions",
+      "title": "9.2 Impulse and Collisions",
+      "book_position": 51,
+      "page_start": 394,
+      "page_end": 407,
+      "density": 1517.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.9-3-conservation-of-linear-momentum",
+      "title": "9.3 Conservation of Linear Momentum",
+      "book_position": 52,
+      "page_start": 407,
+      "page_end": 416,
+      "density": 1796.3,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.9-4-types-of-collisions",
+      "title": "9.4 Types of Collisions",
+      "book_position": 53,
+      "page_start": 417,
+      "page_end": 424,
+      "density": 2083.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.9-5-collisions-in-multiple-dimensions",
+      "title": "9.5 Collisions in Multiple Dimensions",
+      "book_position": 54,
+      "page_start": 424,
+      "page_end": 431,
+      "density": 988.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.9-6-center-of-mass",
+      "title": "9.6 Center of Mass",
+      "book_position": 55,
+      "page_start": 431,
+      "page_end": 446,
+      "density": 1417.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.9-7-rocket-propulsion",
+      "title": "9.7 Rocket Propulsion",
+      "book_position": 56,
+      "page_start": 446,
+      "page_end": 450,
+      "density": 1973.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-9",
+      "title": "Chapter Review",
+      "book_position": 57,
+      "page_start": 451,
+      "page_end": 463,
+      "density": 2833.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.10-1-rotational-variables",
+      "title": "10.1 Rotational Variables",
+      "book_position": 58,
+      "page_start": 464,
+      "page_end": 471,
+      "density": 2035.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.10-2-rotation-with-constant-angular-acceleration",
+      "title": "10.2 Rotation with Constant Angular Acceleration",
+      "book_position": 59,
+      "page_start": 472,
+      "page_end": 477,
+      "density": 1774.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.10-3-relating-angular-and-translational-quantities",
+      "title": "10.3 Relating Angular and Translational Quantities",
+      "book_position": 60,
+      "page_start": 477,
+      "page_end": 481,
+      "density": 1657.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.10-4-moment-of-inertia-and-rotational-kinetic-energy",
+      "title": "10.4 Moment of Inertia and Rotational Kinetic Energy",
+      "book_position": 61,
+      "page_start": 481,
+      "page_end": 489,
+      "density": 1445.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.10-5-calculating-moments-of-inertia",
+      "title": "10.5 Calculating Moments of Inertia",
+      "book_position": 62,
+      "page_start": 489,
+      "page_end": 496,
+      "density": 1691.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.10-6-torque",
+      "title": "10.6 Torque",
+      "book_position": 63,
+      "page_start": 497,
+      "page_end": 502,
+      "density": 1576.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.10-7-newton-s-second-law-for-rotation",
+      "title": "10.7 Newton’s Second Law for Rotation",
+      "book_position": 64,
+      "page_start": 502,
+      "page_end": 505,
+      "density": 2041.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.10-8-work-and-power-for-rotational-motion",
+      "title": "10.8 Work and Power for Rotational Motion",
+      "book_position": 65,
+      "page_start": 506,
+      "page_end": 511,
+      "density": 1289.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-10",
+      "title": "Chapter Review",
+      "book_position": 66,
+      "page_start": 512,
+      "page_end": 527,
+      "density": 2623.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.11-1-rolling-motion",
+      "title": "11.1 Rolling Motion",
+      "book_position": 67,
+      "page_start": 528,
+      "page_end": 535,
+      "density": 1858.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.11-2-angular-momentum",
+      "title": "11.2 Angular Momentum",
+      "book_position": 68,
+      "page_start": 535,
+      "page_end": 543,
+      "density": 1747.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.11-3-conservation-of-angular-momentum",
+      "title": "11.3 Conservation of Angular Momentum",
+      "book_position": 69,
+      "page_start": 543,
+      "page_end": 549,
+      "density": 1405.9,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.11-4-precession-of-a-gyroscope",
+      "title": "11.4 Precession of a Gyroscope",
+      "book_position": 70,
+      "page_start": 549,
+      "page_end": 553,
+      "density": 1218.4,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-11",
+      "title": "Chapter Review",
+      "book_position": 71,
+      "page_start": 554,
+      "page_end": 565,
+      "density": 2763.3,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.12-1-conditions-for-static-equilibrium",
+      "title": "12.1 Conditions for Static Equilibrium",
+      "book_position": 72,
+      "page_start": 566,
+      "page_end": 574,
+      "density": 2256.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.12-2-examples-of-static-equilibrium",
+      "title": "12.2 Examples of Static Equilibrium",
+      "book_position": 73,
+      "page_start": 574,
+      "page_end": 586,
+      "density": 1889.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.12-3-stress-strain-and-elastic-modulus",
+      "title": "12.3 Stress, Strain, and Elastic Modulus",
+      "book_position": 74,
+      "page_start": 587,
+      "page_end": 596,
+      "density": 2029.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.12-4-elasticity-and-plasticity",
+      "title": "12.4 Elasticity and Plasticity",
+      "book_position": 75,
+      "page_start": 597,
+      "page_end": 598,
+      "density": 3420.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-12",
+      "title": "Chapter Review",
+      "book_position": 76,
+      "page_start": 599,
+      "page_end": 611,
+      "density": 2162.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.13-1-newton-s-law-of-universal-gravitation",
+      "title": "13.1 Newton's Law of Universal Gravitation",
+      "book_position": 77,
+      "page_start": 611,
+      "page_end": 617,
+      "density": 1853.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.13-2-gravitation-near-earth-s-surface",
+      "title": "13.2 Gravitation Near Earth's Surface",
+      "book_position": 78,
+      "page_start": 617,
+      "page_end": 624,
+      "density": 1661.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.13-3-gravitational-potential-energy-and-total-energy",
+      "title": "13.3 Gravitational Potential Energy and Total Energy",
+      "book_position": 79,
+      "page_start": 624,
+      "page_end": 629,
+      "density": 2249.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.13-4-satellite-orbits-and-energy",
+      "title": "13.4 Satellite Orbits and Energy",
+      "book_position": 80,
+      "page_start": 629,
+      "page_end": 636,
+      "density": 1852.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.13-5-kepler-s-laws-of-planetary-motion",
+      "title": "13.5 Kepler's Laws of Planetary Motion",
+      "book_position": 81,
+      "page_start": 636,
+      "page_end": 642,
+      "density": 2154.3,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.13-6-tidal-forces",
+      "title": "13.6 Tidal Forces",
+      "book_position": 82,
+      "page_start": 642,
+      "page_end": 647,
+      "density": 2086.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.13-7-einstein-s-theory-of-gravity",
+      "title": "13.7 Einstein's Theory of Gravity",
+      "book_position": 83,
+      "page_start": 648,
+      "page_end": 655,
+      "density": 2787.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-13",
+      "title": "Chapter Review",
+      "book_position": 84,
+      "page_start": 656,
+      "page_end": 666,
+      "density": 3115.4,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.14-1-fluids-density-and-pressure",
+      "title": "14.1 Fluids, Density, and Pressure",
+      "book_position": 85,
+      "page_start": 666,
+      "page_end": 677,
+      "density": 1918.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.14-2-measuring-pressure",
+      "title": "14.2 Measuring Pressure",
+      "book_position": 86,
+      "page_start": 677,
+      "page_end": 681,
+      "density": 2086.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.14-3-pascal-s-principle-and-hydraulics",
+      "title": "14.3 Pascal's Principle and Hydraulics",
+      "book_position": 87,
+      "page_start": 681,
+      "page_end": 686,
+      "density": 1395.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.14-4-archimedes-principle-and-buoyancy",
+      "title": "14.4 Archimedes’ Principle and Buoyancy",
+      "book_position": 88,
+      "page_start": 686,
+      "page_end": 690,
+      "density": 1733.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.14-5-fluid-dynamics",
+      "title": "14.5 Fluid Dynamics",
+      "book_position": 89,
+      "page_start": 690,
+      "page_end": 694,
+      "density": 1980.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.14-6-bernoulli-s-equation",
+      "title": "14.6 Bernoulli’s Equation",
+      "book_position": 90,
+      "page_start": 694,
+      "page_end": 700,
+      "density": 1726.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.14-7-viscosity-and-turbulence",
+      "title": "14.7 Viscosity and Turbulence",
+      "book_position": 91,
+      "page_start": 700,
+      "page_end": 707,
+      "density": 2025.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-14",
+      "title": "Chapter Review",
+      "book_position": 92,
+      "page_start": 708,
+      "page_end": 721,
+      "density": 2995.4,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.15-1-simple-harmonic-motion",
+      "title": "15.1 Simple Harmonic Motion",
+      "book_position": 93,
+      "page_start": 722,
+      "page_end": 730,
+      "density": 1856.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.15-2-energy-in-simple-harmonic-motion",
+      "title": "15.2 Energy in Simple Harmonic Motion",
+      "book_position": 94,
+      "page_start": 730,
+      "page_end": 737,
+      "density": 1866.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.15-3-comparing-simple-harmonic-motion-and-circular-motion",
+      "title": "15.3 Comparing Simple Harmonic Motion and Circular Motion",
+      "book_position": 95,
+      "page_start": 737,
+      "page_end": 740,
+      "density": 988.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.15-4-pendulums",
+      "title": "15.4 Pendulums",
+      "book_position": 96,
+      "page_start": 740,
+      "page_end": 746,
+      "density": 1449.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.15-5-damped-oscillations",
+      "title": "15.5 Damped Oscillations",
+      "book_position": 97,
+      "page_start": 746,
+      "page_end": 749,
+      "density": 1460.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.15-6-forced-oscillations",
+      "title": "15.6 Forced Oscillations",
+      "book_position": 98,
+      "page_start": 749,
+      "page_end": 753,
+      "density": 1805.6,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-15",
+      "title": "Chapter Review",
+      "book_position": 99,
+      "page_start": 754,
+      "page_end": 763,
+      "density": 2790.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.16-1-traveling-waves",
+      "title": "16.1 Traveling Waves",
+      "book_position": 100,
+      "page_start": 764,
+      "page_end": 769,
+      "density": 2477.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.16-2-mathematics-of-waves",
+      "title": "16.2 Mathematics of Waves",
+      "book_position": 101,
+      "page_start": 769,
+      "page_end": 778,
+      "density": 1603.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.16-3-wave-speed-on-a-stretched-string",
+      "title": "16.3 Wave Speed on a Stretched String",
+      "book_position": 102,
+      "page_start": 778,
+      "page_end": 781,
+      "density": 1880.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.16-4-energy-and-power-of-a-wave",
+      "title": "16.4 Energy and Power of a Wave",
+      "book_position": 103,
+      "page_start": 781,
+      "page_end": 785,
+      "density": 2302.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.16-5-interference-of-waves",
+      "title": "16.5 Interference of Waves",
+      "book_position": 104,
+      "page_start": 786,
+      "page_end": 793,
+      "density": 1874.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.16-6-standing-waves-and-resonance",
+      "title": "16.6 Standing Waves and Resonance",
+      "book_position": 105,
+      "page_start": 793,
+      "page_end": 802,
+      "density": 1820.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-16",
+      "title": "Chapter Review",
+      "book_position": 106,
+      "page_start": 803,
+      "page_end": 820,
+      "density": 2660.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.17-1-sound-waves",
+      "title": "17.1 Sound Waves",
+      "book_position": 107,
+      "page_start": 820,
+      "page_end": 822,
+      "density": 1841.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.17-2-speed-of-sound",
+      "title": "17.2 Speed of Sound",
+      "book_position": 108,
+      "page_start": 822,
+      "page_end": 830,
+      "density": 1653.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.17-3-sound-intensity",
+      "title": "17.3 Sound Intensity",
+      "book_position": 109,
+      "page_start": 830,
+      "page_end": 838,
+      "density": 1794.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.17-4-normal-modes-of-a-standing-sound-wave",
+      "title": "17.4 Normal Modes of a Standing Sound Wave",
+      "book_position": 110,
+      "page_start": 838,
+      "page_end": 846,
+      "density": 1638.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.17-5-sources-of-musical-sound",
+      "title": "17.5 Sources of Musical Sound",
+      "book_position": 111,
+      "page_start": 846,
+      "page_end": 850,
+      "density": 1517.4,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.17-6-beats",
+      "title": "17.6 Beats",
+      "book_position": 112,
+      "page_start": 850,
+      "page_end": 852,
+      "density": 843.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.17-7-the-doppler-effect",
+      "title": "17.7 The Doppler Effect",
+      "book_position": 113,
+      "page_start": 852,
+      "page_end": 858,
+      "density": 2186.1,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.17-8-shock-waves",
+      "title": "17.8 Shock Waves",
+      "book_position": 114,
+      "page_start": 858,
+      "page_end": 861,
+      "density": 1837.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-review-17",
+      "title": "Chapter Review",
+      "book_position": 115,
+      "page_start": 862,
+      "page_end": 895,
+      "density": 1374.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-1",
+      "title": "Chapter 1",
+      "book_position": 116,
+      "page_start": 895,
+      "page_end": 896,
+      "density": 2349.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-2",
+      "title": "Chapter 2",
+      "book_position": 117,
+      "page_start": 896,
+      "page_end": 899,
+      "density": 485.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-3",
+      "title": "Chapter 3",
+      "book_position": 118,
+      "page_start": 899,
+      "page_end": 905,
+      "density": 850.4,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-4",
+      "title": "Chapter 4",
+      "book_position": 119,
+      "page_start": 905,
+      "page_end": 910,
+      "density": 574.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-5",
+      "title": "Chapter 5",
+      "book_position": 120,
+      "page_start": 910,
+      "page_end": 915,
+      "density": 832.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-6",
+      "title": "Chapter 6",
+      "book_position": 121,
+      "page_start": 915,
+      "page_end": 917,
+      "density": 2185.3,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-7",
+      "title": "Chapter 7",
+      "book_position": 122,
+      "page_start": 918,
+      "page_end": 919,
+      "density": 1762.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-8",
+      "title": "Chapter 8",
+      "book_position": 123,
+      "page_start": 919,
+      "page_end": 921,
+      "density": 1192.3,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-9",
+      "title": "Chapter 9",
+      "book_position": 124,
+      "page_start": 921,
+      "page_end": 925,
+      "density": 1609.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-10",
+      "title": "Chapter 10",
+      "book_position": 125,
+      "page_start": 925,
+      "page_end": 928,
+      "density": 911.8,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-11",
+      "title": "Chapter 11",
+      "book_position": 126,
+      "page_start": 928,
+      "page_end": 932,
+      "density": 1188.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-12",
+      "title": "Chapter 12",
+      "book_position": 127,
+      "page_start": 932,
+      "page_end": 934,
+      "density": 526.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-13",
+      "title": "Chapter 13",
+      "book_position": 128,
+      "page_start": 934,
+      "page_end": 937,
+      "density": 2510.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-14",
+      "title": "Chapter 14",
+      "book_position": 129,
+      "page_start": 937,
+      "page_end": 940,
+      "density": 2300.2,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-15",
+      "title": "Chapter 15",
+      "book_position": 130,
+      "page_start": 940,
+      "page_end": 941,
+      "density": 2278.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-16",
+      "title": "Chapter 16",
+      "book_position": 131,
+      "page_start": 941,
+      "page_end": 947,
+      "density": 1073.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.chapter-17",
+      "title": "Chapter 17",
+      "book_position": 132,
+      "page_start": 947,
+      "page_end": 955,
+      "density": 806.7,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.c-cavendish-601-center-of-gravity-556-center-of-mass-423-cen",
+      "title": "C Cavendish 601 center of gravity 556 center of mass 423 centrifugal force 282 centrifuge 282 centripetal acceleration 171 ,",
+      "book_position": 133,
+      "page_start": 955,
+      "page_end": 956,
+      "density": 972.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.g-galileo-127-600-gases-654-gauge-pressure-665-geiger-411-ge",
+      "title": "G Galileo 127 , 600 Gases 654 gauge pressure 665 Geiger 411 geosynchronous 649",
+      "book_position": 134,
+      "page_start": 956,
+      "page_end": 956,
+      "density": 460.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.i-i-beams-580-ideal-banking-279-ideal-fluid-678-impulse-382",
+      "title": "I I-beams 580 ideal banking 279 ideal fluid 678 impulse 382 impulse-momentum theorem",
+      "book_position": 135,
+      "page_start": 956,
+      "page_end": 956,
+      "density": 489.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.j-joule-313",
+      "title": "J joule 313",
+      "book_position": 136,
+      "page_start": 956,
+      "page_end": 956,
+      "density": 200.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.l-laminar-flow-679-law-12-law-of-conservation-of-angular",
+      "title": "L laminar flow 679 law 12 law of conservation of angular",
+      "book_position": 137,
+      "page_start": 956,
+      "page_end": 957,
+      "density": 561.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.o-orbital-period-617-orbital-speed-617-order-of-magnitude-8",
+      "title": "O orbital period 617 orbital speed 617 order of magnitude 8 orthogonal vectors 44 oscillation 710 overdamped 737 overtone 786 overtones 832",
+      "book_position": 138,
+      "page_start": 957,
+      "page_end": 957,
+      "density": 139.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.p-parallel-axis-480-parallel-vectors-44-parallel-axis-theore",
+      "title": "P parallel axis 480 parallel vectors 44 parallel-axis theorem 480 particle acceleration 253 particle equilibrium 251 pascal 669",
+      "book_position": 139,
+      "page_start": 957,
+      "page_end": 957,
+      "density": 2110.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.t-tail-to-head-geometric",
+      "title": "T tail-to-head geometric",
+      "book_position": 140,
+      "page_start": 957,
+      "page_end": 958,
+      "density": 504.5,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.v-vector-components-54-vector-equation-45-vector-product-76",
+      "title": "V vector components 54 vector equation 45 vector product 76",
+      "book_position": 141,
+      "page_start": 958,
+      "page_end": 958,
+      "density": 401.0,
+      "topic": null
+    },
+    {
+      "section_id": "physics1.y-young-s-modulus-576-811",
+      "title": "Y Young’s modulus 576 , 811",
+      "book_position": 142,
+      "page_start": 958,
+      "page_end": 959,
+      "density": 22.5,
+      "topic": null
+    }
+  ]
+}

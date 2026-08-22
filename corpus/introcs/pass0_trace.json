@@ -1,0 +1,25 @@
+{
+  "pass": 0,
+  "prompt_version": "pass0-topics-v1",
+  "section_count": 120,
+  "provenance": "derived_from_text",
+  "degenerate": false,
+  "labeller": "NoOpTopicLabeller",
+  "prompt_chars": 12985,
+  "topics_requested": 120,
+  "topics_accepted": 0,
+  "topics_invented_and_dropped": [],
+  "labelled_fraction": 0.0,
+  "estimated_render_tokens": 1970,
+  "envelope": {
+    "document_id": "introcs",
+    "provenance": "derived_from_text",
+    "skeleton_sections": 120,
+    "findings_total": 0,
+    "findings_shown": 0,
+    "target_section_id": null,
+    "has_directive": false,
+    "is_stripped": false,
+    "rendered_chars": 7898
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "document_id": "axler",
+  "chapter_count": 10,
+  "explored_by_pass1": 9,
+  "excluded_unnumbered": [
+    "axler.unnumbered00"
+  ],
+  "excluded_as_repeat": [],
+  "chapters": [
+    {
+      "chapter_id": "axler.unnumbered00",
+      "number": null,
+      "title": "About the Author v",
+      "book_position": 0,
+      "page_start": 3,
+      "page_end": 3,
+      "char_count": 90,
+      "section_ids": [
+        "axler.about-the-author-v",
+        "axler.preface-for-students-xii",
+        "axler.preface-for-instructors-xiii",
+        "axler.acknowledgments-xvii"
+      ],
+      "is_repeat": false,
+      "page_count": 1,
+      "density": 90.0,
+      "section_count": 4
+    },
+    {
+      "chapter_id": "axler.ch01",
+      "number": 1,
+      "title": "Chapter 1 Vector Spaces 1",
+      "book_position": 1,
+      "page_start": 3,
+      "page_end": 3,
+      "char_count": 225,
+      "section_ids": [
+        "axler.chapter-1-vector-spaces-1"
+      ],
+      "is_repeat": false,
+      "page_count": 1,
+      "density": 225.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "axler.ch02",
+      "number": 2,
+      "title": "Chapter 2 Finite-Dimensional Vector Spaces 27",
+      "book_position": 2,
+      "page_start": 3,
+      "page_end": 4,
+      "char_count": 219,
+      "section_ids": [
+        "axler.chapter-2-finite-dimensional-vector-spaces-27"
+      ],
+      "is_repeat": false,
+      "page_count": 2,
+      "density": 109.5,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "axler.ch03",
+      "number": 3,
+      "title": "Chapter 3 Linear Maps 51",
+      "book_position": 3,
+      "page_start": 4,
+      "page_end": 5,
+      "char_count": 916,
+      "section_ids": [
+        "axler.chapter-3-linear-maps-51"
+      ],
+      "is_repeat": false,
+      "page_count": 2,
+      "density": 458.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "axler.ch04",
+      "number": 4,
+      "title": "Chapter 4 Polynomials 119",
+      "book_position": 4,
+      "page_start": 5,
+      "page_end": 5,
+      "char_count": 184,
+      "section_ids": [
+        "axler.chapter-4-polynomials-119"
+      ],
+      "is_repeat": false,
+      "page_count": 1,
+      "density": 184.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "axler.ch05",
+      "number": 5,
+      "title": "Chapter 5 Eigenvalues and Eigenvectors 132",
+      "book_position": 5,
+      "page_start": 5,
+      "page_end": 5,
+      "char_count": 557,
+      "section_ids": [
+        "axler.chapter-5-eigenvalues-and-eigenvectors-132"
+      ],
+      "is_repeat": false,
+      "page_count": 1,
+      "density": 557.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "axler.ch06",
+      "number": 6,
+      "title": "Chapter 6 Inner Product Spaces 181",
+      "book_position": 6,
+      "page_start": 5,
+      "page_end": 6,
+      "char_count": 402,
+      "section_ids": [
+        "axler.chapter-6-inner-product-spaces-181"
+      ],
+      "is_repeat": false,
+      "page_count": 2,
+      "density": 201.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "axler.ch07",
+      "number": 7,
+      "title": "Chapter 7 Operators on Inner Product Spaces 227",
+      "book_position": 7,
+      "page_start": 6,
+      "page_end": 7,
+      "char_count": 912,
+      "section_ids": [
+        "axler.chapter-7-operators-on-inner-product-spaces-227"
+      ],
+      "is_repeat": false,
+      "page_count": 2,
+      "density": 456.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "axler.ch08",
+      "number": 8,
+      "title": "Chapter 8 Operators on Complex Vector Spaces 297",
+      "book_position": 8,
+      "page_start": 7,
+      "page_end": 7,
+      "char_count": 556,
+      "section_ids": [
+        "axler.chapter-8-operators-on-complex-vector-spaces-297"
+      ],
+      "is_repeat": false,
+      "page_count": 1,
+      "density": 556.0,
+      "section_count": 1
+    },
+    {
+      "chapter_id": "axler.ch09",
+      "number": 9,
+      "title": "Chapter 9 Multilinear Algebra and Determinants 332",
+      "book_position": 9,
+      "page_start": 7,
+      "page_end": 404,
+      "char_count": 730676,
+      "section_ids": [
+        "axler.chapter-9-multilinear-algebra-and-determinants-332",
+        "axler.photo-credits-383",
+        "axler.symbol-index-384",
+        "axler.index-385",
+        "axler.colophon-notes-on-typesetting-390"
+      ],
+      "is_repeat": false,
+      "page_count": 398,
+      "density": 1835.9,
+      "section_count": 5
+    }
+  ]
+}

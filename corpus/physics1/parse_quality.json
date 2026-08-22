@@ -1,0 +1,82 @@
+{
+  "doc_id": "physics1",
+  "source_file": "university-physics-volume-1_-_WEB.pdf",
+  "page_count": 959,
+  "body_font_size": 9.0,
+  "block_counts": {
+    "front_matter": 145,
+    "boilerplate": 1072,
+    "body": 11207,
+    "caption": 795,
+    "heading": 1081
+  },
+  "role_counts": {
+    "learning_objectives": 99,
+    "check_understanding": 170,
+    "key_terms": 17,
+    "summary": 19,
+    "review_questions": 34
+  },
+  "heading_level_counts": {
+    "level_3": 143,
+    "level_4": 922,
+    "level_1": 9,
+    "level_2": 7
+  },
+  "extractable_chars": 2087384,
+  "chars_after_cleaning": 2032210,
+  "boilerplate_chars_removed": 29643,
+  "low_text_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    108,
+    204,
+    260,
+    322,
+    390,
+    610,
+    720,
+    762,
+    818,
+    878,
+    886,
+    890,
+    891,
+    892,
+    894,
+    952,
+    954,
+    959
+  ],
+  "pages_with_no_heading": 341,
+  "raw_text_lines": 41581,
+  "math_loss_signals": {
+    "orphan_punctuation": 4720,
+    "line_ends_in_operator": 144,
+    "line_ends_in_connective": 117,
+    "lone_symbol_line": 688
+  },
+  "math_loss_rate_per_1k_lines": 113.5,
+  "content_start_page": 17,
+  "front_matter_blocks": 145,
+  "outline_entries": 198,
+  "outline_max_depth": 2,
+  "pages_outside_outline_coverage": 0,
+  "warnings": [
+    "Orphan-punctuation rate 113.5/1k lines exceeds the 50/1k calibration threshold. Inline formulae are being dropped by text extraction. Do not use this document for the primary quality comparison: the loss is content, not formatting, and it will masquerade as a difference between systems."
+  ]
+}

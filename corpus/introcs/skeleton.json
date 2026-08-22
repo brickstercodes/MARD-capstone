@@ -1,0 +1,1089 @@
+{
+  "document_id": "introcs",
+  "provenance": "derived_from_text",
+  "section_count": 120,
+  "labelled_fraction": 0.0,
+  "estimated_render_tokens": 1970,
+  "sections": [
+    {
+      "section_id": "introcs.chapter-outline",
+      "title": "Chapter Outline",
+      "book_position": 0,
+      "page_start": 19,
+      "page_end": 19,
+      "density": 126.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction",
+      "title": "Introduction",
+      "book_position": 1,
+      "page_start": 19,
+      "page_end": 19,
+      "density": 2073.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-to-computer-science-1",
+      "title": "Introduction to Computer Science 1",
+      "book_position": 2,
+      "page_start": 19,
+      "page_end": 20,
+      "density": 423.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.1-1-computer-science",
+      "title": "1.1 Computer Science",
+      "book_position": 3,
+      "page_start": 20,
+      "page_end": 30,
+      "density": 3141.6,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.1-2-computer-science-across-the-disciplines",
+      "title": "1.2 Computer Science across the Disciplines",
+      "book_position": 4,
+      "page_start": 30,
+      "page_end": 35,
+      "density": 3003.2,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.1-3-computer-science-and-the-future-of-society",
+      "title": "1.3 Computer Science and the Future of Society",
+      "book_position": 5,
+      "page_start": 35,
+      "page_end": 42,
+      "density": 2886.5,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review",
+      "title": "Chapter Review",
+      "book_position": 6,
+      "page_start": 43,
+      "page_end": 49,
+      "density": 2383.6,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-2",
+      "title": "Chapter Outline",
+      "book_position": 7,
+      "page_start": 49,
+      "page_end": 49,
+      "density": 152.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-2",
+      "title": "Introduction",
+      "book_position": 8,
+      "page_start": 49,
+      "page_end": 49,
+      "density": 1911.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.computational-thinking-and-design-reusability-2",
+      "title": "Computational Thinking and Design Reusability 2",
+      "book_position": 9,
+      "page_start": 49,
+      "page_end": 50,
+      "density": 619.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.2-1-computational-thinking",
+      "title": "2.1 Computational Thinking",
+      "book_position": 10,
+      "page_start": 50,
+      "page_end": 61,
+      "density": 2518.5,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.2-2-architecting-solutions-with-adaptive-design-reuse-in-min",
+      "title": "2.2 Architecting Solutions with Adaptive Design Reuse in Mind",
+      "book_position": 11,
+      "page_start": 62,
+      "page_end": 81,
+      "density": 2592.9,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.2-3-evolving-architectures-into-useable-products",
+      "title": "2.3 Evolving Architectures into Useable Products",
+      "book_position": 12,
+      "page_start": 81,
+      "page_end": 90,
+      "density": 2061.1,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-2",
+      "title": "Chapter Review",
+      "book_position": 13,
+      "page_start": 91,
+      "page_end": 99,
+      "density": 2769.9,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-3",
+      "title": "Chapter Outline",
+      "book_position": 14,
+      "page_start": 99,
+      "page_end": 99,
+      "density": 223.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-3",
+      "title": "Introduction",
+      "book_position": 15,
+      "page_start": 99,
+      "page_end": 99,
+      "density": 693.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.3-1-introduction-to-data-structures-and-algorithms",
+      "title": "3.1 Introduction to Data Structures and Algorithms",
+      "book_position": 16,
+      "page_start": 99,
+      "page_end": 99,
+      "density": 311.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.data-structures-and-algorithms-3",
+      "title": "Data Structures and Algorithms 3",
+      "book_position": 17,
+      "page_start": 99,
+      "page_end": 107,
+      "density": 3015.7,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.3-2-algorithm-design-and-discovery",
+      "title": "3.2 Algorithm Design and Discovery",
+      "book_position": 18,
+      "page_start": 107,
+      "page_end": 114,
+      "density": 2954.2,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.3-3-formal-properties-of-algorithms",
+      "title": "3.3 Formal Properties of Algorithms",
+      "book_position": 19,
+      "page_start": 114,
+      "page_end": 120,
+      "density": 2535.1,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.3-4-algorithmic-paradigms",
+      "title": "3.4 Algorithmic Paradigms",
+      "book_position": 20,
+      "page_start": 120,
+      "page_end": 126,
+      "density": 2772.1,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.3-5-sample-algorithms-by-problem",
+      "title": "3.5 Sample Algorithms by Problem",
+      "book_position": 21,
+      "page_start": 126,
+      "page_end": 133,
+      "density": 2425.2,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.3-6-computer-science-theory",
+      "title": "3.6 Computer Science Theory",
+      "book_position": 22,
+      "page_start": 133,
+      "page_end": 137,
+      "density": 2841.6,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-3",
+      "title": "Chapter Review",
+      "book_position": 23,
+      "page_start": 138,
+      "page_end": 153,
+      "density": 2892.6,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-4",
+      "title": "Chapter Outline",
+      "book_position": 24,
+      "page_start": 153,
+      "page_end": 153,
+      "density": 135.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-4",
+      "title": "Introduction",
+      "book_position": 25,
+      "page_start": 153,
+      "page_end": 153,
+      "density": 1750.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.linguistic-realization-of-algorithms-low-level-programming-l",
+      "title": "Linguistic Realization of Algorithms: Low-Level Programming Languages",
+      "book_position": 26,
+      "page_start": 153,
+      "page_end": 153,
+      "density": 69.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.4",
+      "title": "4",
+      "book_position": 27,
+      "page_start": 153,
+      "page_end": 154,
+      "density": 425.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.4-1-models-of-computation",
+      "title": "4.1 Models of Computation",
+      "book_position": 28,
+      "page_start": 154,
+      "page_end": 166,
+      "density": 2325.8,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.4-2-building-c-programs",
+      "title": "4.2 Building C Programs",
+      "book_position": 29,
+      "page_start": 166,
+      "page_end": 183,
+      "density": 2006.9,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.4-3-parallel-programming-models",
+      "title": "4.3 Parallel Programming Models",
+      "book_position": 30,
+      "page_start": 183,
+      "page_end": 188,
+      "density": 2476.5,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.4-4-applications-of-programming-models",
+      "title": "4.4 Applications of Programming Models",
+      "book_position": 31,
+      "page_start": 189,
+      "page_end": 191,
+      "density": 2318.7,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-4",
+      "title": "Chapter Review",
+      "book_position": 32,
+      "page_start": 192,
+      "page_end": 203,
+      "density": 2496.6,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-5",
+      "title": "Chapter Outline",
+      "book_position": 33,
+      "page_start": 203,
+      "page_end": 203,
+      "density": 218.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-5",
+      "title": "Introduction",
+      "book_position": 34,
+      "page_start": 203,
+      "page_end": 203,
+      "density": 1548.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.hardware-realizations-of-algorithms-computer-systems-design",
+      "title": "Hardware Realizations of Algorithms: Computer Systems Design",
+      "book_position": 35,
+      "page_start": 203,
+      "page_end": 203,
+      "density": 60.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.5",
+      "title": "5",
+      "book_position": 36,
+      "page_start": 203,
+      "page_end": 204,
+      "density": 396.5,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.5-1-computer-systems-organization",
+      "title": "5.1 Computer Systems Organization",
+      "book_position": 37,
+      "page_start": 204,
+      "page_end": 208,
+      "density": 2471.4,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.5-2-computer-levels-of-abstraction",
+      "title": "5.2 Computer Levels of Abstraction",
+      "book_position": 38,
+      "page_start": 208,
+      "page_end": 215,
+      "density": 2554.2,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.5-3-machine-level-information-representation",
+      "title": "5.3 Machine-Level Information Representation",
+      "book_position": 39,
+      "page_start": 215,
+      "page_end": 220,
+      "density": 3093.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.5-4-machine-level-program-representation",
+      "title": "5.4 Machine-Level Program Representation",
+      "book_position": 40,
+      "page_start": 221,
+      "page_end": 227,
+      "density": 2957.9,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.5-5-memory-hierarchy",
+      "title": "5.5 Memory Hierarchy",
+      "book_position": 41,
+      "page_start": 227,
+      "page_end": 235,
+      "density": 2322.9,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.5-6-processor-architectures",
+      "title": "5.6 Processor Architectures",
+      "book_position": 42,
+      "page_start": 236,
+      "page_end": 239,
+      "density": 2372.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-5",
+      "title": "Chapter Review",
+      "book_position": 43,
+      "page_start": 240,
+      "page_end": 249,
+      "density": 2336.1,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-6",
+      "title": "Chapter Outline",
+      "book_position": 44,
+      "page_start": 249,
+      "page_end": 249,
+      "density": 173.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-6",
+      "title": "Introduction",
+      "book_position": 45,
+      "page_start": 249,
+      "page_end": 249,
+      "density": 1827.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.infrastructure-abstraction-layer-operating-systems-6",
+      "title": "Infrastructure Abstraction Layer: Operating Systems 6",
+      "book_position": 46,
+      "page_start": 249,
+      "page_end": 250,
+      "density": 62.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.6-1-what-is-an-operating-system",
+      "title": "6.1 What Is an Operating System?",
+      "book_position": 47,
+      "page_start": 250,
+      "page_end": 256,
+      "density": 2954.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.6-2-fundamental-os-concepts",
+      "title": "6.2 Fundamental OS Concepts",
+      "book_position": 48,
+      "page_start": 256,
+      "page_end": 267,
+      "density": 2405.9,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.6-3-processes-and-concurrency",
+      "title": "6.3 Processes and Concurrency",
+      "book_position": 49,
+      "page_start": 267,
+      "page_end": 277,
+      "density": 2769.2,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.6-4-memory-management",
+      "title": "6.4 Memory Management",
+      "book_position": 50,
+      "page_start": 277,
+      "page_end": 284,
+      "density": 2333.9,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.6-5-file-systems",
+      "title": "6.5 File Systems",
+      "book_position": 51,
+      "page_start": 284,
+      "page_end": 289,
+      "density": 2690.7,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.6-6-reliability-and-security",
+      "title": "6.6 Reliability and Security",
+      "book_position": 52,
+      "page_start": 289,
+      "page_end": 294,
+      "density": 3323.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-6",
+      "title": "Chapter Review",
+      "book_position": 53,
+      "page_start": 295,
+      "page_end": 307,
+      "density": 2970.4,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-7",
+      "title": "Chapter Outline",
+      "book_position": 54,
+      "page_start": 307,
+      "page_end": 307,
+      "density": 162.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-7",
+      "title": "Introduction",
+      "book_position": 55,
+      "page_start": 307,
+      "page_end": 307,
+      "density": 1297.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.high-level-programming-languages-7",
+      "title": "High-Level Programming Languages 7",
+      "book_position": 56,
+      "page_start": 307,
+      "page_end": 308,
+      "density": 345.5,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.7-1-programming-language-foundations",
+      "title": "7.1 Programming Language Foundations",
+      "book_position": 57,
+      "page_start": 308,
+      "page_end": 320,
+      "density": 2310.4,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.7-2-programming-language-constructs",
+      "title": "7.2 Programming Language Constructs",
+      "book_position": 58,
+      "page_start": 321,
+      "page_end": 341,
+      "density": 2241.6,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.7-3-alternative-programming-models",
+      "title": "7.3 Alternative Programming Models",
+      "book_position": 59,
+      "page_start": 341,
+      "page_end": 349,
+      "density": 2719.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.7-4-programming-language-implementation",
+      "title": "7.4 Programming Language Implementation",
+      "book_position": 60,
+      "page_start": 350,
+      "page_end": 356,
+      "density": 2678.9,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-7",
+      "title": "Chapter Review",
+      "book_position": 61,
+      "page_start": 357,
+      "page_end": 369,
+      "density": 2586.7,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-8",
+      "title": "Chapter Outline",
+      "book_position": 62,
+      "page_start": 369,
+      "page_end": 369,
+      "density": 316.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-8",
+      "title": "Introduction",
+      "book_position": 63,
+      "page_start": 369,
+      "page_end": 369,
+      "density": 1499.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.data-management-8",
+      "title": "Data Management 8",
+      "book_position": 64,
+      "page_start": 369,
+      "page_end": 370,
+      "density": 748.5,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.8-1-data-management-focus",
+      "title": "8.1 Data Management Focus",
+      "book_position": 65,
+      "page_start": 370,
+      "page_end": 376,
+      "density": 2743.1,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.8-2-data-management-systems",
+      "title": "8.2 Data Management Systems",
+      "book_position": 66,
+      "page_start": 376,
+      "page_end": 382,
+      "density": 2224.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.8-3-relational-database-management-systems",
+      "title": "8.3 Relational Database Management Systems",
+      "book_position": 67,
+      "page_start": 382,
+      "page_end": 399,
+      "density": 2665.8,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.8-4-nonrelational-database-management-systems",
+      "title": "8.4 Nonrelational Database Management Systems",
+      "book_position": 68,
+      "page_start": 400,
+      "page_end": 407,
+      "density": 2650.8,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.8-5-data-warehousing-data-lakes-and-business-intelligence",
+      "title": "8.5 Data Warehousing, Data Lakes, and Business Intelligence",
+      "book_position": 69,
+      "page_start": 407,
+      "page_end": 412,
+      "density": 2234.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.8-6-data-management-for-shallow-and-deep-learning-applicatio",
+      "title": "8.6 Data Management for Shallow and Deep Learning Applications",
+      "book_position": 70,
+      "page_start": 412,
+      "page_end": 422,
+      "density": 2910.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.8-7-informatics-and-data-management",
+      "title": "8.7 Informatics and Data Management",
+      "book_position": 71,
+      "page_start": 422,
+      "page_end": 423,
+      "density": 1809.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-8",
+      "title": "Chapter Review",
+      "book_position": 72,
+      "page_start": 424,
+      "page_end": 439,
+      "density": 2983.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-9",
+      "title": "Chapter Outline",
+      "book_position": 73,
+      "page_start": 439,
+      "page_end": 439,
+      "density": 104.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-9",
+      "title": "Introduction",
+      "book_position": 74,
+      "page_start": 439,
+      "page_end": 439,
+      "density": 1843.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.software-engineering-9",
+      "title": "Software Engineering 9",
+      "book_position": 75,
+      "page_start": 439,
+      "page_end": 440,
+      "density": 1982.5,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.9-1-software-engineering-fundamentals",
+      "title": "9.1 Software Engineering Fundamentals",
+      "book_position": 76,
+      "page_start": 440,
+      "page_end": 450,
+      "density": 3062.8,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.9-2-software-engineering-process",
+      "title": "9.2 Software Engineering Process",
+      "book_position": 77,
+      "page_start": 450,
+      "page_end": 478,
+      "density": 3228.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.9-3-special-topics",
+      "title": "9.3 Special Topics",
+      "book_position": 78,
+      "page_start": 478,
+      "page_end": 499,
+      "density": 2535.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-9",
+      "title": "Chapter Review",
+      "book_position": 79,
+      "page_start": 500,
+      "page_end": 511,
+      "density": 2953.6,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-10",
+      "title": "Chapter Outline",
+      "book_position": 80,
+      "page_start": 511,
+      "page_end": 511,
+      "density": 128.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-10",
+      "title": "Introduction",
+      "book_position": 81,
+      "page_start": 511,
+      "page_end": 511,
+      "density": 406.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.enterprise-and-solution-architectures-management-10",
+      "title": "Enterprise and Solution Architectures Management 10",
+      "book_position": 82,
+      "page_start": 511,
+      "page_end": 512,
+      "density": 897.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.10-1-patterns-management",
+      "title": "10.1 Patterns Management",
+      "book_position": 83,
+      "page_start": 512,
+      "page_end": 519,
+      "density": 2024.8,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.10-2-enterprise-architecture-management-frameworks",
+      "title": "10.2 Enterprise Architecture Management Frameworks",
+      "book_position": 84,
+      "page_start": 520,
+      "page_end": 554,
+      "density": 1619.4,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.10-3-solution-architecture-management",
+      "title": "10.3 Solution Architecture Management",
+      "book_position": 85,
+      "page_start": 555,
+      "page_end": 559,
+      "density": 2708.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-10",
+      "title": "Chapter Review",
+      "book_position": 86,
+      "page_start": 560,
+      "page_end": 569,
+      "density": 2375.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-11",
+      "title": "Chapter Outline",
+      "book_position": 87,
+      "page_start": 569,
+      "page_end": 569,
+      "density": 346.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-11",
+      "title": "Introduction",
+      "book_position": 88,
+      "page_start": 569,
+      "page_end": 569,
+      "density": 1331.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.web-applications-development-11",
+      "title": "Web Applications Development 11",
+      "book_position": 89,
+      "page_start": 569,
+      "page_end": 569,
+      "density": 31.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.11-1-modern-web-applications-architectures",
+      "title": "11.1 Modern Web Applications Architectures",
+      "book_position": 90,
+      "page_start": 570,
+      "page_end": 587,
+      "density": 2592.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.11-2-sample-responsive-wad-with-bootstrap-and-django",
+      "title": "11.2 Sample Responsive WAD with Bootstrap and Django",
+      "book_position": 91,
+      "page_start": 588,
+      "page_end": 614,
+      "density": 1125.4,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.11-3-sample-responsive-wad-with-bootstrap-react-and-node",
+      "title": "11.3 Sample Responsive WAD with Bootstrap/React and Node",
+      "book_position": 92,
+      "page_start": 614,
+      "page_end": 629,
+      "density": 1439.6,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.11-4-sample-responsive-wad-with-bootstrap-react-and-django",
+      "title": "11.4 Sample Responsive WAD with Bootstrap/React and Django",
+      "book_position": 93,
+      "page_start": 629,
+      "page_end": 634,
+      "density": 1210.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.11-5-sample-native-wad-with-react-native-and-node-or-django",
+      "title": "11.5 Sample Native WAD with React Native and Node or Django",
+      "book_position": 94,
+      "page_start": 634,
+      "page_end": 647,
+      "density": 948.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.11-6-sample-ethereum-blockchain-web-2-0-web-3-0-application",
+      "title": "11.6 Sample Ethereum Blockchain Web 2.0/Web 3.0 Application",
+      "book_position": 95,
+      "page_start": 647,
+      "page_end": 659,
+      "density": 1267.7,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-11",
+      "title": "Chapter Review",
+      "book_position": 96,
+      "page_start": 660,
+      "page_end": 669,
+      "density": 2384.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-12",
+      "title": "Chapter Outline",
+      "book_position": 97,
+      "page_start": 669,
+      "page_end": 669,
+      "density": 200.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-12",
+      "title": "Introduction",
+      "book_position": 98,
+      "page_start": 669,
+      "page_end": 669,
+      "density": 1998.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.cloud-native-applications-development-12",
+      "title": "Cloud-Native Applications Development 12",
+      "book_position": 99,
+      "page_start": 669,
+      "page_end": 670,
+      "density": 215.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.12-1-introduction-to-cloud-native-applications",
+      "title": "12.1 Introduction to Cloud-Native Applications",
+      "book_position": 100,
+      "page_start": 670,
+      "page_end": 694,
+      "density": 2396.9,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.12-2-cloud-based-and-cloud-native-applications-deployment-te",
+      "title": "12.2 Cloud-Based and Cloud-Native Applications Deployment Technologies",
+      "book_position": 101,
+      "page_start": 694,
+      "page_end": 715,
+      "density": 2545.8,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.12-3-example-paas-and-faas-deployments-of-cloud-native-appli",
+      "title": "12.3 Example PaaS and FaaS Deployments of Cloud-Native Applications",
+      "book_position": 102,
+      "page_start": 715,
+      "page_end": 753,
+      "density": 2010.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-12",
+      "title": "Chapter Review",
+      "book_position": 103,
+      "page_start": 754,
+      "page_end": 765,
+      "density": 2657.7,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-13",
+      "title": "Chapter Outline",
+      "book_position": 104,
+      "page_start": 765,
+      "page_end": 765,
+      "density": 213.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-13",
+      "title": "Introduction",
+      "book_position": 105,
+      "page_start": 765,
+      "page_end": 765,
+      "density": 1641.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.hybrid-multicloud-digital-solutions-development-13",
+      "title": "Hybrid Multicloud Digital Solutions Development 13",
+      "book_position": 106,
+      "page_start": 765,
+      "page_end": 766,
+      "density": 1235.5,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.13-1-hybrid-multicloud-solutions-and-cloud-mashups",
+      "title": "13.1 Hybrid Multicloud Solutions and Cloud Mashups",
+      "book_position": 107,
+      "page_start": 766,
+      "page_end": 770,
+      "density": 3084.4,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.13-2-big-cloud-iaas-mainstream-capabilities",
+      "title": "13.2 Big Cloud IaaS Mainstream Capabilities",
+      "book_position": 108,
+      "page_start": 770,
+      "page_end": 778,
+      "density": 2504.6,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.13-3-big-cloud-paas-mainstream-capabilities",
+      "title": "13.3 Big Cloud PaaS Mainstream Capabilities",
+      "book_position": 109,
+      "page_start": 778,
+      "page_end": 794,
+      "density": 3197.1,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.13-4-towards-intelligent-autonomous-networked-super-systems",
+      "title": "13.4 Towards Intelligent Autonomous Networked Super Systems",
+      "book_position": 110,
+      "page_start": 794,
+      "page_end": 808,
+      "density": 2929.2,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-13",
+      "title": "Chapter Review",
+      "book_position": 111,
+      "page_start": 809,
+      "page_end": 821,
+      "density": 2584.8,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-outline-14",
+      "title": "Chapter Outline",
+      "book_position": 112,
+      "page_start": 821,
+      "page_end": 821,
+      "density": 128.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-14",
+      "title": "Introduction",
+      "book_position": 113,
+      "page_start": 821,
+      "page_end": 821,
+      "density": 1311.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.cyber-resources-qualities-and-cyber-computing-governance-14",
+      "title": "Cyber Resources Qualities and Cyber Computing Governance 14",
+      "book_position": 114,
+      "page_start": 821,
+      "page_end": 821,
+      "density": 59.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.14-1-cyber-resources-management-frameworks",
+      "title": "14.1 Cyber Resources Management Frameworks",
+      "book_position": 115,
+      "page_start": 822,
+      "page_end": 843,
+      "density": 3628.0,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.14-2-cybersecurity-deep-dive",
+      "title": "14.2 Cybersecurity Deep Dive",
+      "book_position": 116,
+      "page_start": 843,
+      "page_end": 903,
+      "density": 2784.8,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.14-3-governing-the-use-of-cyber-resources",
+      "title": "14.3 Governing the Use of Cyber Resources",
+      "book_position": 117,
+      "page_start": 903,
+      "page_end": 909,
+      "density": 2376.3,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.chapter-review-14",
+      "title": "Chapter Review",
+      "book_position": 118,
+      "page_start": 910,
+      "page_end": 921,
+      "density": 2457.2,
+      "topic": null
+    },
+    {
+      "section_id": "introcs.introduction-to-data-communications-and-networks",
+      "title": "Introduction to Data Communications and Networks",
+      "book_position": 119,
+      "page_start": 921,
+      "page_end": 939,
+      "density": 2752.1,
+      "topic": null
+    }
+  ]
+}

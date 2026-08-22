@@ -1,0 +1,299 @@
+{
+  "document_id": "introcs",
+  "chapters_explored": 14,
+  "concepts_accepted": 0,
+  "edges_accepted": 0,
+  "final_envelope": {
+    "document_id": "introcs",
+    "provenance": "derived_from_text",
+    "skeleton_sections": 120,
+    "findings_total": 14,
+    "findings_shown": 12,
+    "target_section_id": null,
+    "has_directive": false,
+    "is_stripped": false,
+    "rendered_chars": 8850
+  },
+  "chapters": [
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch01",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 9699,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 0,
+        "findings_shown": 0,
+        "target_section_id": "introcs.ch01",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8139
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch02",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 9733,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 1,
+        "findings_shown": 1,
+        "target_section_id": "introcs.ch02",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8222
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch03",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10262,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 2,
+        "findings_shown": 2,
+        "target_section_id": "introcs.ch03",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8309
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch04",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10012,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 3,
+        "findings_shown": 3,
+        "target_section_id": "introcs.ch04",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8372
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch05",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10253,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 4,
+        "findings_shown": 4,
+        "target_section_id": "introcs.ch05",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8444
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch06",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10195,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 5,
+        "findings_shown": 5,
+        "target_section_id": "introcs.ch06",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8515
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch07",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10194,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 6,
+        "findings_shown": 6,
+        "target_section_id": "introcs.ch07",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8590
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch08",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10598,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 7,
+        "findings_shown": 7,
+        "target_section_id": "introcs.ch08",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8654
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch09",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10277,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 8,
+        "findings_shown": 8,
+        "target_section_id": "introcs.ch09",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8730
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch10",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10336,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 9,
+        "findings_shown": 9,
+        "target_section_id": "introcs.ch10",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8793
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch11",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10926,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 10,
+        "findings_shown": 10,
+        "target_section_id": "introcs.ch11",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8874
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch12",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10689,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 11,
+        "findings_shown": 11,
+        "target_section_id": "introcs.ch12",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 8959
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch13",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10855,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 12,
+        "findings_shown": 12,
+        "target_section_id": "introcs.ch13",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9048
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    },
+    {
+      "pass": 1,
+      "chapter_id": "introcs.ch14",
+      "prompt_version": "pass1-concepts-v1",
+      "prompt_chars": 10602,
+      "envelope": {
+        "document_id": "introcs",
+        "provenance": "derived_from_text",
+        "skeleton_sections": 120,
+        "findings_total": 13,
+        "findings_shown": 12,
+        "target_section_id": "introcs.ch14",
+        "has_directive": true,
+        "is_stripped": false,
+        "rendered_chars": 9095
+      },
+      "concepts_accepted": 0,
+      "edges_accepted": 0,
+      "rejected": []
+    }
+  ]
+}

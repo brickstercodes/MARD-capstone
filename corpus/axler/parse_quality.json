@@ -1,0 +1,39 @@
+{
+  "doc_id": "axler",
+  "source_file": "LADR4e.pdf",
+  "page_count": 404,
+  "body_font_size": 10.5,
+  "block_counts": {
+    "body": 8819,
+    "boilerplate": 607,
+    "heading": 17,
+    "caption": 1
+  },
+  "role_counts": {},
+  "heading_level_counts": {
+    "level_1": 17
+  },
+  "extractable_chars": 770296,
+  "chars_after_cleaning": 737844,
+  "boilerplate_chars_removed": 32452,
+  "low_text_pages": [],
+  "pages_with_no_heading": 398,
+  "raw_text_lines": 19990,
+  "math_loss_signals": {
+    "orphan_punctuation": 1756,
+    "line_ends_in_operator": 402,
+    "line_ends_in_connective": 0,
+    "lone_symbol_line": 681
+  },
+  "math_loss_rate_per_1k_lines": 87.8,
+  "content_start_page": 1,
+  "front_matter_blocks": 0,
+  "outline_entries": 168,
+  "outline_max_depth": 3,
+  "pages_outside_outline_coverage": 0,
+  "warnings": [
+    "Orphan-punctuation rate 87.8/1k lines exceeds the 50/1k calibration threshold. Inline formulae are being dropped by text extraction. Do not use this document for the primary quality comparison: the loss is content, not formatting, and it will masquerade as a difference between systems.",
+    "No learning-objective or key-terms blocks found. docs/30-MEASUREMENT_PROTOCOL.md section 2 scores task quality against document-native ground truth of exactly this kind, so this document cannot carry the primary task-score measurement.",
+    "Front matter not detected, so the printed table of contents (if any) is still in document.txt. A model reading it receives the publisher's chapter list without exploring — see ingest/outline.first_content_page."
+  ]
+}

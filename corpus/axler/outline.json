@@ -1,0 +1,1015 @@
+{
+  "doc_id": "axler",
+  "provenance": "pdf_bookmark_outline",
+  "warning": "Publisher metadata, not a derived skeleton. Feeding this to Pass 0 would report the publisher's table of contents as MARD's output. Track 1 owns that decision; see ingest/outline.py.",
+  "entries": [
+    {
+      "level": 1,
+      "title": "Linear Algebra Done Right",
+      "start_page": 1,
+      "end_page": 1
+    },
+    {
+      "level": 1,
+      "title": "About the Author",
+      "start_page": 2,
+      "end_page": 2
+    },
+    {
+      "level": 1,
+      "title": "Contents",
+      "start_page": 3,
+      "end_page": 8
+    },
+    {
+      "level": 1,
+      "title": "Preface for Students",
+      "start_page": 9,
+      "end_page": 9
+    },
+    {
+      "level": 1,
+      "title": "Preface for Instructors",
+      "start_page": 10,
+      "end_page": 13
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "start_page": 14,
+      "end_page": 14
+    },
+    {
+      "level": 1,
+      "title": "Vector Spaces",
+      "start_page": 15,
+      "end_page": 40
+    },
+    {
+      "level": 2,
+      "title": "R^n and C^n",
+      "start_page": 16,
+      "end_page": 25
+    },
+    {
+      "level": 3,
+      "title": "Complex Numbers",
+      "start_page": 16,
+      "end_page": 18
+    },
+    {
+      "level": 3,
+      "title": "Lists",
+      "start_page": 19,
+      "end_page": 19
+    },
+    {
+      "level": 3,
+      "title": "F^n",
+      "start_page": 20,
+      "end_page": 23
+    },
+    {
+      "level": 3,
+      "title": "Digression on Fields",
+      "start_page": 24,
+      "end_page": 24
+    },
+    {
+      "level": 3,
+      "title": "Exercises 1A",
+      "start_page": 24,
+      "end_page": 25
+    },
+    {
+      "level": 2,
+      "title": "Definition of Vector Space",
+      "start_page": 26,
+      "end_page": 31
+    },
+    {
+      "level": 3,
+      "title": "Exercises 1B",
+      "start_page": 30,
+      "end_page": 31
+    },
+    {
+      "level": 2,
+      "title": "Subspaces",
+      "start_page": 32,
+      "end_page": 40
+    },
+    {
+      "level": 3,
+      "title": "Sums of Subspaces",
+      "start_page": 33,
+      "end_page": 34
+    },
+    {
+      "level": 3,
+      "title": "Direct Sums",
+      "start_page": 35,
+      "end_page": 37
+    },
+    {
+      "level": 3,
+      "title": "Exercises 1C",
+      "start_page": 38,
+      "end_page": 40
+    },
+    {
+      "level": 1,
+      "title": "Finite-Dimensional Vector Spaces",
+      "start_page": 41,
+      "end_page": 64
+    },
+    {
+      "level": 2,
+      "title": "Span and Linear Independence",
+      "start_page": 42,
+      "end_page": 52
+    },
+    {
+      "level": 3,
+      "title": "Linear Combinations and Span",
+      "start_page": 42,
+      "end_page": 44
+    },
+    {
+      "level": 3,
+      "title": "Linear Independence",
+      "start_page": 45,
+      "end_page": 50
+    },
+    {
+      "level": 3,
+      "title": "Exercises 2A",
+      "start_page": 51,
+      "end_page": 52
+    },
+    {
+      "level": 2,
+      "title": "Bases",
+      "start_page": 53,
+      "end_page": 57
+    },
+    {
+      "level": 3,
+      "title": "Exercises 2B",
+      "start_page": 56,
+      "end_page": 57
+    },
+    {
+      "level": 2,
+      "title": "Dimension",
+      "start_page": 58,
+      "end_page": 64
+    },
+    {
+      "level": 3,
+      "title": "Exercises 2C",
+      "start_page": 62,
+      "end_page": 64
+    },
+    {
+      "level": 1,
+      "title": "Linear Maps",
+      "start_page": 65,
+      "end_page": 132
+    },
+    {
+      "level": 2,
+      "title": "Vector Space of Linear Maps",
+      "start_page": 66,
+      "end_page": 72
+    },
+    {
+      "level": 3,
+      "title": "Definition and Examples of Linear Maps",
+      "start_page": 66,
+      "end_page": 68
+    },
+    {
+      "level": 3,
+      "title": "Algebraic Operations on L(V, W)",
+      "start_page": 69,
+      "end_page": 70
+    },
+    {
+      "level": 3,
+      "title": "Exercises 3A",
+      "start_page": 71,
+      "end_page": 72
+    },
+    {
+      "level": 2,
+      "title": "Null Spaces and Ranges",
+      "start_page": 73,
+      "end_page": 82
+    },
+    {
+      "level": 3,
+      "title": "Null Space and Injectivity",
+      "start_page": 73,
+      "end_page": 74
+    },
+    {
+      "level": 3,
+      "title": "Range and Surjectivity",
+      "start_page": 75,
+      "end_page": 75
+    },
+    {
+      "level": 3,
+      "title": "Fundamental Theorem of Linear Maps",
+      "start_page": 76,
+      "end_page": 79
+    },
+    {
+      "level": 3,
+      "title": "Exercises 3B",
+      "start_page": 80,
+      "end_page": 82
+    },
+    {
+      "level": 2,
+      "title": "Matrices",
+      "start_page": 83,
+      "end_page": 95
+    },
+    {
+      "level": 3,
+      "title": "Representing a Linear Map by a Matrix",
+      "start_page": 83,
+      "end_page": 84
+    },
+    {
+      "level": 3,
+      "title": "Addition and Scalar Multiplication of Matrices",
+      "start_page": 85,
+      "end_page": 85
+    },
+    {
+      "level": 3,
+      "title": "Matrix Multiplication",
+      "start_page": 86,
+      "end_page": 90
+    },
+    {
+      "level": 3,
+      "title": "Column–Row Factorization and Rank of a Matrix",
+      "start_page": 91,
+      "end_page": 92
+    },
+    {
+      "level": 3,
+      "title": "Exercises 3C",
+      "start_page": 93,
+      "end_page": 95
+    },
+    {
+      "level": 2,
+      "title": "Invertibility and Isomorphisms",
+      "start_page": 96,
+      "end_page": 109
+    },
+    {
+      "level": 3,
+      "title": "Invertible Linear Maps",
+      "start_page": 96,
+      "end_page": 99
+    },
+    {
+      "level": 3,
+      "title": "Isomorphic Vector Spaces",
+      "start_page": 100,
+      "end_page": 101
+    },
+    {
+      "level": 3,
+      "title": "Linear Maps Thought of as Matrix Multiplication",
+      "start_page": 102,
+      "end_page": 103
+    },
+    {
+      "level": 3,
+      "title": "Change of Basis",
+      "start_page": 104,
+      "end_page": 106
+    },
+    {
+      "level": 3,
+      "title": "Exercises 3D",
+      "start_page": 107,
+      "end_page": 109
+    },
+    {
+      "level": 2,
+      "title": "Products and Quotients of Vector Spaces",
+      "start_page": 110,
+      "end_page": 118
+    },
+    {
+      "level": 3,
+      "title": "Products of Vector Spaces",
+      "start_page": 110,
+      "end_page": 111
+    },
+    {
+      "level": 3,
+      "title": "Quotient Spaces",
+      "start_page": 112,
+      "end_page": 116
+    },
+    {
+      "level": 3,
+      "title": "Exercises 3E",
+      "start_page": 117,
+      "end_page": 118
+    },
+    {
+      "level": 2,
+      "title": "Duality",
+      "start_page": 119,
+      "end_page": 132
+    },
+    {
+      "level": 3,
+      "title": "Dual Space and Dual Map",
+      "start_page": 119,
+      "end_page": 122
+    },
+    {
+      "level": 3,
+      "title": "Null Space and Range of Dual of Linear Map",
+      "start_page": 123,
+      "end_page": 126
+    },
+    {
+      "level": 3,
+      "title": "Matrix of Dual of Linear Map",
+      "start_page": 127,
+      "end_page": 128
+    },
+    {
+      "level": 3,
+      "title": "Exercises 3F",
+      "start_page": 129,
+      "end_page": 132
+    },
+    {
+      "level": 1,
+      "title": "Polynomials",
+      "start_page": 133,
+      "end_page": 145
+    },
+    {
+      "level": 2,
+      "title": "Zeros of Polynomials",
+      "start_page": 136,
+      "end_page": 136
+    },
+    {
+      "level": 2,
+      "title": "Division Algorithm for Polynomials",
+      "start_page": 137,
+      "end_page": 137
+    },
+    {
+      "level": 2,
+      "title": "Factorization of Polynomials over C",
+      "start_page": 138,
+      "end_page": 140
+    },
+    {
+      "level": 2,
+      "title": "Factorization of Polynomials over R",
+      "start_page": 141,
+      "end_page": 142
+    },
+    {
+      "level": 2,
+      "title": "Exercises 4",
+      "start_page": 143,
+      "end_page": 145
+    },
+    {
+      "level": 1,
+      "title": "Eigenvalues and Eigenvectors",
+      "start_page": 146,
+      "end_page": 194
+    },
+    {
+      "level": 2,
+      "title": "Invariant Subspaces",
+      "start_page": 147,
+      "end_page": 156
+    },
+    {
+      "level": 3,
+      "title": "Eigenvalues",
+      "start_page": 147,
+      "end_page": 150
+    },
+    {
+      "level": 3,
+      "title": "Polynomials Applied to Operators",
+      "start_page": 151,
+      "end_page": 152
+    },
+    {
+      "level": 3,
+      "title": "Exercises 5A",
+      "start_page": 153,
+      "end_page": 156
+    },
+    {
+      "level": 2,
+      "title": "The Minimal Polynomial",
+      "start_page": 157,
+      "end_page": 167
+    },
+    {
+      "level": 3,
+      "title": "Existence of Eigenvalues on Complex Vector Spaces",
+      "start_page": 157,
+      "end_page": 157
+    },
+    {
+      "level": 3,
+      "title": "Eigenvalues and the Minimal Polynomial",
+      "start_page": 158,
+      "end_page": 162
+    },
+    {
+      "level": 3,
+      "title": "Eigenvalues on Odd-Dimensional Real Vector Spaces",
+      "start_page": 163,
+      "end_page": 163
+    },
+    {
+      "level": 3,
+      "title": "Exercises 5B",
+      "start_page": 164,
+      "end_page": 167
+    },
+    {
+      "level": 2,
+      "title": "Upper-Triangular Matrices",
+      "start_page": 168,
+      "end_page": 176
+    },
+    {
+      "level": 3,
+      "title": "Exercises 5C",
+      "start_page": 174,
+      "end_page": 176
+    },
+    {
+      "level": 2,
+      "title": "Diagonalizable Operators",
+      "start_page": 177,
+      "end_page": 188
+    },
+    {
+      "level": 3,
+      "title": "Diagonal Matrices",
+      "start_page": 177,
+      "end_page": 178
+    },
+    {
+      "level": 3,
+      "title": "Conditions for Diagonalizability",
+      "start_page": 179,
+      "end_page": 183
+    },
+    {
+      "level": 3,
+      "title": "Gershgorin Disk Theorem",
+      "start_page": 184,
+      "end_page": 185
+    },
+    {
+      "level": 3,
+      "title": "Exercises 5D",
+      "start_page": 186,
+      "end_page": 188
+    },
+    {
+      "level": 2,
+      "title": "Commuting Operators",
+      "start_page": 189,
+      "end_page": 194
+    },
+    {
+      "level": 3,
+      "title": "Exercises 5E",
+      "start_page": 193,
+      "end_page": 194
+    },
+    {
+      "level": 1,
+      "title": "Inner Product Spaces",
+      "start_page": 195,
+      "end_page": 240
+    },
+    {
+      "level": 2,
+      "title": "Inner Products and Norms",
+      "start_page": 196,
+      "end_page": 210
+    },
+    {
+      "level": 3,
+      "title": "Inner Products",
+      "start_page": 196,
+      "end_page": 199
+    },
+    {
+      "level": 3,
+      "title": "Norms",
+      "start_page": 200,
+      "end_page": 204
+    },
+    {
+      "level": 3,
+      "title": "Exercises 6A",
+      "start_page": 205,
+      "end_page": 210
+    },
+    {
+      "level": 2,
+      "title": "Orthonormal Bases",
+      "start_page": 211,
+      "end_page": 224
+    },
+    {
+      "level": 3,
+      "title": "Orthonormal Lists and the Gram–Schmidt Procedure",
+      "start_page": 211,
+      "end_page": 217
+    },
+    {
+      "level": 3,
+      "title": "Linear Functionals on Inner Product Spaces",
+      "start_page": 218,
+      "end_page": 220
+    },
+    {
+      "level": 3,
+      "title": "Exercises 6B",
+      "start_page": 221,
+      "end_page": 224
+    },
+    {
+      "level": 2,
+      "title": "Orthogonal Complements and Minimization Problems",
+      "start_page": 225,
+      "end_page": 240
+    },
+    {
+      "level": 3,
+      "title": "Orthogonal Complements",
+      "start_page": 225,
+      "end_page": 230
+    },
+    {
+      "level": 3,
+      "title": "Minimization Problems",
+      "start_page": 231,
+      "end_page": 233
+    },
+    {
+      "level": 3,
+      "title": "Pseudoinverse",
+      "start_page": 234,
+      "end_page": 237
+    },
+    {
+      "level": 3,
+      "title": "Exercises 6C",
+      "start_page": 238,
+      "end_page": 240
+    },
+    {
+      "level": 1,
+      "title": "Operators on Inner Product Spaces",
+      "start_page": 241,
+      "end_page": 310
+    },
+    {
+      "level": 2,
+      "title": "Self-Adjoint and Normal Operators",
+      "start_page": 242,
+      "end_page": 256
+    },
+    {
+      "level": 3,
+      "title": "Adjoints",
+      "start_page": 242,
+      "end_page": 246
+    },
+    {
+      "level": 3,
+      "title": "Self-Adjoint Operators",
+      "start_page": 247,
+      "end_page": 248
+    },
+    {
+      "level": 3,
+      "title": "Normal Operators",
+      "start_page": 249,
+      "end_page": 252
+    },
+    {
+      "level": 3,
+      "title": "Exercises 7A",
+      "start_page": 253,
+      "end_page": 256
+    },
+    {
+      "level": 2,
+      "title": "Spectral Theorem",
+      "start_page": 257,
+      "end_page": 264
+    },
+    {
+      "level": 3,
+      "title": "Real Spectral Theorem",
+      "start_page": 257,
+      "end_page": 259
+    },
+    {
+      "level": 3,
+      "title": "Complex Spectral Theorem",
+      "start_page": 260,
+      "end_page": 260
+    },
+    {
+      "level": 3,
+      "title": "Exercises 7B",
+      "start_page": 261,
+      "end_page": 264
+    },
+    {
+      "level": 2,
+      "title": "Positive Operators",
+      "start_page": 265,
+      "end_page": 271
+    },
+    {
+      "level": 3,
+      "title": "Exercises 7C",
+      "start_page": 269,
+      "end_page": 271
+    },
+    {
+      "level": 2,
+      "title": "Isometries, Unitary Operators, and Matrix Factorization",
+      "start_page": 272,
+      "end_page": 283
+    },
+    {
+      "level": 3,
+      "title": "Isometries",
+      "start_page": 272,
+      "end_page": 273
+    },
+    {
+      "level": 3,
+      "title": "Unitary Operators",
+      "start_page": 274,
+      "end_page": 276
+    },
+    {
+      "level": 3,
+      "title": "QR Factorization",
+      "start_page": 277,
+      "end_page": 279
+    },
+    {
+      "level": 3,
+      "title": "Cholesky Factorization",
+      "start_page": 280,
+      "end_page": 281
+    },
+    {
+      "level": 3,
+      "title": "Exercises 7D",
+      "start_page": 282,
+      "end_page": 283
+    },
+    {
+      "level": 2,
+      "title": "Singular Value Decomposition",
+      "start_page": 284,
+      "end_page": 293
+    },
+    {
+      "level": 3,
+      "title": "Singular Values",
+      "start_page": 284,
+      "end_page": 286
+    },
+    {
+      "level": 3,
+      "title": "SVD for Linear Maps and for Matrices",
+      "start_page": 287,
+      "end_page": 291
+    },
+    {
+      "level": 3,
+      "title": "Exercises 7E",
+      "start_page": 292,
+      "end_page": 293
+    },
+    {
+      "level": 2,
+      "title": "Consequences of Singular Value Decomposition",
+      "start_page": 294,
+      "end_page": 310
+    },
+    {
+      "level": 3,
+      "title": "Norms of Linear Maps",
+      "start_page": 294,
+      "end_page": 296
+    },
+    {
+      "level": 3,
+      "title": "Approximation by Linear Maps with Lower-Dimensional Range",
+      "start_page": 297,
+      "end_page": 298
+    },
+    {
+      "level": 3,
+      "title": "Polar Decomposition",
+      "start_page": 299,
+      "end_page": 300
+    },
+    {
+      "level": 3,
+      "title": "Operators Applied to Ellipsoids and Parallelepipeds",
+      "start_page": 301,
+      "end_page": 304
+    },
+    {
+      "level": 3,
+      "title": "Volume via Singular Values",
+      "start_page": 305,
+      "end_page": 306
+    },
+    {
+      "level": 3,
+      "title": "Properties of an Operator as Determined by Its Eigenvalues",
+      "start_page": 307,
+      "end_page": 307
+    },
+    {
+      "level": 3,
+      "title": "Exercises 7F",
+      "start_page": 308,
+      "end_page": 310
+    },
+    {
+      "level": 1,
+      "title": "Operators on Complex Vector Spaces",
+      "start_page": 311,
+      "end_page": 345
+    },
+    {
+      "level": 2,
+      "title": "Generalized Eigenvectors and Nilpotent Operators",
+      "start_page": 312,
+      "end_page": 321
+    },
+    {
+      "level": 3,
+      "title": "Null Spaces of Powers of an Operator",
+      "start_page": 312,
+      "end_page": 313
+    },
+    {
+      "level": 3,
+      "title": "Generalized Eigenvectors",
+      "start_page": 314,
+      "end_page": 316
+    },
+    {
+      "level": 3,
+      "title": "Nilpotent Operators",
+      "start_page": 317,
+      "end_page": 319
+    },
+    {
+      "level": 3,
+      "title": "Exercises 8A",
+      "start_page": 320,
+      "end_page": 321
+    },
+    {
+      "level": 2,
+      "title": "Generalized Eigenspace Decomposition",
+      "start_page": 322,
+      "end_page": 332
+    },
+    {
+      "level": 3,
+      "title": "Generalized Eigenspaces",
+      "start_page": 322,
+      "end_page": 323
+    },
+    {
+      "level": 3,
+      "title": "Multiplicity of an Eigenvalue",
+      "start_page": 324,
+      "end_page": 327
+    },
+    {
+      "level": 3,
+      "title": "Block Diagonal Matrices",
+      "start_page": 328,
+      "end_page": 329
+    },
+    {
+      "level": 3,
+      "title": "Exercises 8B",
+      "start_page": 330,
+      "end_page": 332
+    },
+    {
+      "level": 2,
+      "title": "Consequences of Generalized Eigenspace Decomposition",
+      "start_page": 333,
+      "end_page": 339
+    },
+    {
+      "level": 3,
+      "title": "Square Roots of Operators",
+      "start_page": 333,
+      "end_page": 334
+    },
+    {
+      "level": 3,
+      "title": "Jordan Form",
+      "start_page": 335,
+      "end_page": 337
+    },
+    {
+      "level": 3,
+      "title": "Exercises 8C",
+      "start_page": 338,
+      "end_page": 339
+    },
+    {
+      "level": 2,
+      "title": "Trace: A Connection Between Matrices and Operators",
+      "start_page": 340,
+      "end_page": 345
+    },
+    {
+      "level": 3,
+      "title": "Exercises 8D",
+      "start_page": 344,
+      "end_page": 345
+    },
+    {
+      "level": 1,
+      "title": "Multilinear Algebra and Determinants",
+      "start_page": 346,
+      "end_page": 396
+    },
+    {
+      "level": 2,
+      "title": "Bilinear Forms and Quadratic Forms",
+      "start_page": 347,
+      "end_page": 359
+    },
+    {
+      "level": 3,
+      "title": "Bilinear Forms",
+      "start_page": 347,
+      "end_page": 350
+    },
+    {
+      "level": 3,
+      "title": "Symmetric Bilinear Forms",
+      "start_page": 351,
+      "end_page": 354
+    },
+    {
+      "level": 3,
+      "title": "Quadratic Forms",
+      "start_page": 355,
+      "end_page": 357
+    },
+    {
+      "level": 3,
+      "title": "Exercises 9A",
+      "start_page": 358,
+      "end_page": 359
+    },
+    {
+      "level": 2,
+      "title": "Alternating Multilinear Forms",
+      "start_page": 360,
+      "end_page": 367
+    },
+    {
+      "level": 3,
+      "title": "Multilinear Forms",
+      "start_page": 360,
+      "end_page": 361
+    },
+    {
+      "level": 3,
+      "title": "Alternating Multilinear Forms and Permutations",
+      "start_page": 362,
+      "end_page": 365
+    },
+    {
+      "level": 3,
+      "title": "Exercises 9B",
+      "start_page": 366,
+      "end_page": 367
+    },
+    {
+      "level": 2,
+      "title": "Determinants",
+      "start_page": 368,
+      "end_page": 383
+    },
+    {
+      "level": 3,
+      "title": "Defining the Determinant",
+      "start_page": 368,
+      "end_page": 370
+    },
+    {
+      "level": 3,
+      "title": "Properties of Determinants",
+      "start_page": 371,
+      "end_page": 380
+    },
+    {
+      "level": 3,
+      "title": "Exercises 9C",
+      "start_page": 381,
+      "end_page": 383
+    },
+    {
+      "level": 2,
+      "title": "Tensor Products",
+      "start_page": 384,
+      "end_page": 396
+    },
+    {
+      "level": 3,
+      "title": "Tensor Product of Two Vector Spaces",
+      "start_page": 384,
+      "end_page": 389
+    },
+    {
+      "level": 3,
+      "title": "Tensor Product of Inner Product Spaces",
+      "start_page": 390,
+      "end_page": 391
+    },
+    {
+      "level": 3,
+      "title": "Tensor Product of Multiple Vector Spaces",
+      "start_page": 392,
+      "end_page": 393
+    },
+    {
+      "level": 3,
+      "title": "Exercises 9D",
+      "start_page": 394,
+      "end_page": 396
+    },
+    {
+      "level": 1,
+      "title": "Photo Credits",
+      "start_page": 397,
+      "end_page": 397
+    },
+    {
+      "level": 1,
+      "title": "Symbol Index",
+      "start_page": 398,
+      "end_page": 398
+    },
+    {
+      "level": 1,
+      "title": "Index",
+      "start_page": 399,
+      "end_page": 403
+    },
+    {
+      "level": 1,
+      "title": "Colophon: Notes on Typesetting",
+      "start_page": 404,
+      "end_page": 404
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "pass": 0,
+  "prompt_version": "pass0-topics-v1",
+  "section_count": 17,
+  "provenance": "derived_from_text",
+  "degenerate": false,
+  "labeller": "NoOpTopicLabeller",
+  "prompt_chars": 2046,
+  "topics_requested": 17,
+  "topics_accepted": 0,
+  "topics_invented_and_dropped": [],
+  "labelled_fraction": 0.0,
+  "estimated_render_tokens": 261,
+  "envelope": {
+    "document_id": "axler",
+    "provenance": "derived_from_text",
+    "skeleton_sections": 17,
+    "findings_total": 0,
+    "findings_shown": 0,
+    "target_section_id": null,
+    "has_directive": false,
+    "is_stripped": false,
+    "rendered_chars": 1064
+  }
+}

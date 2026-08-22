@@ -1,0 +1,162 @@
+{
+  "document_id": "axler",
+  "provenance": "derived_from_text",
+  "section_count": 17,
+  "labelled_fraction": 0.0,
+  "estimated_render_tokens": 261,
+  "sections": [
+    {
+      "section_id": "axler.about-the-author-v",
+      "title": "About the Author v",
+      "book_position": 0,
+      "page_start": 3,
+      "page_end": 3,
+      "density": 18.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.preface-for-students-xii",
+      "title": "Preface for Students xii",
+      "book_position": 1,
+      "page_start": 3,
+      "page_end": 3,
+      "density": 24.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.preface-for-instructors-xiii",
+      "title": "Preface for Instructors xiii",
+      "book_position": 2,
+      "page_start": 3,
+      "page_end": 3,
+      "density": 28.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.acknowledgments-xvii",
+      "title": "Acknowledgments xvii",
+      "book_position": 3,
+      "page_start": 3,
+      "page_end": 3,
+      "density": 20.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.chapter-1-vector-spaces-1",
+      "title": "Chapter 1 Vector Spaces 1",
+      "book_position": 4,
+      "page_start": 3,
+      "page_end": 3,
+      "density": 225.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.chapter-2-finite-dimensional-vector-spaces-27",
+      "title": "Chapter 2 Finite-Dimensional Vector Spaces 27",
+      "book_position": 5,
+      "page_start": 3,
+      "page_end": 4,
+      "density": 109.5,
+      "topic": null
+    },
+    {
+      "section_id": "axler.chapter-3-linear-maps-51",
+      "title": "Chapter 3 Linear Maps 51",
+      "book_position": 6,
+      "page_start": 4,
+      "page_end": 5,
+      "density": 458.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.chapter-4-polynomials-119",
+      "title": "Chapter 4 Polynomials 119",
+      "book_position": 7,
+      "page_start": 5,
+      "page_end": 5,
+      "density": 184.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.chapter-5-eigenvalues-and-eigenvectors-132",
+      "title": "Chapter 5 Eigenvalues and Eigenvectors 132",
+      "book_position": 8,
+      "page_start": 5,
+      "page_end": 5,
+      "density": 557.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.chapter-6-inner-product-spaces-181",
+      "title": "Chapter 6 Inner Product Spaces 181",
+      "book_position": 9,
+      "page_start": 5,
+      "page_end": 6,
+      "density": 201.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.chapter-7-operators-on-inner-product-spaces-227",
+      "title": "Chapter 7 Operators on Inner Product Spaces 227",
+      "book_position": 10,
+      "page_start": 6,
+      "page_end": 7,
+      "density": 456.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.chapter-8-operators-on-complex-vector-spaces-297",
+      "title": "Chapter 8 Operators on Complex Vector Spaces 297",
+      "book_position": 11,
+      "page_start": 7,
+      "page_end": 7,
+      "density": 556.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.chapter-9-multilinear-algebra-and-determinants-332",
+      "title": "Chapter 9 Multilinear Algebra and Determinants 332",
+      "book_position": 12,
+      "page_start": 7,
+      "page_end": 8,
+      "density": 286.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.photo-credits-383",
+      "title": "Photo Credits 383",
+      "book_position": 13,
+      "page_start": 8,
+      "page_end": 8,
+      "density": 17.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.symbol-index-384",
+      "title": "Symbol Index 384",
+      "book_position": 14,
+      "page_start": 8,
+      "page_end": 8,
+      "density": 16.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.index-385",
+      "title": "Index 385",
+      "book_position": 15,
+      "page_start": 8,
+      "page_end": 8,
+      "density": 9.0,
+      "topic": null
+    },
+    {
+      "section_id": "axler.colophon-notes-on-typesetting-390",
+      "title": "Colophon: Notes on Typesetting 390",
+      "book_position": 16,
+      "page_start": 8,
+      "page_end": 404,
+      "density": 1838.9,
+      "topic": null
+    }
+  ]
+}
