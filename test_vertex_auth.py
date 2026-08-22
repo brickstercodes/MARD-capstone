@@ -3,8 +3,10 @@
 Minimal test: verify Vertex AI authentication with GeminiClient.
 Tests the patched GeminiClient with service-account JSON from .env.
 """
+
 import os
 import sys
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -28,6 +30,7 @@ print(f"✓ GOOGLE_APPLICATION_CREDENTIALS_JSON={len(cred_json)} bytes")
 # Import and test GeminiClient
 try:
     from rlm.clients.gemini import GeminiClient
+
     print("✓ GeminiClient imported")
 except ImportError as e:
     print(f"ERROR: Failed to import GeminiClient: {e}")
@@ -41,10 +44,14 @@ try:
         project=project,
         location="global",
     )
-    print(f"✓ GeminiClient instantiated for Vertex (model={client.model_name}, use_vertex={client.use_vertex})")
+    print(
+        f"✓ GeminiClient instantiated for Vertex "
+        f"(model={client.model_name}, use_vertex={client.use_vertex})"
+    )
 except Exception as e:
     print(f"ERROR: Failed to instantiate GeminiClient: {e}")
     import traceback
+
     traceback.print_exc()
     sys.exit(1)
 
@@ -52,7 +59,7 @@ except Exception as e:
 try:
     prompt = "Say 'Vertex authentication successful' and stop."
     response = client.completion(prompt)
-    print(f"✓ Completion call succeeded")
+    print("✓ Completion call succeeded")
     print(f"  Response: {response[:100]}")
 
     usage = client.get_last_usage()
@@ -60,6 +67,7 @@ try:
 except Exception as e:
     print(f"ERROR: Completion call failed: {e}")
     import traceback
+
     traceback.print_exc()
     sys.exit(1)
 

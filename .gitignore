@@ -9,9 +9,14 @@ corpus/parsed/
 corpus/raw/
 
 # Secrets. The spend cap lives in config; the keys never do.
+# Glob rather than the exact name: an editor backup, a .env.local or a hand-made
+# .env.bak is the same credential with a different suffix, and the narrow rule
+# would have let it through.
 .env
+.env.*
 .envrc
 *.key
+.secrets/
 
 # The RLM base library is cloned here by scripts/bootstrap_rlm.sh. It is upstream
 # code with its own history — the commit SHA is recorded in runs/_bootstrap/
