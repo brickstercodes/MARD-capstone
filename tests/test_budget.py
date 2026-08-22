@@ -8,6 +8,7 @@ the money is spent rather than before.
 from __future__ import annotations
 
 import json
+from typing import Any
 
 import pytest
 
@@ -19,7 +20,7 @@ def _cap(ceiling: float = 100.0) -> SpendCap:
     return SpendCap(ceiling_usd=ceiling, set_by="anugrah", set_on="2026-08-05")
 
 
-def _summary(run_id: str, cost: float | None, unpriced: list[str] | None = None) -> dict:
+def _summary(run_id: str, cost: float | None, unpriced: list[str] | None = None) -> dict[str, Any]:
     return {
         "run_id": run_id,
         "system": "mard",
