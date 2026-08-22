@@ -60,7 +60,7 @@ class GeminiClient(BaseLM):
 
         if use_vertex:
             project = project or os.environ.get("GOOGLE_CLOUD_PROJECT")
-            location = location or os.environ.get("GOOGLE_CLOUD_LOCATION", "us-central1")
+            location = location or os.environ.get("GOOGLE_CLOUD_LOCATION", "global")
             if not project:
                 raise ValueError(
                     "Vertex AI requires a project. Set GOOGLE_CLOUD_PROJECT env "
@@ -135,10 +135,42 @@ tier1_client = GeminiClient(model_name="gemini-3.6-flash", use_vertex=True)
 tier2_client = GeminiClient(model_name="gemini-3.1-flash-lite", use_vertex=True)
 ```
 
+## Second patch: `None` response crashes the RLM regex, not just the Tier 2 join
+
+**Status:** Applied, 22 Aug 2026 · Found by Parth (Track 2), documented in `TRACK2.md`, folded in here because `.vendor/` is gitignored and this doc is the only thing that survives a `bootstrap_rlm.sh` — that gap is exactly why it regressed the first time: Parth's fix lived only on his machine and never travelled.
+
+`.vendor/rlm/rlm/utils/parsing.py:18` does `re.finditer(pattern, text, re.DOTALL)` against whatever `GeminiClient.completion`/`acompletion` return. The Google SDK sets `response.text` to `None` — not `""` — when the model emits no text part: a safety block, a `MAX_TOKENS` finish with nothing produced, or a function-call-only candidate. The two return sites in the patch above (`return response.text`, in both `completion` and `acompletion`) pass that `None` straight through, and the regex raises `TypeError: expected string or bytes-like object, got 'NoneType'`. This is the same failure class as the empty-span bug closed in #48 (PR review, `orchestrate/builder.py`): a model returns nothing and downstream code assumes content. There it was silent (the join accepted `""` as a valid span); here it's loud (RLM crashes outright), which is the better failure mode but still needs handling so one empty call in a few hundred doesn't take down a whole run.
+
+Add this function once, at module scope (not inside the class):
+
+```python
+def _text_or_empty(response: object) -> str:
+    """The SDK sets .text to None when the model emits no text part.
+
+    A safety block, a MAX_TOKENS finish with nothing produced, or a function-call-only
+    candidate all land here. Upstream never sees it because the OpenAI client returns ""
+    in the same situation, so this is specific to the Vertex path. Returning "" lets RLM
+    find no code blocks and iterate again, which is the right behaviour when one call in
+    a few hundred comes back empty during W6. The finish reason is printed rather than
+    swallowed: an empty response is a fact about the run, not noise.
+    """
+    text = getattr(response, "text", None)
+    if text is None:
+        candidates = getattr(response, "candidates", None) or []
+        reason = getattr(candidates[0], "finish_reason", "unknown") if candidates else "unknown"
+        print(f"[GeminiClient] empty response, finish_reason={reason}")
+        return ""
+    return str(text)
+```
+
+Then route both existing return sites through it: replace `return response.text` at the end of `completion` and at the end of `acompletion` with `return _text_or_empty(response)`. Nothing else in either method changes.
+
+**Both patches on this page are required, and both are lost on every `bootstrap_rlm.sh`** — the constructor branch from the first section and this guard. Re-apply both, in this order, every time `.vendor/rlm` is re-bootstrapped, before running anything that makes a real Vertex call.
+
 ## What still needs verifying empirically — do not assume these
 
 1. **Env var names.** `google-genai`'s own docstring says project/location "can be obtained from environment variables" but doesn't name them in the file I read. `GOOGLE_CLOUD_PROJECT` / `GOOGLE_CLOUD_LOCATION` are Google's usual convention and are what the patch above reads explicitly (so it doesn't rely on the SDK's internal env lookup at all) — but confirm the SDK doesn't also silently read something with different precedence, by running the first real call and checking `client._api_client.project`/`.location`.
-2. **The "Gemini 3.x preview models need `location=\"global\"`" rule** that appeared in the earlier REST draft. Our two chosen models (`gemini-3.6-flash`, `gemini-3.1-flash-lite`) are both **GA**, not preview, so this specific rule likely doesn't apply — but the Vertex pricing page (`docs/12-MODEL_PAIR.md`) does distinguish Global vs. non-global endpoint pricing even for GA models (non-global carries a ~10% surcharge, live since 1 Jul 2026). **Test explicitly which `location` value the account's Vertex credits are billed against**, and pass that `location` value rather than defaulting to `us-central1` if global is cheaper or required.
+2. ~~**The "Gemini 3.x preview models need `location="global"`" rule**~~ — **Resolved, 22 Aug 2026.** `gemini-3.6-flash` 404s on `us-central1` for this project (issue #11); `location=global` is what actually works and is billed against. The constructor's default above has been changed from `us-central1` to `global` accordingly. `GOOGLE_CLOUD_LOCATION=global` is still set explicitly in `.env` and should stay that way — the default is a safety net for anyone who forgets it, not a reason to drop the explicit env var.
 3. **Structured output for the Master Plan.** Tier 1 needs to emit JSON conforming to the Pydantic Master Plan schema (`CONTEXT.md` §1.5, Track 2's `plan/` module). Neither the patch above nor the original `GeminiClient` configures `response_mime_type`/`response_schema` in `GenerateContentConfig`. That's a separate, additional change to `completion`/`acompletion` (or a config passed at call time) — not covered here, and worth raising with Track 2 before W1's stub builder needs it.
 
 ## Verification debt this opens
