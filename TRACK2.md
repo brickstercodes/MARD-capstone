@@ -6,7 +6,7 @@ Local mirror of the GitHub board. GitHub is authoritative; this file is for
 working offline and for seeing the whole track on one screen. Tick here as you
 go, sync to GitHub when convenient.
 
-**Last synced with GitHub:** 20 August 2026
+**Last synced with GitHub:** 22 August 2026
 
 ---
 
@@ -14,15 +14,20 @@ go, sync to GitHub when convenient.
 
 | | |
 |---|---|
-| Today | **Thu 20 Aug 2026** |
-| Nominal block | **W2** · Mon 17 – Sun 23 Aug · [#13](https://github.com/brickstercodes/MARD-capstone/issues/13) · **day 4 of 7** |
+| Today | **Sat 22 Aug 2026** |
+| Nominal block | **W2** · Mon 17 – Sun 23 Aug · [#13](https://github.com/brickstercodes/MARD-capstone/issues/13) · **day 6 of 7** |
 | Actually open | **W2** ([#13](https://github.com/brickstercodes/MARD-capstone/issues/13)) — W1 ([#12](https://github.com/brickstercodes/MARD-capstone/issues/12)) delivered 20 Aug, nine days late |
-| Next freeze | 🔒 **Feature freeze A · Sun 23 Aug — 3 days** — absolute |
+| Next freeze | 🔒 **Feature freeze A · Sun 23 Aug — tomorrow** — absolute |
 
 **Read this before planning the week.** W1 landed on 20 Aug, nine days late but
-complete: `plan/` and `orchestrate/` are real, 79 tests pass, `check.sh` is
-green. W2 is due Sunday alongside Feature freeze A, which is absolute — after it,
-a change to the pipeline invalidates every number measured before it.
+complete: `plan/` and `orchestrate/` are real, 87 tests pass, `check.sh` is
+green, and it is up as [#48](https://github.com/brickstercodes/MARD-capstone/pull/48).
+W2 is due tomorrow alongside Feature freeze A, which is absolute — after it, a
+change to the pipeline invalidates every number measured before it.
+
+**As of 22 Aug, #48 has no review and no comment.** Arav's [#47](https://github.com/brickstercodes/MARD-capstone/pull/47)
+merged on 21 Aug with zero reviews, so work does land here — it just lands
+unreviewed. Chase the merge rather than waiting for a review that is not coming.
 
 - **W2's remaining work is Track 2's own:** bounded worker pool, per-builder
   retry, failure isolation. The `Builder` interface is already async and the
@@ -30,9 +35,13 @@ a change to the pipeline invalidates every number measured before it.
   changing callers.
 - **W2's last box cannot close this week.** It is *"end-to-end run completes on
   the primary document,"* which needs `ingest/` (T4) and `envelope/` (T1). As of
-  20 Aug **both are still bare `__init__.py` on `main`; T4 has never committed to
-  this repo.** Not a Track 2 problem and not solvable inside Track 2 — escalate
-  rather than absorb.
+  **22 Aug, the day before the freeze**, `envelope/__init__.py` is 282 bytes and
+  `ingest/__init__.py` is 334 bytes — both still bare docstrings, and **T4 has
+  never committed to this repo.** Commits on all branches in the last seven days:
+  nine from Track 2, one from Track 3, none from Track 1 or Track 4. Not a Track 2
+  problem and not solvable inside Track 2 — escalate rather than absorb.
+  **The freeze and the missing pipeline cannot both hold**; that is Anugrah's call
+  and it needs making today, not at Friday's gate review.
 - **Two things other tracks have to agree to**, both introduced by the schema
   and neither inferable from CONTEXT.md:
   - T4: `SourceSpan` needs `section_id`, `book_position`, `page_start`,
