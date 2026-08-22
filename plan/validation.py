@@ -334,11 +334,23 @@ def _check_rationale(plan: MasterPlan, *, positions_usable: bool) -> Iterable[Pl
         if concept_id in explained or concept_id not in book_index:
             continue
         if book_index[concept_id] != position:
+            # The move is DETECTED by comparing ranks, but the note that repairs it is
+            # VALIDATED against the concept's absolute `source.book_position` (see
+            # `_check_note_agrees_with_plan`). Those are different numbers whenever the
+            # plan's concepts come from non-consecutive sections, which is the normal
+            # case once ingest/ supplies real ordinals. Reporting the rank made this
+            # message prompt a note the boundary then rejected with `rationale_mismatch`
+            # - and since that rejection is itself the next repair prompt, the loop did
+            # not terminate. Quote the number the boundary actually compares.
+            concept = plan.concept_graph.concept(concept_id)
+            from_book_position = (
+                concept.source.book_position if concept is not None else book_index[concept_id]
+            )
             yield PlanViolation(
                 code="unexplained_move",
                 where=concept_id,
                 message=(
-                    f"moved from book position {book_index[concept_id] + 1} to plan position "
+                    f"moved from book position {from_book_position} to plan position "
                     f"{position + 1} with no entry in reordering_rationale"
                 ),
             )

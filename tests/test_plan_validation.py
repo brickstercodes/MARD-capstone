@@ -321,3 +321,42 @@ def test_a_missing_plan_file_fails_at_the_boundary_too(tmp_path):
     with pytest.raises(MasterPlanError) as err:
         load_master_plan(tmp_path / "nope.json")
     assert err.value.violations[0].code == "unreadable_plan"
+
+
+def test_the_unexplained_move_message_quotes_the_number_the_boundary_compares():
+    """The message is Tier 1's repair prompt, so its numbers have to be repairable.
+
+    The move is detected by comparing ranks; the note that repairs it is validated
+    against the concept's absolute `source.book_position`. Those differ whenever the
+    plan's concepts come from non-consecutive sections, which is the normal case once
+    `ingest/` supplies real ordinals. Reporting the rank prompted a note the boundary
+    then rejected with `rationale_mismatch` - and that rejection is itself the next
+    repair prompt, so the loop did not terminate.
+    """
+    # Ranks are 0 and 1; absolute book positions are 5 and 12.
+    concepts = (_concept("early", 5), _concept("late", 12))
+    sequence = (
+        StudyStep(position=1, concept_id="late", directive="Taught first, out of order."),
+        StudyStep(position=2, concept_id="early", directive="Taught second, out of order."),
+    )
+    plan = _plan(concepts=concepts, sequence=sequence)
+
+    moves = {v.where: v.message for v in check_master_plan(plan) if v.code == "unexplained_move"}
+    assert "book position 12" in moves["late"]
+    assert "book position 5" in moves["early"]
+
+
+def test_a_note_written_from_that_message_is_accepted():
+    """End to end: repair using the message's own numbers and the boundary passes."""
+    concepts = (_concept("early", 5), _concept("late", 12))
+    sequence = (
+        StudyStep(position=1, concept_id="late", directive="Taught first, out of order."),
+        StudyStep(position=2, concept_id="early", directive="Taught second, out of order."),
+    )
+    reason = "Moved because its prerequisite appears later in the book than it does."
+    rationale = (
+        ReorderNote(concept_id="late", from_book_position=12, to_plan_position=1, reason=reason),
+        ReorderNote(concept_id="early", from_book_position=5, to_plan_position=2, reason=reason),
+    )
+
+    assert check_master_plan(_plan(concepts=concepts, sequence=sequence, rationale=rationale)) == ()

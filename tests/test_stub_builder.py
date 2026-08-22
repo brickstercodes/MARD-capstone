@@ -222,3 +222,45 @@ def _p(position: int) -> Provenance:
         plan_position=position,
         builder="test",
     )
+
+
+@pytest.mark.parametrize("empty", ["", "   ", "\n\n", "\t "])
+def test_an_empty_span_stops_the_join(plan, empty):
+    """A span can satisfy every identity check and still carry nothing.
+
+    The vendored Vertex client returns "" rather than None when the model emits no
+    text part - a safety block, a MAX_TOKENS finish with nothing produced, or a
+    function-call-only candidate (TRACK2.md). Tier 1 recovers by iterating; Tier 2
+    takes the one response it gets. Without the empty axis the artefact is short by a
+    section, every position is present, every concept id is right, and the log records
+    full provenance for the hole.
+    """
+    slots = _slots(plan)
+    spans = [_span(concept_id, position) for position, concept_id in slots]
+    spans[-1] = BuiltSpan(
+        concept_id=slots[-1][1],
+        position=slots[-1][0],
+        text=empty,
+        provenance=_p(slots[-1][0]),
+    )
+
+    with pytest.raises(IncompleteArtefactError) as err:
+        join_in_plan_order(spans, plan)
+
+    assert "empty span for position" in str(err.value)
+    assert slots[-1][1] in str(err.value)
+
+
+def test_every_empty_span_is_named_not_just_the_first(plan):
+    # Same rule as the boundary's: collect, do not short-circuit.
+    slots = _slots(plan)
+    spans = [
+        BuiltSpan(concept_id=concept_id, position=position, text="", provenance=_p(position))
+        for position, concept_id in slots
+    ]
+
+    with pytest.raises(IncompleteArtefactError) as err:
+        join_in_plan_order(spans, plan)
+
+    for _position, concept_id in slots:
+        assert concept_id in str(err.value)

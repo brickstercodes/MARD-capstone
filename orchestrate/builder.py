@@ -187,10 +187,18 @@ def join_in_plan_order(spans: Sequence[BuiltSpan], plan: MasterPlan) -> Artefact
         for position, span in by_position.items()
         if position in expected and span.concept_id != expected[position]
     )
+    # A span can be present, correctly positioned, built for the right concept, and
+    # still carry nothing. The vendored Vertex client returns "" rather than None when
+    # the model emits no text part - a safety block, a MAX_TOKENS finish with nothing
+    # produced, or a function-call-only candidate (TRACK2.md, W0 "RLM examples run
+    # end-to-end"). Tier 1 recovers by iterating; Tier 2 takes the one response it
+    # gets. Without this axis one such call in W6's matrix yields an artefact short by
+    # a section, with every identity check satisfied and a complete-looking log.
+    empty = sorted(position for position, span in by_position.items() if not span.text.strip())
 
-    if duplicates or missing or unexpected or mismatched:
+    if duplicates or missing or unexpected or mismatched or empty:
         raise IncompleteArtefactError(
-            _join_failure(plan, sorted(set(duplicates)), missing, unexpected, mismatched)
+            _join_failure(plan, sorted(set(duplicates)), missing, unexpected, mismatched, empty)
         )
 
     ordered = tuple(by_position[position] for position in sorted(by_position))
@@ -203,6 +211,7 @@ def _join_failure(
     missing: Sequence[int],
     unexpected: Sequence[int],
     mismatched: Sequence[int],
+    empty: Sequence[int] = (),
 ) -> str:
     parts = [
         f"cannot join {plan.document_id}: the spans do not match the Master Plan's "
@@ -217,6 +226,9 @@ def _join_failure(
         parts.append(f"  span(s) at position(s) the plan does not have: {_numbers(unexpected)}")
     if mismatched:
         parts.append(f"  span(s) built the wrong concept for position(s): {_numbers(mismatched)}")
+    if empty:
+        named = ", ".join(f"{position} ({_concept_at(plan, position)})" for position in empty)
+        parts.append(f"  empty span for position(s): {named}")
     return "\n".join(parts)
 
 
