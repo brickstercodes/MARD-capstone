@@ -27,8 +27,7 @@ import argparse
 import json
 from pathlib import Path
 
-import pymupdf
-
+from ingest import pdf
 from ingest.blocks import Block, extract_blocks
 from ingest.boilerplate import mark_boilerplate
 from ingest.outline import first_content_page, read_outline
@@ -68,11 +67,6 @@ def _mark_front_matter(blocks: list[Block], content_start_page: int) -> list[Blo
     ]
 
 
-def _page_heights(path: str) -> dict[int, float]:
-    doc = pymupdf.open(path)
-    return {index + 1: page.rect.height for index, page in enumerate(doc)}
-
-
 def _render_text_stream(blocks: list[Block]) -> str:
     """Blocks to a single marked-up string, boilerplate dropped, pages stamped.
 
@@ -102,14 +96,14 @@ def _render_text_stream(blocks: list[Block]) -> str:
 
 def ingest_document(pdf_path: str, doc_id: str, out_dir: Path) -> None:
     blocks, body_size = extract_blocks(pdf_path, doc_id)
-    blocks = mark_boilerplate(blocks, _page_heights(pdf_path))
+    blocks = mark_boilerplate(blocks, pdf.page_heights(pdf_path))
     outline = read_outline(pdf_path)
     content_start_page = first_content_page(outline)
     blocks = _mark_front_matter(blocks, content_start_page)
 
-    doc = pymupdf.open(pdf_path)
-    page_count = doc.page_count
-    raw_text = "\n".join(page.get_text("text") for page in doc)
+    doc = pdf.open_document(pdf_path)
+    page_count = pdf.page_count(doc)
+    raw_text = pdf.raw_text(doc)
 
     report = build_report(
         doc_id=doc_id,

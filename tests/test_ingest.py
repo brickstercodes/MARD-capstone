@@ -18,9 +18,9 @@ W1 and had to have fixed, so they are regression tests, not decoration:
 
 from __future__ import annotations
 
-import pymupdf
 import pytest
 
+from ingest import pdf
 from ingest.blocks import extract_blocks
 from ingest.boilerplate import mark_boilerplate
 from ingest.quality import measure_math_loss
@@ -38,7 +38,7 @@ def synthetic_pdf(tmp_path):
     The cover's 40pt word appears on one page only; the 14pt section headings appear
     on many. A size-only heading rule picks the cover; a coverage-aware rule does not.
     """
-    doc = pymupdf.open()
+    doc = pdf.new_document()
 
     cover = doc.new_page()
     cover.insert_text((72, 200), "GRAND TITLE", fontsize=COVER_SIZE, fontname="hebo")
@@ -63,13 +63,13 @@ def synthetic_pdf(tmp_path):
         )
 
     path = tmp_path / "synthetic.pdf"
-    doc.save(path)
+    pdf.save(doc, path)
     return str(path)
 
 
 def _parsed(path: str):
     blocks, body_size = extract_blocks(path, "synth")
-    heights = {index + 1: page.rect.height for index, page in enumerate(pymupdf.open(path))}
+    heights = pdf.page_heights(path)
     return mark_boilerplate(blocks, heights), body_size
 
 

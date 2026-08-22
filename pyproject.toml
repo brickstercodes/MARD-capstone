@@ -49,7 +49,7 @@ strict = true
 # is how a green suite starts lying. They are not held to full annotation
 # coverage: pytest fixtures are untyped by convention, and annotating every
 # `def test_x(plan, logger)` buys nothing the assertions do not already say.
-files = ["runlog", "plan", "orchestrate", "tests"]
+files = ["runlog", "plan", "orchestrate", "tests", "ingest", "envelope"]
 # Third-party PDF and model SDKs ship no stubs; failing on those would train
 # everyone to ignore mypy output, which defeats the point of running it.
 ignore_missing_imports = true
@@ -58,6 +58,15 @@ ignore_missing_imports = true
 module = "tests.*"
 disallow_untyped_defs = false
 disallow_incomplete_defs = false
+
+# PyMuPDF ships py.typed with inline hints and no stubs, so its constructor reads as
+# untyped on some wheel builds (Python 3.14 + mypy 2.3) and typed on others (3.11).
+# ingest.pdf is the only module allowed to touch that surface; exempting it here rather
+# than with inline `# type: ignore` avoids strict mode's warn_unused_ignores flagging
+# the suppression as dead on whichever toolchain did not need it.
+[[tool.mypy.overrides]]
+module = "ingest.pdf"
+disallow_untyped_calls = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -21,7 +21,7 @@ from collections import Counter
 from dataclasses import asdict, dataclass
 from typing import Any
 
-import pymupdf
+from ingest import pdf
 
 # A heading has to be meaningfully larger than body text, not a rounding artefact.
 HEADING_SIZE_RATIO = 1.05
@@ -85,7 +85,7 @@ class Block:
         return asdict(self)
 
 
-def _dominant_font_size(doc: pymupdf.Document) -> float:
+def _dominant_font_size(doc: Any) -> float:
     """Body-text size, weighted by how much text is actually set in it.
 
     Weighting by character count rather than span count matters: a book has many
@@ -93,7 +93,7 @@ def _dominant_font_size(doc: pymupdf.Document) -> float:
     would elect a heading size as the body size on some layouts.
     """
     weighted: Counter[float] = Counter()
-    for page in doc:
+    for _number, page in pdf.pages(doc):
         for block in page.get_text("dict")["blocks"]:
             for line in block.get("lines", []):
                 for span in line["spans"]:
@@ -102,7 +102,7 @@ def _dominant_font_size(doc: pymupdf.Document) -> float:
     return weighted.most_common(1)[0][0] if weighted else 0.0
 
 
-def _heading_size_levels(doc: pymupdf.Document, body_size: float) -> dict[float, int]:
+def _heading_size_levels(doc: Any, body_size: float) -> dict[float, int]:
     """Map each structural font size to a heading level, largest size = level 1.
 
     A size qualifies as structural only if it is larger than body text, appears on
@@ -113,8 +113,8 @@ def _heading_size_levels(doc: pymupdf.Document, body_size: float) -> dict[float,
     chars_per_size: Counter[float] = Counter()
     bold_chars_per_size: Counter[float] = Counter()
 
-    for page in doc:
-        sizes_on_page = set()
+    for _number, page in pdf.pages(doc):
+        sizes_on_page: set[float] = set()
         for block in page.get_text("dict")["blocks"]:
             for line in block.get("lines", []):
                 for span in line["spans"]:
@@ -126,7 +126,7 @@ def _heading_size_levels(doc: pymupdf.Document, body_size: float) -> dict[float,
         for size in sizes_on_page:
             pages_per_size[size] += 1
 
-    min_pages = max(MIN_STRUCTURAL_PAGES, int(doc.page_count * MIN_STRUCTURAL_PAGE_FRACTION))
+    min_pages = max(MIN_STRUCTURAL_PAGES, int(pdf.page_count(doc) * MIN_STRUCTURAL_PAGE_FRACTION))
 
     structural = [
         size
@@ -150,13 +150,12 @@ def _classify_role(text: str) -> str | None:
 
 def extract_blocks(path: str, doc_id: str) -> tuple[list[Block], float]:
     """Parse a PDF into page-mapped blocks. Returns the blocks and the body font size."""
-    doc = pymupdf.open(path)
+    doc = pdf.open_document(path)
     body_size = _dominant_font_size(doc)
     size_levels = _heading_size_levels(doc, body_size)
 
     blocks: list[Block] = []
-    for page_index, page in enumerate(doc):
-        page_number = page_index + 1
+    for page_number, page in pdf.pages(doc):
         for block_index, raw in enumerate(page.get_text("dict")["blocks"]):
             lines = raw.get("lines")
             if not lines:

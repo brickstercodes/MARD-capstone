@@ -24,7 +24,7 @@ import re
 from dataclasses import asdict, dataclass
 from typing import Any
 
-import pymupdf
+from ingest import pdf
 
 
 @dataclass(frozen=True)
@@ -66,7 +66,7 @@ def read_outline(path: str) -> list[OutlineEntry]:
     End pages are inferred from the next entry at the same or shallower level, which
     is what makes an entry usable as a slice boundary rather than just a pointer.
     """
-    doc = pymupdf.open(path)
+    doc = pdf.open_document(path)
     raw = doc.get_toc()
 
     entries: list[OutlineEntry] = []
@@ -77,7 +77,7 @@ def read_outline(path: str) -> list[OutlineEntry]:
                 end_page = max(start_page, next_start - 1)
                 break
         if end_page is None:
-            end_page = doc.page_count
+            end_page = pdf.page_count(doc)
         entries.append(
             OutlineEntry(
                 level=level,
