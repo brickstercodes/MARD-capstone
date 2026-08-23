@@ -49,3 +49,11 @@ paper/*.out
 paper/*.bbl
 paper/*.blg
 paper/*.synctex.gz
+
+# Track 2's personal working notes. A lab notebook, not a task assignment: it is
+# addressed to one person, no other track has one, and nothing in it has any
+# authority over anyone else. Kept out of the repo so it cannot be mistaken for
+# something a teammate is meant to act on — anything another track needs to know
+# goes on their GitHub issue, where they are actually notified. Environment
+# knowledge that outlives the notebook belongs in docs/.
+TRACK2.md
