@@ -1,14 +1,28 @@
-"""One real Vertex call, wrapped in RunLogger, read back and checked.
+"""One real provider call, wrapped in RunLogger, read back and checked.
 
 docs/TRACK3_HANDOFF.md's sign-off checklist asks for exactly this before the
 last box on issue #11 closes: "you can wrap one baseline in RunLogger without
 contorting your code" and "token accounting matches what your provider
 reports for the same call". This script is that evidence, run against a live
-Vertex endpoint rather than a mock, so the numbers it prints are real.
+endpoint rather than a mock, so the numbers it prints are real.
 
-Not itself a pytest case: it spends real (tiny) money against the project's
-Vertex credits, and CI shouldn't do that on every push. Run it by hand when
-re-confirming the harness, same as test_vertex_auth.py.
+**Re-run this after any backend change.** The check it performs -- that
+runlog's logged token counts equal what the provider itself reported for the
+same call -- is a claim about one provider's usage reporting, not a property
+of runlog. It was signed off on Vertex on 22 Aug; OpenAI reports usage through
+a different field on a different response shape (`usage.prompt_tokens` /
+`usage.completion_tokens` via OpenAIClient._track_cost), so the sign-off does
+not carry over and has to be earned again. Costs about a cent.
+
+One known gap it does NOT cover: OpenAI bills reasoning tokens as output, and
+`usage.completion_tokens` is expected to include them, but whether that holds
+for the gpt-5.6 family is unconfirmed -- if it does not, every output-token
+cost this project reports on OpenAI would be understated. Flagged as
+verification debt in docs/17; compare this script's figure against the OpenAI
+dashboard for the same call to close it.
+
+Not itself a pytest case: it spends real (tiny) money, and CI shouldn't do
+that on every push. Run it by hand when re-confirming the harness.
 """
 
 from __future__ import annotations
@@ -16,24 +30,28 @@ from __future__ import annotations
 import sys
 import time
 
-from rlm.clients.gemini import GeminiClient
-
-from eval.rates import TIER1_MODEL, default_rate_card
+from eval.backends import active_profile
+from eval.rates import rate_card_for
+from eval.run_vanilla_rlm import runs_root
 from runlog import CAMPAIGN_SEEDS, RunLogger, load_run
 
 PROMPT = "Reply with exactly the digit 7 and nothing else."
 
 
 def main() -> int:
-    client = GeminiClient(model_name=TIER1_MODEL, use_vertex=True)
+    profile = active_profile()
+    model = profile.tier1_model
+    client = profile.client_class()(**profile.backend_kwargs())
+
+    print(f"backend: {profile.name}  model: {model}  runs_root: {runs_root()}")
 
     with RunLogger.start(
-        runs_root="runs",
+        runs_root=str(runs_root()),
         system="vanilla_rlm",
         document_id="runlog-signoff-smoke-test",
         seed=CAMPAIGN_SEEDS[0],
-        models={"root": TIER1_MODEL},
-        rate_card=default_rate_card(),
+        models={"root": model},
+        rate_card=rate_card_for(profile.name),
     ) as run:
         started = time.monotonic()
         response = client.completion(PROMPT)
@@ -42,7 +60,7 @@ def main() -> int:
         provider_usage = client.get_last_usage()
         run.log_call(
             role="root",
-            model=TIER1_MODEL,
+            model=model,
             prompt=PROMPT,
             response=response,
             input_tokens=provider_usage.total_input_tokens,
