@@ -1,0 +1,63 @@
+{
+  "_comment": [
+    "Where each corpus document comes from. This file is the only place a source URL",
+    "is written down, and ingest/manifest.py copies the url and retrieved_on into each",
+    "corpus/<doc>/manifest.json at parse time.",
+    "",
+    "RULES, same discipline as runlog.pricing.RateCard applies to model prices:",
+    "  - licence is read from the publisher's own BOOK-LEVEL licensing page, never from",
+    "    a chapter footer and never from an aggregator. introcs is the live example:",
+    "    its book-level page says CC BY 4.0 while individual chapter footers say",
+    "    CC BY-NC-SA. The book-level page governs.",
+    "  - pdf_sha256 is filled by whoever downloads the file, from the file they",
+    "    actually downloaded. Never copied from another machine's manifest.",
+    "  - retrieved_on is the date of that download, ISO 8601.",
+    "  - a null field is an honest 'not recorded yet'. Do not guess one.",
+    "",
+    "Nulls below are UNRECORDED, not unknown-forever: fill them on the next fetch."
+  ],
+  "introcs": {
+    "title": "Introduction to Computer Science",
+    "publisher": "OpenStax / Rice University",
+    "edition": null,
+    "licence": "CC BY 4.0",
+    "licence_source": "https://openstax.org/details/books/introduction-computer-science",
+    "licence_note": "Book-level page governs. Some chapter footers state CC BY-NC-SA 4.0; docs/16 records this as a publisher template inconsistency.",
+    "url": "https://assets.openstax.org/oscms-prodcms/media/documents/Introduction_To_Computer_Science_-_WEB.pdf",
+    "file_name": "Introduction_To_Computer_Science_-_WEB.pdf",
+    "pdf_sha256": "fd56aaf80c851e9f3b417745785ea5c832fc2911acfd2094a86f4c517fdf435a",
+    "retrieved_on": "2026-08-22",
+    "role": "primary",
+    "pages": 939
+  },
+  "physics1": {
+    "title": "University Physics Volume 1",
+    "publisher": "OpenStax / Rice University",
+    "edition": null,
+    "licence": "CC BY-NC-SA 4.0",
+    "licence_source": "https://openstax.org/details/books/university-physics-volume-1",
+    "licence_note": null,
+    "url": null,
+    "file_name": null,
+    "pdf_sha256": null,
+    "retrieved_on": null,
+    "role": "secondary",
+    "pages": 959,
+    "known_issue": "Orphan-punctuation rate 113.5/1k lines. Equations are lost by text extraction, which is content loss and not formatting loss. Disqualified as primary document (docs/16)."
+  },
+  "axler": {
+    "title": "Linear Algebra Done Right, 4th edition",
+    "publisher": "Sheldon Axler",
+    "edition": "4th",
+    "licence": "CC BY-NC 4.0",
+    "licence_source": null,
+    "licence_note": "licence_source UNRECORDED — confirm against the author's own site before Manuscript B cites this document.",
+    "url": null,
+    "file_name": null,
+    "pdf_sha256": null,
+    "retrieved_on": null,
+    "role": "o5-case-study",
+    "pages": 404,
+    "known_issue": "No learning objectives and no key-terms blocks, so document-native ground truth cannot be extracted. Strongest prerequisite structure of the three; O5 only (docs/16)."
+  }
+}

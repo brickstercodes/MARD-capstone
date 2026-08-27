@@ -1,5 +1,13 @@
 # Handoff — Track 3: why the `introcs` run produced garbage, and how to re-run it
 
+**⚠ SUPERSEDED, 28 Aug 2026 — historical only for anything naming `replm`.**
+`docs/18-W3_PROVIDER_SWITCH.md` §4.2's addendum reverses the control-library decision
+this document assumes: the control is now `Zhang_RLM @ 62acf7b`, not `replm @ a0ca553`.
+The root-cause diagnosis in §0 (raw PDF via `pypdf`, the table-of-contents prompt) is
+still accurate and still the reason the original run failed — only the
+`replm`-specific facts (the `sub_caller.py:96` guard, "no concurrency cap", "no seed
+parameter") describe a library no longer in this repo.
+
 **For:** Arav Sharma (@FalseAdvertising), Track 3 · **Paste this whole file as the
 first message of a fresh Claude Code session opened in the repo root.**
 

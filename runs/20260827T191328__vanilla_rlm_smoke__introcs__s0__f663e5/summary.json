@@ -1,0 +1,33 @@
+{
+  "run_id": "20260827T191328__vanilla_rlm_smoke__introcs__s0__f663e5",
+  "status": "ok",
+  "system": "vanilla_rlm_smoke",
+  "document_id": "introcs",
+  "seed": 0,
+  "wall_clock_s": 214.532,
+  "totals": {
+    "calls": 2,
+    "input_tokens": 87817,
+    "output_tokens": 18398,
+    "per_model": {
+      "gpt-5-mini": {
+        "input_tokens": 29730,
+        "output_tokens": 17235,
+        "cost": 0.0419025
+      },
+      "gpt-5.2": {
+        "input_tokens": 58087,
+        "output_tokens": 1163,
+        "cost": 0.11793425
+      }
+    },
+    "cost": 0.15983675,
+    "unpriced_models": [],
+    "stale_rates": []
+  },
+  "result": {
+    "smoke": true
+  },
+  "error": null,
+  "finished_at": "2026-08-27T19:17:02.994856+00:00"
+}

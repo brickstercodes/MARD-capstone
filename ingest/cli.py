@@ -30,6 +30,7 @@ from pathlib import Path
 from ingest import pdf
 from ingest.blocks import Block, extract_blocks
 from ingest.boilerplate import mark_boilerplate
+from ingest.manifest import SourceRecord, sha256_file, write_manifest
 from ingest.outline import first_content_page, read_outline
 from ingest.quality import build_report, render_markdown
 
@@ -148,10 +149,46 @@ def ingest_document(pdf_path: str, doc_id: str, out_dir: Path) -> None:
     )
     (target / "parse_quality.md").write_text(render_markdown(report), encoding="utf-8")
 
+    # Pin provenance last, so the artefact hashes describe files that exist.
+    # corpus/*/document.* is gitignored, so without this the parsed text every
+    # measured number rests on has no recorded origin. See ingest/manifest.py.
+    source_path = Path(pdf_path)
+    manifest = write_manifest(
+        target,
+        doc_id,
+        SourceRecord(
+            file_name=source_path.name,
+            sha256=sha256_file(source_path),
+            bytes=source_path.stat().st_size,
+            page_count=page_count,
+            url=source.get("url") if (source := _source_entry(doc_id, out_dir)) else None,
+            retrieved_on=source.get("retrieved_on") if source else None,
+        ),
+    )
+
     print(
         f"{doc_id}: {page_count} pages, {report.chars_after_cleaning:,} chars kept, "
         f"{len(report.warnings)} warning(s) -> {target}"
     )
+    print(f"{doc_id}: source sha256 {manifest['source']['sha256'][:12]}, provenance pinned")
+
+
+def _source_entry(doc_id: str, out_dir: Path) -> dict[str, str] | None:
+    """Look up this document in corpus/SOURCES.json, if it has been recorded there.
+
+    Optional on purpose. A document can legitimately be parsed before anyone has
+    written down where it came from; the manifest then carries nulls, which is an
+    honest "unrecorded" rather than a blocked parse. scripts/fetch_corpus.sh is what
+    makes the entry mandatory for a reproducible fetch.
+    """
+    registry = out_dir / "SOURCES.json"
+    if not registry.exists():
+        return None
+    try:
+        entry = json.loads(registry.read_text(encoding="utf-8")).get(doc_id)
+    except json.JSONDecodeError:
+        return None
+    return entry if isinstance(entry, dict) else None
 
 
 def main() -> None:

@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
-# Install the RLM base library and run its own examples, capturing the output.
+# Vendor the RLM control library — Arav's Zhang_RLM fork (docs/18-W3_PROVIDER_SWITCH.md
+# §4.2, reversed 27 Aug 2026) — pinned at 62acf7b, and install it editable.
 #
-# Issue #11 asks for the library "running its own examples end-to-end". That is a
-# claim about this machine on this day, so it gets evidence rather than a tick:
-# everything below is teed into runs/_bootstrap/ and can be attached to the
-# issue. If the base library does not work here, that has to surface in W0 —
-# Track 3 needs the vanilla RLM control running in W1 and it is built on this.
+# Pinned rather than pulled to latest: a moving control library makes every measured
+# number unattributable. Same vendor-as-working-copy rationale as before (the fork's
+# own tests and examples matter, not just the importable package), same iCloud
+# hidden-.pth fix, same "run from /" import check — each exists because of a real
+# incident recorded here and in this script's own history.
+#
+# `replm` (FalseAdvertising/Vanilla_RLM_Python) is retired — no longer the control,
+# and no longer vendored at all (scripts/bootstrap_replm.sh and .vendor/replm/ are
+# both deleted; see docs/18 §4.2's superseded-not-erased record).
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUT_DIR="${REPO_ROOT}/runs/_bootstrap"
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
 LOG="${OUT_DIR}/bootstrap_${STAMP}.log"
-RLM_REPO="https://github.com/alexzhang13/rlm"
+RLM_REPO="https://github.com/FalseAdvertising/Zhang_RLM"
+PINNED_SHA="62acf7b9fb70baf78b899213fec5aea9951c8341"
 VENDOR_DIR="${REPO_ROOT}/.vendor/rlm"
 
 mkdir -p "${OUT_DIR}" "${REPO_ROOT}/.vendor"
@@ -53,20 +59,27 @@ echo "python    : $("${PY}" --version 2>&1)"
 echo "pip       : $("${PY}" -m pip --version)"
 echo
 
-echo "--- 1. clone or update the RLM base library ---"
-# Vendored as a working copy rather than a pinned pip install because the
-# examples live in the repo, and reproducing a base-paper number in W1 means
-# reading their eval setup, not just importing the package.
-if [[ -d "${VENDOR_DIR}/.git" ]]; then
-  git -C "${VENDOR_DIR}" pull --ff-only
-else
-  git clone "${RLM_REPO}" "${VENDOR_DIR}"
-fi
-RLM_SHA="$(git -C "${VENDOR_DIR}" rev-parse HEAD)"
-echo "RLM commit: ${RLM_SHA}"
+echo "--- 1. remove any prior rlm install/vendor copy ---"
+# Zhang_RLM is a fork of alexzhang13/rlm and installs under the same distribution
+# name (rlms), importable as `rlm`. Installing both editable means the last install
+# silently wins and there is no way to tell which code ran — replace, don't add.
+"${PY}" -m pip uninstall -y rlms >/dev/null 2>&1 || true
+rm -rf "${VENDOR_DIR}"
+echo "cleared prior rlms install and ${VENDOR_DIR}"
 echo
 
-echo "--- 2. install it ---"
+echo "--- 2. clone and pin ${PINNED_SHA} ---"
+git clone "${RLM_REPO}" "${VENDOR_DIR}"
+git -C "${VENDOR_DIR}" checkout "${PINNED_SHA}"
+RLM_SHA="$(git -C "${VENDOR_DIR}" rev-parse HEAD)"
+echo "RLM commit: ${RLM_SHA}"
+if [[ "${RLM_SHA}" != "${PINNED_SHA}" ]]; then
+  echo "!! Resolved SHA ${RLM_SHA} does not match the pinned ${PINNED_SHA}. Aborting."
+  exit 1
+fi
+echo
+
+echo "--- 3. install it ---"
 "${PY}" -m pip install -e "${VENDOR_DIR}"
 
 # An editable install resolves through a .pth file, and CPython 3.14's
@@ -81,18 +94,10 @@ if command -v chflags >/dev/null 2>&1; then
 fi
 echo
 
-echo "--- 3. import check ---"
+echo "--- 4. import check ---"
 # From / rather than here: run in the repo root, this passes on sys.path[0]
 # alone and proves nothing about the install.
 (cd / && "${PY}" -c "import rlm; print('rlm imported from', rlm.__file__)")
-echo
-
-echo "--- 4. list the examples we are expected to run ---"
-find "${VENDOR_DIR}" -maxdepth 2 \( -name 'example*' -o -name 'examples' -o -name 'demo*' \) -print
-echo
-echo "Run each one manually and paste the result below this line in the log."
-echo "An example that needs an API key will fail until keys are provisioned —"
-echo "record that as blocked, not as broken."
 echo
 
 echo "--- 5. record what was installed ---"
@@ -101,6 +106,7 @@ cat > "${OUT_DIR}/rlm_${STAMP}.json" <<EOF
 {
   "rlm_repo": "${RLM_REPO}",
   "rlm_commit": "${RLM_SHA}",
+  "pinned_sha": "${PINNED_SHA}",
   "captured_at": "${STAMP}",
   "python": "$("${PY}" --version 2>&1)"
 }
@@ -108,4 +114,4 @@ EOF
 
 echo
 echo "Done. Evidence in ${OUT_DIR}"
-echo "Attach ${LOG} to issue #11 before ticking the box."
+echo "Vendored at ${VENDOR_DIR}, pinned to ${RLM_SHA}."

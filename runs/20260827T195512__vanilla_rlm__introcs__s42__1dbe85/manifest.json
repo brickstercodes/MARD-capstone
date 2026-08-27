@@ -1,0 +1,60 @@
+{
+  "config": {
+    "run_id": "20260827T195512__vanilla_rlm__introcs__s42__1dbe85",
+    "system": "vanilla_rlm",
+    "document_id": "introcs",
+    "seed": 42,
+    "models": {
+      "root": "gpt-5.2",
+      "sub": "gpt-5-mini"
+    },
+    "params": {
+      "max_depth": 1,
+      "max_iterations": 30,
+      "max_concurrent_subcalls": 4
+    },
+    "git": {
+      "commit": "cdebb8f2264fcbc0d6dec8aded7aa805ddc5aa78",
+      "branch": "main",
+      "dirty": true
+    },
+    "environment": {
+      "python": "3.14.5",
+      "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+      "packages": {
+        "pydantic": "2.13.4",
+        "openai": "2.53.0",
+        "anthropic": "0.121.0",
+        "pymupdf": "1.28.2",
+        "pdfplumber": "0.11.10"
+      }
+    },
+    "captured_at": "2026-08-27T19:55:12.152296+00:00"
+  },
+  "seeding": {
+    "seed": 42,
+    "python_random": true,
+    "pythonhashseed_env": null,
+    "numpy": false,
+    "torch": false
+  },
+  "rate_card": {
+    "gpt-5.2": {
+      "model": "gpt-5.2",
+      "input_per_million": 1.75,
+      "output_per_million": 14.0,
+      "currency": "USD",
+      "retrieved_on": "2026-08-27",
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    "gpt-5-mini": {
+      "model": "gpt-5-mini",
+      "input_per_million": 0.25,
+      "output_per_million": 2.0,
+      "currency": "USD",
+      "retrieved_on": "2026-08-27",
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    }
+  },
+  "started_at": "2026-08-27T19:55:12.152343+00:00"
+}

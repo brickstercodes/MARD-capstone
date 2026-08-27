@@ -96,6 +96,6 @@ Three defects were found and fixed during the day, and each has a regression tes
 | # | Item | Status |
 |---|---|---|
 | 1 | Two further openly licensed documents that pass the parse-quality checks, needed for W5 | Not started |
-| 2 | Whether excluding front matter and withholding `outline.json` is what Pass 0 should see, and that A1 is treated identically | **Open — Track 1, blocks Pass 0** |
+| 2 | Whether excluding front matter and withholding `outline.json` is what Pass 0 should see, and that A1 is treated identically | **CLOSED 27 Aug 2026 — Anugrah Shetty (Track 1): yes to both.** Both arms read `document.txt` with front matter excluded; `outline.json` stays the fidelity yardstick and is never an input to any system. Reason: this is the only configuration in which the skeleton is *derived* rather than copied, and the 82.2% recall at 0.0 pages boundary error was measured under it — changing it would invalidate that figure. Recorded in `docs/21` §3. |
 | 3 | Whether the 50/1k orphan-punctuation threshold generalises beyond these three files | [UNVERIFIED] |
 | 4 | Whether `introcs` level-4 headings should be reclassified before Track 3 builds against the markers | Open — cheap now, expensive after Feature Freeze A |

@@ -1,0 +1,1 @@
+{"at": "2026-08-27T19:13:28.473111+00:00", "kind": "vanilla_config", "rlm_fork_sha": "62acf7b9fb70baf78b899213fec5aea9951c8341", "root_model": "gpt-5.2", "sub_model": "gpt-5-mini", "max_depth": 1, "max_iterations": 10, "page_count": 20, "smoke": true}

@@ -16,6 +16,13 @@
 > 3. **§1 "Config snapshot"** — depth must be logged as an
 >    **`(enable_sub_calls, max_recursion_depth)` pair**, never one integer, or the A4
 >    depth-0 row is a silent duplicate of depth-1. See `18` §5.1.
+> 5. **§4 gains a failed-run definition, and §1 gains groundedness fields** — see
+>    [`24-GROUNDEDNESS_AND_SEED42.md`](24-GROUNDEDNESS_AND_SEED42.md) §6. A run is
+>    re-runnable only if the **protocol did not execute** (harness fault, provider fault,
+>    unverified corpus). A run in which the *system under test* behaved badly is a **result**
+>    and is reported. Systems producing per-concept output additionally record a
+>    **groundedness rate**, a **regeneration count**, and where derivable a **mis-sourced
+>    count**.
 > 4. **§6 is replaced.** The Google MRCR v2 reproduction is void. Track 3 instead
 >    reproduces a **base-paper** number (arXiv:2512.24601), which is what §6 always wanted
 >    and could not have while the pair was Gemini. See `18` §6.
@@ -33,7 +40,7 @@ Every run of any system (MARD, vanilla RLM / A1, any baseline, any other ablatio
 | **Task score** | Output quality metric — see §2. Depends on evaluated output modality: **explanations only** (`CONTEXT.md` §2.1). Never flashcards/quizzes/diagrams. |
 | **Tokens consumed** | Input + output tokens, summed across every model call in the run (Tier 1 scout + all Tier 2 builders). Split input/output separately in the log; report the sum in tables. |
 | **Calls issued** | Count of model API calls, split by tier (Tier 1 call count, Tier 2 call count, total). |
-| **Cost** | `tokens × same-day published Vertex AI rate`, per `docs/12-MODEL_PAIR.md`. Never a cached/aggregator rate — `CONTEXT.md` §4.3 item 4: "third-party aggregators disagreed by up to 2× for the same model during preparation." |
+| **Cost** | `tokens × same-day published OpenAI rate`, from `provider.rates.build_rate_card()` (`docs/18` §1/§10 — `docs/12-MODEL_PAIR.md` is void). Never a cached/aggregator rate — `CONTEXT.md` §4.3 item 4: "third-party aggregators disagreed by up to 2× for the same model during preparation." |
 | **Wall-clock latency** | End-to-end run time. Fork-join means this is `max(builder latency)`, not `Σ(builder latency)` — report both so the parallelism claim is checkable, not asserted. |
 | **Seed** | Which of the 3 seeds this run used. See §4. |
 | **Config snapshot** | Full run configuration — model IDs, prompt template versions, depth setting, which ablation (if any) is active, document ID. |

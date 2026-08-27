@@ -15,6 +15,22 @@
 >   ↔ `replm` {1,2,3,4}. **A1 requires depth held fixed** — setting the control to
 >   `replm` 0 or 3 to "match" a MARD number makes O3 measure a depth difference instead of
 >   the envelope. Whether the sweep ends at `replm` 3 or 4 is open (`18` §7 item 3).
+> ### ⚠️ RENAMED 27 Aug 2026 — A1 and the vanilla control are now two different runs
+>
+> This document says A1 *"is architecturally vanilla RLM"* and that A1 and the control are
+> *"the same run"*. **That is no longer true and was always a conflation.** Vanilla RLM is a
+> root REPL loop issuing flat sub-calls; MARD is Pass 0/1 → Master Plan → Tier 2 builders →
+> join in plan order. Those are different architectures, not one boolean. Anugrah's decision
+> of 27 Aug:
+>
+> - **B1 — vanilla RLM (Zhang architecture).** The O3 headline baseline. Its own run.
+> - **A1 — envelope removed.** MARD's architecture with `Envelope.stripped()`. Isolates the
+>   **envelope specifically**, which is what `docs/00-CLAIM.md` and the paper's title stake
+>   the contribution on. Without it, a win over B1 says only "our architecture is better" —
+>   it changes four or five things at once.
+>
+> A2, A3 and A4 are unchanged. Everything below about *what each ablation toggles* still holds.
+
 > - **No A4 number may be quoted from a `replm` build older than `a0ca553`** — batched
 >   sub-calls silently bypassed recursion before that fix, so every depth ≥ 2 point would
 >   have run at depth 1 while being logged correctly. `18` §5.3.

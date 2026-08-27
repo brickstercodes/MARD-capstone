@@ -5,6 +5,7 @@ description = "Metadata-Augmented Recursive Decomposition — a metadata envelop
 requires-python = ">=3.10"
 dependencies = [
     "pydantic>=2.7",
+    "openai>=2.53",
 ]
 
 [project.optional-dependencies]
@@ -19,7 +20,17 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["runlog", "ingest", "envelope", "plan", "orchestrate", "eval", "corpus"]
+packages = [
+    "runlog",
+    "ingest",
+    "envelope",
+    "plan",
+    "orchestrate",
+    "eval",
+    "corpus",
+    "provider",
+    "vanilla",
+]
 
 [tool.setuptools.package-data]
 # EXAMPLE_PLAN.json is the worked example of the Tier 1 → Tier 2 contract and
@@ -49,7 +60,7 @@ strict = true
 # is how a green suite starts lying. They are not held to full annotation
 # coverage: pytest fixtures are untyped by convention, and annotating every
 # `def test_x(plan, logger)` buys nothing the assertions do not already say.
-files = ["runlog", "plan", "orchestrate", "tests", "ingest", "envelope"]
+files = ["runlog", "plan", "orchestrate", "tests", "ingest", "envelope", "provider", "vanilla"]
 # Third-party PDF and model SDKs ship no stubs; failing on those would train
 # everyone to ignore mypy output, which defeats the point of running it.
 ignore_missing_imports = true

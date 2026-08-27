@@ -1,5 +1,13 @@
 # Implementation brief — wire the MARD arm onto Arav's `replm` fork
 
+**⚠ SUPERSEDED, 28 Aug 2026 — historical only.** `docs/18-W3_PROVIDER_SWITCH.md` §4.2's
+addendum reverses the `replm` decision this whole document implements: the control is
+now `Zhang_RLM @ 62acf7b`, `replm` is retired (not kept as a fallback), and every
+`replm`-specific fact and file/line citation below (`sub_caller.py:96`, `a0ca553`'s
+`client.py`, the `(enable_sub_calls, max_recursion_depth)` pair, etc.) describes a
+library no longer in this repo. Kept unedited as the record of what was built and why,
+not as current instructions.
+
 **Paste this whole file as the first message of a fresh Claude Code session, opened
 in `~/Desktop/Capstone/MARD-capstone`.**
 

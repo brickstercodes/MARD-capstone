@@ -330,6 +330,15 @@ relative to vanilla RLM on documents with exploitable structure, while degrading
 gracefully to vanilla-RLM behaviour on documents without it.
 \end{quote}
 
+A second property of the envelope emerged from measurement rather than design, and we
+report it as a finding rather than folding it into the claim above: because MARD's plan is a
+\emph{typed contract} validated at the tier boundary, a builder receives its source span by
+construction rather than by a model matching text to a concept. We observed the vanilla
+baseline silently generate content without consulting the document at all, while reporting
+success (Section~\ref{sec:grounding}). The envelope's structural apparatus makes that failure
+mode loud rather than silent, which is a claim about \emph{faithfulness and auditability}
+distinct from output quality.
+
 Three properties of this sentence are deliberate. It credits the envelope, not
 recursion, because recursion is the base paper's. It is a \emph{disjunction} over
 quality and tokens, because we do not know in advance which axis the effect
@@ -853,6 +862,62 @@ $\Delta$           & \RESULT & \RESULT & \RESULT \\
 \end{tabular}
 \end{table}
 
+\subsection{Groundedness of generated content}
+\label{sec:grounding}
+
+The most consequential observation in this study was not a score. In one repeat of the
+baseline, the system completed without error, reported success, and produced a coherent
+study guide in which a substantial fraction of the explanations had been generated
+\emph{without the document in context at all}.
+
+The mechanism is worth stating precisely, because it is a property of the method rather than
+of our harness. In vanilla RLM the root model authors its own exploration code. In this run
+that code mismapped a concept onto an unrelated passage; the resulting generation failed to
+parse and was discarded; and the retry proceeded with an empty source field, producing an
+explanation from the model's parametric knowledge. Nothing in the returned artefact, the exit
+status, or the aggregate token accounting distinguishes that explanation from a grounded one.
+The failure is visible only by walking the execution trajectory.
+
+We therefore instrument groundedness directly. For each concept in a final artefact we
+resolve the generating call and classify it as \emph{grounded} (non-empty source text),
+\emph{ungrounded} (empty or absent source), or \emph{regenerated} (at least one prior attempt
+discarded). \TODO{Report the groundedness rate per run for both arms. Measure MARD's rate and
+report it whatever it is --- claiming immunity without measuring is the same overclaim
+inverted. State plainly that this was found by manual trajectory inspection and instrumented
+afterwards.}
+
+\begin{table}[t]
+\centering
+\small
+\caption{Groundedness by system and repeat. Rate is grounded concepts as a fraction of
+concepts in the final artefact.}
+\label{tab:grounding}
+\begin{tabular}{llrrr}
+\toprule
+\textbf{System} & \textbf{Repeat} & \textbf{Concepts} & \textbf{Grounded} & \textbf{Regen.} \\
+\midrule
+Vanilla RLM & 1 & \RESULT & \RESULT & \RESULT \\
+Vanilla RLM & 2 & \RESULT & \RESULT & \RESULT \\
+Vanilla RLM & 3 & \RESULT & \RESULT & \RESULT \\
+MARD        & 1 & \RESULT & \RESULT & \RESULT \\
+MARD        & 2 & \RESULT & \RESULT & \RESULT \\
+MARD        & 3 & \RESULT & \RESULT & \RESULT \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+MARD's architecture bears on this structurally rather than incidentally. Builder inputs are
+constructed from the plan's recorded source span rather than matched at generation time; the
+plan is schema-validated at the tier boundary and a malformed plan fails loudly rather than
+dispatching many subtly incorrect builders; and the join validates non-empty output per plan
+step, raising rather than returning an artefact that is short by a section while satisfying
+every identity check.
+
+\subsection{Variance across repeats}
+
+\TODO{Report the three baseline repeats individually. Do not average them: the spread in
+concept count, cost and wall-clock is itself the result. State that no repeat was excluded.}
+
 \subsection{Ablation}
 \label{sec:ablations}
 
@@ -904,6 +969,14 @@ behaviour here. A null difference is the predicted outcome, not a failure.}
 predicted to help where structure is exploitable and to degenerate where it is
 not. Both halves are results.}
 
+\subsection{Structure as a faithfulness mechanism}
+
+\TODO{Written against Table~\ref{tab:grounding}. The argument: a typed, validated plan does
+not merely order the output, it constrains what each generation step is permitted to see.
+Where the baseline can fall back to parametric knowledge silently, the ablated pipeline
+either supplies the recorded span or fails. If MARD's own groundedness rate is below one,
+report and explain that instead.}
+
 \subsection{Threats to validity}
 
 \paragraph{The comparison rests on one mechanism.}
@@ -917,6 +990,15 @@ findings, and that a child envelope carries its parent's findings.
 Section~\ref{sec:confounds} describes the two routes by which document structure
 could reach a model without being derived. We control both and apply the controls
 to both arms. We cannot rule out a third route we have not thought of.
+
+\paragraph{No repeat was excluded.}
+One baseline repeat exhibited the grounding failure described in
+Section~\ref{sec:grounding}, and produced markedly different output volume, cost and latency
+from the other two. It is reported. A run is treated as re-runnable only when the
+\emph{protocol} failed to execute --- a harness fault, a provider fault, an unverified
+corpus. A run in which the system under test behaved badly is a result. Excluding the repeat
+in which the baseline performed worst would be indistinguishable from tuning toward a
+positive outcome.
 
 \paragraph{Single primary document.}
 Manuscript-scale evidence from one document cannot establish that an effect is

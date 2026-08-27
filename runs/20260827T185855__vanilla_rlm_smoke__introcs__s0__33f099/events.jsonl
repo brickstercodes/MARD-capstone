@@ -1,0 +1,6 @@
+{"at": "2026-08-27T18:58:55.599972+00:00", "kind": "vanilla_config", "rlm_fork_sha": "62acf7b9fb70baf78b899213fec5aea9951c8341", "root_model": "gpt-5.2", "sub_model": "gpt-5-mini", "max_depth": 1, "max_iterations": 10, "page_count": 20, "smoke": true}
+{"at": "2026-08-27T19:00:56.632900+00:00", "kind": "vanilla_retry", "url": "/chat/completions", "delay_seconds": 0.39444726855936896}
+{"at": "2026-08-27T19:00:57.037345+00:00", "kind": "vanilla_retry", "url": "/chat/completions", "delay_seconds": 0.8105113992649244}
+{"at": "2026-08-27T19:00:57.855506+00:00", "kind": "vanilla_retry", "url": "/chat/completions", "delay_seconds": 1.7897142095845775}
+{"at": "2026-08-27T19:00:59.651664+00:00", "kind": "vanilla_retry", "url": "/chat/completions", "delay_seconds": 3.7410832497070365}
+{"at": "2026-08-27T19:01:03.399003+00:00", "kind": "vanilla_retry", "url": "/chat/completions", "delay_seconds": 6.977450557262783}

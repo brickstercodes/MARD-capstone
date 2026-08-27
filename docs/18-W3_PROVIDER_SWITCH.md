@@ -10,19 +10,28 @@ almost every frozen document at once. Rather than rewrite frozen text — which
 the frozen documents keep their bodies and carry a dated banner pointing here. **This
 document is the current state; where it and an older document disagree, this one wins.**
 
+> **⚠ §4.2's CLOSED decision below is REVERSED, 28 Aug 2026, on Anugrah's direct
+> instruction.** The control library is `Zhang_RLM` (`FalseAdvertising/Zhang_RLM @
+> 62acf7b`), not `replm`. §1 items 2–3, §4.2, and §5–§5.6 below describe the
+> superseded `replm` decision and are kept as the historical record of why the
+> control library changed — read the new addendum at the end of §4.2 first, then
+> treat everything naming `replm` as history, not current state. `docs/19` and
+> `docs/20` name `replm` throughout and carry the same superseded status.
+
 ---
 
 ## 1. Decision
 
 1. **Provider is OpenAI.** Google Cloud Vertex AI is abandoned for the remainder of the
    project.
-2. **The vanilla RLM control runs on `replm`**, from Track 3's fork
-   [`github.com/FalseAdvertising/Vanilla_RLM_Python`](https://github.com/FalseAdvertising/Vanilla_RLM_Python),
-   **pinned to commit `a0ca553`** (26 Aug 2026, Arav Sharma). Upstream is
-   [`github.com/dschulmeist/replm`](https://github.com/dschulmeist/replm), MIT licensed.
-3. **Control configuration is `max_recursion_depth=1`, `enable_sub_calls=True`** —
-   `replm`'s own default, and the base paper's primary reported condition
-   (`CONTEXT.md` §1.6). See §5 for why this is not depth 0.
+2. ~~The vanilla RLM control runs on `replm`~~ **REVERSED 28 Aug 2026 — see §4.2
+   addendum.** The control is
+   [`github.com/FalseAdvertising/Zhang_RLM`](https://github.com/FalseAdvertising/Zhang_RLM),
+   **pinned to full SHA `62acf7b9fb70baf78b899213fec5aea9951c8341`**. `replm` is
+   retired, not kept as a fallback.
+3. ~~Control configuration is `max_recursion_depth=1`, `enable_sub_calls=True`~~
+   **REVERSED — see §4.2 addendum.** Control configuration is `max_depth=1` — Zhang's
+   own default, and the base paper's primary reported condition (`CONTEXT.md` §1.6).
 4. **The model pair is not yet re-decided.** `docs/12-MODEL_PAIR.md`'s Gemini pair is
    void; no OpenAI pair has been selected on evidence. See §7 item 1 — this is the
    single largest open item and it blocks the O6 cost model.
@@ -203,7 +212,191 @@ Under this decision these matter *less* — we are no longer comparing two imple
 against each other — but they still decide how faithfully our vanilla arm reproduces the
 published RLM, which is what item 1's sanity check has to establish.
 
-## 5. `replm` facts established first-hand (source read 26 Aug 2026)
+### 4.2 addendum — REVERSED, 28 Aug 2026
+
+**Decision.** Both arms move from `replm` to `Zhang_RLM`
+(`github.com/FalseAdvertising/Zhang_RLM`, pinned to full SHA
+`62acf7b9fb70baf78b899213fec5aea9951c8341`, 27 Aug 2026, Arav Sharma — a fork of
+`alexzhang13/rlm` that fixes a Windows/UTF-8 encoding defect in the REPL's context
+loading and bundles an example script). `replm` is retired entirely: not deprecated,
+not kept as a fallback — `.vendor/replm` is deleted and `scripts/bootstrap_replm.sh`
+is removed.
+
+**On whose authority, and why now rather than 27 Aug.** Anugrah instructed the switch
+directly, 28 Aug 2026. The reasoning above — implementation parity, "not rate
+limits" — is not wrong and is not being retracted; §4.1's own comparison (written the
+same day as the CLOSED decision it now overturns) already laid out why a
+Zhang-lineage library is the stronger choice: `alexzhang13/rlm` ships
+`max_concurrent_subcalls` where `replm` has no cap at all, `other_backends` +
+`sub_sampling_args` give a first-class Tier 1 / Tier 2 model split, `sampling_args`
+carries a real `seed`, and `orchestrate/lm_builder.py`'s `LanguageModel` protocol was
+declared structurally *because* `rlm.clients.base_lm.BaseLM` satisfies it and
+`replm`'s `OpenAIAdapter.acomplete(...)` does not — meaning `Zhang_RLM` gives both
+arms a **shared client layer**, which is *stronger* parity than `replm` provided, not
+weaker. The prior decision weighed "one fewer implementation to defend" against these
+gaps and chose the former; this decision weighs them the other way. **The rate-limit
+prohibition still applies and is not what changed:** nothing about this reversal is
+justified by throughput, and that reasoning must not appear anywhere either.
+
+**What is actually different from the real `Zhang_RLM` API** — verified first-hand
+against the pinned commit, not inferred from a prior draft of this plan: there is no
+`RLMWrapper`/`RLMConfig` (everything is a constructor kwarg on `rlm.core.rlm.RLM`
+itself); `.completion(prompt, root_prompt)` is **synchronous**, not `.agenerate()`;
+there is no `reasoning_effort` parameter; `on_iteration_start`/`on_iteration_complete`
+are declared but **never invoked** at this pinned commit (verified by grep across the
+whole fork — dead code, not a wiring bug on our side); and there is **no
+client-injection seam** — `RLM.__init__`'s `backend_kwargs` always builds its own
+`openai.OpenAI`/`openai.AsyncOpenAI` internally, so `provider.openai_client
+.ThrottledAsyncOpenAI` cannot be handed to it the way `replm`'s
+`RLMWrapper(client=...)` allowed. `vanilla/run.py` and
+`vanilla/openai_logging_bridge.py` document the resulting design (429/retry
+visibility via the `openai` SDK's own logger, not via client injection).
+
+**Consequences accepted, updating §4.2's original three:**
+
+1. The baseline is still our own implementation of RLM, not the authors' — unchanged.
+2. **The concurrency gap is gone, not inherited.** `Zhang_RLM` ships
+   `max_concurrent_subcalls` (default 4) and its own per-environment
+   semaphore/thread-pool gating. `provider/throttle.py`'s hand-rolled `Throttle` is
+   **not** threaded through the vanilla arm's calls — it remains in place only for
+   MARD's own Tier 1/2 calls via `provider/seams.py`, which never go through Zhang's
+   `RLM` at all.
+3. Throttling is still a study-wide, disclosed, identically-applied constraint —
+   unchanged in spirit, different mechanism per arm.
+
+**Correction, 28 Aug 2026 — §4.1's `on_subcall_start`/`on_subcall_complete` claim
+(line 139) is incomplete, found from a real smoke run, not from reading source.**
+§4.1 says these callbacks "carry depth, which is most of what `runlog` needs" —
+true only when a sub-call actually recurses (`next_depth < max_depth`). At our fixed
+`max_depth=1`, `next_depth` is always `1`, so `_subcall()`'s
+`if next_depth >= self.max_depth:` branch is taken every time — the plain-LM-completion
+early return, which calls the client directly and returns *before* either callback
+later in the function. A real 20-page smoke run confirmed this empirically: `gpt-5-mini`
+was clearly called (29,730 input / 17,235 output tokens landed in `usage_summary`),
+and `events.jsonl` contains zero `vanilla_subcall_*` records.
+
+**This was first written up as a limitation ("cannot be satisfied for the vanilla
+arm") and that framing was wrong — caught and corrected the same day.** The
+measurement is not lost, only the callback: `_llm_query`/`_llm_query_batched`/
+`_rlm_query`/`_rlm_query_batched` (`local_repl.py`) all append the real
+`RLMChatCompletion` they get back — real prompt, real response, its own
+`usage_summary`, its own `execution_time` — to `self._pending_llm_calls`, which
+surfaces as `REPLResult.rlm_calls` on every code block inside the `RLMLogger`
+trajectory this wrapper already attaches, independent of whether the callbacks fire.
+`vanilla/run.py`'s `_walk_subcalls`/`_log_subcall_detail` now read that directly:
+real per-sub-call timing feeds genuine `max`/`Σ` wall-clock, and real per-sub-call
+prompt/response/tokens are logged via `vanilla_subcall_detail` events —
+`_reconcile_usage` cross-checks the granular sum against `usage_summary` and logs a
+`vanilla_usage_reconciliation_mismatch` event if they ever diverge, rather than
+trusting either silently. Cost/token totals still come from `usage_summary` alone
+(`_log_usage`), never from this granular walk, so a gap in trajectory capture can
+never under-count real spend. No limitation to write into Manuscript A after all —
+losing the callbacks cost real-time verbose-output convenience during a run, not any
+measurement `docs/30` §1 requires.
+
+**Second correction, same day, from the first full-corpus run rather than the
+20-page smoke test: batched sub-calls' per-call metadata is unreliable, in a way
+`_reconcile_usage` was built to catch and did.** The B1 run (`runs/…s11__ec9d17`)
+issued two `rlm_query_batched`/`llm_query_batched` calls of 7 prompts each (one per
+chapter — real, distinct prompts and responses, verified by reading them). Within
+each batch, all 7 logged entries shared byte-identical `execution_time` and token
+counts. Traced to `LMHandler._handle_batched` (`rlm/core/lm_handler.py`): it calls
+`client.get_last_usage()` **once, after `asyncio.gather()` returns**, and stamps
+that single snapshot onto every completion in the batch. `OpenAIClient.get_last_usage()`
+(`rlm/clients/openai.py`) reads `self.last_prompt_tokens`/`last_completion_tokens` —
+plain instance attributes with no lock, last-writer-wins under N concurrent async
+tasks. `execution_time` is `total_batch_time / len(prompts)`, an average, labelled as
+such in Zhang's own code comment ("approximate per-prompt time"). Real bug (or at
+minimum severe imprecision) in the vendored library's batched path, not in this
+wrapper's reading of it — the B1 run's `vanilla_usage_reconciliation_mismatch` event
+(granular sum 431,151 in / 57,750 out vs. `usage_summary`'s 482,998 / 50,982) is
+exactly this, caught by the check built for exactly this kind of thing.
+
+**What still holds and what doesn't, precisely:** cost/token totals (`_log_usage`,
+never derived from the granular walk) are unaffected — `usage_summary` comes from
+the client's own cumulative counters, correct regardless of this bug. `Σ` over
+sub-calls stays meaningful for a batch (N copies of `total_time/N` sum back to the
+true `total_time`). `max` over sub-calls does **not** — comparing averages-per-batch
+is not comparing true peak single-call latency, and likely understates real
+intra-batch variance. State this precisely if `docs/30` §1's wall-clock figure for
+B1 goes in Manuscript A: `Σ` is real, `max` is a batch-average proxy, not a peak.
+
+**Third correction, same day: B1's `concept_count` figure was wrong on the second
+repeat, in the direction that looked like a collapse.** Seed 11 reported 156
+concepts; seed 23 initially reported **14** — read as-is, that looks like a
+catastrophic variance between two repeats of the same frozen prompt on the same
+document. It was a counting bug, not a result: seed 23's answer nested concepts one
+level deeper than seed 11's (14 `## Chapter N` wrapper headings, each holding
+several `### Concept Name` entries — 190 of them), and `_count_concepts`
+(`vanilla/run.py`) only ever looked at `##`, so it silently reported the *wrapper*
+count as the concept count. The frozen prompt (`docs/21` §3.1) does not mandate a
+heading structure, and this is the second time in one day a fixed-format assumption
+broke on real model output (the first being the `on_subcall_start` claim above) —
+fixed to take whichever heading level (numbered `##`, plain `##`, or `###`) has the
+*most* matches, since concepts are always the finest structural unit and so always
+outnumber any wrapper level. Corrected count: **190**, not 14. Re-verified against
+both real answer files directly, not just re-read from code.
+
+**The corrected saturation picture, with real numbers from two repeats:** 49
+concepts (20 pages) → 156 (seed 11, full 916 pages) → 190 (seed 23, full 916
+pages). Full-document counts are in the same 150–190 range across two independent
+repeats — much closer to each other than either is to the 20-page slice — which is
+a real, if noisy, signal of *something* stabilizing at full-document scale. It is
+not the clean "saturates at ~50" story hoped for, and the seed-11-vs-23 spread
+(156 vs 190, ~20%) is exactly the kind of variance `docs/30` §4's "3 repeats,
+variance reported" exists to catch before anyone quotes a single run's count as if
+it were the number.
+
+**Fourth finding, same day, from B1's third repeat (seed 42) — not a harness bug,
+a real property of the vanilla arm at full-document scale worth reporting.**
+Seed 42's `concept_count` is 75 — apparently converging further, not diverging.
+It doesn't: at least 41 of those 75 concepts (`runs/…s42__1dbe85`, iteration 14's
+own `missing_outline` count) were generated **with no textbook grounding at all**,
+traced precisely via `vanilla_subcall_detail`. For "Trees and balanced trees":
+attempt 1 (correct source chunks) failed JSON parsing and was discarded; attempt 2
+pulled a completely unrelated chunk — a multiple-choice quiz page about
+"enterprise architecture levels" — because the root's self-authored
+`chunks_for_includes` mismatched concept names to chunk indices, and that attempt
+was also discarded on a parse failure; attempt 3 dropped source text entirely
+(`SOURCE:` empty, 88 input tokens) and generated the explanation from
+`gpt-5-mini`'s general knowledge alone. That third, sourceless response is the
+exact text that appears in the published final study guide — confirmed by matching
+phrasing verbatim. Nothing in the final answer or in `status: "ok"` shows this: the
+content itself reads as accurate, coherent CS material, and the sourceless model
+didn't get derailed by the earlier mismatched chunk, it simply answered from its
+own knowledge. But it is not what the frozen prompt (`docs/21` §3.1) asks for —
+"the textbook available in `context`" — for at least 55% of this run's concepts.
+
+**This is the root model's own bug, in code it wrote itself** (a regex splitting
+"Explanation:"/"Check yourself:" sections, and the includes→chunk-index matching),
+not a defect in `vanilla/run.py` or `Zhang_RLM`. It is a genuine, reportable finding
+about vanilla RLM's robustness at full-document scale: when the root orchestrates
+its own multi-stage pipeline (extract → cluster → retrieve source → explain), a bug
+in its self-authored glue code can silently degrade a large fraction of the output
+to ungrounded generation, invisible without walking the full trajectory — no
+exception, no truncation flag, no TOC artifact, nothing `docs/30` §1's aggregate
+fields would ever surface. Worth its own line in Manuscript A's limitations or
+discussion, not something to quietly fix or drop. Also explains seed 42's cost/time
+outlier ($1.60, 776.1s vs $0.32/152.5s and $0.58/437.2s) — iterations 11–16 were
+largely the root fighting its own parsing failures.
+
+**Concept counts across all three B1 repeats, corrected:** 156 (seed 11) / 190
+(seed 23) / 75 (seed 42, ≥41 of which are known-ungrounded). This is a much wider,
+noisier spread than the two-repeat picture above suggested, and seed 42's number
+carries an asterisk the other two don't. Do not average these three into a single
+"vanilla arm produces ~140 concepts" figure without carrying this caveat forward.
+
+**§5–§5.6 below describe `replm` and are superseded, kept as the historical record of
+the decision this reversed — not current state.** The A4 depth-numbering mapping in
+§5.2 does *not* transfer to `Zhang_RLM`'s `max_depth`; re-derive it against
+`envelope/pass1.py`'s actual call structure rather than assuming the table above still
+applies (still `[UNVERIFIED]` either way — see §8 item 1).
+
+## 5. `replm` facts established first-hand (source read 26 Aug 2026) — SUPERSEDED, historical only
+
+> Everything in this section describes `replm`, which is no longer the control
+> (§4.2 addendum, 28 Aug 2026). Kept unedited as the record of why `replm` was chosen
+> and then left, not as a description of the current harness.
 
 Each of these was read out of the pinned source, not inferred from the README.
 
@@ -371,7 +564,7 @@ decided.
 | # | Decision | Blocks | Needed by |
 |---|---|---|---|
 | 1 | **The OpenAI model pair.** Tier 1 and Tier 2 model IDs, on published evidence, with same-day rates from OpenAI's own pricing page. `docs/12`'s successor. | O6 cost model, every run, `RateCard` | Immediately — it blocks §6 too |
-| 2 | ~~Is the control `replm` or `alexzhang13/rlm`?~~ **CLOSED 27 Aug — see §4.2.** Both arms run on Arav's fork; the reference implementation is cited as the specification, not measured as the artefact. Justification is **implementation parity**, not rate limits. | — | Closed |
+| 2 | ~~Is the control `replm` or `alexzhang13/rlm`?~~ CLOSED 27 Aug on `replm` — **REVERSED 28 Aug, see §4.2 addendum.** Both arms now run on `Zhang_RLM @ 62acf7b`. Justification is still **implementation parity**, not rate limits; the instantiation changed, not the argument. | — | Closed |
 | 3 | **A4's sweep range** under the corrected mapping (§5.2) — `replm` {1,2,3} or {1,2,3,4}. | W6 provisioning, `RATE_LIMIT_BUDGET.md` §1.1 arithmetic | Before W5 |
 | 4 | **The out-of-pocket ceiling.** §10 measures the whole project at roughly **$150–200**, so this is a decision about an affordable number rather than a constraint on the science. But `SpendCap.from_env()` refuses to run without an explicit value and `MARD_SPEND_CAP_USD` is still not exported anywhere persistent. **Set it to something real and small** (§10 suggests $60 for Phase A) rather than carrying $780 forward. | Every run | Immediately |
 | 5 | **Whether Pass 2 runs for the 29 Aug review.** Reverses `docs/17`'s Trigger B decision, and confounds envelope with depth if the control stays at `replm` 1. Acceptable as a *system-vs-system* demo; not as the O3 isolation number. | What §3 and every results caption say | 28 Aug |
@@ -461,11 +654,13 @@ model barely matters by comparison.
 
 ## 9. References
 
-- Fork, pinned: `github.com/FalseAdvertising/Vanilla_RLM_Python` @ `a0ca553`
-- Upstream: `github.com/dschulmeist/replm` — MIT
-- Base-paper library, vendored: `github.com/alexzhang13/rlm` @ `caf0bff` — **MIT**
-  (upstream has since moved to `854e688`, 25 Aug 2026)
+- **Control, pinned (28 Aug 2026 —):** `github.com/FalseAdvertising/Zhang_RLM` @
+  `62acf7b9fb70baf78b899213fec5aea9951c8341`, MIT (fork of `alexzhang13/rlm`)
+- Superseded control (27–28 Aug 2026), historical only: `github.com/FalseAdvertising/Vanilla_RLM_Python` @ `a0ca553` — MIT; upstream `github.com/dschulmeist/replm`
+- Base-paper library: `github.com/alexzhang13/rlm` @ `caf0bff` — **MIT**
+  (upstream has since moved to `854e688`, 25 Aug 2026); `Zhang_RLM` is a fork of this
 - Base paper: Zhang, Kraska & Khattab, arXiv:2512.24601 — `docs/40` row 1
 - Superseded: `docs/12-MODEL_PAIR.md`, `docs/15-VERTEX_GEMINI_CLIENT_PATCH.md`
 - Amended: `docs/30-MEASUREMENT_PROTOCOL.md` §1/§6, `docs/31-ABLATIONS.md` A4,
-  `RATE_LIMIT_BUDGET.md` §2, `RLM_BASELINE_SURVEY.md` §1–§3
+  `RATE_LIMIT_BUDGET.md` §2, `RLM_BASELINE_SURVEY.md` §1–§3, `docs/19`, `docs/20`
+  (both name `replm` throughout — superseded by this record's §4.2 addendum)

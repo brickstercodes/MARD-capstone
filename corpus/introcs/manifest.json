@@ -1,0 +1,44 @@
+{
+  "doc_id": "introcs",
+  "generated_at": "2026-08-27T18:48:15.860534+00:00",
+  "source": {
+    "file_name": "Introduction_To_Computer_Science_-_WEB.pdf",
+    "sha256": "fd56aaf80c851e9f3b417745785ea5c832fc2911acfd2094a86f4c517fdf435a",
+    "bytes": 56261511,
+    "page_count": 939,
+    "url": "https://assets.openstax.org/oscms-prodcms/media/documents/Introduction_To_Computer_Science_-_WEB.pdf",
+    "retrieved_on": "2026-08-22"
+  },
+  "pipeline": {
+    "contract_version": 1,
+    "git_commit": "cdebb8f2264fcbc0d6dec8aded7aa805ddc5aa78",
+    "git_branch": "main",
+    "git_dirty": true
+  },
+  "artefacts": {
+    "document.jsonl": {
+      "sha256": "6dd2b8c43a6aa5d10383b0106179f35a81c8a3d3a8d69ab84b57c579c9a8946f",
+      "bytes": 4240510
+    },
+    "document.txt": {
+      "sha256": "428c7b6821beabb8d1832d74ac39bb492e4994ac886f7d83ea612ff6e63325ec",
+      "bytes": 2477391
+    },
+    "outline.json": {
+      "sha256": "d86dd91c687de3c50526c81ebb57c7ca84090e069be3be24a2d35ec8d134a402",
+      "bytes": 16743
+    },
+    "sections.json": {
+      "sha256": "7f8bbcf79ce3e07b4812878b8d41a8192fed760812f3df588572dac242fb4292",
+      "bytes": 332889
+    },
+    "chapters.json": {
+      "sha256": "24bc4bf3acfb9d6b32a97ef127c0b51081206848a29df0660a3a6dc4e6b1705c",
+      "bytes": 11556
+    },
+    "parse_quality.json": {
+      "sha256": "33ec1e666e98cd3ae9934073260e7211b11f318be08a0a3c897da314a309d72c",
+      "bytes": 1272
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "cap": {
+    "ceiling_usd": 60.0,
+    "set_by": "anugrah",
+    "set_on": "2026-08-22",
+    "note": "Rs 75,000 at Rs 95.13/USD on 9 Aug 2026, rounded down"
+  },
+  "spent_usd": 2.65663,
+  "uncounted_runs": [],
+  "entries": [
+    {
+      "run_id": "20260827T191328__vanilla_rlm_smoke__introcs__s0__f663e5",
+      "system": "vanilla_rlm_smoke",
+      "document_id": "introcs",
+      "seed": 0,
+      "cost_usd": 0.15983675,
+      "at": "2026-08-27T19:17:02.995421+00:00"
+    },
+    {
+      "run_id": "20260827T193317__vanilla_rlm__introcs__s11__ec9d17",
+      "system": "vanilla_rlm",
+      "document_id": "introcs",
+      "seed": 11,
+      "cost_usd": 0.32110025,
+      "at": "2026-08-27T19:35:50.404758+00:00"
+    },
+    {
+      "run_id": "20260827T194259__vanilla_rlm__introcs__s23__a39374",
+      "system": "vanilla_rlm",
+      "document_id": "introcs",
+      "seed": 23,
+      "cost_usd": 0.5755082499999999,
+      "at": "2026-08-27T19:50:16.981946+00:00"
+    },
+    {
+      "run_id": "20260827T195512__vanilla_rlm__introcs__s42__1dbe85",
+      "system": "vanilla_rlm",
+      "document_id": "introcs",
+      "seed": 42,
+      "cost_usd": 1.6001845000000001,
+      "at": "2026-08-27T20:08:08.626382+00:00"
+    }
+  ]
+}
