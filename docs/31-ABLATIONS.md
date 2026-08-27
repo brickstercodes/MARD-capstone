@@ -1,5 +1,24 @@
 # 31 — Frozen ablation set
 
+> ### ⚠️ CLARIFIED — 26 Aug 2026 (A4 only; no ablation redefined)
+>
+> All four ablations toggle exactly what they always toggled. Two operational notes on
+> A4, from reading the `replm` source first-hand — see
+> [`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md) §5.1–§5.3:
+>
+> - **`max_recursion_depth=0` does not disable sub-calls.** The guard is
+>   `self._depth + 1 < max_recursion_depth`, so 0 and 1 take the same branch and produce
+>   indistinguishable traces. The real no-sub-calls condition is `enable_sub_calls=False`.
+>   **Record A4 as an `(enable_sub_calls, max_recursion_depth)` pair.**
+> - **A4's depth numbering is offset by one from `replm`'s.** MARD depth 0 (two-pass)
+>   already issues flat sub-calls, which is `replm` depth **1**. Mapping: MARD {0,1,2,3}
+>   ↔ `replm` {1,2,3,4}. **A1 requires depth held fixed** — setting the control to
+>   `replm` 0 or 3 to "match" a MARD number makes O3 measure a depth difference instead of
+>   the envelope. Whether the sweep ends at `replm` 3 or 4 is open (`18` §7 item 3).
+> - **No A4 number may be quoted from a `replm` build older than `a0ca553`** — batched
+>   sub-calls silently bypassed recursion before that fix, so every depth ≥ 2 point would
+>   have run at depth 1 while being logged correctly. `18` §5.3.
+
 **Status:** Frozen W0 (2 Aug 2026) · Owner: Track 1 · Read by: Track 3 before building scorers/runner (`CONTEXT.md` §3.3 W2: "ablation runner (envelope removed)").
 
 Four ablations, per `CONTEXT.md` §2.1/§2.2/§3.2. This document fixes *how each one is operationalised* — i.e., exactly what toggles, what stays fixed, and what output it's expected to produce — so Track 3 can build the ablation runner against a stationary target. Changing any definition below after Track 3 has built against it is a protocol change, not a bug fix, and must go through Track 1.

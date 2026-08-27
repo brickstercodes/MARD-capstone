@@ -1,5 +1,22 @@
 # 12 — Model pair decision record
 
+> ### ⛔ SUPERSEDED — 26 Aug 2026
+>
+> **This decision is void.** Vertex AI could not run vanilla RLM (malformed function
+> call errors, ~₹2,000 spent beyond free credits) and the project moved to **OpenAI** on
+> 26 Aug. Both models named below, the provider, the GDM-MRCR v2 evidence table and the
+> "₹75,000 from a Vertex credit balance" budget framing are all void.
+>
+> **A replacement pair has not yet been selected** — see
+> [`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md) §7 item 1. Until it is, no model
+> ID in this repository is authoritative.
+>
+> **One thing here got better, not worse:** Consequence 1 below gave up reproducing a
+> base-paper number because the pair was Gemini and the base paper is GPT-5-family only.
+> On OpenAI that check is available again — `18` §6.
+>
+> Body retained unedited as the record of why Gemini was chosen. Do not cite it as current.
+
 **Status:** Decided 2 Aug 2026 (within the Sun 9 Aug deadline, `CONTEXT.md` §4.2 item 2) · Decision owner: Anugrah Shetty · Type: ADR-style, per global `CLAUDE.md` Part 7.
 
 ## Decision

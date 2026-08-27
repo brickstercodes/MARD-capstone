@@ -1,5 +1,25 @@
 # 30 — Measurement protocol
 
+> ### ⚠️ AMENDED — 26 Aug 2026 (protocol still frozen; two rows changed)
+>
+> The provider switch to OpenAI ([`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md))
+> changes exactly three things here. Everything else — the seven required fields, the
+> ground-truth source, the explanations-only constraint, the matrices, the freezes —
+> stands unchanged.
+>
+> 1. **§1 "Cost"** — read "same-day published **OpenAI** rate", not Vertex. Same
+>    discipline, same 30-day staleness rule.
+> 2. **§1 "Seed"** — `replm` has **no `seed` parameter**, and reasoning-model endpoints
+>    reject `temperature` outright. "3 seeds" is operationally **3 repeat runs at default
+>    sampling, variance reported across repeats**; `CAMPAIGN_SEEDS` remain run
+>    *identifiers*. `TRACK3_HANDOFF.md` already anticipated this. See `18` §5.4.
+> 3. **§1 "Config snapshot"** — depth must be logged as an
+>    **`(enable_sub_calls, max_recursion_depth)` pair**, never one integer, or the A4
+>    depth-0 row is a silent duplicate of depth-1. See `18` §5.1.
+> 4. **§6 is replaced.** The Google MRCR v2 reproduction is void. Track 3 instead
+>    reproduces a **base-paper** number (arXiv:2512.24601), which is what §6 always wanted
+>    and could not have while the pair was Gemini. See `18` §6.
+
 **Status:** Frozen W0 (2 Aug 2026) · Owner: Track 1 · **This is the document Track 3 builds its scorers and matrix runner against** (`CONTEXT.md` §3.6 dependency map, W0 edge T1 → T3). Track 3: read this fully before starting the W1 vanilla-RLM-control task.
 
 Anything not nailed down here is exactly the kind of ambiguity `CONTEXT.md` Part 0 rule 3 warns about — four sessions each filling the gap with a "sensible default" produces four incomparable numbers. If something you need isn't specified below, escalate to Track 1; do not infer it.

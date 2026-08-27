@@ -1,5 +1,25 @@
 # Handoff: run logging harness — Track 2 → Track 3
 
+> ### ✅ REQUEST 2 ANSWERED, ITEM 4 CONFIRMED — 26 Aug 2026
+>
+> **"Tell me what identifies a run for you"** — depth needs to be **two** first-class
+> fields in `params`, not one: **`enable_sub_calls` and `max_recursion_depth`**. In
+> `replm`, `max_recursion_depth=0` and `=1` take the same code branch, so a single
+> integer makes A4's depth-0 row a silent duplicate of depth-1. The pinned build SHA must
+> also be the **fork's** SHA (`FalseAdvertising/Vanilla_RLM_Python`), not upstream's —
+> see [`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md) §5.1 and §5.3.
+>
+> **Item 4 ("local seeding does nothing to a hosted model") was right, and is now
+> load-bearing.** `replm` has no `seed` parameter at all, and reasoning-model endpoints
+> reject `temperature`. `CAMPAIGN_SEEDS = (11, 23, 42)` are **run identifiers**; the
+> variance comes from genuine repeats. `docs/30` §4 amended accordingly.
+>
+> **Item 2 (cost is `null`, never `0.0`) now guards a live hazard.** `replm`'s own
+> `RLMResponse.cost` returns `0.0` when unpriced. The rate must reach it from
+> `runlog.pricing.RateCard`, never hardcoded.
+>
+> Note the provider is now **OpenAI**, not Vertex — `RateCard` sources change accordingly.
+
 **For:** Arav Sharma (@FalseAdvertising) · **From:** Parth Sangani (@parthparu)
 **Unblocks:** the last checkbox on [#11](https://github.com/brickstercodes/MARD-capstone/issues/11)
 — *"Track 3 has confirmed the harness meets their needs"*

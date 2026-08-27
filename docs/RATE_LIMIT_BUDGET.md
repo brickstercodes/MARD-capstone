@@ -1,5 +1,29 @@
 # Rate-limit budget
 
+> ### ⛔ §2 VOID, §1 AND §5 AFFECTED — 26 Aug 2026
+>
+> The project left Vertex AI for **OpenAI** on 26 Aug
+> ([`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md)).
+>
+> - **§2 (Supply) is void in full** — the per-project Vertex quota model, the
+>   `location=global` note, the shared-bucket question, and "Vertex AI only, the credit
+>   balance is redeemable through Vertex alone". It needs rewriting against OpenAI's
+>   rate-limit tiers. **Its own deadline was "before W3", which has passed.**
+> - **§1 (Demand) survives** — run counts, the burst shape of Tier 2 fork-join, and the
+>   warning that a single global concurrency number is wrong are all provider-independent.
+>   §1.2's open arithmetic question (24 vs 36 non-sweep ablation runs) is still open.
+> - **§1.4's vLLM lever needs a re-decision**, not just a re-read — it was framed against
+>   API spend from a credit balance that no longer applies.
+> - **§5's `MARD_SPEND_CAP_USD=780` is void.** It was ₹75,000 at ₹95.13/USD against a
+>   ₹90,000 Vertex credit balance that was **free and is now stranded**. There is no
+>   replacement grant: from 26 Aug every token is **paid out of pocket by the team**.
+>   `docs/18` §10 measures the real figure — **~$9 for all of Manuscript A, ~$147 for
+>   Manuscript B**. Set the cap to something real and small; do not carry $780 forward.
+> - **The framing of this document is now wrong in one important way.** It was written
+>   assuming spend was the soft constraint and rate limits the hard one. With out-of-pocket
+>   money that is *still true* — the project costs under $200 — but the reason has changed:
+>   spend is not a constraint because the work is cheap, not because a grant covers it.
+
 **Owner:** Track 2 (Parth Sangani, @parthparu) · **Closes:** the *"rate-limit
 budget documented"* box on [#11](https://github.com/brickstercodes/MARD-capstone/issues/11)
 · **Reviewed:** every Friday gate review

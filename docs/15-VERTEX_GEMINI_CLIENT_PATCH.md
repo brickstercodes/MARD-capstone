@@ -1,5 +1,13 @@
 # 15 — Vertex AI patch for `GeminiClient`
 
+> ### ⛔ SUPERSEDED IN FULL — 26 Aug 2026
+>
+> This document patches a **Vertex AI** code path the project no longer uses. The project
+> moved to **OpenAI** on 26 Aug — see
+> [`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md).
+>
+> Retained for the record. **Not maintained. Do not build against it.**
+
 **Status:** Ready for Track 2, 9 Aug 2026 · Owner: Track 1 (Anugrah), to be applied by Track 2 · Target: `.vendor/rlm/rlm/clients/gemini.py` (gitignored, so this patch lives here as the source of truth rather than in a diff against a file this repo doesn't track)
 
 ## Why this, and not a new REST client

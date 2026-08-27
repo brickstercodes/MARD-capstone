@@ -1,11 +1,44 @@
 # The RLM base library: what runs, and what it already does
 
+> ### ⚠️ §1 AND §3 SUPERSEDED, §2 STANDS WITH A CAVEAT — 26 Aug 2026
+>
+> This document surveys **`alexzhang13/rlm`** (the base paper's own library, vendored at
+> `.vendor/rlm` @ `caf0bff`, MIT — see the two corrections below). The vanilla RLM control
+> currently runs on a **different
+> library** — `replm`, MIT, from Track 3's fork pinned at `a0ca553`. See
+> [`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md) §4.
+>
+> - **§1 (the 14 examples) and §3 (still blocked) describe a library that is no longer the
+>   control.** Superseded.
+> - **§2 stands, and §2.2 holds more cleanly than it did.** Verified first-hand in
+>   `replm`: the inner orchestrator is constructed with `query=prompt, context=prompt` and
+>   a shared budget and **nothing else** — no parent findings, no skeleton, no directive.
+>   The upward/observational vs downward/operative distinction is sharper there.
+> - **§2.3's `root_prompt` trap does not exist in `replm`** — there is no user-injectable
+>   downward slot. It remains valid *as a point about the base paper's reference
+>   implementation* and still belongs in related work, but its file-and-line citations must
+>   be labelled as citations of `alexzhang13/rlm`, **not** of the system we ran.
+> - **§2.5's argument for `runlog` is untouched** and if anything stronger — `replm`'s
+>   response object has no notion of a seed, system, document or budget either.
+>
+> **Open, and Track 1's to answer:** whether the control *should* be `replm` or the RLM
+> authors' own library. A reviewer will ask. `18` §7 item 2.
+
 **Owner:** Track 2 (Parth Sangani, @parthparu) · **Serves:** the *"RLM examples run
 end-to-end"* box on [#11](https://github.com/brickstercodes/MARD-capstone/issues/11),
 and CONTEXT.md §1.2
 
-Vendored at `.vendor/rlm`, pinned to `72d6940`, installed as `rlms==0.1.3`.
-Upstream: `github.com/alexzhang13/rlm`, CC BY 4.0.
+Vendored at `.vendor/rlm`, installed as `rlms==0.1.3`.
+Upstream: `github.com/alexzhang13/rlm`, **MIT**.
+
+> **Two corrections, 26 Aug 2026, both verified first-hand.**
+> **(a) The licence is MIT, not CC BY 4.0.** `LICENSE` reads *"MIT License, Copyright
+> (c) 2026 Alex Zhang"*, `pyproject.toml` declares `license = "MIT"`, and no "CC BY" or
+> "Creative Commons" string exists anywhere in the repository. The W9 attribution was
+> about to be wrong.
+> **(b) The vendored copy is at `caf0bff`** (8 Aug 2026), not `72d6940` (25 Jun).
+> Upstream is further ahead again at `854e688` (25 Aug). Whatever is measured must be
+> re-pinned and recorded by its real SHA.
 
 Two parts. §1 is operational — which of the 14 examples can actually be run and
 what each needs. §2 is the one CONTEXT.md §1.2 demands and is the more important
