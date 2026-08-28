@@ -1,0 +1,31 @@
+{
+  "run_id": "20260828T191814__vanilla_rlm_oolong_harness_check__oolong_trec_coarse_task_17000203__s11__d6ec13",
+  "status": "ok",
+  "system": "vanilla_rlm_oolong_harness_check",
+  "document_id": "oolong_trec_coarse_task_17000203",
+  "seed": 11,
+  "wall_clock_s": 211.933,
+  "totals": {
+    "calls": 2,
+    "input_tokens": 85731,
+    "output_tokens": 117809,
+    "per_model": {
+      "gpt-5-mini": {
+        "input_tokens": 44555,
+        "output_tokens": 115742,
+        "cost": 0.24262275
+      },
+      "gpt-5.2": {
+        "input_tokens": 41176,
+        "output_tokens": 2067,
+        "cost": 0.100996
+      }
+    },
+    "cost": 0.34361875,
+    "unpriced_models": [],
+    "stale_rates": []
+  },
+  "result": null,
+  "error": null,
+  "finished_at": "2026-08-28T19:21:46.575386+00:00"
+}

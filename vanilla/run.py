@@ -174,6 +174,91 @@ def run_vanilla_rlm(
     document_text = (corpus_dir / document_id / "document.txt").read_text(encoding="utf-8")
     pages = split_pages(document_text)
 
+    return _run_vanilla_rlm_pages(
+        pages,
+        task_prompt,
+        document_id=document_id,
+        task_prompt_is_frozen=task_prompt == FROZEN_STUDY_GUIDE_PROMPT,
+        root_model=root_model,
+        sub_model=sub_model,
+        logger=logger,
+        max_iterations=max_iterations,
+        max_concurrent_subcalls=max_concurrent_subcalls,
+        max_retries=max_retries,
+        sampling_args=sampling_args,
+        sub_sampling_args=sub_sampling_args,
+        verbose=verbose,
+    )
+
+
+def run_vanilla_rlm_oolong_task(
+    context_lines: list[str],
+    task: dict[str, Any],
+    *,
+    root_model: str,
+    sub_model: str,
+    logger: RunLogger,
+    max_iterations: int = 30,
+    max_concurrent_subcalls: int = 4,
+    max_retries: int = 5,
+    sampling_args: dict[str, Any] | None = None,
+    sub_sampling_args: dict[str, Any] | None = None,
+    verbose: bool = False,
+) -> RLMChatCompletion:
+    """Run one vanilla-RLM generation over an OOLONG benchmark task — the harness-check
+    exception `docs/42` §1.4 calls for, not a bypass of the study-guide freeze above.
+
+    `run_vanilla_rlm` refuses to run without going through `ingest/manifest.py`'s
+    provenance check and defaults `task_prompt` to the frozen study-guide instruction
+    because, for that measured run, the prompt is part of what is being measured
+    (`docs/21` trap #2 — the same boundary applies here: `root_prompt` must still never
+    fold in page content). Neither applies to OOLONG: it is not an ingested corpus
+    document (there is nothing for `ingest/manifest.py` to verify), and the per-task
+    question genuinely *is* the correct root_prompt — OOLONG's own base-paper harness
+    (`.vendor/rlm/training/environments/oolong/oolong/env.py`) uses each task's own
+    question as its `root_prompt` too. A caller cannot reach this function by accident
+    while trying to run a measured study-guide generation — it takes an OOLONG task
+    dict, not a `document_id`.
+
+    `context_lines` is the shared 131K-token OOLONG context window, split one line per
+    list element (matching the benchmark's own framing: "the following lines contain
+    N general-knowledge questions, one per line") — never re-chunked into
+    `[[page:N]]`-marked pages, because this context was never ingested through
+    `ingest/cli.py` and has no such markers.
+    """
+    return _run_vanilla_rlm_pages(
+        context_lines,
+        task["question"],
+        document_id=f"oolong_trec_coarse_ctxwin_{task['context_window_id']}",
+        task_prompt_is_frozen=False,
+        root_model=root_model,
+        sub_model=sub_model,
+        logger=logger,
+        max_iterations=max_iterations,
+        max_concurrent_subcalls=max_concurrent_subcalls,
+        max_retries=max_retries,
+        sampling_args=sampling_args,
+        sub_sampling_args=sub_sampling_args,
+        verbose=verbose,
+    )
+
+
+def _run_vanilla_rlm_pages(
+    pages: list[str],
+    task_prompt: str,
+    *,
+    document_id: str,
+    task_prompt_is_frozen: bool,
+    root_model: str,
+    sub_model: str,
+    logger: RunLogger,
+    max_iterations: int,
+    max_concurrent_subcalls: int,
+    max_retries: int,
+    sampling_args: dict[str, Any] | None,
+    sub_sampling_args: dict[str, Any] | None,
+    verbose: bool,
+) -> RLMChatCompletion:
     fork_sha = zhang_rlm_fork_sha()
     logger.log_event(
         "vanilla_config",
@@ -189,7 +274,7 @@ def run_vanilla_rlm(
             "sub_sampling_args": sub_sampling_args or {},
             "page_count": len(pages),
             "document_id": document_id,
-            "task_prompt_is_frozen": task_prompt == FROZEN_STUDY_GUIDE_PROMPT,
+            "task_prompt_is_frozen": task_prompt_is_frozen,
             "subcall_callbacks_reachable": VANILLA_MAX_DEPTH >= 2,
         },
     )

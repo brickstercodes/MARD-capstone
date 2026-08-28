@@ -1,0 +1,1 @@
+Answer: abbreviation is less common than numeric value

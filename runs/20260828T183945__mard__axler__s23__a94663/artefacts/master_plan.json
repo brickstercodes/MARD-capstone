@@ -1,0 +1,1775 @@
+{
+  "schema_version": "1",
+  "document_id": "axler",
+  "concept_graph": {
+    "concepts": [
+      {
+        "id": "definition-of-vector-space",
+        "label": "Definition of a Vector Space",
+        "source": {
+          "section_id": "axler.chapter-1-vector-spaces-1",
+          "book_position": 4,
+          "page_start": 3,
+          "page_end": 3
+        },
+        "aliases": []
+      },
+      {
+        "id": "examples-of-vector-spaces",
+        "label": "Canonical Examples of Vector Spaces",
+        "source": {
+          "section_id": "axler.chapter-1-vector-spaces-1",
+          "book_position": 4,
+          "page_start": 3,
+          "page_end": 3
+        },
+        "aliases": []
+      },
+      {
+        "id": "fields-and-scalars",
+        "label": "Fields and Scalars (Underlying Number System)",
+        "source": {
+          "section_id": "axler.chapter-1-vector-spaces-1",
+          "book_position": 4,
+          "page_start": 3,
+          "page_end": 3
+        },
+        "aliases": []
+      },
+      {
+        "id": "linear-independence",
+        "label": "Linear Independence and Dependence",
+        "source": {
+          "section_id": "axler.chapter-1-vector-spaces-1",
+          "book_position": 4,
+          "page_start": 3,
+          "page_end": 3
+        },
+        "aliases": []
+      },
+      {
+        "id": "span",
+        "label": "Span and Linear Combinations",
+        "source": {
+          "section_id": "axler.chapter-1-vector-spaces-1",
+          "book_position": 4,
+          "page_start": 3,
+          "page_end": 3
+        },
+        "aliases": []
+      },
+      {
+        "id": "subspaces",
+        "label": "Subspaces and the Subspace Test",
+        "source": {
+          "section_id": "axler.chapter-1-vector-spaces-1",
+          "book_position": 4,
+          "page_start": 3,
+          "page_end": 3
+        },
+        "aliases": []
+      },
+      {
+        "id": "basis",
+        "label": "Basis",
+        "source": {
+          "section_id": "axler.chapter-2-finite-dimensional-vector-spaces-27",
+          "book_position": 5,
+          "page_start": 3,
+          "page_end": 4
+        },
+        "aliases": []
+      },
+      {
+        "id": "coordinate-representation",
+        "label": "Coordinate Representation (with respect to a basis)",
+        "source": {
+          "section_id": "axler.chapter-2-finite-dimensional-vector-spaces-27",
+          "book_position": 5,
+          "page_start": 3,
+          "page_end": 4
+        },
+        "aliases": []
+      },
+      {
+        "id": "dimension",
+        "label": "Dimension",
+        "source": {
+          "section_id": "axler.chapter-2-finite-dimensional-vector-spaces-27",
+          "book_position": 5,
+          "page_start": 3,
+          "page_end": 4
+        },
+        "aliases": []
+      },
+      {
+        "id": "finite-dimensional-vector-space",
+        "label": "Finite-Dimensional Vector Space",
+        "source": {
+          "section_id": "axler.chapter-2-finite-dimensional-vector-spaces-27",
+          "book_position": 5,
+          "page_start": 3,
+          "page_end": 4
+        },
+        "aliases": []
+      },
+      {
+        "id": "linear-combinations-and-spanning",
+        "label": "Linear Combinations and Spanning in Finite Dimensions",
+        "source": {
+          "section_id": "axler.chapter-2-finite-dimensional-vector-spaces-27",
+          "book_position": 5,
+          "page_start": 3,
+          "page_end": 4
+        },
+        "aliases": []
+      },
+      {
+        "id": "subspaces-in-finite-dimensional-spaces",
+        "label": "Subspaces in Finite-Dimensional Spaces",
+        "source": {
+          "section_id": "axler.chapter-2-finite-dimensional-vector-spaces-27",
+          "book_position": 5,
+          "page_start": 3,
+          "page_end": 4
+        },
+        "aliases": []
+      },
+      {
+        "id": "composition-and-invertibility",
+        "label": "Composition and Invertibility of Linear Maps",
+        "source": {
+          "section_id": "axler.chapter-3-linear-maps-51",
+          "book_position": 6,
+          "page_start": 4,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "fundamental-theorem-of-linear-maps",
+        "label": "Fundamental Theorem of Linear Maps (Rank\u2013Nullity)",
+        "source": {
+          "section_id": "axler.chapter-3-linear-maps-51",
+          "book_position": 6,
+          "page_start": 4,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "linear-map-definition",
+        "label": "Definition of a Linear Map",
+        "source": {
+          "section_id": "axler.chapter-3-linear-maps-51",
+          "book_position": 6,
+          "page_start": 4,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "matrix-of-linear-map",
+        "label": "Matrix of a Linear Map (with Respect to Bases)",
+        "source": {
+          "section_id": "axler.chapter-3-linear-maps-51",
+          "book_position": 6,
+          "page_start": 4,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "null-space-and-injectivity",
+        "label": "Null Space and Injectivity",
+        "source": {
+          "section_id": "axler.chapter-3-linear-maps-51",
+          "book_position": 6,
+          "page_start": 4,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "range-and-surjectivity",
+        "label": "Range and Surjectivity",
+        "source": {
+          "section_id": "axler.chapter-3-linear-maps-51",
+          "book_position": 6,
+          "page_start": 4,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "characteristic-polynomial",
+        "label": "Characteristic Polynomial (via determinants) and Eigenvalues Connection",
+        "source": {
+          "section_id": "axler.chapter-4-polynomials-119",
+          "book_position": 7,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "minimal-polynomial",
+        "label": "Minimal Polynomial",
+        "source": {
+          "section_id": "axler.chapter-4-polynomials-119",
+          "book_position": 7,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "polynomial-division-algorithm",
+        "label": "Polynomial Division Algorithm",
+        "source": {
+          "section_id": "axler.chapter-4-polynomials-119",
+          "book_position": 7,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "polynomial-linear-map",
+        "label": "Polynomials Applied to Linear Operators",
+        "source": {
+          "section_id": "axler.chapter-4-polynomials-119",
+          "book_position": 7,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "polynomial-vector-space",
+        "label": "Polynomial Vector Space (P(F)) and Degree",
+        "source": {
+          "section_id": "axler.chapter-4-polynomials-119",
+          "book_position": 7,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "zeros-and-factorization",
+        "label": "Zeros (Roots) and Linear Factors",
+        "source": {
+          "section_id": "axler.chapter-4-polynomials-119",
+          "book_position": 7,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "characteristic-polynomial-and-algebraic-multiplicity",
+        "label": "Characteristic Polynomial and Algebraic Multiplicity",
+        "source": {
+          "section_id": "axler.chapter-5-eigenvalues-and-eigenvectors-132",
+          "book_position": 8,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "diagonalization",
+        "label": "Diagonalization via Eigenvectors",
+        "source": {
+          "section_id": "axler.chapter-5-eigenvalues-and-eigenvectors-132",
+          "book_position": 8,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "eigenspaces",
+        "label": "Eigenspaces as Subspaces",
+        "source": {
+          "section_id": "axler.chapter-5-eigenvalues-and-eigenvectors-132",
+          "book_position": 8,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "eigenvalues-and-eigenvectors",
+        "label": "Eigenvalues and Eigenvectors",
+        "source": {
+          "section_id": "axler.chapter-5-eigenvalues-and-eigenvectors-132",
+          "book_position": 8,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "geometric-multiplicity-and-dimension-counting",
+        "label": "Geometric Multiplicity and Dimension Counting",
+        "source": {
+          "section_id": "axler.chapter-5-eigenvalues-and-eigenvectors-132",
+          "book_position": 8,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "triangular-matrices-and-eigenvalues",
+        "label": "Eigenvalues of Triangular Matrices",
+        "source": {
+          "section_id": "axler.chapter-5-eigenvalues-and-eigenvectors-132",
+          "book_position": 8,
+          "page_start": 5,
+          "page_end": 5
+        },
+        "aliases": []
+      },
+      {
+        "id": "gram-schmidt",
+        "label": "Gram\u2013Schmidt Orthonormalization",
+        "source": {
+          "section_id": "axler.chapter-6-inner-product-spaces-181",
+          "book_position": 9,
+          "page_start": 5,
+          "page_end": 6
+        },
+        "aliases": []
+      },
+      {
+        "id": "inner-product-definition",
+        "label": "Inner Product (definition and basic properties)",
+        "source": {
+          "section_id": "axler.chapter-6-inner-product-spaces-181",
+          "book_position": 9,
+          "page_start": 5,
+          "page_end": 6
+        },
+        "aliases": []
+      },
+      {
+        "id": "norm-and-distance",
+        "label": "Norm and Distance Induced by an Inner Product",
+        "source": {
+          "section_id": "axler.chapter-6-inner-product-spaces-181",
+          "book_position": 9,
+          "page_start": 5,
+          "page_end": 6
+        },
+        "aliases": []
+      },
+      {
+        "id": "orthogonal-complements-and-projections",
+        "label": "Orthogonal Complements and Orthogonal Projections",
+        "source": {
+          "section_id": "axler.chapter-6-inner-product-spaces-181",
+          "book_position": 9,
+          "page_start": 5,
+          "page_end": 6
+        },
+        "aliases": []
+      },
+      {
+        "id": "orthogonality-and-orthonormal-sets",
+        "label": "Orthogonality and Orthonormal Sets",
+        "source": {
+          "section_id": "axler.chapter-6-inner-product-spaces-181",
+          "book_position": 9,
+          "page_start": 5,
+          "page_end": 6
+        },
+        "aliases": []
+      },
+      {
+        "id": "riesz-representation-finite-dimensional",
+        "label": "Riesz Representation (finite-dimensional inner product spaces)",
+        "source": {
+          "section_id": "axler.chapter-6-inner-product-spaces-181",
+          "book_position": 9,
+          "page_start": 5,
+          "page_end": 6
+        },
+        "aliases": []
+      },
+      {
+        "id": "adjoint-operator",
+        "label": "Adjoint Operator",
+        "source": {
+          "section_id": "axler.chapter-7-operators-on-inner-product-spaces-227",
+          "book_position": 10,
+          "page_start": 6,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "normal-operator",
+        "label": "Normal Operators",
+        "source": {
+          "section_id": "axler.chapter-7-operators-on-inner-product-spaces-227",
+          "book_position": 10,
+          "page_start": 6,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "orthogonal-unitary-operator",
+        "label": "Orthogonal/Unitary Operators (Isometries)",
+        "source": {
+          "section_id": "axler.chapter-7-operators-on-inner-product-spaces-227",
+          "book_position": 10,
+          "page_start": 6,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "positive-operator",
+        "label": "Positive (Semidefinite) Operators and Square Roots",
+        "source": {
+          "section_id": "axler.chapter-7-operators-on-inner-product-spaces-227",
+          "book_position": 10,
+          "page_start": 6,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "self-adjoint-operator",
+        "label": "Self-Adjoint (Hermitian) Operators",
+        "source": {
+          "section_id": "axler.chapter-7-operators-on-inner-product-spaces-227",
+          "book_position": 10,
+          "page_start": 6,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "spectral-theorem-self-adjoint",
+        "label": "Spectral Theorem for Self-Adjoint Operators",
+        "source": {
+          "section_id": "axler.chapter-7-operators-on-inner-product-spaces-227",
+          "book_position": 10,
+          "page_start": 6,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "complex-eigenvalues-existence",
+        "label": "Existence of Eigenvalues over Complex Vector Spaces",
+        "source": {
+          "section_id": "axler.chapter-8-operators-on-complex-vector-spaces-297",
+          "book_position": 11,
+          "page_start": 7,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "functional-calculus-normal",
+        "label": "Functions of a Normal Operator (Diagonal/Polynomial Functional Calculus)",
+        "source": {
+          "section_id": "axler.chapter-8-operators-on-complex-vector-spaces-297",
+          "book_position": 11,
+          "page_start": 7,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "schur-decomposition",
+        "label": "Schur Decomposition (Unitary Triangularization for Normal Operators)",
+        "source": {
+          "section_id": "axler.chapter-8-operators-on-complex-vector-spaces-297",
+          "book_position": 11,
+          "page_start": 7,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "simultaneous-diagonalization-commuting-normal",
+        "label": "Simultaneous Diagonalization of Commuting Normal Operators",
+        "source": {
+          "section_id": "axler.chapter-8-operators-on-complex-vector-spaces-297",
+          "book_position": 11,
+          "page_start": 7,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "spectral-theorem-normal",
+        "label": "Spectral Theorem for Normal Operators (Complex Case)",
+        "source": {
+          "section_id": "axler.chapter-8-operators-on-complex-vector-spaces-297",
+          "book_position": 11,
+          "page_start": 7,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "upper-triangularization",
+        "label": "Upper-Triangular Form (Triangularization) of Operators",
+        "source": {
+          "section_id": "axler.chapter-8-operators-on-complex-vector-spaces-297",
+          "book_position": 11,
+          "page_start": 7,
+          "page_end": 7
+        },
+        "aliases": []
+      },
+      {
+        "id": "alternating-forms-and-exterior-algebra",
+        "label": "Alternating Forms and Exterior Algebra",
+        "source": {
+          "section_id": "axler.chapter-9-multilinear-algebra-and-determinants-332",
+          "book_position": 12,
+          "page_start": 7,
+          "page_end": 8
+        },
+        "aliases": []
+      },
+      {
+        "id": "characteristic-polynomial-coefficients-and-determinant",
+        "label": "Characteristic Polynomial Coefficients and Determinant",
+        "source": {
+          "section_id": "axler.chapter-9-multilinear-algebra-and-determinants-332",
+          "book_position": 12,
+          "page_start": 7,
+          "page_end": 8
+        },
+        "aliases": []
+      },
+      {
+        "id": "determinant-and-volume-orientation",
+        "label": "Determinant, Volume, and Orientation",
+        "source": {
+          "section_id": "axler.chapter-9-multilinear-algebra-and-determinants-332",
+          "book_position": 12,
+          "page_start": 7,
+          "page_end": 8
+        },
+        "aliases": []
+      },
+      {
+        "id": "determinant-via-alternating-multilinearity",
+        "label": "Determinant via Alternating Multilinearity",
+        "source": {
+          "section_id": "axler.chapter-9-multilinear-algebra-and-determinants-332",
+          "book_position": 12,
+          "page_start": 7,
+          "page_end": 8
+        },
+        "aliases": []
+      },
+      {
+        "id": "multilinear-maps",
+        "label": "Multilinear Maps",
+        "source": {
+          "section_id": "axler.chapter-9-multilinear-algebra-and-determinants-332",
+          "book_position": 12,
+          "page_start": 7,
+          "page_end": 8
+        },
+        "aliases": []
+      },
+      {
+        "id": "tensor-products-and-tensor-algebra",
+        "label": "Tensor Products and Tensor Algebra",
+        "source": {
+          "section_id": "axler.chapter-9-multilinear-algebra-and-determinants-332",
+          "book_position": 12,
+          "page_start": 7,
+          "page_end": 8
+        },
+        "aliases": []
+      }
+    ],
+    "edges": [
+      {
+        "prerequisite": "fields-and-scalars",
+        "dependent": "definition-of-vector-space",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "definition-of-vector-space",
+        "dependent": "subspaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "definition-of-vector-space",
+        "dependent": "examples-of-vector-spaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "definition-of-vector-space",
+        "dependent": "span",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "span",
+        "dependent": "linear-independence",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "subspaces",
+        "dependent": "span",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "span",
+        "dependent": "finite-dimensional-vector-space",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "linear-independence",
+        "dependent": "basis",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "span",
+        "dependent": "basis",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "basis",
+        "dependent": "dimension",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "span",
+        "dependent": "linear-combinations-and-spanning",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "definition-of-vector-space",
+        "dependent": "coordinate-representation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "basis",
+        "dependent": "coordinate-representation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "subspaces",
+        "dependent": "subspaces-in-finite-dimensional-spaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "finite-dimensional-vector-space",
+        "dependent": "subspaces-in-finite-dimensional-spaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "dimension",
+        "dependent": "subspaces-in-finite-dimensional-spaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "definition-of-vector-space",
+        "dependent": "linear-map-definition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "fields-and-scalars",
+        "dependent": "linear-map-definition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "subspaces",
+        "dependent": "null-space-and-injectivity",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "subspaces",
+        "dependent": "range-and-surjectivity",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "finite-dimensional-vector-space",
+        "dependent": "fundamental-theorem-of-linear-maps",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "dimension",
+        "dependent": "fundamental-theorem-of-linear-maps",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "basis",
+        "dependent": "matrix-of-linear-map",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "coordinate-representation",
+        "dependent": "matrix-of-linear-map",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "linear-map-definition",
+        "dependent": "composition-and-invertibility",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "null-space-and-injectivity",
+        "dependent": "composition-and-invertibility",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "range-and-surjectivity",
+        "dependent": "composition-and-invertibility",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "finite-dimensional-vector-space",
+        "dependent": "composition-and-invertibility",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "definition-of-vector-space",
+        "dependent": "polynomial-vector-space",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "span",
+        "dependent": "polynomial-vector-space",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "finite-dimensional-vector-space",
+        "dependent": "minimal-polynomial",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "linear-map-definition",
+        "dependent": "polynomial-linear-map",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "composition-and-invertibility",
+        "dependent": "polynomial-linear-map",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "matrix-of-linear-map",
+        "dependent": "characteristic-polynomial",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "linear-map-definition",
+        "dependent": "eigenvalues-and-eigenvectors",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "null-space-and-injectivity",
+        "dependent": "eigenspaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "subspaces",
+        "dependent": "eigenspaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "matrix-of-linear-map",
+        "dependent": "diagonalization",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "basis",
+        "dependent": "diagonalization",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "dimension",
+        "dependent": "geometric-multiplicity-and-dimension-counting",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "fundamental-theorem-of-linear-maps",
+        "dependent": "geometric-multiplicity-and-dimension-counting",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "characteristic-polynomial",
+        "dependent": "characteristic-polynomial-and-algebraic-multiplicity",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "polynomial-linear-map",
+        "dependent": "characteristic-polynomial-and-algebraic-multiplicity",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "definition-of-vector-space",
+        "dependent": "inner-product-definition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "fields-and-scalars",
+        "dependent": "inner-product-definition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "inner-product-definition",
+        "dependent": "norm-and-distance",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "inner-product-definition",
+        "dependent": "orthogonality-and-orthonormal-sets",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "linear-independence",
+        "dependent": "orthogonality-and-orthonormal-sets",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "orthogonality-and-orthonormal-sets",
+        "dependent": "gram-schmidt",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "basis",
+        "dependent": "gram-schmidt",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "span",
+        "dependent": "gram-schmidt",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "subspaces",
+        "dependent": "orthogonal-complements-and-projections",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "orthogonality-and-orthonormal-sets",
+        "dependent": "orthogonal-complements-and-projections",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "gram-schmidt",
+        "dependent": "orthogonal-complements-and-projections",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "linear-map-definition",
+        "dependent": "riesz-representation-finite-dimensional",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "orthogonality-and-orthonormal-sets",
+        "dependent": "riesz-representation-finite-dimensional",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "linear-map-definition",
+        "dependent": "adjoint-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "inner-product-definition",
+        "dependent": "adjoint-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "orthogonality-and-orthonormal-sets",
+        "dependent": "adjoint-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "adjoint-operator",
+        "dependent": "self-adjoint-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "eigenvalues-and-eigenvectors",
+        "dependent": "self-adjoint-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "orthogonality-and-orthonormal-sets",
+        "dependent": "self-adjoint-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "adjoint-operator",
+        "dependent": "normal-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "adjoint-operator",
+        "dependent": "orthogonal-unitary-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "inner-product-definition",
+        "dependent": "orthogonal-unitary-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "norm-and-distance",
+        "dependent": "orthogonal-unitary-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "self-adjoint-operator",
+        "dependent": "spectral-theorem-self-adjoint",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "eigenvalues-and-eigenvectors",
+        "dependent": "spectral-theorem-self-adjoint",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "orthogonality-and-orthonormal-sets",
+        "dependent": "spectral-theorem-self-adjoint",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "self-adjoint-operator",
+        "dependent": "positive-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "inner-product-definition",
+        "dependent": "positive-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "spectral-theorem-self-adjoint",
+        "dependent": "positive-operator",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "zeros-and-factorization",
+        "dependent": "complex-eigenvalues-existence",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "characteristic-polynomial",
+        "dependent": "complex-eigenvalues-existence",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "eigenvalues-and-eigenvectors",
+        "dependent": "complex-eigenvalues-existence",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "eigenvalues-and-eigenvectors",
+        "dependent": "upper-triangularization",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "triangular-matrices-and-eigenvalues",
+        "dependent": "upper-triangularization",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "basis",
+        "dependent": "upper-triangularization",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "normal-operator",
+        "dependent": "schur-decomposition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "orthogonal-unitary-operator",
+        "dependent": "schur-decomposition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "orthogonality-and-orthonormal-sets",
+        "dependent": "schur-decomposition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "schur-decomposition",
+        "dependent": "spectral-theorem-normal",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "normal-operator",
+        "dependent": "spectral-theorem-normal",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "diagonalization",
+        "dependent": "spectral-theorem-normal",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "spectral-theorem-normal",
+        "dependent": "simultaneous-diagonalization-commuting-normal",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "normal-operator",
+        "dependent": "simultaneous-diagonalization-commuting-normal",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "spectral-theorem-normal",
+        "dependent": "functional-calculus-normal",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "polynomial-linear-map",
+        "dependent": "functional-calculus-normal",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "definition-of-vector-space",
+        "dependent": "multilinear-maps",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "linear-map-definition",
+        "dependent": "multilinear-maps",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "finite-dimensional-vector-space",
+        "dependent": "tensor-products-and-tensor-algebra",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "linear-map-definition",
+        "dependent": "tensor-products-and-tensor-algebra",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "multilinear-maps",
+        "dependent": "tensor-products-and-tensor-algebra",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "multilinear-maps",
+        "dependent": "alternating-forms-and-exterior-algebra",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "tensor-products-and-tensor-algebra",
+        "dependent": "alternating-forms-and-exterior-algebra",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "alternating-forms-and-exterior-algebra",
+        "dependent": "determinant-via-alternating-multilinearity",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "matrix-of-linear-map",
+        "dependent": "determinant-via-alternating-multilinearity",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "composition-and-invertibility",
+        "dependent": "determinant-via-alternating-multilinearity",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "inner-product-definition",
+        "dependent": "determinant-and-volume-orientation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "norm-and-distance",
+        "dependent": "determinant-and-volume-orientation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "determinant-via-alternating-multilinearity",
+        "dependent": "determinant-and-volume-orientation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "characteristic-polynomial",
+        "dependent": "characteristic-polynomial-coefficients-and-determinant",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "matrix-of-linear-map",
+        "dependent": "characteristic-polynomial-coefficients-and-determinant",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "determinant-via-alternating-multilinearity",
+        "dependent": "characteristic-polynomial-coefficients-and-determinant",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      }
+    ]
+  },
+  "study_sequence": [
+    {
+      "position": 1,
+      "concept_id": "fields-and-scalars",
+      "directive": "Specify the field over which a vector space is defined (typically \u211d or \u2102) and explain how scalars act via scalar multiplication, including how changing the field changes what counts as a vector space."
+    },
+    {
+      "position": 2,
+      "concept_id": "definition-of-vector-space",
+      "directive": "State the axioms (addition, scalar multiplication, and their properties) that define a vector space over a field, and be able to verify whether a given set with operations satisfies them."
+    },
+    {
+      "position": 3,
+      "concept_id": "examples-of-vector-spaces",
+      "directive": "Work through the main examples (e.g., F^n, function spaces, polynomial spaces) and explicitly identify the vectors, scalars, and operations in each example."
+    },
+    {
+      "position": 4,
+      "concept_id": "subspaces",
+      "directive": "Define subspace and apply the closure conditions (under addition and scalar multiplication) to determine whether a subset of a vector space is a subspace."
+    },
+    {
+      "position": 5,
+      "concept_id": "span",
+      "directive": "Define linear combination and span, compute spans of given sets, and interpret span as the smallest subspace containing a set."
+    },
+    {
+      "position": 6,
+      "concept_id": "linear-independence",
+      "directive": "Define linear independence via the uniqueness of representing 0 as a linear combination, and determine whether a given list of vectors is independent or dependent using the defining equation."
+    },
+    {
+      "position": 7,
+      "concept_id": "basis",
+      "directive": "State and use the definition of a basis (a list that is linearly independent and spans), and be able to verify that a given list is (or is not) a basis."
+    },
+    {
+      "position": 8,
+      "concept_id": "coordinate-representation",
+      "directive": "Given a basis, write vectors uniquely as linear combinations of basis vectors and interpret the resulting scalars as coordinates."
+    },
+    {
+      "position": 9,
+      "concept_id": "dimension",
+      "directive": "Define dimension as the length of any basis, and apply basic consequences (e.g., comparisons via spanning/independence and existence of bases in finite-dimensional spaces)."
+    },
+    {
+      "position": 10,
+      "concept_id": "finite-dimensional-vector-space",
+      "directive": "Define what it means for a vector space to be finite-dimensional (existence of a finite spanning list) and be able to decide in examples whether a space is finite- or infinite-dimensional."
+    },
+    {
+      "position": 11,
+      "concept_id": "linear-combinations-and-spanning",
+      "directive": "Use linear combinations to express vectors in terms of a spanning list and apply finite-dimensional spanning arguments (including how spanning interacts with subspaces)."
+    },
+    {
+      "position": 12,
+      "concept_id": "subspaces-in-finite-dimensional-spaces",
+      "directive": "Use finite-dimensional tools (spanning lists, bases, and dimension) to analyze subspaces, including generating/identifying bases of subspaces and comparing dimensions."
+    },
+    {
+      "position": 13,
+      "concept_id": "fundamental-theorem-of-linear-maps",
+      "directive": "Present and use the relationship between dimensions of the domain, null space, and range (rank\u2013nullity), and apply it to deduce injectivity/surjectivity consequences in finite dimensions."
+    },
+    {
+      "position": 14,
+      "concept_id": "linear-map-definition",
+      "directive": "State the definition of a linear map between vector spaces (preservation of addition and scalar multiplication) and give a few representative examples and non-examples."
+    },
+    {
+      "position": 15,
+      "concept_id": "matrix-of-linear-map",
+      "directive": "Explain how a linear map between finite-dimensional vector spaces is represented by a matrix once bases are chosen, and how to compute/apply that matrix to coordinate vectors."
+    },
+    {
+      "position": 16,
+      "concept_id": "null-space-and-injectivity",
+      "directive": "Define the null space (kernel) of a linear map and explain how it characterizes injectivity, including how to test injectivity using the null space."
+    },
+    {
+      "position": 17,
+      "concept_id": "range-and-surjectivity",
+      "directive": "Define the range (image) of a linear map and explain surjectivity in terms of the range, including how to test surjectivity."
+    },
+    {
+      "position": 18,
+      "concept_id": "composition-and-invertibility",
+      "directive": "Define composition of linear maps and inverse maps when they exist, and state the criteria for invertibility in terms of injectivity/surjectivity (especially in finite dimensions)."
+    },
+    {
+      "position": 19,
+      "concept_id": "characteristic-polynomial",
+      "directive": "Define the characteristic polynomial and relate its roots to eigenvalues; include how it depends on a chosen basis/matrix representation and what is basis-independent about it."
+    },
+    {
+      "position": 20,
+      "concept_id": "minimal-polynomial",
+      "directive": "Define the minimal polynomial of an operator (or matrix), prove it exists in finite dimensions, and use it to deduce algebraic relations satisfied by the operator."
+    },
+    {
+      "position": 21,
+      "concept_id": "polynomial-division-algorithm",
+      "directive": "State and use the division algorithm for polynomials (existence and uniqueness of quotient and remainder) and demonstrate it with worked examples."
+    },
+    {
+      "position": 22,
+      "concept_id": "polynomial-linear-map",
+      "directive": "Define p(T) for a linear map/operator T and a polynomial p, and show how this construction behaves with respect to addition, scalar multiplication, and composition of operators."
+    },
+    {
+      "position": 23,
+      "concept_id": "polynomial-vector-space",
+      "directive": "Define the vector space of polynomials over a field, including degree and the standard basis {1, x, x^2, \u2026}, and illustrate how polynomial addition and scalar multiplication fit the vector space axioms."
+    },
+    {
+      "position": 24,
+      "concept_id": "zeros-and-factorization",
+      "directive": "Explain the relationship between a polynomial\u2019s zeros and its linear factors, including how multiplicity is reflected in repeated factors."
+    },
+    {
+      "position": 25,
+      "concept_id": "characteristic-polynomial-and-algebraic-multiplicity",
+      "directive": "Define the characteristic polynomial of a linear map/matrix, explain how its zeros are eigenvalues, and define algebraic multiplicity."
+    },
+    {
+      "position": 26,
+      "concept_id": "diagonalization",
+      "directive": "State and use the criterion for when an operator/matrix is diagonalizable (existence of a basis of eigenvectors) and show how diagonal form represents the action of the operator."
+    },
+    {
+      "position": 27,
+      "concept_id": "eigenspaces",
+      "directive": "Define the eigenspace corresponding to an eigenvalue and prove it is a subspace; relate eigenvectors to the null space of a shifted operator."
+    },
+    {
+      "position": 28,
+      "concept_id": "eigenvalues-and-eigenvectors",
+      "directive": "Define eigenvalues and eigenvectors of a linear map (operator) and explain how to verify the eigenvector/eigenvalue equation and interpret it geometrically."
+    },
+    {
+      "position": 29,
+      "concept_id": "geometric-multiplicity-and-dimension-counting",
+      "directive": "Define geometric multiplicity as the dimension of an eigenspace and relate it to algebraic multiplicity using dimension arguments and null space/range relationships."
+    },
+    {
+      "position": 30,
+      "concept_id": "triangular-matrices-and-eigenvalues",
+      "directive": "Explain why the eigenvalues of an upper/lower triangular matrix are the diagonal entries and use this to find eigenvalues efficiently in examples."
+    },
+    {
+      "position": 31,
+      "concept_id": "inner-product-definition",
+      "directive": "State the definition of an inner product on a vector space (over R or C), list the axioms it satisfies, and give standard examples (especially on F^n)."
+    },
+    {
+      "position": 32,
+      "concept_id": "norm-and-distance",
+      "directive": "Define the norm and distance coming from an inner product and record the key inequalities (especially Cauchy\u2013Schwarz and the triangle inequality) that justify these definitions."
+    },
+    {
+      "position": 33,
+      "concept_id": "orthogonality-and-orthonormal-sets",
+      "directive": "Define orthogonality, orthonormal sets, and orthonormal bases; include the basic consequences for linear independence and for computing coordinates/lengths."
+    },
+    {
+      "position": 34,
+      "concept_id": "gram-schmidt",
+      "directive": "Present the Gram\u2013Schmidt procedure and its output; explain what input it requires (a basis or linearly independent list) and what it produces (an orthonormal basis for the same span)."
+    },
+    {
+      "position": 35,
+      "concept_id": "orthogonal-complements-and-projections",
+      "directive": "Define the orthogonal complement of a subspace and the orthogonal projection onto a subspace; state the key decomposition result (vector equals projection plus orthogonal remainder) and the associated minimization/closest-point property."
+    },
+    {
+      "position": 36,
+      "concept_id": "riesz-representation-finite-dimensional",
+      "directive": "State and use the representation of linear functionals via inner products (each functional equals inner product with a unique vector), and indicate how it depends on orthonormal bases."
+    },
+    {
+      "position": 37,
+      "concept_id": "adjoint-operator",
+      "directive": "Define the adjoint T* of a linear operator T on an inner product space and state its characterizing property. Include core identities and how to compute T* from inner-product data / matrices in an orthonormal basis."
+    },
+    {
+      "position": 38,
+      "concept_id": "normal-operator",
+      "directive": "Define normal operators (commuting with their adjoint) and develop the standard consequences emphasized in the chapter (orthogonal eigenspaces, diagonalizability in the complex case deferred/linked to later results)."
+    },
+    {
+      "position": 39,
+      "concept_id": "orthogonal-unitary-operator",
+      "directive": "Define orthogonal (real) and unitary (complex) operators and relate them to preserving inner products and norms. State equivalent characterizations (e.g., T*T=I) and main structural consequences."
+    },
+    {
+      "position": 40,
+      "concept_id": "self-adjoint-operator",
+      "directive": "Define self-adjoint operators and record their key spectral properties used later (e.g., real eigenvalues, orthogonality of eigenvectors). Provide the main theorems that describe their behavior in finite-dimensional inner product spaces."
+    },
+    {
+      "position": 41,
+      "concept_id": "spectral-theorem-self-adjoint",
+      "directive": "State the spectral theorem in the form used by the text (existence of an orthonormal basis of eigenvectors / diagonal matrix in an orthonormal basis). Indicate how it is applied to analyze operators on inner product spaces."
+    },
+    {
+      "position": 42,
+      "concept_id": "positive-operator",
+      "directive": "Define positive operators via \u27e8Tv,v\u27e9\u22650 and develop the associated tools highlighted in the chapter (ordering, functional consequences, existence/uniqueness of positive square roots when applicable)."
+    },
+    {
+      "position": 43,
+      "concept_id": "complex-eigenvalues-existence",
+      "directive": "State and use the result that every linear operator on a nonzero finite-dimensional complex vector space has an eigenvalue, and explain how this follows from polynomial roots."
+    },
+    {
+      "position": 44,
+      "concept_id": "schur-decomposition",
+      "directive": "Present the Schur form for operators on complex inner product spaces (especially normal operators), including the role of an orthonormal basis and the unitary change of basis."
+    },
+    {
+      "position": 45,
+      "concept_id": "spectral-theorem-normal",
+      "directive": "State and apply the spectral theorem that a normal operator on a complex inner product space is diagonalizable by an orthonormal basis."
+    },
+    {
+      "position": 46,
+      "concept_id": "functional-calculus-normal",
+      "directive": "Define how to interpret p(T) for a polynomial p and a normal operator T using diagonalization, and connect the resulting eigenvalues of p(T) to p evaluated on eigenvalues of T."
+    },
+    {
+      "position": 47,
+      "concept_id": "simultaneous-diagonalization-commuting-normal",
+      "directive": "Explain conditions under which a family (or pair) of commuting normal operators can be diagonalized in a single orthonormal basis, and how this is used."
+    },
+    {
+      "position": 48,
+      "concept_id": "upper-triangularization",
+      "directive": "Describe how to build a basis in which an operator has an upper-triangular matrix, and specify what the diagonal entries represent."
+    },
+    {
+      "position": 49,
+      "concept_id": "multilinear-maps",
+      "directive": "Define k-linear (multilinear) maps on a product of vector spaces, give key examples, and state the basic algebraic properties (linearity in each slot, behavior under fixing variables)."
+    },
+    {
+      "position": 50,
+      "concept_id": "tensor-products-and-tensor-algebra",
+      "directive": "Construct the tensor product (or characterize it via its universal property) so that multilinear maps correspond to linear maps out of a tensor product; use this to define and manipulate tensors and tensor powers."
+    },
+    {
+      "position": 51,
+      "concept_id": "alternating-forms-and-exterior-algebra",
+      "directive": "Define alternating multilinear forms, build the exterior power using the alternating projection (or quotient construction), and develop the wedge product and its core identities."
+    },
+    {
+      "position": 52,
+      "concept_id": "determinant-via-alternating-multilinearity",
+      "directive": "Define the determinant as the unique alternating multilinear function of the columns (or rows) normalized to be 1 on the identity, and derive standard properties (multiplicativity, effect of row operations, det(A)=0 iff not invertible)."
+    },
+    {
+      "position": 53,
+      "concept_id": "characteristic-polynomial-coefficients-and-determinant",
+      "directive": "Relate determinant and trace (and possibly other coefficients) to the characteristic polynomial, and show how these quantities behave under change of basis and similarity."
+    },
+    {
+      "position": 54,
+      "concept_id": "determinant-and-volume-orientation",
+      "directive": "Explain how determinants encode oriented volume scaling (and orientation change) of linear maps; connect this to geometric interpretations in real inner-product spaces."
+    }
+  ],
+  "reordering_rationale": [
+    {
+      "concept_id": "fields-and-scalars",
+      "from_book_position": 4,
+      "to_plan_position": 1,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "definition-of-vector-space",
+      "from_book_position": 4,
+      "to_plan_position": 2,
+      "reason": "Book order teaches this before 'fields-and-scalars', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "examples-of-vector-spaces",
+      "from_book_position": 4,
+      "to_plan_position": 3,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "subspaces",
+      "from_book_position": 4,
+      "to_plan_position": 4,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "linear-independence",
+      "from_book_position": 4,
+      "to_plan_position": 6,
+      "reason": "Book order teaches this before 'span', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "fundamental-theorem-of-linear-maps",
+      "from_book_position": 6,
+      "to_plan_position": 13,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "linear-map-definition",
+      "from_book_position": 6,
+      "to_plan_position": 14,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "matrix-of-linear-map",
+      "from_book_position": 6,
+      "to_plan_position": 15,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "null-space-and-injectivity",
+      "from_book_position": 6,
+      "to_plan_position": 16,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "range-and-surjectivity",
+      "from_book_position": 6,
+      "to_plan_position": 17,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "composition-and-invertibility",
+      "from_book_position": 6,
+      "to_plan_position": 18,
+      "reason": "Book order teaches this before 'linear-map-definition', 'null-space-and-injectivity', 'range-and-surjectivity', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "inner-product-definition",
+      "from_book_position": 9,
+      "to_plan_position": 31,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "norm-and-distance",
+      "from_book_position": 9,
+      "to_plan_position": 32,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "orthogonality-and-orthonormal-sets",
+      "from_book_position": 9,
+      "to_plan_position": 33,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "gram-schmidt",
+      "from_book_position": 9,
+      "to_plan_position": 34,
+      "reason": "Book order teaches this before 'orthogonality-and-orthonormal-sets', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "orthogonal-complements-and-projections",
+      "from_book_position": 9,
+      "to_plan_position": 35,
+      "reason": "Book order teaches this before 'orthogonality-and-orthonormal-sets', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "self-adjoint-operator",
+      "from_book_position": 10,
+      "to_plan_position": 40,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "spectral-theorem-self-adjoint",
+      "from_book_position": 10,
+      "to_plan_position": 41,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "positive-operator",
+      "from_book_position": 10,
+      "to_plan_position": 42,
+      "reason": "Book order teaches this before 'self-adjoint-operator', 'spectral-theorem-self-adjoint', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "schur-decomposition",
+      "from_book_position": 11,
+      "to_plan_position": 44,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "spectral-theorem-normal",
+      "from_book_position": 11,
+      "to_plan_position": 45,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "functional-calculus-normal",
+      "from_book_position": 11,
+      "to_plan_position": 46,
+      "reason": "Book order teaches this before 'spectral-theorem-normal', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "simultaneous-diagonalization-commuting-normal",
+      "from_book_position": 11,
+      "to_plan_position": 47,
+      "reason": "Book order teaches this before 'spectral-theorem-normal', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "multilinear-maps",
+      "from_book_position": 12,
+      "to_plan_position": 49,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "tensor-products-and-tensor-algebra",
+      "from_book_position": 12,
+      "to_plan_position": 50,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "alternating-forms-and-exterior-algebra",
+      "from_book_position": 12,
+      "to_plan_position": 51,
+      "reason": "Book order teaches this before 'multilinear-maps', 'tensor-products-and-tensor-algebra', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "characteristic-polynomial-coefficients-and-determinant",
+      "from_book_position": 12,
+      "to_plan_position": 53,
+      "reason": "Book order teaches this before 'determinant-via-alternating-multilinearity', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "determinant-and-volume-orientation",
+      "from_book_position": 12,
+      "to_plan_position": 54,
+      "reason": "Book order teaches this before 'determinant-via-alternating-multilinearity', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    }
+  ],
+  "run_id": null
+}

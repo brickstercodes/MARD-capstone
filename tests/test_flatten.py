@@ -55,10 +55,10 @@ def _heading(block_id: str, text: str, level: int = 1) -> Block:
     )
 
 
-def _body(block_id: str, text: str) -> Block:
+def _body(block_id: str, text: str, page: int = 1) -> Block:
     return Block(
         block_id=block_id,
-        page=1,
+        page=page,
         kind="body",
         level=None,
         role=None,
@@ -139,11 +139,38 @@ def test_render_text_has_no_atx_markers() -> None:
     assert not any(line.startswith("#") for line in text.splitlines())
 
 
-def test_render_text_has_no_page_markers() -> None:
-    sections, blocks = _synthetic_corpus()
-    flat_blocks, _ = flatten_blocks(sections, blocks, seed=1)
-    text = render_text(flat_blocks)
-    assert "[[page:" not in text
+def test_render_text_emits_sequential_page_markers_not_original_numbers() -> None:
+    # Original pages chosen far from 1..N so an overlap with the new numbering
+    # would be unmistakable rather than a coincidence. Cadence: a marker on every
+    # block whose original page differs from the previous block's — 500, 500, 640,
+    # 777, 777 is three transitions, so three markers, numbered 1, 2, 3.
+    blocks = [
+        _body("b1", "First page text.", page=500),
+        _body("b2", "Still the first original page.", page=500),
+        _body("b3", "Second original page.", page=640),
+        _body("b4", "Third original page, part one.", page=777),
+        _body("b5", "Third original page, part two.", page=777),
+    ]
+
+    text = render_text(blocks)
+    markers = [int(n) for n in re.findall(r"\[\[page:(\d+)\]\]", text)]
+
+    assert markers == [1, 2, 3]
+    assert markers == sorted(set(markers))  # strictly increasing from 1, no repeats
+    # No original page number survives into the emitted markers.
+    assert not ({500, 640, 777} & set(markers))
+
+
+def test_render_text_page_marker_count_matches_original_page_transitions() -> None:
+    # A block sharing its original page with the previous block gets no new marker
+    # — cadence, not one-marker-per-block.
+    blocks = [
+        _body("b1", "a", page=10),
+        _body("b2", "b", page=10),
+        _body("b3", "c", page=10),
+    ]
+    text = render_text(blocks)
+    assert re.findall(r"\[\[page:(\d+)\]\]", text) == ["1"]
 
 
 def test_verify_ablation_on_stripped_blocks_is_empty_and_degenerate() -> None:
@@ -203,9 +230,13 @@ def test_flatten_corpus_end_to_end_on_real_introcs(tmp_path: Path) -> None:
     assert manifest["flatten"]["shuffle_seed"] == 1
     assert manifest["flatten"]["ablation_verified"]["is_empty"] is True
     assert manifest["flatten"]["ablation_verified"]["degenerate"] is True
+    assert manifest["flatten"]["page_markers"] == "renumbered"
 
     text = (target / "document.txt").read_text(encoding="utf-8")
-    assert "[[page:" not in text
+    markers = [int(n) for n in re.findall(r"\[\[page:(\d+)\]\]", text)]
+    assert markers == sorted(set(markers))  # strictly increasing from 1
+    assert markers[0] == 1
+    assert len(markers) > 1  # vanilla.run.split_pages requires more than one chunk
     # The real corpus's body text legitimately contains lines starting with "#"
     # (C-family `#include`, Python `#` comments in code samples), so a blanket
     # "no line starts with #" check would false-positive on real content. The
@@ -213,6 +244,14 @@ def test_flatten_corpus_end_to_end_on_real_introcs(tmp_path: Path) -> None:
     # immediately in front of it — never "# Chapter Outline", just "Chapter Outline".
     assert "Chapter Outline" in text
     assert not any(re.match(r"^#{1,6}\s+Chapter Outline\s*$", line) for line in text.splitlines())
+
+    # The actual bug this fixes: vanilla.run.split_pages must accept the flattened
+    # corpus rather than refusing it as a single-chunk full-context baseline
+    # (vanilla/run.py:129) — a marker-free flat corpus made the negative control
+    # unrunnable on the vanilla arm.
+    from vanilla.run import split_pages
+
+    assert len(split_pages(text)) > 1
 
     # Re-derive sections from the written manifest's own permutation and confirm the
     # real `run_pass0` entry point (not just `verify_ablation`) agrees.

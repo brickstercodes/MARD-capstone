@@ -1,0 +1,1 @@
+Answer: description and abstract concept is less common than numeric value

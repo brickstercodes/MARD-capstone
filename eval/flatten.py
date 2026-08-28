@@ -21,11 +21,22 @@ section boundaries come from that recorded structure rather than from guessing a
 the text. `document.txt` is then rendered from those same relabelled blocks, so the
 human-readable artefact and the machine-verifiable one cannot drift apart.
 
-**The `[[page:N]]` decision: dropped.** Page numbers are positional structure in
-the same sense heading levels are — a model can reconstruct original reading order
-from a page sequence even after sections are shuffled and headings are stripped,
-which would leave the ablation incomplete in exactly the way `docs/26` §2 warns
-about. They are omitted from the flattened `document.txt` entirely.
+**The `[[page:N]]` decision: renumbered, not dropped.** An earlier version of this
+module omitted page markers entirely, on the reasoning that a page sequence is
+positional structure a model could use to reconstruct original reading order — but
+that reasoning was about what the *numbers* reveal, not about whether markers exist
+at all, and dropping them outright broke something else: `vanilla.run.split_pages`
+requires more than one `[[page:N]]`-delimited chunk and raises otherwise
+(`vanilla/run.py:129`), so a marker-free flat corpus made the vanilla arm refuse to
+run the negative control at all. `render_text` now emits markers renumbered
+sequentially in the *shuffled* order — `[[page:1]]`, `[[page:2]]`, ... — at the same
+block cadence the original pagination used (one marker per point where two
+consecutive blocks, in the new order, came from different original pages). Sequential
+numbering in the new order carries no information about the old one: `[[page:7]]`
+means "the seventh page-transition in this shuffle", not "originally page 7", so the
+model gains chunk boundaries to read by without gaining anything to reconstruct book
+order from. That was always the actual concern; dropping markers entirely was a
+stronger fix than the concern required, and broke a downstream consumer besides.
 
 **Both `document.txt` and `document.jsonl` are written.** The vanilla arm
 (`vanilla.run.run_vanilla_rlm`) reads only `document.txt`, so an earlier version of
@@ -148,8 +159,27 @@ def flatten_blocks(
 
 
 def render_text(flat_blocks: list[Block]) -> str:
-    """Plain text: one block's text per paragraph, no heading markers, no page markers."""
-    return "\n\n".join(block.text for block in flat_blocks).strip() + "\n"
+    """Plain text: one block's text per paragraph, no heading markers, `[[page:N]]`
+    markers renumbered sequentially in the shuffled order.
+
+    A marker is emitted before the first block and again every time a block's
+    *original* page differs from the previous block's — the same cadence
+    `ingest.cli._render_text_stream` uses, just relabelled `1, 2, 3, ...` instead of
+    the real page number, so the count and rough size of `vanilla.run.split_pages`'s
+    chunks matches what the unablated corpus would have produced. See the module
+    docstring's "[[page:N]] decision" note for why renumbering, not omission, is the
+    correct ablation of what a page sequence reveals.
+    """
+    parts: list[str] = []
+    marker_number = 0
+    previous_page: int | None = None
+    for block in flat_blocks:
+        if block.page != previous_page:
+            marker_number += 1
+            parts.append(f"[[page:{marker_number}]]")
+            previous_page = block.page
+        parts.append(block.text)
+    return "\n\n".join(parts).strip() + "\n"
 
 
 def verify_ablation(document_id: str, flat_blocks: list[Block]) -> tuple[Skeleton, dict[str, Any]]:
@@ -209,7 +239,7 @@ def flatten_corpus(
         "shuffle_seed": seed,
         "source_corpus": source_dir.name,
         "section_permutation": permutation,
-        "page_markers": "dropped",
+        "page_markers": "renumbered",
         "ablation_verified": {
             "is_empty": skeleton.is_empty,
             "degenerate": trace["degenerate"],

@@ -1,0 +1,44 @@
+{
+  "doc_id": "axler",
+  "generated_at": "2026-08-28T14:17:54.474094+00:00",
+  "source": {
+    "file_name": "LADR4e.pdf",
+    "sha256": "b40b1da1cbcaf441c34596e1b133d5f32b17f1d2e4de5a7753e10d4753a4513d",
+    "bytes": 2795246,
+    "page_count": 404,
+    "url": "https://linear.axler.net/LADR4e",
+    "retrieved_on": "2026-08-22"
+  },
+  "pipeline": {
+    "contract_version": 1,
+    "git_commit": "5dcd427689fff77d32cbc2029e447084a23a3475",
+    "git_branch": "main",
+    "git_dirty": true
+  },
+  "artefacts": {
+    "document.jsonl": {
+      "sha256": "996e001ddd9ef759b2c3daff90efa4a5b6772b1b8ef8adfc92f80d6e01a84035",
+      "bytes": 2422027
+    },
+    "document.txt": {
+      "sha256": "70cc0fe97e8269dc751e4dd99ac5b9018e8361078a22c65957e1eca936ec59e5",
+      "bytes": 903237
+    },
+    "outline.json": {
+      "sha256": "2f9961c978c55cf6093895d1cd5579da1d34256d4bce24ef490b5e43049b8da5",
+      "bytes": 20282
+    },
+    "sections.json": {
+      "sha256": "7592fbf22b5fc081eef3ab316b6e77fb1cfd3b77ad7939c93ed4bde6c4139fef",
+      "bytes": 254040
+    },
+    "chapters.json": {
+      "sha256": "ae80ed314b232cdf1ddcec805db48d571cc363b05f7ff9767df179db384d96a3",
+      "bytes": 4458
+    },
+    "parse_quality.json": {
+      "sha256": "a52e01985a0e6a3d20b97321f5663033f2b07479b10e99faf862c2c3ed01dfa8",
+      "bytes": 1582
+    }
+  }
+}

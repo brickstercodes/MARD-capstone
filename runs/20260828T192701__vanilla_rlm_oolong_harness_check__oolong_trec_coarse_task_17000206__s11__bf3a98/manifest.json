@@ -1,0 +1,63 @@
+{
+  "config": {
+    "run_id": "20260828T192701__vanilla_rlm_oolong_harness_check__oolong_trec_coarse_task_17000206__s11__bf3a98",
+    "system": "vanilla_rlm_oolong_harness_check",
+    "document_id": "oolong_trec_coarse_task_17000206",
+    "seed": 11,
+    "models": {
+      "root": "gpt-5.2",
+      "sub": "gpt-5-mini"
+    },
+    "params": {
+      "max_depth": 1,
+      "max_iterations": 30,
+      "max_concurrent_subcalls": 4,
+      "oolong_task_id": 17000206,
+      "oolong_task_type": "TASK_TYPE.RELATIVE_FREQ",
+      "oolong_answer_type": "ANSWER_TYPE.COMPARISON"
+    },
+    "git": {
+      "commit": "5dcd427689fff77d32cbc2029e447084a23a3475",
+      "branch": "main",
+      "dirty": true
+    },
+    "environment": {
+      "python": "3.14.5",
+      "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+      "packages": {
+        "pydantic": "2.13.4",
+        "openai": "2.53.0",
+        "anthropic": "0.121.0",
+        "pymupdf": "1.28.2",
+        "pdfplumber": "0.11.10"
+      }
+    },
+    "captured_at": "2026-08-28T19:27:01.335503+00:00"
+  },
+  "seeding": {
+    "seed": 11,
+    "python_random": true,
+    "pythonhashseed_env": null,
+    "numpy": false,
+    "torch": false
+  },
+  "rate_card": {
+    "gpt-5.2": {
+      "model": "gpt-5.2",
+      "input_per_million": 1.75,
+      "output_per_million": 14.0,
+      "currency": "USD",
+      "retrieved_on": "2026-08-27",
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    "gpt-5-mini": {
+      "model": "gpt-5-mini",
+      "input_per_million": 0.25,
+      "output_per_million": 2.0,
+      "currency": "USD",
+      "retrieved_on": "2026-08-27",
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    }
+  },
+  "started_at": "2026-08-28T19:27:01.335580+00:00"
+}

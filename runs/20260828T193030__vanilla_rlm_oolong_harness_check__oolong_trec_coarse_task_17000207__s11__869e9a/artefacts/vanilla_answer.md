@@ -1,0 +1,1 @@
+Answer: abbreviation is more common than location

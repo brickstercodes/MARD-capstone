@@ -16,11 +16,13 @@ First repeat (seed 11) already ran — $0.32, see `docs/18` §4.2 addendum. Next
 
     export OPENAI_API_KEY="sk-..."   # or a .env file with that line
     export MARD_SPEND_CAP_USD=120
-    .venv/bin/python scripts/run_vanilla_full.py 23   # or 42 for the third repeat
+    .venv/bin/python scripts/run_vanilla_full.py 23                        # or 42
+    .venv/bin/python scripts/run_vanilla_full.py 11 --document-id introcs_flat
 """
 
 from __future__ import annotations
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -30,7 +32,6 @@ from vanilla.run import VANILLA_MAX_DEPTH, _count_concepts, run_vanilla_rlm
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CORPUS_DIR = REPO_ROOT / "corpus"
-DOCUMENT_ID = "introcs"
 ROOT_MODEL = "gpt-5.2"
 SUB_MODEL = "gpt-5-mini"
 MAX_ITERATIONS = 30  # Zhang's own default; the failed replm-era run also hit this
@@ -41,36 +42,28 @@ MAX_CONCURRENT_SUBCALLS = 4  # Zhang's own default (docs/18 §4.2 addendum)
 ESTIMATED_USD = 5.0
 
 
-def _seed_from_argv() -> int:
-    if len(sys.argv) < 2:
-        return CAMPAIGN_SEEDS[0]
-    try:
-        seed = int(sys.argv[1])
-    except ValueError:
-        print(f"Seed must be an integer, got {sys.argv[1]!r}", file=sys.stderr)
-        raise SystemExit(2) from None
-    if seed not in CAMPAIGN_SEEDS:
-        print(
-            f"{seed} is not one of runlog.CAMPAIGN_SEEDS {CAMPAIGN_SEEDS} — "
-            "refusing rather than silently starting an untracked repeat.",
-            file=sys.stderr,
-        )
-        raise SystemExit(2)
-    return seed
+def _parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("seed", type=int, choices=CAMPAIGN_SEEDS)
+    parser.add_argument("--document-id", default="introcs")
+    return parser.parse_args()
 
 
 def main() -> int:
-    seed = _seed_from_argv()
+    args = _parse_args()
+    seed = args.seed
+    document_id = args.document_id
     cap = SpendCap.from_env()
     ledger = SpendLedger(REPO_ROOT / "runs", cap)
     print(f"[full] seed {seed} (runlog.CAMPAIGN_SEEDS index {CAMPAIGN_SEEDS.index(seed)})")
+    print(f"[full] document_id {document_id}")
     print(f"[full] spend cap ${cap.ceiling_usd:.2f}, ${ledger.remaining:.2f} remaining")
     ledger.check_before_run(ESTIMATED_USD)  # raises BudgetExceededError, refuses loudly
 
     with RunLogger.start(
         runs_root=REPO_ROOT / "runs",
         system="vanilla_rlm",
-        document_id=DOCUMENT_ID,
+        document_id=document_id,
         seed=seed,
         models={"root": ROOT_MODEL, "sub": SUB_MODEL},
         params={
@@ -82,7 +75,7 @@ def main() -> int:
     ) as run:
         response = run_vanilla_rlm(
             CORPUS_DIR,
-            DOCUMENT_ID,
+            document_id,
             root_model=ROOT_MODEL,
             sub_model=SUB_MODEL,
             logger=run,

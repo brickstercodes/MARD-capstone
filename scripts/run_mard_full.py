@@ -13,6 +13,7 @@ start if it would breach the cap.
     .venv/bin/python scripts/run_mard_full.py 11                 # MARD full, seed 11
     .venv/bin/python scripts/run_mard_full.py 11 --ablation a1s  # A1s (skeleton removed)
     .venv/bin/python scripts/run_mard_full.py 11 --ablation a1f  # A1f (findings removed)
+    .venv/bin/python scripts/run_mard_full.py 11 --document-id introcs_flat  # negative control
 """
 
 from __future__ import annotations
@@ -28,7 +29,6 @@ from runlog import CAMPAIGN_SEEDS, RunLogger, SpendCap, SpendLedger
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CORPUS_DIR = REPO_ROOT / "corpus"
-DOCUMENT_ID = "introcs"
 TIER1_MODEL = "gpt-5.2"
 TIER2_MODEL = "gpt-5-mini"
 
@@ -41,24 +41,27 @@ def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("seed", type=int, choices=CAMPAIGN_SEEDS)
     parser.add_argument("--ablation", choices=["a1s", "a1f"], default=None)
+    parser.add_argument("--document-id", default="introcs")
     return parser.parse_args()
 
 
 def main() -> int:
     args = _parse_args()
     system = f"mard_{args.ablation}" if args.ablation else "mard"
+    document_id = args.document_id
 
     cap = SpendCap.from_env()
     ledger = SpendLedger(REPO_ROOT / "runs", cap)
     seed_index = CAMPAIGN_SEEDS.index(args.seed)
     print(f"[{system}] seed {args.seed} (runlog.CAMPAIGN_SEEDS index {seed_index})")
+    print(f"[{system}] document_id {document_id}")
     print(f"[{system}] spend cap ${cap.ceiling_usd:.2f}, ${ledger.remaining:.2f} remaining")
     ledger.check_before_run(ESTIMATED_USD)
 
     with RunLogger.start(
         runs_root=REPO_ROOT / "runs",
         system=system,
-        document_id=DOCUMENT_ID,
+        document_id=document_id,
         seed=args.seed,
         models={"tier1": TIER1_MODEL, "tier2": TIER2_MODEL},
         params={
@@ -71,7 +74,7 @@ def main() -> int:
     ) as run:
         result = run_mard(
             CORPUS_DIR,
-            DOCUMENT_ID,
+            document_id,
             tier1_model=TIER1_MODEL,
             tier2_model=TIER2_MODEL,
             logger=run,

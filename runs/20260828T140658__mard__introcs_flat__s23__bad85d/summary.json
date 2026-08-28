@@ -1,0 +1,26 @@
+{
+  "run_id": "20260828T140658__mard__introcs_flat__s23__bad85d",
+  "status": "ok",
+  "system": "mard",
+  "document_id": "introcs_flat",
+  "seed": 23,
+  "wall_clock_s": 0.048,
+  "totals": {
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "per_model": {},
+    "cost": 0.0,
+    "unpriced_models": [],
+    "stale_rates": []
+  },
+  "result": {
+    "compiled": false,
+    "concepts_accepted": 0,
+    "edges_accepted": 0,
+    "cross_chapter_edges": 0,
+    "never_declared_rejections": 0
+  },
+  "error": null,
+  "finished_at": "2026-08-28T14:06:58.316009+00:00"
+}

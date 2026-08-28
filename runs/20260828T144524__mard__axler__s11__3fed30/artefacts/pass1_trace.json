@@ -1,0 +1,191 @@
+[
+  {
+    "pass": 1,
+    "chapter_id": "axler.ch01",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 3589,
+    "envelope": {
+      "document_id": "axler",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 17,
+      "findings_total": 0,
+      "findings_shown": 0,
+      "suppress_findings": false,
+      "target_section_id": "axler.ch01",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 2460
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 8,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "axler.ch02",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 4313,
+    "envelope": {
+      "document_id": "axler",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 17,
+      "findings_total": 1,
+      "findings_shown": 1,
+      "suppress_findings": false,
+      "target_section_id": "axler.ch02",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 3124
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 11,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "axler.ch03",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 5021,
+    "envelope": {
+      "document_id": "axler",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 17,
+      "findings_total": 2,
+      "findings_shown": 2,
+      "suppress_findings": false,
+      "target_section_id": "axler.ch03",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 3895
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 14,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "axler.ch04",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 5975,
+    "envelope": {
+      "document_id": "axler",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 17,
+      "findings_total": 3,
+      "findings_shown": 3,
+      "suppress_findings": false,
+      "target_section_id": "axler.ch04",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 4846
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 13,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "axler.ch05",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 6928,
+    "envelope": {
+      "document_id": "axler",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 17,
+      "findings_total": 4,
+      "findings_shown": 4,
+      "suppress_findings": false,
+      "target_section_id": "axler.ch05",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 5748
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 14,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "axler.ch06",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 8109,
+    "envelope": {
+      "document_id": "axler",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 17,
+      "findings_total": 5,
+      "findings_shown": 5,
+      "suppress_findings": false,
+      "target_section_id": "axler.ch06",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 6953
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 14,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "axler.ch07",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 9331,
+    "envelope": {
+      "document_id": "axler",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 17,
+      "findings_total": 6,
+      "findings_shown": 6,
+      "suppress_findings": false,
+      "target_section_id": "axler.ch07",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 8136
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 14,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "axler.ch08",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 10264,
+    "envelope": {
+      "document_id": "axler",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 17,
+      "findings_total": 7,
+      "findings_shown": 7,
+      "suppress_findings": false,
+      "target_section_id": "axler.ch08",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 9066
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 14,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "axler.ch09",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 11669,
+    "envelope": {
+      "document_id": "axler",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 17,
+      "findings_total": 8,
+      "findings_shown": 8,
+      "suppress_findings": false,
+      "target_section_id": "axler.ch09",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 10264
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 14,
+    "rejected": []
+  }
+]

@@ -1,0 +1,7 @@
+{"at": "2026-08-28T14:06:58.809427+00:00", "kind": "mard_tier1_config", "reasoning_effort": null}
+{"at": "2026-08-28T14:06:58.809622+00:00", "kind": "mard_pass0", "pass": 0, "prompt_version": "pass0-topics-v1", "section_count": 0, "provenance": "derived_from_text", "degenerate": true, "labeller": "SyncTopicLabeller", "note": "Empty skeleton: no sections detected. MARD degenerates to vanilla RLM on this document (CONTEXT.md line 92, objective O4)."}
+{"at": "2026-08-28T14:06:58.809757+00:00", "kind": "envelope_snapshot", "pass": 0, "path": "pass_0_initial.json"}
+{"at": "2026-08-28T14:06:58.809875+00:00", "kind": "envelope_snapshot", "pass": 1, "path": "pass_1_final.json"}
+{"at": "2026-08-28T14:06:58.809992+00:00", "kind": "mard_pass1", "chapters_explored": 0, "chapters_total": 0, "concepts_accepted": 0, "edges_accepted": 0}
+{"at": "2026-08-28T14:06:58.810036+00:00", "kind": "mard_cross_chapter_edges", "cross_chapter_edges": 0, "total_edges": 0, "never_declared_rejections": 0}
+{"at": "2026-08-28T14:06:58.810070+00:00", "kind": "mard_no_plan", "reason": "Pass 1 accepted no concepts; nothing to compile."}

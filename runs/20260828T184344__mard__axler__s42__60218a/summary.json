@@ -1,0 +1,37 @@
+{
+  "run_id": "20260828T184344__mard__axler__s42__60218a",
+  "status": "ok",
+  "system": "mard",
+  "document_id": "axler",
+  "seed": 42,
+  "wall_clock_s": 270.23,
+  "totals": {
+    "calls": 62,
+    "input_tokens": 21448,
+    "output_tokens": 74318,
+    "per_model": {
+      "gpt-5-mini": {
+        "input_tokens": 5721,
+        "output_tokens": 64258,
+        "cost": 0.12994625
+      },
+      "gpt-5.2": {
+        "input_tokens": 15727,
+        "output_tokens": 10060,
+        "cost": 0.16836225
+      }
+    },
+    "cost": 0.2983085,
+    "unpriced_models": [],
+    "stale_rates": []
+  },
+  "result": {
+    "compiled": true,
+    "concepts_accepted": 53,
+    "edges_accepted": 116,
+    "cross_chapter_edges": 77,
+    "never_declared_rejections": 0
+  },
+  "error": null,
+  "finished_at": "2026-08-28T18:48:14.829640+00:00"
+}

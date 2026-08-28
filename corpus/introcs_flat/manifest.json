@@ -1,6 +1,6 @@
 {
   "doc_id": "introcs_flat",
-  "generated_at": "2026-08-28T10:16:55.988406+00:00",
+  "generated_at": "2026-08-28T14:22:56.884902+00:00",
   "source": {
     "file_name": "introcs/document.txt",
     "sha256": "428c7b6821beabb8d1832d74ac39bb492e4994ac886f7d83ea612ff6e63325ec",
@@ -11,7 +11,7 @@
   },
   "pipeline": {
     "contract_version": 1,
-    "git_commit": "6068ddbdf879329c2e3f266a9df1be88f2525c9a",
+    "git_commit": "5dcd427689fff77d32cbc2029e447084a23a3475",
     "git_branch": "main",
     "git_dirty": true
   },
@@ -21,8 +21,8 @@
       "bytes": 3932373
     },
     "document.txt": {
-      "sha256": "47162fd0b15b92397f135d999fcc9ba1776887cd15f8eed08d5a457ec7ff98d2",
-      "bytes": 2460138
+      "sha256": "b394324d1026a16468615d178a8917c0db973d6f903f421fc910b37583cb26ec",
+      "bytes": 2474151
     },
     "outline.json": {
       "sha256": null,
@@ -166,7 +166,7 @@
       "introcs.cloud-native-applications-development-12",
       "introcs.8-3-relational-database-management-systems"
     ],
-    "page_markers": "dropped",
+    "page_markers": "renumbered",
     "ablation_verified": {
       "is_empty": true,
       "degenerate": true
