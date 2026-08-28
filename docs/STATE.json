@@ -1,0 +1,75 @@
+{
+  "_comment": "Machine-readable current state. Written by hand, 27 Aug 2026. If this disagrees with a doc, the doc wins - this is a convenience index, not a source of truth.",
+  "updated": "2026-08-27",
+  "provider": "openai",
+  "models": {
+    "tier1_root": "gpt-5.2",
+    "tier2_sub": "gpt-5-mini",
+    "rates_module": "provider/rates.py",
+    "rates_retrieved_on": "2026-08-27",
+    "rates_stale_after": "2026-09-26"
+  },
+  "control_library": {
+    "repo": "FalseAdvertising/Zhang_RLM",
+    "pinned_sha": "62acf7b",
+    "vendored_at": ".vendor/rlm",
+    "package_name": "rlm"
+  },
+  "spend": {
+    "cap_usd": 120,
+    "env_var": "MARD_SPEND_CAP_USD",
+    "set_in": ".venv/bin/activate",
+    "void_previous_cap": 780
+  },
+  "primary_document": "introcs",
+  "structural_controls": {
+    "front_matter": "excluded from document.txt",
+    "outline_json": "yardstick only, never an input",
+    "applies_to": "every system, identically"
+  },
+  "configurations": {
+    "B1_vanilla_rlm": {
+      "status": "done",
+      "repeats": 3,
+      "seeds": [
+        11,
+        23,
+        42
+      ]
+    },
+    "M_mard_two_pass": {
+      "status": "not_started",
+      "repeats": 3
+    },
+    "A1_envelope_removed": {
+      "status": "not_started",
+      "repeats": 3,
+      "lever": "Envelope.stripped()"
+    },
+    "NC_negative_control": {
+      "status": "not_started",
+      "repeats": 3,
+      "document": "structure-ablated introcs",
+      "replaces": "frozen OOLONG subset, deferred to Manuscript B"
+    }
+  },
+  "blocked": {
+    "master_plan_compiled": false,
+    "blocks": [
+      "docs/30 3 forward-reference metric (Master Plan order half)",
+      "eval/groundtruth_scoring Master-Plan half",
+      "paper Fig. 1 panel (c)"
+    ]
+  },
+  "known_traps": [
+    "provider/seams.py is async; envelope/pass0.py and pass1.py protocols are sync. No bridge exists. Returns a coroutine, rejects all chapters, empty plan, NO exception. docs/25 2.",
+    "Envelope.stripped() removes the skeleton as well as findings - cannot separate the two without a fourth variant.",
+    "join_in_plan_order raises IncompleteArtefactError on empty spans. Never catch it.",
+    "No seed parameter exists anywhere. CAMPAIGN_SEEDS are run identifiers; variance comes from repeats."
+  ],
+  "unverified": [
+    "docs/18 5.2 depth mapping between MARD passes and the library parameter - derived from prose, not from envelope/pass1.py",
+    "docs/24 4 'at least 41 of 75 ungrounded' - from an intermediate counter; only one concept verified end to end",
+    "docs/23 3.3 whether the OpenStax PDF uses a distinct bold face for glossary terms"
+  ]
+}

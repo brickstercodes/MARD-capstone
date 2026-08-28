@@ -1,5 +1,14 @@
 # Implementation brief — vendor `Zhang_RLM`, wire it to `ingest`, close the vanilla arm
 
+> ### ✅ COMPLETE — 27 Aug 2026
+>
+> The vanilla arm (**B1**) closed with three logged runs on `introcs` (seeds 11/23/42).
+> **This document is retained for one reason: §3.1 holds the frozen task prompt**, which is
+> paper content and cannot change after a measured run. Everything else here is history.
+>
+> For the MARD arm, read [`25-HANDOFF_MARD_ARM.md`](25-HANDOFF_MARD_ARM.md).
+> For current state, read [`00-START_HERE.md`](00-START_HERE.md).
+
 **Paste this whole file as the first message of a fresh Claude Code session opened in
 `~/Desktop/Capstone/MARD-capstone`.**
 

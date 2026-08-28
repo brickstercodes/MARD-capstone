@@ -589,6 +589,15 @@ built from **measured** corpus figures plus **named** assumptions, so each assum
 be argued with individually and replaced with a real `calls_issued` figure after the first
 run.
 
+> **⚠️ CORRECTED 27 Aug 2026.** §10.2–§10.4 below were computed against the GPT-5.6
+> Sol/Terra/Luna rate card. **That is not the pair that ran.** The actual pair is
+> `gpt-5.2` (Tier 1, $1.75/$14.00 per 1M) + `gpt-5-mini` (Tier 2, $0.25/$2.00), recorded
+> first-hand in `provider/rates.py` and written up in
+> [`22-MODEL_PAIR_OPENAI.md`](22-MODEL_PAIR_OPENAI.md), which carries the corrected model:
+> **MARD ≈ $0.94/run projected, vanilla $0.32–$1.60 measured (n=3), remaining matrix ≈ $11.**
+> The "$25–35 for Manuscript A" figure derived from §10.3 is **withdrawn**. §10.1's measured
+> corpus quantities and §10.4's two conclusions still hold; only the prices were wrong.
+
 ### 10.1 Measured inputs
 
 | Quantity | Value | Source |

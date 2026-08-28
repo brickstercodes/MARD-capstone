@@ -1,273 +1,130 @@
-% ============================================================
-% MARD -- Manuscript A working draft
-% Single-file Overleaf project: paste into main.tex, Recompile.
-% Compiler: pdfLaTeX. refs.bib is embedded via filecontents.
+%==============================================================
+%  Metadata-Augmented Recursive Decomposition (MARD)
+%  Manuscript A  --  IEEE conference format
 %
-% DRAFT STATUS, 26 Aug 2026
-%   Sections 1-4 and 6-7 are drafted prose.
-%   Section 5 is scaffolding only -- table skeletons with
-%   \RESULT placeholders. Nothing in it is a number yet.
-%   Every unresolved item is marked \TODO or \VERIFY and is
-%   listed in the "Draft debt" appendix so none can be lost.
+%  Upload to Overleaf as a new project; main file = this file.
+%  Compiler: pdfLaTeX.  IEEEtran.cls is available on Overleaf by
+%  default, so no .cls upload is required.
 %
-% HARD RULES INHERITED FROM THE PROJECT (CONTEXT.md 3.4, 4.3):
-%   - No number enters this file that does not trace to a
-%     logged run under runs/<run_id>/.
-%   - No citation enters this file without a verified row in
-%     docs/40-LITERATURE_LOG.md.
-%   - After a results freeze, numbers are written up, never
-%     re-run. A wrong result gets a limitation paragraph.
-% ============================================================
+%  MERGED 27 Aug 2026: team layout (author block, section
+%  numbering, Fig. 1, inline bibliography) + the groundedness /
+%  methodology material from the working draft.
+%
+%  TWO PLACEHOLDER CONVENTIONS, both greppable:
+%    % >>> PENDING   prose that still needs writing
+%    \RESULT         a table cell with no measured number yet
+%                    (prints a red marker, so an unfilled cell can
+%                    never be mistaken for an em-dash or a zero)
+%  Before the final build, delete the three macro definitions
+%  below: the document then FAILS to compile if any \TODO,
+%  \VERIFY or \RESULT survived. That is deliberate.
+%==============================================================
 \documentclass[conference]{IEEEtran}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{times}
-\usepackage{latexsym}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{booktabs}
+\usepackage{textcomp}
 \usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{filecontents}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds}
 
-% ---- Draft markers. Delete these three macros for the final build;
-% ---- the document will then fail to compile anywhere one is left,
-% ---- which is deliberate.
+% --- Draft markers. DELETE these three lines for the final build. ---------
 \newcommand{\TODO}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
 \newcommand{\VERIFY}[1]{\textcolor{orange}{\textbf{[VERIFY: #1]}}}
 \newcommand{\RESULT}{\textcolor{red}{\textbf{--}}}
 
-% ------------------------------------------------------------
-% Embedded bibliography.
-%
-% CITATION STATUS, 26 Aug 2026 -- READ THIS BEFORE CITING.
-% docs/40-LITERATURE_LOG.md is the project's citation gate:
-% "If a source is mentioned but not in this table, it has not
-% been verified and should not be cited."
-%
-% Only TWO entries below currently have a verified row in that
-% log: zhang2025rlm (row 1) and alizadeh2026srlm (row 2).
-% The other fifteen came from the title-approval deck and have
-% never been entered. They are retained here because the
-% related-work argument needs them, but each carries a
-% status comment, and Section 2's prose is written so that no
-% *claim* rests on an unverified row -- only positioning does.
-%
-% CONTEXT.md 2.3 records that a July 2026 audit of this
-% project's own materials found three misattributed citations
-% and four wrong figures. The corrections are folded in below.
-% ------------------------------------------------------------
-\begin{filecontents*}{refs.bib}
+% --- Figure 1 palette (print-safe; distinguishable in greyscale) ---------
+\definecolor{mardblue}{HTML}{1F5FA9}   % Tier 1 -- Scout
+\definecolor{mardbluebg}{HTML}{EAF2FB}
+\definecolor{mardorange}{HTML}{C05621} % Tier 2 -- Builders
+\definecolor{mardorangebg}{HTML}{FDF0E6}
+\definecolor{mardink}{HTML}{16202B}    % Master Plan
+\definecolor{mardgrey}{HTML}{6B7785}   % Document / output
 
-% === VERIFIED (docs/40 row 1) ===
-@misc{zhang2025rlm,
-  author        = {Zhang, Alex L. and Kraska, Tim and Khattab, Omar},
-  title         = {Recursive Language Models},
-  year          = {2025},
-  eprint        = {2512.24601},
-  archiveprefix = {arXiv},
-  note          = {MIT CSAIL. BASE PAPER. Verified: docs/40 row 1.}
-}
+% --- Section numbering: arabic sections, dotted subsections (1, 1.1, 1.1.1) ---
+% IEEEtran keeps TWO sets of labels: \thesection... drives \ref and the ToC,
+% while \thesection...dis drives what is printed in the heading itself. Both
+% must be overridden, or headings keep showing "A." "B." "C.".
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+\renewcommand{\thesectiondis}{\arabic{section}.}
+\renewcommand{\thesubsectiondis}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsectiondis}{%
+  \arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+\renewcommand{\theparagraphdis}{%
+  \arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}.}
 
-% === VERIFIED (docs/40 row 2) ===
-% TITLE CONFLICT -- RESOLVE BEFORE SUBMISSION.
-% docs/40 row 2 and CONTEXT.md 1.7 both record this paper as
-% "SRLM: Scaling Recursive Language Models with Multi-Pass
-% Attention". The deck's bib entry gave a different title for
-% the same arXiv ID. One of the two is wrong; the arXiv abstract
-% page is the tiebreaker. Author list and ID agree in both.
-@misc{alizadeh2026srlm,
-  author        = {Alizadeh, Keivan and Shojaee, Parsa and Cho, Minsik and Farajtabar, Mehrdad},
-  title         = {{SRLM}: Scaling Recursive Language Models with Multi-Pass Attention},
-  year          = {2026},
-  eprint        = {2603.15653},
-  archiveprefix = {arXiv},
-  note          = {Verified: docs/40 row 2. TITLE CONFLICT with deck bib -- confirm on arXiv.}
-}
+\sisetup{group-separator={,}, detect-weight=true}
+% Column type for right-aligned numeric columns of fixed width
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
-% === NOT IN THE LITERATURE LOG -- positioning only, no claim rests on these ===
-@article{liu2024lostinthemiddle,
-  author  = {Liu, Nelson F. and Lin, Kevin and Hewitt, John and Paranjape, Ashwin
-             and Bevilacqua, Michele and Petroni, Fabio and Liang, Percy},
-  title   = {Lost in the Middle: How Language Models Use Long Contexts},
-  journal = {Transactions of the Association for Computational Linguistics},
-  year    = {2024},
-  note    = {NOT LOGGED. Cite ONLY for the U-shaped positional finding.
-             CONTEXT.md 2.3: the "40 percent loss beyond 128K" figure
-             attributed to this paper does not appear in it.}
-}
-@misc{ong2024routellm,
-  author        = {Ong, Isaac and Almahairi, Amjad and Wu, Vincent and Chiang, Wei-Lin
-                   and Wu, Tianhao and Gonzalez, Joseph E. and Kadous, M. Waleed and Stoica, Ion},
-  title         = {{RouteLLM}: Learning to Route {LLMs} with Preference Data},
-  year          = {2024},
-  eprint        = {2406.18665},
-  archiveprefix = {arXiv},
-  note          = {NOT LOGGED. Author list corrected per CONTEXT.md 2.3
-                   (the deck listed only four of eight).}
-}
-@misc{moslem2026routing,
-  author        = {Moslem, Yasmin and Kelleher, John D.},
-  title         = {Dynamic Model Routing and Cascading for Efficient {LLM} Inference: A Survey},
-  year          = {2026},
-  eprint        = {2603.04445},
-  archiveprefix = {arXiv},
-  note          = {NOT LOGGED.}
-}
-@misc{dong2026payforhints,
-  author        = {Dong, Zhuoshi and Sharma, Harsh and O'Toole, Eoin and Champati, J. Pradeep and Wu, Kai},
-  title         = {Pay for Hints, Not Answers: {LLM} Shepherding for Cost-Efficient Inference},
-  year          = {2026},
-  eprint        = {2601.22132},
-  archiveprefix = {arXiv},
-  note          = {NOT LOGGED.}
-}
-@inproceedings{ou2025hierarchicalmerging,
-  author    = {Ou, Litu and Lapata, Mirella},
-  title     = {Context-Aware Hierarchical Merging for Long Document Summarization},
-  booktitle = {Findings of the Association for Computational Linguistics},
-  year      = {2025},
-  note      = {NOT LOGGED. arXiv:2502.00977.}
-}
-@inproceedings{kim2025nexussum,
-  author    = {Kim, Hyungjoo and Kim, Bong Hyun},
-  title     = {{NexusSum}: Hierarchical {LLM} Agents for Long-Form Narrative Summarization},
-  booktitle = {Proceedings of the Association for Computational Linguistics},
-  year      = {2025},
-  note      = {NOT LOGGED. arXiv:2505.24575.}
-}
-@inproceedings{jiang2023llmlingua,
-  author    = {Jiang, Huiqiang and Wu, Qianhui and Lin, Chin-Yew and Yang, Yuqing and Qiu, Lili},
-  title     = {{LLMLingua}: Compressing Prompts for Accelerated Inference of Large Language Models},
-  booktitle = {Proceedings of EMNLP},
-  year      = {2023},
-  note      = {NOT LOGGED.}
-}
-@inproceedings{pan2024llmlingua2,
-  author    = {Pan, Zhuoshi and Wu, Qianhui and Jiang, Huiqiang and Xia, Menglin
-               and Luo, Xufang and Zhang, Jue},
-  title     = {{LLMLingua-2}: Data Distillation for Efficient and Faithful
-               Task-Agnostic Prompt Compression},
-  booktitle = {Findings of the Association for Computational Linguistics},
-  year      = {2024},
-  note      = {NOT LOGGED. Author list truncated in the deck -- confirm full list.}
-}
-@inproceedings{li2023selectivecontext,
-  author    = {Li, Yucheng and Dong, Bo and Guerin, Frank and Lin, Chenghua},
-  title     = {Compressing Context to Enhance Inference Efficiency of Large Language Models},
-  booktitle = {Proceedings of EMNLP},
-  year      = {2023},
-  note      = {NOT LOGGED. arXiv:2310.06201. Author list corrected per
-               CONTEXT.md 2.3 -- the deck had attached the phi-1 author list.}
-}
-@inproceedings{li2025promptcompressionsurvey,
-  author    = {Li, Zongqian and Liu, Yinhong and Su, Yixuan and Collier, Nigel},
-  title     = {Prompt Compression for Large Language Models: A Survey},
-  booktitle = {Proceedings of NAACL},
-  year      = {2025},
-  note      = {NOT LOGGED. arXiv:2410.12388.}
-}
-@inproceedings{li2021prerequisitechains,
-  author    = {Li, Irene and Yan, Vanessa and Li, Tianxiao and Qu, Rihao and Radev, Dragomir},
-  title     = {Unsupervised Cross-Domain Prerequisite Chain Learning using
-               Variational Graph Autoencoders},
-  booktitle = {Proceedings of ACL-IJCNLP},
-  pages     = {1005--1011},
-  year      = {2021},
-  note      = {NOT LOGGED.}
-}
-@article{prerequisitesurvey2025,
-  title     = {Prerequisite Relation Learning: A Survey and Outlook},
-  journal   = {ACM Computing Surveys},
-  volume    = {57},
-  number    = {11},
-  articleno = {279},
-  year      = {2025},
-  doi       = {10.1145/3733593},
-  note      = {NOT LOGGED. UNVERIFIED AUTHOR LIST -- do not cite with
-               named authors until confirmed against the ACM record.}
-}
-@inproceedings{sun2024learningpath,
-  author    = {Sun, Jiapeng and He, Yue and Xu, Yidan and Sun, Jie and Sun, Ge},
-  title     = {A Learning-path based Supervised Method for Concept
-               Prerequisite Relations Extraction},
-  booktitle = {Proceedings of ACM CIKM},
-  pages     = {2168--2177},
-  year      = {2024},
-  note      = {NOT LOGGED. UNVERIFIED AUTHOR LIST -- confirm against ACM DL.}
-}
-@misc{wu2025llmagentseducation,
-  author        = {Wu, Shengyao},
-  title         = {{LLM} Agents for Education: Advances and Applications},
-  year          = {2025},
-  eprint        = {2503.11733},
-  archiveprefix = {arXiv},
-  note          = {NOT LOGGED. Author list truncated in the deck -- confirm.}
-}
-@misc{tufino2025notebooklm,
-  author        = {Tufino, Eugenio},
-  title         = {{NotebookLM} as a {Socratic} Physics Tutor: Design and
-                   Preliminary Observations of a {RAG}-Based Tool},
-  year          = {2025},
-  eprint        = {2504.09720},
-  archiveprefix = {arXiv},
-  note          = {NOT LOGGED. CAUTION, CONTEXT.md Risk 2: this is a
-                   physics-education paper. It does NOT support the
-                   hierarchy-vs-dependency claim about NotebookLM's Mind Map
-                   and must never be cited as if it does. It replaced a
-                   fabricated title at the same arXiv ID (CONTEXT.md 2.3).}
-}
-\end{filecontents*}
-
-\title{Metadata-Augmented Recursive Decomposition for\\
-       Cost-Efficient Comprehension of Unbounded Documents}
-
-\author{
-\begin{tabular}{cccc}
-\shortstack{Parth Sangani \\ \small Dept.\ of Computer Engineering \\ \small MPSTME, NMIMS \\ \small Mumbai, India}
-&
-\shortstack{Arav Sharma \\ \small Dept.\ of Computer Engineering \\ \small MPSTME, NMIMS \\ \small Mumbai, India}
-&
-\shortstack{Anugrah Shetty \\ \small Dept.\ of Computer Engineering \\ \small MPSTME, NMIMS \\ \small Mumbai, India}
-&
-\shortstack{Tanish Sharma \\ \small Dept.\ of Computer Engineering \\ \small MPSTME, NMIMS \\ \small Mumbai, India}
-\end{tabular}
-}
-% Real names are for the internal draft only. Swap to anonymous
-% before any ARR / IEEE double-blind submission build.
-\date{}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \begin{document}
+\title{Metadata-Augmented Recursive Decomposition for\\
+Cost-Efficient Comprehension of Unbounded Documents}
+
+\author{%
+\begin{tabular}{@{}*{5}{>{\centering\arraybackslash}p{0.19\textwidth}}@{}}
+Parth Sangani\textsuperscript{1,\,a,\,b,\,*} &
+Arav Sharma\textsuperscript{2,\,a,\,b} &
+Anugrah Shetty\textsuperscript{3,\,a,\,b} &
+Tanish Sharma\textsuperscript{4,\,a,\,b} &
+Soni Sweta\textsuperscript{5,\,a,\,b}
+\end{tabular}\\[4pt]
+{\footnotesize\textsuperscript{a}Department of Computer Engineering}\\[1pt]
+{\footnotesize\textsuperscript{b}Mukesh Patel School of Technology Management \& Engineering, SVKM's Narsee Monjee}\\[1pt]
+{\footnotesize Institute of Management Studies (NMIMS) Deemed-to-University, Mumbai-400056, India}\\[4pt]
+{\footnotesize\textsuperscript{1}\texttt{sanganiparth22@gmail.com}}\\[1pt]
+{\footnotesize\textsuperscript{2}\texttt{arav.sharma0405@gmail.com}}\\[1pt]
+{\footnotesize\textsuperscript{3}\texttt{anuadz2358@gmail.com}}\\[1pt]
+{\footnotesize\textsuperscript{4}\texttt{tanishsharma619@gmail.com}}\\[1pt]
+{\footnotesize\textsuperscript{5}\texttt{soni.sweta16@gmail.com}}\\[2pt]
+{\footnotesize Corresponding Author\textsuperscript{*}}%
+}
 \maketitle
 
 \begin{abstract}
-Recursive Language Models (RLMs) process inputs far beyond a model's native
-context window by holding the document in a REPL environment and letting a root
-model explore it programmatically, delegating reading to sub-model calls. We
-observe that this exploration is \emph{structurally blind}: each recursive call
-receives a raw text slice with no view of the document's organisation, no record
-of what sibling calls have already established, and no statement of why it was
-invoked. On documents whose structure is exploitable --- textbooks, manuals,
-standards --- this discards precisely the information that makes the document
-navigable.
-
-We propose \textbf{Metadata-Augmented Recursive Decomposition (MARD)}, an
-inference-time extension that threads a \emph{metadata envelope} through every
-recursive call. The envelope carries a structural skeleton derived from the
-document's own text, findings accumulated from prior calls, and a parent-issued
-directive, and it grows as exploration proceeds. Exploration thereby becomes an
-act of confirming a hypothesis rather than of discovering blindly. We
-instantiate MARD on dependency-ordered study-material generation over
-textbook-scale documents, where a frontier ``Scout'' reads a small fraction of
-the document to emit a typed Master Plan and a fleet of cheap ``Swarm'' builders
-generate material that is joined in dependency order rather than book order.
-
-\TODO{Results sentence. Blocked on results freeze A (27 Aug 2026). Report the
-O3 delta against vanilla RLM in both quality and tokens, and state the O4
-boundary. Per docs/00-CLAIM.md the claim is a \emph{disjunction} --- quality
-and/or tokens --- so a win on either is the claimed result and a null is
-reported as a null.}
+Recursive Language Models (RLMs) process inputs far beyond a model's
+native context window by holding the document in a REPL environment and
+letting a root model explore it programmatically, delegating reading to
+sub-model calls. We observe that this exploration is structurally blind:
+each recursive call receives a raw text slice with no view of the
+document's organisation, no record of what sibling calls have already
+established, and no statement of why it was invoked. On documents whose
+structure is exploitable---textbooks, manuals, standards---this discards
+precisely the information that makes the document navigable. We propose
+Metadata-Augmented Recursive Decomposition (MARD), an inference-time
+extension that threads a metadata envelope through every recursive call.
+The envelope carries a structural skeleton derived from the document's own
+text, findings accumulated from prior calls, and a parent-issued directive,
+and it grows as exploration proceeds. Exploration thereby becomes an act of
+confirming a hypothesis rather than of discovering blindly. We instantiate
+MARD on dependency-ordered study-material generation over textbook-scale
+documents, where a frontier ``Scout'' reads a small fraction of the document
+to emit a typed Master Plan and a fleet of cheap ``Swarm'' builders generate
+material that is joined in dependency order rather than book order. We
+evaluate MARD against vanilla RLM under matched models, matched recursion
+depth and identical structural controls, measuring output quality and tokens
+consumed independently, with three repeated runs per condition and a
+flat-context negative control. We additionally instrument the
+\emph{groundedness} of generated content, after observing the baseline
+silently produce explanations without consulting the source document while
+reporting success.
+% >>> PENDING: append the results sentence here after the results freeze.
+% Report the observed delta against vanilla RLM in both quality and tokens,
+% and state the boundary condition. The claim is a disjunction (quality
+% and/or tokens): a win on either is the claimed result; a null is reported
+% as a null.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -275,815 +132,1132 @@ long-context language models, recursive inference, document structure,
 prerequisite ordering, inference-time methods, cost-efficient inference
 \end{IEEEkeywords}
 
-% ============================================================
 \section{Introduction}
-% ============================================================
+\label{sec:intro}
+The dominant approach to reasoning over documents that exceed a language
+model's context window is to reduce the document: chunk and retrieve,
+compress the prompt, or compact the conversation. Each discards information
+and each does so before the model has had a chance to decide what matters.
 
-The dominant approach to reasoning over documents that exceed a language model's
-context window is to reduce the document: chunk and retrieve, compress the
-prompt, or compact the conversation. Each discards information and each does so
-before the model has had a chance to decide what matters.
-
-Recursive Language Models \cite{zhang2025rlm} invert this. The document is never
-placed in the prompt at all. It is bound to a variable inside a Python REPL, and
-the root model receives only \emph{metadata} about it --- its type, its length.
-The root then writes code to explore it: slicing, regular expressions, loops.
-Inside that REPL it may call \texttt{llm\_query}, handing an extracted slice to a
-sub-model that reads it and returns an answer. The root is an orchestrator that
-decides \emph{what to read} and delegates \emph{the reading}. Because the root
-sees only truncated program output, its own context grows slowly, and inputs
-of several million tokens become tractable against a context window two orders
-of magnitude smaller.
+Recursive Language Models \cite{zhang2025rlm} invert this. The document is
+never placed in the prompt at all. It is bound to a variable inside a Python
+REPL, and the root model receives only metadata about it---its type, its
+length. The root then writes code to explore it: slicing, regular
+expressions, loops. Inside that REPL it may call \texttt{llm\_query}, handing
+an extracted slice to a sub-model that reads it and returns an answer. The
+root is an orchestrator that decides what to read and delegates the reading.
+Because the root sees only truncated program output, its own context grows
+slowly, and inputs of several million tokens become tractable against a
+context window two orders of magnitude smaller.
 
 \subsection{The defect: recursion without orientation}
-
-We observe a specific deficiency in this design. Every sub-call is given a raw
-slice of text and nothing else. It does not know which document the slice comes
-from, where in that document it sits, what other sub-calls have already
+\label{sec:gap}
+We observe a specific deficiency in this design. Every sub-call is given a
+raw slice of text and nothing else. It does not know which document the slice
+comes from, where in that document it sits, what other sub-calls have already
 established, or why it in particular was invoked. It is, in effect, a reader
 handed three photocopied pages with no cover and no page numbers.
 
 Two costs follow. First, orientation is re-derived on every call rather than
-established once and reused. Second, sub-calls cannot build on one another: a
-finding established in Chapter~3 is unavailable to the call that reads
+established once and reused. Second, sub-calls cannot build on one another:
+a finding established in Chapter~3 is unavailable to the call that reads
 Chapter~9, even though the document itself may explicitly connect them. On a
-\emph{flat} context --- a shuffled transcript, a log file --- neither cost is
-avoidable, because there is no structure to be oriented against. But on a
-document with exploitable structure, the information being discarded is exactly
-the information the author supplied to make the text navigable: a table of
+flat context---a shuffled transcript, a log file---neither cost is avoidable,
+because there is no structure to be oriented against. But on a document with
+exploitable structure, the information being discarded is exactly the
+information the author supplied to make the text navigable: a table of
 contents, numbered sections, and in-text cross-references of the form ``as we
 saw in Chapter~3.''
 
 \subsection{Contribution}
-
 We introduce a \emph{metadata envelope}: a compact, growing structure carried
-into every recursive call, comprising (i)~a structural skeleton of the document,
-(ii)~findings accumulated across prior calls, and (iii)~a directive issued by the
-calling context stating what this call is for. Our claim, stated in the form we
-commit to before reporting any measurement:
+into every recursive call, comprising (i)~a structural skeleton of the
+document, (ii)~findings accumulated across prior calls, and (iii)~a directive
+issued by the calling context stating what this call is for. Our claim,
+stated in the form we commit to before reporting any measurement:
 
 \begin{quote}
-\itshape
 MARD's growing metadata envelope makes recursive document exploration
-structure-aware --- improving output quality and/or reducing tokens consumed
-relative to vanilla RLM on documents with exploitable structure, while degrading
-gracefully to vanilla-RLM behaviour on documents without it.
+structure-aware---improving output quality and/or reducing tokens consumed
+relative to vanilla RLM on documents with exploitable structure, while
+degrading gracefully to vanilla-RLM behaviour on documents without it.
 \end{quote}
 
-A second property of the envelope emerged from measurement rather than design, and we
-report it as a finding rather than folding it into the claim above: because MARD's plan is a
-\emph{typed contract} validated at the tier boundary, a builder receives its source span by
-construction rather than by a model matching text to a concept. We observed the vanilla
-baseline silently generate content without consulting the document at all, while reporting
-success (Section~\ref{sec:grounding}). The envelope's structural apparatus makes that failure
-mode loud rather than silent, which is a claim about \emph{faithfulness and auditability}
-distinct from output quality.
+Three properties of this sentence are deliberate. It credits the envelope,
+not recursion, because recursion is the base paper's. It is a disjunction
+over quality and tokens, because we do not know in advance which axis the
+effect appears on and measure both independently. And the
+graceful-degeneration clause is a prediction stated in advance, not a failure
+mode discovered afterwards; it is an objective of this work rather than a
+caveat on it.
 
-Three properties of this sentence are deliberate. It credits the envelope, not
-recursion, because recursion is the base paper's. It is a \emph{disjunction} over
-quality and tokens, because we do not know in advance which axis the effect
-appears on and measure both independently. And the graceful-degeneration clause
-is a prediction stated in advance, not a failure mode discovered afterwards; it
-is an objective of this work rather than a caveat on it.
+A second property emerged from measurement rather than design, and we report
+it as a finding rather than folding it into the claim above. Because MARD's
+plan is a \emph{typed contract} validated at the tier boundary, a builder
+receives its source span by construction rather than by a model matching text
+to a concept at generation time. We observed the vanilla baseline silently
+generate content without consulting the document at all, while reporting
+success (Section~\ref{sec:grounding}). The envelope's structural apparatus
+makes that failure mode loud rather than silent, which is a claim about
+\emph{faithfulness and auditability} distinct from output quality.
 
-\subsection{What is \emph{not} claimed}
-
+\subsection{What is not claimed}
 It is important to say this before a reader infers otherwise. The base
-paper's RLM already pairs a frontier root model with cheaper sub-model calls, and
-already recurses. Neither is our contribution. The base library that accompanies
-it already carries rich per-call metadata and even ships an example demonstrating
-metadata captured at every depth of the recursion tree. Section~\ref{sec:notours}
-draws the line precisely: that metadata flows \emph{upward} and is
-\emph{observational}, whereas MARD's envelope flows \emph{downward} and is
-\emph{operative}. Same word, opposite direction, and only one of the two changes
+paper's RLM already pairs a frontier root model with cheaper sub-model calls,
+and already recurses. Neither is our contribution. The base library that
+accompanies it already carries rich per-call metadata and even ships an
+example demonstrating metadata captured at every depth of the recursion tree.
+Section~\ref{sec:baselib} draws the line precisely: that metadata flows
+upward and is observational, whereas MARD's envelope flows downward and is
+operative. Same word, opposite direction, and only one of the two changes
 what the model does.
 
-We also make no claim to beat the state of the art on long-context benchmarks.
-Isolating MARD's contribution means comparing against vanilla RLM; the base
-paper's own Table~1 reports a higher overall high-water mark from a different
-system, and that remains the standing bar \cite{zhang2025rlm}.
+We also make no claim to beat the state of the art on long-context
+benchmarks. Isolating MARD's contribution means comparing against vanilla
+RLM; the base paper's own results report a higher overall high-water mark
+from a different system, and that remains the standing bar
+\cite{zhang2025rlm}.
 
 \subsection{Demonstrating application}
+We instantiate MARD on the generation of dependency-ordered study material
+from textbook-scale documents. This application is chosen because it makes
+the envelope's contribution measurable rather than anecdotal: a textbook
+declares its own prerequisite relations through in-text cross-references, so
+a generated ordering can be scored against ground truth extracted
+programmatically from the document itself, with no expert annotation and
+therefore no human-subjects component.
 
-We instantiate MARD on the generation of dependency-ordered study material from
-textbook-scale documents. This application is chosen because it makes the
-envelope's contribution measurable rather than anecdotal: a textbook declares its
-own prerequisite relations through in-text cross-references, so a generated
-ordering can be scored against ground truth extracted programmatically from the
-document itself, with no expert annotation and therefore no human-subjects
-component.
+\section{Literature Review}
+\label{sec:related}
 
-% ============================================================
-\section{Related Work}
-% ============================================================
-
-\paragraph{Recursive and long-context inference.}
+\subsection{Recursive and long-context inference}
 Our work extends RLM \cite{zhang2025rlm} directly. A recent critique, SRLM
-\cite{alizadeh2026srlm}, reports gains over RLM and argues that recursion may not
-be the primary driver of RLM's advantage, observing that within-window recursion
-sometimes degrades performance. We take no position on that dispute, and our
-design does not require one: the envelope reduces \emph{orientation cost}, which
-is a claim about what each call is given rather than about what makes recursion
-work. The critique does, however, shape our methodology. If the objection to a
-reported improvement is that it may be sampling noise or prompt luck, the defence
-is not more documents but variance across repeated runs, a negative control, and
-a boundary condition stated in advance. Section~\ref{sec:setup} adopts all three.
+\cite{alizadeh2026srlm}, reports gains over RLM and argues that recursion may
+not be the primary driver of RLM's advantage, observing that within-window
+recursion sometimes degrades performance. We take no position on that
+dispute, and our design does not require one: the envelope reduces
+orientation cost, which is a claim about what each call is \emph{given}
+rather than about what makes recursion work. The critique does, however,
+shape our methodology. If the objection to a reported improvement is that it
+may be sampling noise or prompt luck, the defence is not more documents but
+variance across repeated runs, a negative control, and a boundary condition
+stated in advance. Section~\ref{sec:setup} adopts all three.
 
-Positional-degradation results \cite{liu2024lostinthemiddle} motivate the broader
-family of context-reduction approaches, of which prompt compression
-\cite{jiang2023llmlingua,pan2024llmlingua2,li2023selectivecontext} and its recent
-survey \cite{li2025promptcompressionsurvey} are representative. These are
-complementary rather than competing: they reduce what a call must read, whereas
-MARD changes what a call \emph{knows} about what it reads.
+Positional-degradation results \cite{liu2024lost} motivate the broader family
+of context-reduction approaches, of which prompt compression
+\cite{jiang2023llmlingua,pan2024llmlingua2,li2023compressing} and its recent
+survey \cite{li2025survey} are representative. These are complementary rather
+than competing: they reduce what a call must read, whereas MARD changes what
+a call knows about what it reads.
 
-\paragraph{Hierarchical decomposition of long documents.}
-Hierarchical merging for summarisation \cite{ou2025hierarchicalmerging} and
-multi-agent narrative summarisation \cite{kim2025nexussum} decompose long inputs
-into a tree and combine partial results upward. The structural difference from
-MARD is the direction of information flow: in merging schemes, context is
-assembled on the way up. In MARD, accumulated context is injected on the way
-down, before each unit of work executes.
+\subsection{Hierarchical decomposition of long documents}
+Hierarchical merging for summarisation \cite{ou2025hierarchical} and
+multi-agent narrative summarisation \cite{kim2025nexussum} decompose long
+inputs into a tree and combine partial results upward. The structural
+difference from MARD is the direction of information flow: in merging
+schemes, context is assembled on the way up. In MARD, accumulated context is
+injected on the way down, before each unit of work executes.
 
-\paragraph{Tiered and cost-aware inference.}
+\subsection{Tiered and cost-aware inference}
 Routing and cascading approaches \cite{ong2024routellm,moslem2026routing} and
-hint-based delegation \cite{dong2026payforhints} allocate a frontier model
-selectively to control cost. MARD's Scout/Swarm split is an instance of the same
-economics, and we claim no novelty for it. What is ours is that the cheap tier
-receives a \emph{typed plan directive} rather than an undifferentiated slice ---
-an ablation we isolate directly (Section~\ref{sec:ablations}).
+hint-based delegation \cite{dong2026hints} allocate a frontier model
+selectively to control cost. MARD's Scout/Swarm split is an instance of the
+same economics, and we claim no novelty for it. What is ours is that the
+cheap tier receives a typed plan directive rather than an undifferentiated
+slice---an ablation we isolate directly (Section~\ref{sec:ablation}).
 
-\paragraph{Prerequisite structure and educational applications.}
+\subsection{Prerequisite structure and educational applications}
 Concept prerequisite extraction has an established literature
-\cite{li2021prerequisitechains,sun2024learningpath,prerequisitesurvey2025}, as do
-LLM agents in education \cite{wu2025llmagentseducation,tufino2025notebooklm}. We
-differ in the source of supervision: rather than learning prerequisite relations
-from labelled corpora, we treat each edge our system emits as a
-\emph{falsifiable prediction} against the document's own declared
-cross-references.
+\cite{li2021prereq,sun2024learningpath,prereqsurvey2025}, as do LLM agents in
+education \cite{wu2025agents,tufino2025notebooklm}. We differ in the source of
+supervision: rather than learning prerequisite relations from labelled
+corpora, we treat each edge our system emits as a falsifiable prediction
+against the document's own declared cross-references.
 
-\paragraph{Positioning against shipped systems.}
-Two honest acknowledgements, which we state rather than let a reader supply.
-Ingestion capacity is \emph{not} the gap --- deployed products already accept
-large document collections --- and at least one shipped product now generates
-sequenced study plans from uploaded course material. The line we draw is on the
-\emph{source} of the sequencing: deployed systems that sequence do so
-diagnostically, ordering by what a learner has answered incorrectly, whereas our
-ordering is document-derived, extracted without supervision and scored against
-the text's own cross-references. We deliberately do not use any closed product as
-a quantitative baseline: their architectures are unpublished, they expose no token
-accounting, and they change without notice, so no such comparison would reproduce.
-\VERIFY{CONTEXT.md Risk 2 --- the hierarchy-vs-dependency distinction has
-\emph{no} peer-reviewed support. The only admissible evidence is first-hand
-screenshots placed beside our own concept graph. Do not cite
-\texttt{tufino2025notebooklm} here; it is a physics-education paper and does not
-support this claim. Owner: Track 4 / Track 1.}
+\subsection{Positioning against shipped systems}
+Two acknowledgements, which we state rather than let a reader supply.
+Ingestion capacity is not the gap---deployed products already accept large
+document collections---and at least one shipped product now generates
+sequenced study plans from uploaded course material. The line we draw is on
+the \emph{source} of the sequencing: deployed systems that sequence do so
+diagnostically, ordering by what a learner has answered incorrectly, whereas
+our ordering is document-derived, extracted without supervision and scored
+against the text's own cross-references. We deliberately do not use any
+closed product as a quantitative baseline: their architectures are
+unpublished, they expose no token accounting, and they change without notice,
+so no such comparison would reproduce.
+No peer-reviewed source establishes what any particular shipped product's
+mind-map view does or does not encode, so we treat this as a qualitative
+observation supported by first-hand inspection rather than as a citable claim.
+Fig.~\ref{fig:trees} places three renderings of the same source document side
+by side. The distinction it is intended to make visible is not depth or
+resolution but \emph{edge semantics}: in panels (a) and (b) an edge means
+\emph{is contained in}, and in panel (c) an edge means \emph{must precede}.
+\VERIFY{Panels (a) and (b) are first-hand screenshots taken 27 Aug 2026 and
+are reproducible only in the sense that the procedure is stated; both products
+change without notice. Do not cite \texttt{tufino2025notebooklm} in support of
+this paragraph --- it is a physics-education paper and does not address
+mind-map structure.}
 
-% ============================================================
-\section{Method}
-% ============================================================
+\begin{figure*}[!t]
+\centering
+\begin{minipage}[t]{0.47\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{fig_notebooklm.png}\\[3pt]
+  {\footnotesize (a) A deployed notebook product's mind-map view.\\
+   Edges denote containment; leaves are topic labels.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{fig_tasur.png}\\[3pt]
+  {\footnotesize (b) The authors' prototype renderer,\footnotemark[1] one
+   branch shown at full depth. Edges still denote containment, but the tree
+   descends a level further, to typed atomic items retaining the source text
+   and its notation.}
+\end{minipage}
 
-\subsection{What the base library already provides}
-\label{sec:notours}
+\vspace{8pt}
+\begin{minipage}[t]{0.62\textwidth}
+  \centering
+  \fbox{\begin{minipage}[t][0.30\textwidth][c]{0.95\linewidth}
+    \centering
+    \TODO{Panel (c): render MARD's concept graph for the same document from
+    the compiled Master Plan. Edges are prerequisite assertions, each scorable
+    against the document's own in-text cross-references. Blocked until Pass~1
+    emits a validated plan.}
+  \end{minipage}}\\[3pt]
+  {\footnotesize (c) MARD's concept graph. Edges denote a prerequisite
+   relation, not containment.}
+\end{minipage}
 
-Formalising MARD requires first naming what it does \emph{not} add, because the
-base library ships a great deal that sounds like our contribution. Its metadata
+\caption{Three renderings of \emph{Linear Algebra Done Right}, 4th ed.,
+the corpus document with the most explicit prerequisite structure and the
+target of the dependency-ordering case study rather than the primary
+measurement document. \textbf{All three were produced from an abridged
+version of the text, not the full book.} Panels (a) and (b) differ in
+resolution: both encode the containment hierarchy the document already
+declares through its headings, and (b)---shown for a single branch, since at
+whole-tree scale its leaves are illegible---descends a level further and
+preserves mathematical notation. Panel (c) differs in kind: its edges
+assert precedence rather than membership, and each is therefore a falsifiable
+prediction rather than a restatement of the table of contents.}
+\label{fig:trees}
+\end{figure*}
+\footnotetext[1]{Declaration of interest: panel (b) is produced by a
+prototype system built and maintained by one of the authors. It is included
+as an illustration of rendering granularity, not as an evaluated system, and
+no performance claim is made for it in this work.}
+
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Design}
+\label{sec:design}
+
+\subsubsection{What the base library already provides}
+\label{sec:baselib}
+Formalising MARD requires first naming what it does not add, because the base
+library ships a great deal that sounds like our contribution. Its metadata
 types carry the root model, maximum depth, iteration count, backend and
-environment; its completion object carries the full execution trajectory ---
-iterations, code blocks, and nested sub-calls, each with its own metadata,
-recursively; and per-call token and cost accounting is built in.
+environment; its completion object carries the full execution
+trajectory---iterations, code blocks, and nested sub-calls, each with its own
+metadata, recursively; and per-call token and cost accounting is built in.
 
-That metadata, however, flows \emph{upward} and is \emph{observational}: it is a
+That metadata, however, flows \emph{upward} and is observational: it is a
 record of what happened, assembled for inspection after the fact. It never
-re-enters a prompt and never influences a child call. This is checkable in the
-source rather than a matter of framing. When a parent spawns a child, the child
-is constructed with a fresh, empty logger --- the library's own comment says the
-purpose is that the child's trajectory be \emph{captured}, not that the parent's
-be communicated --- and the child receives only the prompt string that the
-parent's REPL code passed to it. Nothing else crosses the boundary.
+re-enters a prompt and never influences a child call. This is checkable in
+the source rather than a matter of framing. When a parent spawns a child, the
+child is constructed with a fresh, empty logger---the library's own comment
+says the purpose is that the child's trajectory be captured, not that the
+parent's be communicated---and the child receives only the prompt string that
+the parent's REPL code passed to it. Nothing else crosses the boundary.
 
-MARD's envelope flows \emph{downward} and is \emph{operative}. Skeleton,
-accumulated findings and parent directive enter the child's context \emph{before}
-it runs, changing what the child can see and therefore what it produces.
+MARD's envelope flows \emph{downward} and is operative. Skeleton, accumulated
+findings and parent directive enter the child's context before it runs,
+changing what the child can see and therefore what it produces.
 
 One objection should be anticipated. The base library does expose a slot for
 injecting a small user-authored string alongside the root's context, and
-declines to populate it for children. The rebuttal is about what fills the slot,
-not whether a slot exists: that parameter is designed for a fixed, short,
-user-supplied string --- its documentation's own example is the user's original
-question. The envelope is accumulated state that grows across calls. No mechanism
-in the base library constructs, propagates or compounds such state, and none
-carries one child's findings to the next. The library gives us somewhere to put
-an envelope; the envelope is ours.
+declines to populate it for children. The rebuttal is about what fills the
+slot, not whether a slot exists: that parameter is designed for a fixed,
+short, user-supplied string---its documentation's own example is the user's
+original question. The envelope is accumulated state that grows across calls.
+No mechanism in the base library constructs, propagates or compounds such
+state, and none carries one child's findings to the next. The library gives
+us somewhere to put an envelope; the envelope is ours.
 
-\subsection{The metadata envelope}
-
-Let $D$ be a document and $\mathcal{S}(D)$ a \emph{skeleton}: an ordered
-structural index of $D$'s chapters and sections with their positional spans,
-derived from $D$'s own text. For a recursive call $c$ we define the envelope
-\[
-  E(c) \;=\; \big\langle\, \mathcal{S}(D),\; F(c),\; d(c) \,\big\rangle,
-\]
-where $F(c)$ is the set of findings accumulated by calls ordered before $c$, and
-$d(c)$ is the directive issued by $c$'s parent stating the purpose of the call.
-$E(c)$ is rendered into $c$'s prompt in addition to its text slice. The envelope
-is bounded by construction: our per-call budget is approximately 300 tokens,
-against a design ceiling of 500.
-\VERIFY{Confirm the 300-token figure against the rendered envelopes in
-\texttt{corpus/introcs/pass1\_trace.json} before this goes to the guide. It is
-the per-chapter figure; section-level rendering measured an order of magnitude
-higher and is why Pass~1 dispatches per chapter.}
+\subsubsection{The metadata envelope}
+Let $D$ be a document and $S(D)$ a \emph{skeleton}: an ordered structural
+index of $D$'s chapters and sections with their positional spans, derived
+from $D$'s own text. For a recursive call $c$ we define the envelope
+\begin{equation}
+E(c) = \bigl\langle\, S(D),\; F(c),\; d(c) \,\bigr\rangle ,
+\end{equation}
+where $F(c)$ is the set of findings accumulated by calls ordered before $c$,
+and $d(c)$ is the directive issued by $c$'s parent stating the purpose of the
+call. $E(c)$ is rendered into $c$'s prompt in addition to its text slice. The
+envelope is bounded by construction: the per-call budget is approximately
+\num{300} tokens at chapter granularity, against a design ceiling of
+\num{500}.\footnote{Section-level rendering measured an order of magnitude
+higher, which is why Pass~1 dispatches per chapter.}
+\VERIFY{Confirm the 300-token figure against the rendered envelopes in the
+Pass~1 trace before this goes to the guide.}
 
 The design constraint that makes this non-trivial is that $E(c)$ must remain
 small while $F(c)$ grows monotonically with the number of completed calls.
-Findings are therefore summarised, not concatenated.
+Findings are therefore summarised, not concatenated. The rendering additionally
+applies a recency window, so a call sees the most recent findings rather than
+all of them---which predicts that recovered cross-chapter relations will skew
+toward nearby chapters.
 
-\subsection{Pass structure}
+\subsubsection{Pass structure}
+\label{sec:passes}
+
+\begin{figure}[!t]
+\centering
+\scriptsize
+\begin{tikzpicture}[
+  font=\scriptsize,
+  node distance=0pt,
+  box/.style   ={draw, rounded corners=1pt, align=center, inner sep=3pt},
+  doc/.style   ={box, dashed, draw=mardgrey, text=mardgrey,
+                 text width=0.86\columnwidth},
+  scoutbox/.style ={box, draw=mardblue, fill=mardbluebg, line width=0.5pt,
+                 text width=0.90\columnwidth, inner ysep=4pt},
+  swarmbox/.style ={box, draw=mardorange, fill=mardorangebg, line width=0.5pt,
+                 text width=0.90\columnwidth, inner ysep=4pt},
+  plan/.style  ={box, fill=mardink, draw=mardink, text=white,
+                 text width=0.86\columnwidth, inner ysep=4pt},
+  outbox/.style={box, draw=mardgrey, text width=0.86\columnwidth,
+                 inner ysep=4pt},
+  flow/.style  ={-{Latex[length=1.4mm]}, draw=mardgrey,
+                 shorten >=1pt, shorten <=1pt}
+]
+% --- unbounded document -------------------------------------------------
+\node[doc] (docnode)
+  {\texttt{UNBOUNDED DOCUMENT} --- never loaded into any context};
+\node[below=2.2mm of docnode, text width=0.86\columnwidth, align=center,
+      inner sep=0pt, text=mardblue] (expose)
+  {exposed as REPL environment variable};
+\draw[flow] (docnode.south) -- (expose.north);
+% --- tier 1: scout ------------------------------------------------------
+\node[scoutbox, below=2.2mm of expose] (scout) {%
+  \begin{minipage}{0.86\columnwidth}
+  \centering
+  \color{mardblue}%
+  \makebox[\linewidth][s]{\texttt{TIER 1 --- THE SCOUT}\hfill
+    frontier model $\cdot$ single session}\\[3pt]
+  \begin{tikzpicture}[font=\scriptsize, cell/.style={draw=mardblue,
+        fill=white, text=mardink, rounded corners=1pt,
+        minimum height=4.5mm, align=center, inner sep=2pt}]
+    \node[cell, text width=0.23\columnwidth] (p0) {Pass 0\\skeleton};
+    \node[cell, text width=0.23\columnwidth, right=1.2mm of p0] (p1)
+      {Pass 1\\exploration};
+    \node[cell, text width=0.23\columnwidth, right=1.2mm of p1] (p2)
+      {Pass 2+\\deep dive};
+    \draw[-{Latex[length=1.2mm]}, draw=mardblue] (p0) -- (p1);
+    \draw[-{Latex[length=1.2mm]}, draw=mardblue] (p1) -- (p2);
+  \end{tikzpicture}\\[3pt]
+  \color{mardblue}Envelope grows across passes $\cdot$ reads ${\approx}3$--$5\%$ of $D$
+  \end{minipage}};
+\draw[flow] (expose.south) -- (scout.north);
+% --- master plan --------------------------------------------------------
+\node[plan, below=2.2mm of scout] (plan)
+  {\texttt{MASTER PLAN} --- concept graph $+$ ordered sequence\\
+   (typed contract)};
+\draw[flow] (scout.south) -- (plan.north);
+% --- tier 2: builders ---------------------------------------------------
+\node[swarmbox, below=2.2mm of plan] (swarm) {%
+  \begin{minipage}{0.86\columnwidth}
+  \centering
+  \color{mardorange}%
+  \makebox[\linewidth][s]{\texttt{TIER 2 --- THE BUILDERS}\hfill
+    cheap model $\cdot$ $N$ in parallel}\\[3pt]
+  \begin{tikzpicture}[font=\scriptsize, cell/.style={draw=mardorange,
+        fill=white, text=mardink, rounded corners=1pt,
+        minimum height=4mm, minimum width=0.135\columnwidth, inner sep=1pt}]
+    \node[cell] (b1) {$b_1$};
+    \node[cell, right=1.1mm of b1] (b2) {$b_2$};
+    \node[cell, right=1.1mm of b2] (b3) {$b_3$};
+    \node[cell, right=1.1mm of b3] (b4) {$b_4$};
+    \node[cell, right=1.1mm of b4] (bn) {$b_N$};
+  \end{tikzpicture}\\[3pt]
+  \color{mardorange}Wall-clock is $\max_i(b_i)$, not $\sum_i$ $\cdot$ join in plan order
+  \end{minipage}};
+\draw[flow] (plan.south) -- (swarm.north);
+% --- output -------------------------------------------------------------
+\node[outbox, below=2.2mm of swarm] (output)
+  {\texttt{DEPENDENCY-ORDERED OUTPUT}};
+\draw[flow] (swarm.south) -- (output.north);
+\end{tikzpicture}
+\caption{MARD architecture. The document is never placed in a prompt; it is
+bound to a REPL variable and explored by the frontier tier, which emits a
+typed Master Plan that dispatches a parallel budget tier. Pass~2 is specified
+but \emph{not executed} in the configuration evaluated here
+(Section~\ref{sec:passes}); the system reported in this manuscript is
+two-pass.}
+\label{fig:arch}
+\end{figure}
 
 MARD proceeds in passes over $D$, all executed by the frontier tier.
-
 \begin{itemize}
-  \item \textbf{Pass~0 --- skeleton extraction.} Derive $\mathcal{S}(D)$ from the
-        document's text. This pass is predominantly arithmetic over detected
-        block structure rather than model inference; a single labelling call
-        assigns topic labels. Crucially, the skeleton is \emph{text-derived
-        only}: where a source document ships a publisher-supplied bookmark
-        outline, that outline is used solely as a yardstick for evaluating
-        skeleton quality and is never an input (Section~\ref{sec:confounds}).
-  \item \textbf{Pass~1 --- enriched exploration.} One call per chapter, each
-        carrying $E(c)$ and each contributing to $F$. The output is the
-        \emph{Master Plan}.
-  \item \textbf{Pass~2 --- targeted deep dive.} Revisit spans that Pass~1 marked
-        as uncertain, at greater depth.
+  \item \textbf{Pass 0 --- skeleton extraction.} Derive $S(D)$ from the
+  document's text. This pass is predominantly arithmetic over detected block
+  structure rather than model inference; a single labelling call assigns
+  topic labels. Crucially, the skeleton is text-derived only: where a source
+  document ships a publisher-supplied bookmark outline, that outline is used
+  solely as a yardstick for evaluating skeleton quality and is never an input
+  (Section~\ref{sec:confounds}).
+  \item \textbf{Pass 1 --- enriched exploration.} One call per chapter, each
+  carrying $E(c)$ and each contributing to $F$. The output is the Master Plan.
+  \item \textbf{Pass 2 --- targeted deep dive.} Revisit spans that Pass~1
+  marked as uncertain, at greater depth.
 \end{itemize}
 
-\paragraph{This manuscript reports a two-pass configuration.}
+\noindent\textbf{This manuscript reports a two-pass configuration.}
 The system evaluated here executes Pass~0 and Pass~1 only; Pass~2 is not run.
-This is stated here, in every results caption, and in the limitations, because
-describing a two-pass system as three-pass would be an overclaim. The decision
-was taken deliberately: Pass~1's implementation was completed one day before this
-project's feature freeze, and the reliability of a pass cannot be evidenced in a
-day. Layering a targeted deep dive on an unevidenced exploration pass would make
-a subsequent wrong result undiagnosable --- it could not be attributed to either
-pass. The two-pass configuration is additionally, and by design, the depth-$0$
-point of the depth sweep in Section~\ref{sec:ablations}, so this manuscript's
-number is a valid point on that curve rather than a one-off compromise.
+This is stated here, in every results caption, and in the limitations,
+because describing a two-pass system as three-pass would be an overclaim. The
+decision was taken deliberately: Pass~1's implementation was completed one
+day before this project's feature freeze, and the reliability of a pass
+cannot be evidenced in a day. Layering a targeted deep dive on an unevidenced
+exploration pass would make a subsequent wrong result undiagnosable---it
+could not be attributed to either pass. The two-pass configuration is
+additionally, and by design, the depth-0 point of the depth sweep in
+Section~\ref{sec:ablation}, so this manuscript's number is a valid point on
+that curve rather than a one-off compromise.
 
-\subsection{The Master Plan as a typed contract}
-
-Pass~1 emits a \emph{Master Plan}: a concept graph together with an ordered study
-sequence and the rationale for any reordering. It is validated against a schema
-at the tier boundary, and a malformed plan fails loudly rather than dispatching
-$N$ subtly incorrect builders.
+\subsubsection{The Master Plan as a typed contract}
+Pass~1 emits a \emph{Master Plan}: a concept graph together with an ordered
+study sequence and the rationale for any reordering. It is validated against
+a schema at the tier boundary, and a malformed plan fails loudly rather than
+dispatching $N$ subtly incorrect builders.
 
 The field that carries the contribution is the concept graph's edge set. Each
-edge asserts that one concept is prerequisite to another, and each is therefore a
-\emph{falsifiable prediction} scorable against the document's own in-text
-cross-references.
+edge asserts that one concept is prerequisite to another, and each is
+therefore a falsifiable prediction scorable against the document's own
+in-text cross-references. Edges are validated at the boundary: an edge naming
+a concept that no call has declared is rejected and logged rather than
+silently admitted, which makes the rejection log itself a measurement of what
+exploration could and could not reach.
 
-\subsection{Two-tier execution and dependency-ordered joining}
+\subsubsection{Two-tier execution and dependency-ordered joining}
+The Scout (frontier tier, single session) reads approximately 3--5\% of $D$
+and emits the Master Plan. The Swarm (budget tier) then runs $N$ builders in
+parallel, one per section, each receiving its section slice plus its plan
+directive. Because the builders fork and join, wall-clock time is
+$\max_i(\mathrm{builder}_i)$ rather than $\sum_i$, and we report both so that
+the parallelism claim is checkable rather than asserted.
 
-The \textbf{Scout} (frontier tier, single session) reads approximately 3--5\% of
-$D$ and emits the Master Plan. The \textbf{Swarm} (budget tier) then runs $N$
-builders in parallel, one per section, each receiving its section slice plus its
-plan directive. Because the builders fork and join, wall-clock time is
-$\max_i(\text{builder}_i)$ rather than $\sum_i$, and we report both so that the
-parallelism claim is checkable rather than asserted.
-
-Builder outputs are joined in \emph{Master Plan order} --- the dependency-derived
-ordering --- rather than in book order. We note explicitly that book order is
+Builder outputs are joined in Master Plan order---the dependency-derived
+ordering---rather than in book order. We note explicitly that book order is
 itself an expert baseline, since the document's author already sequenced the
 material; reordering must therefore beat a real ordering, not a random one.
+The join additionally validates non-empty output per plan step and raises
+rather than returning a partial artefact, so a run that produced a short
+result fails visibly instead of scoring as a complete but poor one.
 
-\subsection{The stated precondition}
+\subsubsection{The stated precondition}
+MARD requires exploitable structure. On a flat context there is no skeleton
+to extract, $F$ carries no positional meaning, and the envelope reduces to
+overhead. We therefore predict that MARD degenerates to vanilla-RLM behaviour
+on flat inputs, and we test this with a negative control rather than omitting
+it. This is an objective of the work, not an embarrassment to be discovered
+in review.
 
-MARD requires exploitable structure. On a flat context there is no skeleton to
-extract, $F$ carries no positional meaning, and the envelope reduces to overhead.
-We therefore predict that MARD degenerates to vanilla-RLM behaviour on flat
-inputs, and we test this with a negative control rather than omitting it. This is
-an objective of the work, not an embarrassment to be discovered in review.
+The control is a \emph{structure-ablated variant of the primary document}: the
+same text with its section order shuffled and its heading markers removed.
+This is a deliberate choice over an external flat-context benchmark. It holds
+content constant and varies only structure, so it is a manipulation rather
+than a change of corpus, and it parallels the envelope ablation one level
+lower---A1 removes the accumulated structure the system builds, and this
+removes the structure the document supplies. The pipeline treats the resulting
+empty skeleton as a recorded condition rather than an error, so degeneration
+appears in the run log as a finding rather than as a missing value. An
+external flat-context benchmark subset is fixed and frozen in the project's
+evaluation artefacts and is run in the full study
+(Section~\ref{sec:future}).
 
-% ============================================================
-\section{Experimental Setup}
-\label{sec:setup}
-% ============================================================
+\subsection{Algorithm and Implementation}
+\label{sec:impl}
+\noindent\textbf{Model pair.}
+The frontier tier (Scout) is \texttt{gpt-5.2}; the budget tier (Swarm, and the
+baseline's sub-calls) is \texttt{gpt-5-mini}. Rates were read from the
+provider's own pricing page on the day the rate card was written and are
+recorded once, in code, with their source and retrieval date; the accounting
+layer refuses to price a run against a rate more than thirty days old rather
+than let a stale figure ride.
 
-\subsection{Corpus and licensing}
-\label{sec:corpus}
+We are explicit that this pair is selected on \emph{role fit and cost}, not on
+a published benchmark comparison. The Scout runs once per document and must
+hold the skeleton and accumulated envelope across a sequence of chapter calls;
+the Swarm is $N$ independent builders each consuming one section and a
+directive, where call volume rather than per-call ceiling dominates. The
+budget tier carries roughly 93\% of the token volume at approximately one
+seventh the rate on both input and output. A model sweep that would test that
+reasoning is deferred to the full study, and we do not present the selection
+as a measured result.
 
-Our corpus consists of openly licensed textbooks spanning distinct domains, under
-an open-license-only constraint on all source material. Table~\ref{tab:corpus}
-summarises them. Licensing was verified against each publisher's own copyright
-page rather than a third-party aggregator.
-
-\begin{table}[t]
-\centering
-\small
-\caption{Corpus documents and licences, verified against each source's own
-copyright page.}
-\label{tab:corpus}
-\begin{tabular}{lll}
-\toprule
-\textbf{Document} & \textbf{Licence} & \textbf{Role} \\
-\midrule
-\textit{Introduction to Computer Science} (OpenStax) & CC~BY~4.0 & Primary \\
-\textit{University Physics, Vol.~1} (OpenStax) & CC~BY-NC-SA~4.0 & Secondary \\
-\textit{Linear Algebra Done Right}, 4th ed. & CC~BY-NC~4.0 & Secondary \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-OpenStax titles were selected specifically because they ship machine-readable
-learning objectives, glossaries and answer keys --- the substrate required for
-document-native ground truth extracted without human annotation, and therefore
-without an ethics-approval process this project's timeline cannot absorb.
-
-\paragraph{On the licence of the primary document.}
-\textit{Introduction to Computer Science} is CC~BY~4.0 (plain attribution),
-confirmed against OpenStax's book-level licensing page. Individual chapter
-footers within the same book state CC~BY-NC-SA; we treat the book-level page as
-authoritative and record the inconsistency rather than silently choosing one.
-
-\VERIFY{OSTEP contradiction. CONTEXT.md 2.1 lists OSTEP among the four corpus
-documents; the corpus rationale here excludes it as standard-copyright.
-docs/16-PRIMARY\_DOCUMENT.md already records that the corpus is ``effectively two
-usable documents plus one restricted one'' against the planned four. This must be
-resolved before Manuscript~B, which needs two further openly licensed candidates
-that pass the parse-quality checks below.}
-
-\subsection{Ingestion and primary-document selection}
-
-Primary-document selection was made on measured evidence rather than convenience.
-Table~\ref{tab:parse} reports parse quality across the three candidates. No
-optical character recognition is used on any document: all three carry a text
-layer, and OCR would replace exact text with approximate text --- decisively,
-OCR errors in glossary terms would corrupt the very reference set against which
-task quality is scored, silently and irreversibly.
-
-\begin{table}[t]
-\centering
-\small
-\caption{Parse quality, produced by the ingestion pipeline and reproducible from
-the corpus artefacts. \textit{Orphan punctuation} counts punctuation stranded
-where a formula failed to extract.}
-\label{tab:parse}
-\begin{tabular}{lrrr}
-\toprule
-& \textbf{introcs} & \textbf{physics1} & \textbf{axler} \\
-\midrule
-Pages                          & 939 & 959 & 404 \\
-Characters after cleaning      & 2{,}432{,}812 & 2{,}032{,}210 & 737{,}844 \\
-Headings detected              & 1{,}403 & 1{,}081 & 17 \\
-Learning-objective blocks      & 61 & 99 & 0 \\
-Key-terms blocks               & 14 & 17 & 0 \\
-Orphan punctuation (per 1k lines) & \textbf{30.3} & 113.5 & 87.8 \\
-Warnings raised                & \textbf{0} & 1 & 3 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\textit{University Physics} is disqualified as primary on content loss, not
-formatting loss: its orphan-punctuation rate is nearly four times that of the
-primary document, and inspection confirms sentences from which equations have
-vanished entirely. That damage is not uniform across systems under test --- a
-configuration that reads more of the document encounters more of it --- and would
-manufacture a difference between MARD and vanilla RLM having nothing to do with
-either. \textit{Linear Algebra Done Right} carries no learning objectives and no
-key-terms sections, so document-native ground truth cannot be extracted from it;
-it remains the strongest candidate for the dependency-ordering case study, which
-is scored separately.
-
-Page mapping was verified by sampling 1{,}200 blocks at random across the three
-documents and confirming each appears on the page it claims; 1{,}199 passed, the
-single failure being a whitespace-normalisation difference in an index line
-rather than a mapping error.
-
-\subsection{Two structural confounds, and how they are controlled}
-\label{sec:confounds}
-
-Both concern structure reaching a model without that model having derived it. If
-structure arrives by another route, we would be reporting the publisher's work as
-MARD's.
-
-\begin{enumerate}
-  \item \textbf{The publisher's bookmark outline.} All three documents ship one.
-        The ingestion pipeline writes it to a separate artefact with an explicit
-        provenance field and never merges it into the text stream, so that using
-        it must be a deliberate decision rather than an accident. It serves as
-        the yardstick for skeleton quality and is not an input to Pass~0.
-  \item \textbf{The printed table of contents inside the body text.} Subtler,
-        because it arrives through the ordinary text channel: the primary
-        document prints its full chapter list on page~7, so a model reading the
-        opening pages obtains the skeleton for free. Front matter is detected,
-        tagged, and excluded from the text stream supplied to every system.
-\end{enumerate}
-
-\textbf{Both controls are applied identically to the vanilla-RLM arm.} If the two
-arms received different inputs, the comparison would not isolate the envelope.
-\VERIFY{docs/16 verification debt item 2 records this as open --- confirm Pass~0
-and A1 are in fact treated identically in the harness, not merely intended to be.}
-
-\subsection{Skeleton fidelity}
-
-Because the skeleton is the substrate for everything downstream, its quality is
-measured before it is used. Against the publisher outline, the primary document's
-text-derived skeleton achieves \textbf{82.2\% recall at 0.0 pages of boundary
-error}. Boundary error of zero indicates that where a section is recovered, its
-span is recovered exactly; the recall shortfall is missed sections, not
-misplaced ones.
-
-\subsection{Systems compared}
-
-\begin{itemize}
-  \item \textbf{MARD} --- two-pass, as specified above.
-  \item \textbf{Vanilla RLM} --- the isolation baseline. Identical models,
-        document, and controls; the envelope removed, so each recursive call
-        receives its raw slice only. This is simultaneously the primary baseline
-        and ablation~A1, and is executed once, not twice.
-  \item \textbf{Negative control} --- a flat-context task, to test the graceful
-        degeneration half of the claim.
-\end{itemize}
-
-Manuscript~B additionally runs full-context, naive chunking and embedding-RAG
-baselines first-hand.
-
-\paragraph{Both arms are executed on a single implementation.}
-Ablation A1 requires that the MARD and vanilla-RLM arms differ \emph{only} in the
-presence of the envelope. Executing the baseline on a separate codebase would
-confound the envelope with two independent implementations --- differing prompt
-templates, REPL surfaces and stopping criteria --- none of which is the variable
-under study. We therefore implement vanilla RLM as an envelope-disabled
+\noindent\textbf{Both arms are executed on a single implementation.}
+Isolating the envelope requires that the two arms differ \emph{only} in its
+presence. Executing the baseline on a separate codebase would confound the
+envelope with two independent implementations---differing prompt templates,
+REPL surfaces and stopping criteria---none of which is the variable under
+study. We therefore implement vanilla RLM as an envelope-disabled
 configuration of the same system, and treat the reference implementation
-accompanying the base paper \cite{zhang2025rlm} as the specification we implement
-against rather than as the artefact we measure.
+accompanying the base paper \cite{zhang2025rlm} as the specification we
+implement against rather than as the artefact we measure.
 
 The cost of this choice is that our baseline is our own implementation of RLM
-rather than the original authors'. We mitigate it in the only way available: by
-reproducing a published result from the base paper first-hand on our own harness
-before any number in Section~\ref{sec:results} is trusted. That check is not a
-formality here --- it is the sole evidence that the vanilla arm faithfully
-reproduces the published method.
+rather than the original authors'. We mitigate it in the only way available:
+by reproducing a published result from the base paper first-hand on our own
+harness before any number in Section~\ref{sec:results} is trusted. That check
+is not a formality here---it is the sole evidence that the vanilla arm
+faithfully reproduces the published method.
 \TODO{Report the reproduced base-paper figure and the target it was checked
-against. This check gates every number in Section~5.}
+against. This check gates every number in Section~4.}
 
-\paragraph{Concurrency and sub-call size are bounded, identically for both arms.}
+\noindent\textbf{Concurrency and sub-call size are bounded, identically for
+both arms.}
 Runs were executed under a provider rate-limit tier that required bounding
-sub-call concurrency and sub-call input size. \TODO{State the two values, $k$
-concurrent sub-calls and $m$ tokens per sub-call, once fixed.} Both bounds are
-applied to \emph{both} arms and are recorded in every run's configuration
-snapshot. We report this because it is not a neutral implementation detail:
-throttling can degrade output completeness, and applying it asymmetrically would
-manufacture a difference between the arms that has nothing to do with the
-envelope. Where a bounded run produced a truncated artefact, the run is recorded
-as \emph{failed} rather than scored as degraded --- see the join-time
-completeness check below.
+sub-call concurrency and sub-call input size.
+\TODO{State the two values once fixed.}
+Both bounds are applied to \emph{both} arms and are recorded in every run's
+configuration snapshot. We report this because it is not a neutral
+implementation detail: throttling can degrade output completeness, and
+applying it asymmetrically would manufacture a difference between the arms
+that has nothing to do with the envelope.
 
-\paragraph{Truncation is a failure, not a low score.}
-A builder response can be correctly positioned, built for the correct concept,
-and still carry no text --- a safety refusal, a token-limit finish with nothing
-emitted, or a tool-call-only completion. Sorting such a set succeeds quietly and
-yields an artefact short by one section with every identity check satisfied. The
-join therefore validates non-empty text per plan step and raises rather than
-returning a partial artefact, so a hole in the results matrix explains itself
-instead of appearing as a plausible low number.
-
-\paragraph{Recursion depth is held fixed.}
-Both arms run at a matched recursion depth in which sub-calls are plain
-completions. This is the base paper's primary reported condition. Holding depth
-fixed is not incidental: if the arms differed in depth, the measured difference
-would confound the envelope with an extra layer of recursion, and the isolation
-claim would be void.
-\VERIFY{The mapping between MARD's pass-depth numbering and the control
-library's recursion-depth parameter is off by one, and is currently derived from
-project documentation rather than from the implementation's call structure.
-Confirm against \texttt{envelope/pass1.py} before this paragraph is final ---
-docs/18 5.2.}
-
-\subsection{Metrics}
-
-Every run of every system records seven fields, and a number that cannot be
-traced to all seven from a logged run is not admitted to this paper: task score,
-tokens consumed (input and output, summed over every model call and reported
-separately in the log), calls issued split by tier, cost at the same-day
-published provider rate, wall-clock latency (both $\max$ and $\sum$ over
-builders), run identifier, and a full configuration snapshot including model
-identifiers, prompt-template versions, depth setting, active ablation, and
-document.
-
-\paragraph{Task score.}
-The evaluated output modality is \textbf{explanations only}. Flashcards, quizzes
-and diagrams are demonstrable prototype features that test nothing about the
-envelope and would multiply the evaluation surface; they are excluded from
-measurement. Explanations are scored against document-native ground truth ---
-glossary terms, per-chapter learning objectives, in-text cross-references and
-forward-reference positions --- extracted programmatically. \TODO{State the exact
-scoring function once Track 3's scorer is final. The ground-truth source and the
-modality constraint are frozen; the function is not yet.}
-
-\paragraph{Dependency-ordering score.}
-Scored independently of task quality, as \emph{forward-reference violations}:
-the number of times a generated sequence places a concept before something the
-document itself declares as its prerequisite, counted for book order and for
-Master Plan order.
-
-\paragraph{Variance.}
-Every reported number is the result of three independent repeated runs, with
-spread reported alongside the central value. We report repeats rather than fixed
-random seeds deliberately: the inference endpoints used here do not expose
-deterministic decoding, so a nominal seed would name a property the system does
-not have. Where variance swamps an effect, that is reported as the finding.
-
-\subsection{Implementation and cost}
-
-\TODO{Name the model pair and provider once selected, with same-day rates from
-the provider's own pricing page and the date read. This is an open decision as of
-this draft --- docs/18 7 item 1 --- and blocks the cost column below.}
-
-The cost model is instantiated with measured token counts rather than a claimed
-multiple. Table~\ref{tab:costmodel} reports the projected cost of the full
-Manuscript~A matrix from measured corpus quantities. We report the model rather
+The cost model is instantiated with measured token counts rather than a
+claimed multiple. Table~\ref{tab:cost} reports the projected cost of the full
+evaluation matrix from measured corpus quantities. We report the model rather
 than a headline ratio because provider rates move month to month, and a fixed
 multiple quoted against a rate that later disappears is precisely the kind of
 claim that decays into misinformation.
 
-\begin{table}[t]
+\begin{table}[!t]
+\caption{Cost of the Evaluation Matrix on the Primary Document. Corpus
+Quantities and the Baseline's Per-Run Cost are Measured; the MARD Figure is
+Projected from Those Quantities at the Same Rates}
+\label{tab:cost}
 \centering
-\small
-\caption{Projected cost of the Manuscript~A matrix on the primary document,
-from measured corpus quantities. Token counts marked $\dagger$ are derived from
-character counts at an assumed ratio and are pending confirmation with a
-tokeniser.}
-\label{tab:costmodel}
-\begin{tabular}{lr}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{5.0cm}R{2.2cm}@{}}
 \toprule
 \textbf{Measured quantity} & \textbf{Value} \\
 \midrule
-Primary document, characters & 2{,}468{,}431 \\
-Primary document, tokens$^\dagger$ & $\approx$617{,}000 \\
-Sections (Swarm builders) & 120 \\
-Chapters explored by Pass~1 & 14 \\
+Primary document, characters        & 2\,468\,431 \\
+Primary document, tokens\textsuperscript{\dag} & $\approx$617\,000 \\
+Sections (Swarm builders)           & 120 \\
+Chapters explored by Pass~1         & 14 \\
 \midrule
-\textbf{Projected cost} & \\
-MARD, one run & \RESULT \\
-Vanilla RLM, one run & \RESULT \\
-Both arms, three repeats & \RESULT \\
-Manuscript~A matrix, complete & \RESULT \\
+\multicolumn{2}{@{}l}{\textbf{Published rates, per \num{1000000} tokens}} \\
+Frontier tier, input / output       & \$1.75 / \$14.00 \\
+Budget tier, input / output         & \$0.25 / \$2.00 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Cost per run}} \\
+Vanilla RLM, measured\textsuperscript{\ddag} & \$0.32--\$1.60 \\
+MARD, projected                     & $\approx$\$0.94 \\
+\midrule
+Remaining matrix, projected         & $\approx$\$11 \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\begin{minipage}{\columnwidth}
+\footnotesize \textsuperscript{\dag}Derived from character counts at an
+assumed ratio; pending confirmation with a tokeniser.
+\textsuperscript{\ddag}Three logged runs; the spread is reported rather than
+averaged, for the reason given in Section~\ref{sec:variance}.
+\end{minipage}
+\end{table}
+
+\subsection{Experimental Setup}
+\label{sec:setup}
+
+\subsubsection{Corpus and licensing}
+Our corpus consists of openly licensed textbooks spanning distinct domains,
+under an open-license-only constraint on all source material.
+Table~\ref{tab:corpus} summarises them. Licensing was verified against each
+publisher's own copyright page rather than a third-party aggregator.
+
+\begin{table}[!t]
+\caption{Corpus Documents and Licences, Verified Against Each Source's Own
+Copyright Page}
+\label{tab:corpus}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{3.5cm}p{2.4cm}p{1.4cm}@{}}
+\toprule
+\textbf{Document} & \textbf{Licence} & \textbf{Role} \\
+\midrule
+Introduction to Computer Science (OpenStax) & CC BY 4.0 & Primary \\
+University Physics, Vol.~1 (OpenStax) & CC BY-NC-SA 4.0 & Secondary \\
+Linear Algebra Done Right, 4th ed. & CC BY-NC 4.0 & Secondary \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-% ============================================================
-\section{Results}
-\label{sec:results}
-% ============================================================
+OpenStax titles were selected specifically because they ship
+machine-readable learning objectives, glossaries and answer keys---the
+substrate required for document-native ground truth extracted without human
+annotation, and therefore without an ethics-approval process this project's
+timeline cannot absorb.
 
-\TODO{This entire section is scaffolding. No number below is real. Nothing may be
-written here that does not trace to a logged run under \texttt{runs/}. After the
-results freeze, numbers are written up and never re-run; a wrong result receives
-a limitation paragraph, not a second attempt.}
+\noindent\textbf{On the licence of the primary document.}
+\emph{Introduction to Computer Science} is CC BY 4.0 (plain attribution),
+confirmed against OpenStax's book-level licensing page. Individual chapter
+footers within the same book state CC BY-NC-SA; we treat the book-level page
+as authoritative and record the inconsistency rather than silently choosing
+one.
+
+\subsubsection{Ingestion and primary-document selection}
+Primary-document selection was made on measured evidence rather than
+convenience. Table~\ref{tab:parse} reports parse quality across the three
+candidates. No optical character recognition is used on any document: all
+three carry a text layer, and OCR would replace exact text with approximate
+text---decisively, OCR errors in glossary terms would corrupt the very
+reference set against which task quality is scored, silently and
+irreversibly.
+
+\begin{table}[!t]
+\caption{Parse Quality, Produced by the Ingestion Pipeline and Reproducible
+from the Corpus Artefacts. Orphan Punctuation Counts Punctuation Stranded
+Where a Formula Failed to Extract}
+\label{tab:parse}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{3.2cm}R{1.05cm}R{1.05cm}R{0.95cm}@{}}
+\toprule
+\textbf{Measure} & \textbf{introcs} & \textbf{physics1} & \textbf{axler} \\
+\midrule
+Pages                              & 939       & 959       & 404 \\
+Characters after cleaning          & 2\,432\,812 & 2\,032\,210 & 737\,844 \\
+Headings detected                  & 1\,403    & 1\,081    & 17 \\
+Learning-objective blocks          & 61        & 99        & 0 \\
+Key-terms blocks                   & 14        & 17        & 0 \\
+Orphan punctuation (per 1k lines)  & 30.3      & 113.5     & 87.8 \\
+Warnings raised                    & 0         & 1         & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{University Physics} is disqualified as primary on content loss, not
+formatting loss: its orphan-punctuation rate is nearly four times that of the
+primary document, and inspection confirms sentences from which equations have
+vanished entirely. That damage is not uniform across systems under test---a
+configuration that reads more of the document encounters more of it---and
+would manufacture a difference between MARD and vanilla RLM having nothing to
+do with either. \emph{Linear Algebra Done Right} carries no learning
+objectives and no key-terms sections, so document-native ground truth cannot
+be extracted from it; it remains the strongest candidate for the
+dependency-ordering case study, which is scored separately.
+
+Page mapping was verified by sampling \num{1200} blocks at random across the
+three documents and confirming each appears on the page it claims;
+\num{1199} passed, the single failure being a whitespace-normalisation
+difference in an index line rather than a mapping error.
+
+\subsubsection{Two structural confounds, and how they are controlled}
+\label{sec:confounds}
+Both concern structure reaching a model without that model having derived it.
+If structure arrives by another route, we would be reporting the publisher's
+work as MARD's.
+
+\begin{enumerate}
+  \item \textbf{The publisher's bookmark outline.} All three documents ship
+  one. The ingestion pipeline writes it to a separate artefact with an
+  explicit provenance field and never merges it into the text stream, so that
+  using it must be a deliberate decision rather than an accident. It serves as
+  the yardstick for skeleton quality and is not an input to Pass~0.
+  \item \textbf{The printed table of contents inside the body text.} Subtler,
+  because it arrives through the ordinary text channel: the primary document
+  prints its full chapter list on page~7, so a model reading the opening pages
+  obtains the skeleton for free. Front matter is detected, tagged, and
+  excluded from the text stream supplied to every system.
+\end{enumerate}
+
+Both controls are applied identically to the vanilla-RLM arm. If the two arms
+received different inputs, the comparison would not isolate the envelope.
+
+\subsubsection{Skeleton fidelity}
+Because the skeleton is the substrate for everything downstream, its quality
+is measured before it is used. Against the publisher outline, the primary
+document's text-derived skeleton achieves \SI{82.2}{\percent} recall at
+\num{0.0} pages of boundary error. Boundary error of zero indicates that
+where a section is recovered, its span is recovered exactly; the recall
+shortfall is missed sections, not misplaced ones.
+
+\subsubsection{Systems compared}
+\begin{itemize}
+  \item \textbf{MARD} --- two-pass, as specified above.
+  \item \textbf{B1, vanilla RLM} --- the isolation baseline: the base paper's
+  architecture, a root REPL loop issuing flat sub-calls, on identical models,
+  document and structural controls.
+  \item \textbf{A1, envelope removed} --- MARD's architecture with the
+  envelope emptied. This is a \emph{separate} run from B1 and serves a
+  different purpose, discussed below.
+  \item \textbf{Negative control} --- MARD and B1 on the structure-ablated
+  variant of the primary document, testing the graceful-degeneration half of
+  the claim under content held constant.
+\end{itemize}
+
+B1 and A1 are deliberately distinguished, because they answer different
+questions. B1 compares MARD's architecture against the base paper's, and a
+win there changes several things at once---the envelope, the pass structure,
+the typed plan, two-tier dispatch and dependency-ordered joining. A1 holds
+the architecture fixed and removes only the envelope, and is therefore the
+only comparison that attributes an effect to the envelope specifically, which
+is what this paper's claim rests on. Reporting B1 alone would license the
+weaker conclusion that our pipeline is better, not that the envelope is why.
+
+The full study additionally runs full-context, naive chunking and
+embedding-RAG baselines first-hand.
+
+\noindent\textbf{Recursion depth is held fixed.}
+Both arms run at a matched recursion depth in which sub-calls are plain
+completions. This is the base paper's primary reported condition. Holding
+depth fixed is not incidental: if the arms differed in depth, the measured
+difference would confound the envelope with an extra layer of recursion, and
+the isolation claim would be void.
+\VERIFY{The mapping between MARD's pass-depth numbering and the control
+library's recursion-depth parameter is off by one and is currently derived
+from project documentation rather than from the implementation's call
+structure. Confirm against the Pass~1 source before this paragraph is final.}
+
+\subsubsection{Metrics}
+Every run of every system records seven fields, and a number that cannot be
+traced to all seven from a logged run is not admitted to this paper: task
+score; tokens consumed (input and output, summed over every model call and
+reported separately in the log); calls issued, split by tier; cost at the
+same-day published provider rate; wall-clock latency (both $\max$ and $\sum$
+over builders); run identifier; and a full configuration snapshot including
+model identifiers, prompt-template versions, depth setting, active ablation,
+and document. Systems producing per-concept output additionally record the
+groundedness fields defined in Section~\ref{sec:grounding}.
+
+\noindent\textbf{Task score.}
+The evaluated output modality is explanations only. Flashcards, quizzes and
+diagrams are demonstrable prototype features that test nothing about the
+envelope and would multiply the evaluation surface; they are excluded from
+measurement. Explanations are scored against document-native ground truth
+extracted programmatically. Of the ground-truth sources available in the
+corpus, this manuscript uses \emph{per-chapter learning objectives} and
+\emph{in-text cross-references}. Glossary terms are present in the corpus but
+are typeset as an undelimited run-on list, and recovering term boundaries
+reliably requires font-level information we defer to the full study; they are
+therefore \emph{not} used here. We state this because a restriction disclosed
+is a scope decision and a restriction implied is not.
+\TODO{State the exact matching function and threshold once the scorer is
+final, and report raw counts alongside it so the number survives a reviewer
+who disagrees with the threshold.}
+
+\noindent\textbf{Dependency-ordering score.}
+Scored independently of task quality, as forward-reference violations: the
+number of times a generated sequence places a concept before something the
+document itself declares as its prerequisite, counted for book order and for
+Master Plan order.
+
+\noindent\textbf{Variance.}
+Every reported number is the result of three independent repeated runs, with
+spread reported alongside the central value. We report repeats rather than
+fixed random seeds deliberately: the inference endpoints used here do not
+expose deterministic decoding, so a nominal seed would name a property the
+system does not have. Where variance swamps an effect, that is reported as
+the finding.
+
+\section{Results and Discussion}
+\label{sec:results}
+% >>> PENDING: no number in this section is real yet. Nothing may be written
+% here that does not trace to a logged run. After the results freeze, numbers
+% are written up and never re-run; a wrong result receives a limitation
+% paragraph, not a second attempt.
 
 \subsection{Isolating the envelope}
+Table~\ref{tab:main} reports MARD in its two-pass configuration against
+vanilla RLM on the primary document, at matched recursion depth and under
+identical structural controls.
 
-\begin{table}[t]
-\centering
-\small
-\caption{MARD (two-pass) against vanilla RLM on the primary document. Three
-repeated runs; spread in parentheses. Both arms at matched recursion depth with
-identical structural controls.}
+\begin{table}[!t]
+\caption{MARD (Two-Pass) Against Vanilla RLM on the Primary Document. Three
+Repeated Runs; Spread in Parentheses. Both Arms at Matched Recursion Depth
+with Identical Structural Controls}
 \label{tab:main}
-\begin{tabular}{lrrr}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{2.9cm}R{1.35cm}R{1.35cm}R{1.1cm}@{}}
 \toprule
 \textbf{System} & \textbf{Task score} & \textbf{Tokens} & \textbf{Cost} \\
 \midrule
-Vanilla RLM (= A1) & \RESULT & \RESULT & \RESULT \\
-MARD (two-pass)    & \RESULT & \RESULT & \RESULT \\
+B1, vanilla RLM      & \RESULT & \RESULT & \RESULT \\
+A1, envelope removed & \RESULT & \RESULT & \RESULT \\
+MARD (two-pass)      & \RESULT & \RESULT & \RESULT \\
 \midrule
-$\Delta$           & \RESULT & \RESULT & \RESULT \\
+$\Delta$ (MARD $-$ B1) & \RESULT & \RESULT & \RESULT \\
+$\Delta$ (MARD $-$ A1) & \RESULT & \RESULT & \RESULT \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\subsection{Variance across repeats}
+\label{sec:variance}
+\TODO{Report the three baseline repeats individually. Do not average them:
+the spread in concept count, cost and wall-clock is itself the result. State
+explicitly that no repeat was excluded.}
 
 \subsection{Groundedness of generated content}
 \label{sec:grounding}
+The most consequential observation in this study was not a score. In one
+repeat of the baseline, the system completed without error, reported success,
+and produced a coherent study guide in which a substantial fraction of the
+explanations had been generated \emph{without the document in context at
+all}.
 
-The most consequential observation in this study was not a score. In one repeat of the
-baseline, the system completed without error, reported success, and produced a coherent
-study guide in which a substantial fraction of the explanations had been generated
-\emph{without the document in context at all}.
+The mechanism is worth stating precisely, because it is a property of the
+method rather than of our harness. In vanilla RLM the root model authors its
+own exploration code. In this run that code mismapped a concept onto an
+unrelated passage; the resulting generation failed to parse and was
+discarded; and the retry proceeded with an empty source field, producing an
+explanation from the model's parametric knowledge. Nothing in the returned
+artefact, the exit status, or the aggregate token accounting distinguishes
+that explanation from a grounded one. The failure is visible only by walking
+the execution trajectory.
 
-The mechanism is worth stating precisely, because it is a property of the method rather than
-of our harness. In vanilla RLM the root model authors its own exploration code. In this run
-that code mismapped a concept onto an unrelated passage; the resulting generation failed to
-parse and was discarded; and the retry proceeded with an empty source field, producing an
-explanation from the model's parametric knowledge. Nothing in the returned artefact, the exit
-status, or the aggregate token accounting distinguishes that explanation from a grounded one.
-The failure is visible only by walking the execution trajectory.
+We therefore instrument groundedness directly. For each concept in a final
+artefact we resolve the generating call and classify it as \emph{grounded}
+(non-empty source text), \emph{ungrounded} (empty or absent source), or
+\emph{regenerated} (at least one prior attempt discarded). This
+instrumentation was written \emph{after} the behaviour was found by manual
+trajectory inspection, and we report it as such.
 
-We therefore instrument groundedness directly. For each concept in a final artefact we
-resolve the generating call and classify it as \emph{grounded} (non-empty source text),
-\emph{ungrounded} (empty or absent source), or \emph{regenerated} (at least one prior attempt
-discarded). \TODO{Report the groundedness rate per run for both arms. Measure MARD's rate and
-report it whatever it is --- claiming immunity without measuring is the same overclaim
-inverted. State plainly that this was found by manual trajectory inspection and instrumented
-afterwards.}
-
-\begin{table}[t]
-\centering
-\small
-\caption{Groundedness by system and repeat. Rate is grounded concepts as a fraction of
-concepts in the final artefact.}
+\begin{table}[!t]
+\caption{Groundedness by System and Repeat. Rate is Grounded Concepts as a
+Fraction of Concepts in the Final Artefact}
 \label{tab:grounding}
-\begin{tabular}{llrrr}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{2.4cm}R{0.8cm}R{1.2cm}R{1.3cm}R{1.2cm}@{}}
 \toprule
-\textbf{System} & \textbf{Repeat} & \textbf{Concepts} & \textbf{Grounded} & \textbf{Regen.} \\
+\textbf{System} & \textbf{Rep.} & \textbf{Concepts} & \textbf{Grounded} &
+\textbf{Regen.} \\
 \midrule
-Vanilla RLM & 1 & \RESULT & \RESULT & \RESULT \\
-Vanilla RLM & 2 & \RESULT & \RESULT & \RESULT \\
-Vanilla RLM & 3 & \RESULT & \RESULT & \RESULT \\
-MARD        & 1 & \RESULT & \RESULT & \RESULT \\
-MARD        & 2 & \RESULT & \RESULT & \RESULT \\
-MARD        & 3 & \RESULT & \RESULT & \RESULT \\
+B1, vanilla RLM & 1 & \RESULT & \RESULT & \RESULT \\
+B1, vanilla RLM & 2 & \RESULT & \RESULT & \RESULT \\
+B1, vanilla RLM & 3 & \RESULT & \RESULT & \RESULT \\
+MARD            & 1 & \RESULT & \RESULT & \RESULT \\
+MARD            & 2 & \RESULT & \RESULT & \RESULT \\
+MARD            & 3 & \RESULT & \RESULT & \RESULT \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-MARD's architecture bears on this structurally rather than incidentally. Builder inputs are
-constructed from the plan's recorded source span rather than matched at generation time; the
-plan is schema-validated at the tier boundary and a malformed plan fails loudly rather than
-dispatching many subtly incorrect builders; and the join validates non-empty output per plan
-step, raising rather than returning an artefact that is short by a section while satisfying
-every identity check.
+\TODO{Report the rate for both arms. Measure MARD's rate and report it
+whatever it is --- claiming immunity without measuring is the same overclaim
+inverted. Any count of ungrounded concepts must come from the detector, not
+from an intermediate counter observed during the run.}
 
-\subsection{Variance across repeats}
-
-\TODO{Report the three baseline repeats individually. Do not average them: the spread in
-concept count, cost and wall-clock is itself the result. State that no repeat was excluded.}
+MARD's architecture bears on this structurally rather than incidentally.
+Builder inputs are constructed from the plan's recorded source span rather
+than matched at generation time; the plan is schema-validated at the tier
+boundary and a malformed plan fails loudly rather than dispatching many
+subtly incorrect builders; and the join validates non-empty output per plan
+step, raising rather than returning an artefact that is short by a section
+while satisfying every identity check.
 
 \subsection{Ablation}
-\label{sec:ablations}
+\label{sec:ablation}
+The frozen ablation set comprises four manipulations: A1, the envelope
+removed, holding MARD's architecture fixed; A2, the plan withheld from the
+Swarm, in which the Master Plan is still computed and still determines join
+order but builders receive no directive; A3, reordering disabled, joining in
+book order; and A4, a sweep over recursion depth reported as a curve rather
+than a table row. This manuscript reports A1 and A2; A3 and A4 appear in the
+full study.
 
-The frozen ablation set comprises four manipulations: \textbf{A1}, the envelope
-removed, which is architecturally vanilla RLM and is therefore the same run as
-the baseline; \textbf{A2}, the plan withheld from the Swarm, in which the Master
-Plan is still computed and still determines join order but builders receive no
-directive; \textbf{A3}, reordering disabled, joining in book order; and
-\textbf{A4}, a sweep over recursion depth reported as a curve rather than a table
-row. This manuscript reports A1 and A2; A3 and A4 appear in the full study.
-
-A2 is the ablation reported here because it separates two effects that A1
-collapses together: whether \emph{exploration} benefits from structure-awareness,
-and whether \emph{dispatch} does.
-
-\begin{table}[t]
+\begin{table}[!t]
+\caption{Ablation A2 --- Plan Withheld from the Swarm}
+\label{tab:a2}
 \centering
-\small
-\caption{Ablation A2 --- plan withheld from the Swarm.}
-\label{tab:ablation}
-\begin{tabular}{lrr}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{3.2cm}R{1.6cm}R{1.6cm}@{}}
 \toprule
 \textbf{Configuration} & \textbf{Task score} & \textbf{Tokens} \\
 \midrule
-MARD (full)              & \RESULT & \RESULT \\
-A2 (plan withheld)       & \RESULT & \RESULT \\
+MARD (full)          & \RESULT & \RESULT \\
+A2 (plan withheld)   & \RESULT & \RESULT \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\TODO{A2 failure mode to check before reporting: if a builder's prompt template
-reconstructs plan-like context from the raw section text --- because the section
-carries its own headings --- this ablation under-measures the plan's
-contribution. Log the exact prompt sent to each builder in this condition so the
-check is auditable rather than asserted.}
+A2 is reported alongside A1 because the two separate effects that a single
+comparison collapses: whether \emph{exploration} benefits from
+structure-awareness, and whether \emph{dispatch} does.
+% >>> PENDING: A2 failure mode to check before reporting. If a builder's
+% prompt template reconstructs plan-like context from the raw section text --
+% because the section carries its own headings -- this ablation
+% under-measures the plan's contribution. Log the exact prompt sent to each
+% builder in this condition so the check is auditable rather than asserted.
 
-\subsection{Negative control}
+\subsection{Negative control: structure ablated}
+\label{sec:negcontrol}
+On the structure-ablated variant, skeleton extraction recovers nothing and the
+envelope renders empty, so MARD's per-call input is by construction what
+vanilla RLM's already was. The prediction is therefore a \emph{null
+difference}, and a null here is the claimed outcome rather than a failure to
+find an effect.
 
-\TODO{Flat-context result. The claim predicts degeneration to vanilla-RLM
-behaviour here. A null difference is the predicted outcome, not a failure.}
+\begin{table}[!t]
+\caption{Negative Control. MARD and B1 on the Structure-Ablated Primary
+Document, Three Repeats Each. A Null Difference is the Predicted Result}
+\label{tab:negcontrol}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{3.0cm}R{1.5cm}R{1.5cm}@{}}
+\toprule
+\textbf{System} & \textbf{Task score} & \textbf{Tokens} \\
+\midrule
+B1, vanilla RLM & \RESULT & \RESULT \\
+MARD (two-pass) & \RESULT & \RESULT \\
+\midrule
+$\Delta$        & \RESULT & \RESULT \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-% ============================================================
-\section{Discussion}
-% ============================================================
+\TODO{Report the delta and its spread. If MARD is measurably \emph{worse}
+here, that is the envelope's overhead with nothing to orient against, and it
+is a result worth stating rather than absorbing into noise.}
 
 \subsection{The structure-dependence boundary}
-
-\TODO{Written against real numbers. The frame is fixed in advance: MARD is
-predicted to help where structure is exploitable and to degenerate where it is
-not. Both halves are results.}
+% >>> PENDING: written against real numbers. The frame is fixed in advance:
+% MARD is predicted to help where structure is exploitable and to degenerate
+% where it is not. Both halves are results.
 
 \subsection{Structure as a faithfulness mechanism}
-
-\TODO{Written against Table~\ref{tab:grounding}. The argument: a typed, validated plan does
-not merely order the output, it constrains what each generation step is permitted to see.
-Where the baseline can fall back to parametric knowledge silently, the ablated pipeline
-either supplies the recorded span or fails. If MARD's own groundedness rate is below one,
-report and explain that instead.}
+\TODO{Written against Table~\ref{tab:grounding}. The argument: a typed,
+validated plan does not merely order the output, it constrains what each
+generation step is permitted to see. Where the baseline can fall back to
+parametric knowledge silently, the ablated pipeline either supplies the
+recorded span or fails. If MARD's own groundedness rate is below one, report
+and explain that instead.}
 
 \subsection{Threats to validity}
 
-\paragraph{The comparison rests on one mechanism.}
+\subsubsection{The comparison rests on one mechanism}
 If the envelope ceases to propagate downward, MARD is vanilla RLM and every
-number in Table~\ref{tab:main} measures nothing --- while every component still
+number in Table~\ref{tab:main} measures nothing---while every component still
 executes and no test fails. This mechanism is therefore guarded by dedicated
 tests asserting that a later chapter's prompt contains an earlier chapter's
-findings, and that a child envelope carries its parent's findings.
+findings, and that a child envelope carries its parent's findings. We note
+that those tests establish the envelope is \emph{present} in the prompt, not
+that the model \emph{used} it; ablation A1 is the first direct test of
+influence.
 
-\paragraph{Structure leakage.}
-Section~\ref{sec:confounds} describes the two routes by which document structure
-could reach a model without being derived. We control both and apply the controls
-to both arms. We cannot rule out a third route we have not thought of.
-
-\paragraph{No repeat was excluded.}
+\subsubsection{No repeat was excluded}
 One baseline repeat exhibited the grounding failure described in
-Section~\ref{sec:grounding}, and produced markedly different output volume, cost and latency
-from the other two. It is reported. A run is treated as re-runnable only when the
-\emph{protocol} failed to execute --- a harness fault, a provider fault, an unverified
-corpus. A run in which the system under test behaved badly is a result. Excluding the repeat
-in which the baseline performed worst would be indistinguishable from tuning toward a
+Section~\ref{sec:grounding}, and produced markedly different output volume,
+cost and latency from the other two. It is reported. A run is treated as
+re-runnable only when the \emph{protocol} failed to execute---a harness
+fault, a provider fault, an unverified corpus. A run in which the system
+under test behaved badly is a result. Excluding the repeat in which the
+baseline performed worst would be indistinguishable from tuning toward a
 positive outcome.
 
-\paragraph{Single primary document.}
-Manuscript-scale evidence from one document cannot establish that an effect is
-not document-specific. This is why variance across repeats, a negative control,
-and a pre-stated boundary carry the argument here rather than breadth, and why
-the full study expands the corpus.
+\subsubsection{Structure leakage}
+Section~\ref{sec:confounds} describes the two routes by which document
+structure could reach a model without being derived. We control both and
+apply the controls to both arms. We cannot rule out a third route we have not
+thought of.
 
-\paragraph{Provider dependence.}
-Results are obtained against a hosted inference endpoint whose decoding is not
-deterministic and whose behaviour may change. We mitigate by reporting repeats
-with spread and by recording a full configuration snapshot per run.
+\subsubsection{Single primary document}
+Manuscript-scale evidence from one document cannot establish that an effect
+is not document-specific. This is why variance across repeats, a negative
+control, and a pre-stated boundary carry the argument here rather than
+breadth, and why the full study expands the corpus.
+
+\subsubsection{Provider dependence}
+Results are obtained against a hosted inference endpoint whose decoding is
+not deterministic and whose behaviour may change. We mitigate by reporting
+repeats with spread and by recording a full configuration snapshot per run.
+
+\section{Limitations and Future Work}
+\label{sec:future}
 
 \subsection{Limitations}
+The system evaluated here is two-pass: the targeted deep-dive pass is
+specified but not executed, for the reasons given in
+Section~\ref{sec:passes}. Evaluated output is restricted to explanations, and
+the task score is computed against learning-objective coverage and in-text
+cross-references only, with the glossary source deferred
+(Section~\ref{sec:setup}).
 
-The system evaluated here is \textbf{two-pass}: the targeted deep-dive pass is
-specified but not executed, for the reasons in Section~3. Evaluated output is
-restricted to explanations.
-
-Our vanilla-RLM baseline is our own implementation of the published method rather
-than the original authors' code, adopted so that both arms share one
+Our vanilla-RLM baseline is our own implementation of the published method
+rather than the original authors' code, adopted so that both arms share one
 implementation and the comparison isolates the envelope
-(Section~\ref{sec:setup}). Runs are additionally executed under bounded sub-call
-concurrency and input size imposed by our provider rate-limit tier; these bounds
-apply to both arms, but they place the absolute scores below what an unthrottled
-configuration would produce, and we therefore treat the \emph{difference} between
-arms as the reportable quantity and the absolute values as configuration-specific.
+(Section~\ref{sec:impl}). Runs are additionally executed under bounded
+sub-call concurrency and input size imposed by our provider rate-limit tier;
+these bounds apply to both arms, but they place the absolute scores below
+what an unthrottled configuration would produce, and we therefore treat the
+\emph{difference} between arms as the reportable quantity and the absolute
+values as configuration-specific.
 
-Whether improved structural ordering translates into
-learning gain is not addressed --- that requires a controlled study with human
-participants, which we scope as future work and do not speculate about here.
+The flat-context control is a structure-ablated variant of our own primary
+document rather than an external benchmark. That choice buys a clean
+manipulation---content held constant, structure removed---at the cost of not
+demonstrating degeneration on an independently constructed flat corpus, which
+the full study supplies.
 
-% ============================================================
+Whether improved structural ordering translates into learning gain is not
+addressed---that requires a controlled study with human participants, which
+we scope as future work and do not speculate about here.
+
+\subsection{Future Work}
+Four extensions are already scoped rather than speculative, and each is
+named elsewhere in this manuscript as deferred rather than abandoned.
+First, executing Pass~2, the targeted deep dive specified in
+Section~\ref{sec:passes} but not run here, once Pass~1's reliability has
+been evidenced over more than a single freeze window. Second, ablations A3
+and A4---reordering disabled, and the sweep over recursion depth---which
+the full study reports and this manuscript does not, together with the
+external flat-context benchmark subset that complements the structure-ablated
+control used here (Section~\ref{sec:negcontrol}); its instance count places it
+outside this manuscript's wall-clock budget rather than outside its scope. Third, expanding the
+corpus beyond a single primary document, together with the
+dependency-ordering case study on \emph{Linear Algebra Done Right}, whose
+absent learning objectives rule it out as a primary document but not as an
+ordering target. Fourth, and outside this project's scope, a controlled
+study with human participants would be required to establish whether
+improved structural ordering produces learning gain; we state this as an
+open question and do not speculate about its outcome.
+
+Recovering glossary terms as a fourth ground-truth source, which requires
+font-level extraction to segment an undelimited run-on list, is a fifth
+deferred item rather than an abandoned one.
+
+A sixth concerns presentation rather than measurement. The Master Plan's
+concept graph is currently evaluated as a scored artefact rather than rendered
+as one, and Fig.~\ref{fig:trees} illustrates what changes when it is. Deployed
+products that generate document-derived mind maps render containment: the
+structure a document already declares through its headings. A prerequisite
+graph affords a different interaction---entering the material at a concept and
+walking backwards through what it depends on, rather than downwards through
+what contains it. Whether that serves a learner better than a hierarchical
+view is an open question, and answering it requires the controlled study
+scoped above rather than an appeal to either rendering's appearance.
+% >>> PENDING: revisit this list after the results freeze; drop any item
+% that the full study has by then absorbed.
+
 \section{Conclusion}
-% ============================================================
+\label{sec:conclusion}
+% >>> PENDING: draft last, after the results section. One paragraph. State the
+% mechanism, the measured direction of effect, and the boundary. Do not
+% restate the abstract.
 
-\TODO{Draft last, after Section~5. One paragraph. State the mechanism, the
-measured direction of effect, and the boundary. Do not restate the abstract.}
+%==============================================================
+%  CITATION STATUS -- READ BEFORE SUBMISSION. Delete this block
+%  once every entry has been verified against its primary record.
+%
+%  The project's literature log is the citation gate: a source
+%  not in that table has not been verified and must not be cited.
+%  As of 27 Aug 2026 only TWO entries below have a verified row:
+%  zhang2025rlm and alizadeh2026srlm. The remaining fifteen came
+%  from the title-approval deck and have never been entered.
+%  Section 2 is written so that no CLAIM rests on an unverified
+%  entry -- only positioning does -- but each must be checked.
+%
+%  Specific outstanding items:
+%   * alizadeh2026srlm -- TITLE CONFLICT. Two different titles are
+%     on record for the same arXiv identifier. The version below
+%     matches the literature log; confirm on the abstract page.
+%   * prereqsurvey2025 -- author list UNVERIFIED, deliberately
+%     omitted below rather than guessed. Confirm against ACM DL.
+%   * sun2024learningpath -- author list UNVERIFIED. Same.
+%   * wu2025agents, pan2024llmlingua2 -- author lists truncated in
+%     the deck; confirm the full lists.
+%   * li2023compressing -- author list was previously wrong (the
+%     phi-1 authors had been attached to it); the list below is
+%     the corrected one.
+%   * liu2024lost -- cite ONLY for the U-shaped positional
+%     finding. A "40 percent loss beyond 128K" figure previously
+%     attributed to this paper does not appear in it.
+%   * tufino2025notebooklm -- a physics-education paper. It does
+%     NOT support the hierarchy-versus-dependency claim about
+%     shipped mind-mapping products and must never be cited as
+%     if it does.
+%==============================================================
+\begin{thebibliography}{00}
 
-\bibliographystyle{IEEEtran}
-\bibliography{refs}
+\bibitem{zhang2025rlm}
+A.~L. Zhang, T.~Kraska, and O.~Khattab, ``Recursive language models,'' 2025.
 
-\appendix
+\bibitem{alizadeh2026srlm}
+K.~Alizadeh, P.~Shojaee, M.~Cho, and M.~Farajtabar, ``SRLM: Scaling recursive
+language models with multi-pass attention,'' 2026.
 
-\section{Draft debt}
+\bibitem{liu2024lost}
+N.~F. Liu, K.~Lin, J.~Hewitt, A.~Paranjape, M.~Bevilacqua, F.~Petroni, and
+P.~Liang, ``Lost in the middle: How language models use long contexts,''
+\emph{Transactions of the Association for Computational Linguistics}, 2024.
 
-\textit{This appendix is a working artefact and is deleted before submission. It
-exists so that no open item is lost between drafts.}
+\bibitem{jiang2023llmlingua}
+H.~Jiang, Q.~Wu, C.-Y. Lin, Y.~Yang, and L.~Qiu, ``LLMLingua: Compressing
+prompts for accelerated inference of large language models,'' in
+\emph{Proc. EMNLP}, 2023.
 
-\begin{enumerate}
-  \item \textbf{Model pair and provider unselected.} Blocks the cost column,
-        the implementation paragraph, and the harness sanity check.
-  \item \textbf{Citation gate.} Only two of the seventeen bibliography entries
-        have a verified row in the project's literature log. Section~2's prose
-        is written so that no \emph{claim} rests on an unverified entry, but
-        every entry must be verified against its primary record before
-        submission. Two author lists are explicitly unconfirmed.
-  \item \textbf{Title conflict} on the SRLM reference: two different titles are
-        recorded for the same arXiv identifier. Resolve against the abstract
-        page.
-  \item \textbf{The hierarchy-versus-dependency claim} has no peer-reviewed
-        support. First-hand screenshots are the only admissible evidence.
-  \item \textbf{OSTEP} appears in the planned corpus but is excluded by the
-        licensing constraint. The full study needs two further openly licensed
-        documents that pass the parse-quality checks.
-  \item \textbf{Depth-numbering off-by-one} between the pass structure and the
-        control library's parameter, currently derived from documentation rather
-        than code.
-  \item \textbf{Envelope token budget} quoted at approximately 300 tokens;
-        confirm against the logged Pass~1 traces.
-  \item \textbf{Task-scoring function} not yet final.
-  \item \textbf{Harness sanity check} --- reproduce a published base-paper number
-        first-hand before any result in Section~5 is trusted. \textbf{Now
-        load-bearing}, not routine: it is the only evidence that our own
-        implementation of the baseline is faithful to the published method.
-  \item \textbf{Throttle values} $k$ and $m$ unstated, and their effect on
-        absolute scores unquantified. Confirm both arms carry them.
-  \item \textbf{Structural-control parity} between the MARD and vanilla arms is
-        intended but not yet confirmed in the harness.
-\end{enumerate}
+\bibitem{pan2024llmlingua2}
+Z.~Pan, Q.~Wu, H.~Jiang, M.~Xia, X.~Luo, and J.~Zhang, ``LLMLingua-2: Data
+distillation for efficient and faithful task-agnostic prompt compression,''
+in \emph{Findings of the ACL}, 2024.
 
-\section{Reproducibility}
+\bibitem{li2023compressing}
+Y.~Li, B.~Dong, F.~Guerin, and C.~Lin, ``Compressing context to enhance
+inference efficiency of large language models,'' in \emph{Proc. EMNLP}, 2023.
 
-\TODO{Master Plan schema; full ablation grid; the pinned commit of the control
-library, recorded by the exact revision measured; corpus artefact checksums; and
-the run-identifier scheme. Note the licence of the control library correctly ---
-it is MIT.}
+\bibitem{li2025survey}
+Z.~Li, Y.~Liu, Y.~Su, and N.~Collier, ``Prompt compression for large language
+models: A survey,'' in \emph{Proc. NAACL}, 2025.
+
+\bibitem{ou2025hierarchical}
+L.~Ou and M.~Lapata, ``Context-aware hierarchical merging for long document
+summarization,'' in \emph{Findings of the ACL}, 2025.
+
+\bibitem{kim2025nexussum}
+H.~Kim and B.~H. Kim, ``NexusSum: Hierarchical LLM agents for long-form
+narrative summarization,'' in \emph{Proc. ACL}, 2025.
+
+\bibitem{ong2024routellm}
+I.~Ong, A.~Almahairi, V.~Wu, W.-L. Chiang, T.~Wu, J.~E. Gonzalez, M.~W.
+Kadous, and I.~Stoica, ``RouteLLM: Learning to route LLMs with preference
+data,'' 2024.
+
+\bibitem{moslem2026routing}
+Y.~Moslem and J.~D. Kelleher, ``Dynamic model routing and cascading for
+efficient LLM inference: A survey,'' 2026.
+
+\bibitem{dong2026hints}
+Z.~Dong, H.~Sharma, E.~O'Toole, J.~P. Champati, and K.~Wu, ``Pay for hints,
+not answers: LLM shepherding for cost-efficient inference,'' 2026.
+
+\bibitem{li2021prereq}
+I.~Li, V.~Yan, T.~Li, R.~Qu, and D.~Radev, ``Unsupervised cross-domain
+prerequisite chain learning using variational graph autoencoders,'' in
+\emph{Proc. ACL-IJCNLP}, 2021, pp. 1005--1011.
+
+\bibitem{sun2024learningpath}
+J.~Sun, Y.~He, Y.~Xu, J.~Sun, and G.~Sun, ``A learning-path based supervised
+method for concept prerequisite relations extraction,'' in \emph{Proc. ACM
+CIKM}, 2024, pp. 2168--2177.
+
+\bibitem{prereqsurvey2025}
+``Prerequisite relation learning: A survey and outlook,'' \emph{ACM Computing
+Surveys}, vol. 57, no. 11, 2025.
+
+\bibitem{wu2025agents}
+S.~Wu, ``LLM agents for education: Advances and applications,'' 2025.
+
+\bibitem{tufino2025notebooklm}
+E.~Tufino, ``NotebookLM as a Socratic physics tutor: Design and preliminary
+observations of a RAG-based tool,'' 2025.
+
+\end{thebibliography}
 
 \end{document}

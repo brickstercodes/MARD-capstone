@@ -16,6 +16,16 @@
 > 3. **§1 "Config snapshot"** — depth must be logged as an
 >    **`(enable_sub_calls, max_recursion_depth)` pair**, never one integer, or the A4
 >    depth-0 row is a silent duplicate of depth-1. See `18` §5.1.
+> 6. **§5's Manuscript A matrix substitutes the negative control.** The frozen OOLONG
+>    subset (n=50, `eval/frozen_subsets/`) is **deferred to Manuscript B**: at 150–800 s per
+>    run, ×2 systems ×3 seeds, it is days of wall-clock. Manuscript A's flat-context control
+>    is instead a **structure-ablated variant of the primary document** — same text, section
+>    order shuffled, heading markers stripped. This holds content constant and varies only
+>    structure, so it is a manipulation rather than a change of corpus, and `run_pass0`
+>    already records the resulting empty skeleton as `degenerate: true` rather than as an
+>    error. **This is a scope deferral, not an edit to a frozen subset** — nothing in
+>    `eval/frozen_subsets/` is touched, per that directory's own immutability rule. See
+>    `docs/25-HANDOFF_MARD_ARM.md` §T6.
 > 5. **§4 gains a failed-run definition, and §1 gains groundedness fields** — see
 >    [`24-GROUNDEDNESS_AND_SEED42.md`](24-GROUNDEDNESS_AND_SEED42.md) §6. A run is
 >    re-runnable only if the **protocol did not execute** (harness fault, provider fault,
