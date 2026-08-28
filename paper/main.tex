@@ -450,8 +450,9 @@ approximately \num{300} tokens against a ceiling of \num{500}. Measuring the
 rendered Pass~1 prompts directly refutes that figure, and we report the
 measurement rather than the intent.
 
-Across the \num{14} Pass~1 calls of a representative run, the skeleton
-$S(D)$ renders at \num{4031} tokens---identical on every call, since it is
+Fig.~\ref{fig:envelope} shows the composition. Across the \num{14} Pass~1
+calls of a representative run, the skeleton $S(D)$ renders at \num{4031}
+tokens---identical on every call, since it is
 the same structural index---the accumulated findings $F(c)$ at a mean of
 \num{1446} tokens and a maximum of \num{2853}, and the directive $d(c)$ at
 \num{56}. The envelope is therefore on the order of \num{5500} tokens per
@@ -477,6 +478,8 @@ channels ablated separately in Section~\ref{sec:ablation} are the two large
 bands here, and the larger of them is the one whose removal changes nothing.}
 \label{fig:envelope}
 \end{figure}
+
+Fig.~\ref{fig:arch} shows how the tiers and passes fit together.
 
 \subsubsection{Pass structure}
 \label{sec:passes}
@@ -1156,7 +1159,8 @@ superior retrieval, and return to it in Section~\ref{sec:threats}.
 
 \subsection{Variance across repeats}
 \label{sec:variance}
-The spread in Table~\ref{tab:main} is the result. Under identical
+The spread in Table~\ref{tab:main}, drawn per run in Fig.~\ref{fig:results},
+is the result. Under identical
 configuration on an identical document, the baseline's task score ranges from
 $0.315$ to $0.765$---a spread of $0.450$, or $82\%$ of its own mean. MARD's
 ranges from $0.584$ to $0.650$, a spread of $0.066$. The baseline's input
@@ -1524,7 +1528,8 @@ MARD (two-pass) & none \newline (declined) & 0 \newline 0 \newline 0 & \$0.000 \
 \end{tabular}
 \end{table}
 
-MARD does not degrade on the ablated document; it declines to run. Pass~0's
+Table~\ref{tab:negcontrol} reports the outcome. MARD does not degrade on the
+ablated document; it declines to run. Pass~0's
 skeleton extraction recovers no sections, the envelope renders empty, and the
 run terminates with \texttt{compiled: false} before any model call is issued.
 All three repeats are identical: zero concepts, zero edges, zero tokens, zero
@@ -1595,6 +1600,73 @@ scrambled text usefully. Only one of them reported that.
 
 \subsection{Threats to validity}
 \label{sec:threats}
+Table~\ref{tab:threats} summarises every threat and limitation disclosed in
+this manuscript, with its current status, so that a reader can see the whole
+set at once rather than assembling it from the sections in which each arises.
+Two are unresolved and we name them as such.
+
+\begin{table*}[!t]
+\caption{Disclosed Threats and Limitations, With Status. ``Bounded'' Means the
+Threat is Real But Its Effect on the Reported Claims is Argued and Stated;
+``Unresolved'' Means No Mitigation Was Performed}
+\label{tab:threats}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{4.3cm}p{2.05cm}p{9.4cm}@{}}
+\toprule
+\textbf{Threat} & \textbf{Status} & \textbf{What we did, and what remains} \\
+\midrule
+Baseline reproduction never performed & \textbf{Unresolved} &
+No published RLM result was reproduced first-hand. A six-task harness check
+confirms the arm executes the benchmark and that its output parses under the
+reference scorer; it establishes nothing about accuracy. Every comparison
+should be read as against \emph{our implementation of} RLM
+(Section~\ref{sec:impl}). \\
+Depth match unverifiable from logs & \textbf{Unresolved} &
+Both arms run one level of delegation by architecture, but MARD logs every
+call at depth~0 and \texttt{parent\_call\_id} is unpopulated in both arms, so
+the match rests on the source rather than the artefacts
+(Section~\ref{sec:impl}). \\
+\midrule
+Single primary document & Bounded &
+All task-score results come from one book. Reliability, cost and structural
+findings were re-measured on a second document
+(Section~\ref{sec:secondoc}, Table~\ref{tab:seconddoc}): two replicate, one
+does not, and the cross-chapter fraction is document-dependent. \\
+Explanations are not text-grounded & Bounded &
+No Tier~2 call carries the cited prose, so MARD's explanations are
+attribution-correct but generated from parametric knowledge. Measured, not
+assumed (Section~\ref{sec:grounding}); the repair is scoped in
+Section~\ref{sec:future}. \\
+The comparison rests on one mechanism & Bounded &
+If the envelope stopped propagating, MARD would be vanilla RLM and every
+number would measure nothing. Guarded by tests asserting envelope presence in
+the prompt, and tested directly by ablation A1f. \\
+Throttling depresses absolute scores & Bounded &
+Sub-call concurrency and input size are bounded by the provider tier,
+identically for both arms. We therefore report the \emph{difference} between
+arms as the quantity of interest and treat absolute values as
+configuration-specific. \\
+Flat control is self-constructed & Bounded &
+The negative control ablates our own document rather than using an external
+flat corpus, buying a clean manipulation at the cost of external
+construction. Chunk count also shifts from \num{916} to \num{1008}
+(Section~\ref{sec:negcontrol}). \\
+Structure leakage; no repeat excluded; provider dependence & Bounded &
+Front-matter exclusion is verified by the ingestion preflight; all repeats
+are reported with none dropped; the model pair and same-day rate card are
+recorded in every run's configuration snapshot. \\
+\midrule
+Learning gain is not addressed & Out of scope &
+No learner used the artefact and no comparison against linear reading was
+run. This requires a controlled human-subjects study
+(Section~\ref{sec:future}). \\
+Pass~2, ablations A2--A4, glossary ground truth & Deferred &
+Specified and not executed in this configuration; reported as a gap rather
+than inferred (Sections~\ref{sec:passes}, \ref{sec:ablation}). \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
 \subsubsection{The comparison rests on one mechanism}
 If the envelope ceases to propagate downward, MARD is vanilla RLM and every
@@ -1732,8 +1804,8 @@ contribution while deleting its substance.
 The implementation, the ingestion pipeline, every logged run directory, the
 evaluation modules, and the scripts that regenerate each figure and table in
 this paper are available at
-\url{https://github.com/brickstercodes/MARD-capstone}, at commit
-\texttt{c1185a1}. The supplementary results logs referenced in
+\url{https://github.com/brickstercodes/MARD-capstone}, at release
+\texttt{v1.0-manuscript}. The supplementary results logs referenced in
 Section~\ref{sec:results} are the \texttt{docs/} directory of that repository.
 Run directories carry the full configuration snapshot, the per-call log and
 the cost accounting for every number reported here, so each table is
