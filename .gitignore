@@ -59,3 +59,4 @@ paper/*.out
 paper/*.bbl
 paper/*.blg
 paper/*.synctex.gz
+_internal/

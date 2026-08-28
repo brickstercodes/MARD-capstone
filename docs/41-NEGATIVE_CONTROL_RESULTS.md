@@ -2,7 +2,7 @@
 
 **Status:** Recorded 28 Aug 2026 · Owner: MARD-arm session (`docs/25`/`docs/39`)
 
-Implements `docs/39-HANDOFF_NEGATIVE_CONTROL.md`. Scoring is `docs/26`'s to do — this
+Implements the negative-control brief. Scoring is `docs/26`'s to do — this
 document names run ids and states what happened; it does not compute task scores.
 
 **Both original blockers were resolved by others, verified independently here before

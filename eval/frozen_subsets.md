@@ -13,6 +13,26 @@ separately-named subset (e.g. `_v2`) — never an edit to these two.
 
 ---
 
+## Note on `browsecomp_plus_frozen_20.jsonl` (added 29 Aug 2026)
+
+This file is **not used by the manuscript in `paper/`** and is referenced by no
+code in this repository. It is a Manuscript B artefact: BrowseComp-Plus was
+scoped out when the evaluation matrix was locked, and the subset had already
+been frozen by then.
+
+It is retained rather than deleted because of the rule at the top of this file.
+The subset's value is that its method and seed were fixed *before* any result
+existed; a subset regenerated later, after seeing which sample is convenient,
+would not carry that guarantee. Deleting it and regenerating it later would
+silently discard the property that makes it worth having.
+
+It is large — roughly 55 MB, because each of the 20 records inlines its full
+evidence and negative document set — and it therefore dominates the size of a
+clone. That cost is disclosed here rather than left for a reader to discover.
+
+
+---
+
 ## 1. OOLONG negative-control subset (`trec_coarse`, n=50)
 
 **Source:** Bertsch et al., *Oolong: Evaluating long context reasoning and

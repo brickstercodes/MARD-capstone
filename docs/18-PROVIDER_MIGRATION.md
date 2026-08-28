@@ -73,7 +73,7 @@ Two things follow that are worth naming plainly rather than discovering later:
 | `RLM_BASELINE_SURVEY.md` §2 | **Not void — but its citations now point at a library that may not be the control.** See §4 | §4 below |
 | `docs/40-LITERATURE_LOG.md` rows 3–10 | Not void as *verified sources* — they were correctly verified. But rows 3–7 and 10 no longer support any live decision | Rows stay; a status column note marks them as historical |
 
-**Nothing in `docs/00-CLAIM.md`, `docs/16-PRIMARY_DOCUMENT.md`, `docs/17-W1_DECISION_POINTS.md`
+**Nothing in `docs/00-CLAIM.md`, `docs/16-PRIMARY_DOCUMENT.md`, the W1 decision record
 or `docs/31-ABLATIONS.md`'s definitions is affected.** The claim is provider-agnostic, the
 primary document is `introcs` on evidence, the two-pass decision stands, and the four
 ablations toggle the same things they always did. `docs/31` gains one clarification only

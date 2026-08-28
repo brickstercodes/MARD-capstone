@@ -1,7 +1,7 @@
 # 38 — Structural determinism, fidelity, and per-chapter coverage
 
 **Status:** Recorded 28 Aug 2026 · Owner: Track 1 (`docs/26`/`docs/35` session) · Implements
-`docs/37-HANDOFF_DETERMINISM_AND_CHAPTER_SCORING.md`
+the determinism-and-chapter-scoring brief
 
 Code: [`eval/structure.py`](../eval/structure.py) (Track A),
 [`eval/chapter_scoring.py`](../eval/chapter_scoring.py) (Track B). Data:

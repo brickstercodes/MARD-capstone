@@ -1,7 +1,7 @@
 # 35 — Scoring results: O3 quality, forward-reference violations, groundedness over MARD
 
 **Status:** Recorded 28 Aug 2026 · Owner: Track 1 (`docs/26`/`docs/32` session) · Implements
-`docs/34-HANDOFF_SCORING.md`
+the scoring brief
 
 > ### ⚠️ AMENDED — 28 Aug 2026, §2 corrected in place
 >

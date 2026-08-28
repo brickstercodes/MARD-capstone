@@ -4,7 +4,7 @@
 >
 > Rows 3–10 are Gemini/Vertex sources. They were **correctly verified** and remain valid
 > as verified sources — but the project moved to **OpenAI** on 26 Aug
-> ([`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md)), so none of them supports a
+> ([`18-PROVIDER_MIGRATION.md`](18-PROVIDER_MIGRATION.md)), so none of them supports a
 > live decision any more. **Do not cite them as justifying the model pair**; there is no
 > current pair. Rows 1–2 (the base paper and SRLM) are unaffected and are now *more*
 > load-bearing, because on OpenAI a base-paper number can finally be reproduced

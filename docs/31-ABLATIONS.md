@@ -4,7 +4,7 @@
 >
 > All four ablations toggle exactly what they always toggled. Two operational notes on
 > A4, from reading the `replm` source first-hand — see
-> [`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md) §5.1–§5.3:
+> [`18-PROVIDER_MIGRATION.md`](18-PROVIDER_MIGRATION.md) §5.1–§5.3:
 >
 > - **`max_recursion_depth=0` does not disable sub-calls.** The guard is
 >   `self._depth + 1 < max_recursion_depth`, so 0 and 1 take the same branch and produce

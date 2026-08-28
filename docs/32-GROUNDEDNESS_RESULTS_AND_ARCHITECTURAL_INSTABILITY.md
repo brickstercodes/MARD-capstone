@@ -165,7 +165,7 @@ list. What is not optional, because it follows directly from §§1–3 above:
 
 ## 5. Housekeeping
 
-- `docs/STATE.json` `"unverified"` — the `docs/24` §4 entry is superseded by this
+- the project's unverified-claims register — the `docs/24` §4 entry is superseded by this
   document; the figure is now verified, with the caveat in §3 above attached.
 - `docs/24-GROUNDEDNESS_AND_SEED42.md` carries a banner pointing here.
 

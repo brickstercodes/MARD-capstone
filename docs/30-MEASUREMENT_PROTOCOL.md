@@ -2,7 +2,7 @@
 
 > ### ⚠️ AMENDED — 26 Aug 2026 (protocol still frozen; two rows changed)
 >
-> The provider switch to OpenAI ([`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md))
+> The provider switch to OpenAI ([`18-PROVIDER_MIGRATION.md`](18-PROVIDER_MIGRATION.md))
 > changes exactly three things here. Everything else — the seven required fields, the
 > ground-truth source, the explanations-only constraint, the matrices, the freezes —
 > stands unchanged.
@@ -25,7 +25,7 @@
 >    already records the resulting empty skeleton as `degenerate: true` rather than as an
 >    error. **This is a scope deferral, not an edit to a frozen subset** — nothing in
 >    `eval/frozen_subsets/` is touched, per that directory's own immutability rule. See
->    `docs/25-HANDOFF_MARD_ARM.md` §T6.
+>    the MARD-arm implementation brief.
 > 5. **§4 gains a failed-run definition, and §1 gains groundedness fields** — see
 >    [`24-GROUNDEDNESS_AND_SEED42.md`](24-GROUNDEDNESS_AND_SEED42.md) §6. A run is
 >    re-runnable only if the **protocol did not execute** (harness fault, provider fault,

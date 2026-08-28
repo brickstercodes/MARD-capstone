@@ -6,7 +6,7 @@
 > `.vendor/rlm` @ `caf0bff`, MIT — see the two corrections below). The vanilla RLM control
 > currently runs on a **different
 > library** — `replm`, MIT, from Track 3's fork pinned at `a0ca553`. See
-> [`18-W3_PROVIDER_SWITCH.md`](18-W3_PROVIDER_SWITCH.md) §4.
+> [`18-PROVIDER_MIGRATION.md`](18-PROVIDER_MIGRATION.md) §4.
 >
 > - **§1 (the 14 examples) and §3 (still blocked) describe a library that is no longer the
 >   control.** Superseded.
