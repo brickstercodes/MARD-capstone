@@ -75,22 +75,24 @@
 Cost-Efficient Comprehension of Unbounded Documents}
 
 \author{%
-\begin{tabular}{@{}*{5}{>{\centering\arraybackslash}p{0.19\textwidth}}@{}}
-Parth Sangani\textsuperscript{1,\,a,\,b,\,*} &
+\begin{tabular}{@{}*{3}{>{\centering\arraybackslash}p{0.30\textwidth}}@{}}
+Anugrah Shetty\textsuperscript{1,\,a,\,b,\,*} &
 Arav Sharma\textsuperscript{2,\,a,\,b} &
-Anugrah Shetty\textsuperscript{3,\,a,\,b} &
+Parth Sangani\textsuperscript{3,\,a,\,b} \\[6pt]
 Tanish Sharma\textsuperscript{4,\,a,\,b} &
-Soni Sweta\textsuperscript{5,\,a,\,b}
+Soni Sweta\textsuperscript{5,\,a,\,b,\,*} &
+Prashasti Kanikar\textsuperscript{6,\,a,\,b}
 \end{tabular}\\[4pt]
 {\footnotesize\textsuperscript{a}Department of Computer Engineering}\\[1pt]
 {\footnotesize\textsuperscript{b}Mukesh Patel School of Technology Management \& Engineering, SVKM's Narsee Monjee}\\[1pt]
 {\footnotesize Institute of Management Studies (NMIMS) Deemed-to-University, Mumbai-400056, India}\\[4pt]
-{\footnotesize\textsuperscript{1}\texttt{sanganiparth22@gmail.com}}\\[1pt]
+{\footnotesize\textsuperscript{1}\texttt{anugrahsshetty@gmail.com}}\\[1pt]
 {\footnotesize\textsuperscript{2}\texttt{arav.sharma0405@gmail.com}}\\[1pt]
-{\footnotesize\textsuperscript{3}\texttt{anuadz2358@gmail.com}}\\[1pt]
+{\footnotesize\textsuperscript{3}\texttt{sanganiparth22@gmail.com}}\\[1pt]
 {\footnotesize\textsuperscript{4}\texttt{tanishsharma619@gmail.com}}\\[1pt]
-{\footnotesize\textsuperscript{5}\texttt{soni.sweta16@gmail.com}}\\[2pt]
-{\footnotesize Corresponding Author\textsuperscript{*}}%
+{\footnotesize\textsuperscript{5}\texttt{soni.sweta16@gmail.com}}\\[1pt]
+{\footnotesize\textsuperscript{6}\texttt{Prashasti.Kanikar@nmims.edu}}\\[2pt]
+{\footnotesize Corresponding Authors\textsuperscript{*}}%
 }
 \maketitle
 
@@ -351,44 +353,34 @@ make no claim about either product's behaviour beyond that date.
 \begin{minipage}[t]{0.47\textwidth}
   \centering
   \includegraphics[width=\linewidth]{fig_notebooklm.png}\\[3pt]
-  {\footnotesize (a) Google NotebookLM's mind-map view of the document,
-   captured 27~August~2026. Edges denote containment; leaves are topic
-   labels.}
+  {\footnotesize (a) NotebookLM (containment).}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
   \centering
   \includegraphics[width=\linewidth]{fig_tasur.png}\\[3pt]
-  {\footnotesize (b) Tasur,\footnotemark[1] a prototype renderer, captured
-   27~August~2026; one branch shown at full depth. Edges still denote
-   containment, but the tree descends a level further, to typed atomic items
-   retaining the source text and its notation.}
+  {\footnotesize (b) Tasur\footnotemark[1] (containment, atomic level).}
 \end{minipage}
 
 \vspace{8pt}
 \begin{minipage}[t]{0.92\textwidth}
   \centering
   \includegraphics[width=0.95\linewidth]{fig_mard_graph.png}\\[3pt]
-  {\footnotesize (c) MARD's compiled concept graph, drawn at the same scope and
-   in the same visual idiom as (a) and (b) so that only \emph{edge semantics}
-   differ. Chapter~1's six concepts, with the two dependents outside the
-   chapter that they feed. Dark edges leave the chapter; grey edges stay
-   inside it. Note what a containment tree cannot express: ``Vector Space of
-   Polynomials'' has four prerequisites, all in Chapter~1, three chapters
-   earlier. Full graph: 54 concepts, 116 edges, 76 of them cross-chapter.
-   Single unreplicated run, seed 11.}
+  {\footnotesize (c) MARD (precedence).}
 \end{minipage}
 
-\caption{Three renderings of \emph{Linear Algebra Done Right}, 4th ed.,
-the corpus document with the most explicit prerequisite structure and the
-target of the dependency-ordering case study rather than the primary
-measurement document. \textbf{All three were produced from an abridged
-version of the text, not the full book.} Panels (a) and (b) differ in
-resolution: both encode the containment hierarchy the document already
-declares through its headings, and (b)---shown for a single branch, since at
-whole-tree scale its leaves are illegible---descends a level further and
-preserves mathematical notation. Panel (c) differs in kind: its edges
-assert precedence rather than membership, and each is therefore a falsifiable
-prediction rather than a restatement of the table of contents.}
+\caption{Three renderings of \emph{Linear Algebra Done Right}, 4th ed.
+(abridged text, not the full book), used for the dependency-ordering case
+study rather than as the primary measurement document. (a)~NotebookLM's
+mind-map, captured 27~Aug~2026: edges denote containment, leaves are topic
+labels. (b)~Tasur, same day, one branch at full depth (whole-tree leaves are
+illegible): edges still denote containment but descend to typed atomic items
+with source text and notation. (c)~MARD's concept graph, same scope and
+idiom, so only \emph{edge semantics} differ: Chapter~1's six concepts plus
+two outside dependents---dark edges cross chapters, grey stay inside. Full
+graph: 54 concepts, 116 edges, 76 cross-chapter; single run, seed 11.
+(a)--(b) encode containment already declared by the headings; (c)'s edges
+assert precedence instead---each a falsifiable prediction, not a restatement
+of the table of contents.}
 \label{fig:trees}
 \end{figure*}
 \footnotetext[1]{Declaration of interest: Tasur is built and maintained by one
@@ -472,6 +464,20 @@ This measurement anticipates the ablation result in
 Section~\ref{sec:ablation}. The component consuming the most input is the one
 whose removal costs nothing.
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\linewidth]{fig_envelope.pdf}
+\caption{Composition of the Pass~1 prompt across one run's fourteen chapter
+calls, measured from the logged prompts rather than from the design intent.
+The skeleton is constant at \num{4031} tokens because it is the same
+structural index every time; the findings channel grows monotonically from
+nothing to \num{3013} tokens as chapters complete. The remaining band is the
+chapter's own text slice, the directive and the response schema. The two
+channels ablated separately in Section~\ref{sec:ablation} are the two large
+bands here, and the larger of them is the one whose removal changes nothing.}
+\label{fig:envelope}
+\end{figure}
+
 \subsubsection{Pass structure}
 \label{sec:passes}
 
@@ -554,10 +560,7 @@ whose removal costs nothing.
 \end{tikzpicture}
 \caption{MARD architecture. The document is never placed in a prompt; it is
 bound to a REPL variable and explored by the frontier tier, which emits a
-typed Master Plan that dispatches a parallel budget tier. Pass~2 is specified
-but \emph{not executed} in the configuration evaluated here
-(Section~\ref{sec:passes}); the system reported in this manuscript is
-two-pass.}
+typed Master Plan that dispatches a parallel budget tier.}
 \label{fig:arch}
 \end{figure}
 
@@ -1161,6 +1164,23 @@ token count varies by a factor of $6.4$ across the same three repeats
 ($517{,}000$ to $3{,}315{,}000$); MARD's varies by $0.9\%$. Its cost varies
 $5.0\times$; MARD's by $3.8\%$.
 
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig_results.pdf}
+\caption{Three repeated runs per configuration on the primary document, each
+point one run. (a)~Objective coverage: the baseline's three repeats span
+$0.315$--$0.765$ while MARD's span $0.584$--$0.650$; the distributions
+overlap, which is why the quality comparison is reported as a null. (b)~Input
+tokens, log scale: MARD's three points coincide at this resolution because
+they differ by under \num{1}\%, while the baseline's span a factor of
+$6.4$. (c)~Ablation by envelope channel, with the count of prerequisite
+declarations naming a concept that was never declared. Suppressing the
+skeleton changes neither quantity; suppressing the accumulated findings
+collapses cross-chapter linkage and leaves a mean of \num{57} unresolved
+declarations per run.}
+\label{fig:results}
+\end{figure*}
+
 This instability is visible in the artefacts themselves. Table~\ref{tab:struct}
 reports the organisational structure each system imposed. The baseline emitted
 $156$, $190$ and $75$ concept-level sections on its three repeats, and its
@@ -1212,8 +1232,9 @@ log.
 
 \subsection{Replication on a second document}
 \label{sec:secondoc}
-On a second document MARD's advantage widens: it consumes $20.6\times$ fewer
-input tokens than the baseline, against $15.8\times$ on the primary document,
+On a second document MARD's advantage widens (Table~\ref{tab:seconddoc}): it
+consumes $20.6\times$ fewer input tokens than the baseline, against
+$15.8\times$ on the primary document,
 while emitting a concept set that varies by one across three repeats where the
 baseline emits a different document format on each.
 
@@ -1247,6 +1268,38 @@ and we withdraw any suggestion that it is a general property of the method.
 The likely mechanism is that the primary document is roughly eight times
 larger, leaving the root model far more scope for its exploration to diverge;
 we did not test that explanation and offer it as a conjecture, not a finding.
+
+\begin{table}[!t]
+\caption{The Primary Document's Findings Re-Measured on a Second Document.
+Three Repeats Each. \emph{Linear Algebra Done Right} Carries No
+Learning-Objective Blocks, So No Task Score Exists For Either Arm On It}
+\label{tab:seconddoc}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{2.5cm}R{2.05cm}R{2.05cm}@{}}
+\toprule
+ & \textbf{introcs} & \textbf{axler} \\
+ & \emph{939 pp., 14 ch.} & \emph{404 pp., 10 ch.} \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Input tokens, mean}} \\
+\quad B1, vanilla & 1{,}493{,}033 & 448{,}915 \\
+\quad MARD & 94{,}242 & 21{,}761 \\
+\quad reduction & $15.8\times$ & $\mathbf{20.6\times}$ \\
+\addlinespace
+\multicolumn{3}{@{}l}{\textbf{Structural units, per repeat}} \\
+\quad B1, vanilla & 156, 190, 75 & 86, 9, 77 \\
+\quad MARD & 84, 83, 84 & 54, 54, 53 \\
+\addlinespace
+\multicolumn{3}{@{}l}{\textbf{Spread across repeats}} \\
+\quad B1 input tokens & $6.4\times$ & $\mathbf{1.05\times}$ \\
+\quad MARD input tokens & $1.01\times$ & $1.07\times$ \\
+\quad B1 output words & $1.5\times$ & $3.35\times$ \\
+\addlinespace
+\multicolumn{3}{@{}l}{\textbf{MARD cross-chapter fraction}} \\
+\quad range & 0.895--0.930 & \textbf{0.655--0.673} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \textbf{Cross-chapter linkage is markedly lower.} MARD's cross-chapter edge
 fraction was \num{0.655}--\num{0.673} on this document against
@@ -1383,24 +1436,26 @@ all accepted edges, together with the count of prerequisite declarations
 rejected because the named prerequisite was never declared anywhere in the
 plan.
 
-\begin{table}[!t]
+\begin{table*}[!t]
 \caption{Ablation A1, by Envelope Channel. Cross-Chapter Fraction is
 Cross-Chapter Edges Over All Accepted Edges. Never-Declared Rejections Count
-Prerequisites Named But Never Declared. Three Repeats; Min--Max in
+Prerequisites Named But Never Declared. Tier~1 Input is the Frontier Tier's
+Own Token Consumption, Where the Skeleton is Spent. Three Repeats; Min--Max in
 Parentheses}
 \label{tab:ablation}
 \centering
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}p{2.5cm}R{2.1cm}R{1.5cm}R{1.05cm}@{}}
+\begin{tabular}{@{}p{3.4cm}R{2.4cm}R{2.0cm}R{1.5cm}R{2.2cm}R{1.5cm}@{}}
 \toprule
-\textbf{Configuration} & \textbf{Cross-chapter} & \textbf{Never-decl.} & \textbf{Score} \\
+\textbf{Configuration} & \textbf{Cross-chapter} & \textbf{Never-decl.} &
+\textbf{Score} & \textbf{Tier 1 input} & \textbf{Cost} \\
 \midrule
-MARD (full) & 0.917 \newline (0.895--0.930) & 2 \newline (0--4) & 0.621 \\
-A1s, skeleton suppressed & 0.898 \newline (0.874--0.942) & 0 \newline (0--0) & 0.730 \\
-A1f, findings suppressed & \textbf{0.014} \newline (0.000--0.021) & \textbf{57} \newline (49--67) & 0.623 \\
+MARD (full) & 0.917 (0.895--0.930) & 2 (0--4) & 0.621 & 84{,}811 & \$0.578 \\
+A1s, skeleton suppressed & 0.898 (0.874--0.942) & 0 (0--0) & \textbf{0.730} & \textbf{28{,}147} & \textbf{\$0.498} \\
+A1f, findings suppressed & \textbf{0.014} (0.000--0.021) & \textbf{57} (49--67) & 0.623 & 68{,}584 & \$0.524 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 The two channels behave entirely differently, and this is the manuscript's
 central mechanistic result.
@@ -1420,8 +1475,11 @@ falls from $0.917$ to $0.898$, a difference smaller than either
 configuration's own spread across repeats. Task score \emph{rises}, from
 $0.621$ to $0.730$, and is the highest of any configuration measured, with the
 tightest spread. Never-declared rejections fall to zero in all three repeats.
-Cost falls from \$0.578 to \$0.498, and Tier~1 input tokens fall by $60\%$:
-the skeleton is the single most expensive item in MARD's prompt budget.
+Cost falls from \$0.578 to \$0.498, and the frontier tier's own input
+consumption falls from \num{84811} tokens to \num{28147}---a reduction of
+\num{66.8}\%, against \num{60}\% of the run's total input. The skeleton is the
+single most expensive item in MARD's prompt budget, and removing it improves
+every quantity in Table~\ref{tab:ablation} that we can measure.
 
 We report this without adjustment. On every measure available to us the
 skeleton channel either fails to contribute or actively costs, while
@@ -1669,6 +1727,20 @@ containment renderer unchanged would preserve the appearance of the
 contribution while deleting its substance.
 % >>> PENDING: revisit this list after the results freeze; drop any item
 % that the full study has by then absorbed.
+
+\section*{Code and Data Availability}
+The implementation, the ingestion pipeline, every logged run directory, the
+evaluation modules, and the scripts that regenerate each figure and table in
+this paper are available at
+\url{https://github.com/brickstercodes/MARD-capstone}, at commit
+\texttt{c1185a1}. The supplementary results logs referenced in
+Section~\ref{sec:results} are the \texttt{docs/} directory of that repository.
+Run directories carry the full configuration snapshot, the per-call log and
+the cost accounting for every number reported here, so each table is
+recomputable without an API key. The parsed corpora are not redistributed:
+\texttt{corpus/SOURCES.json} records each source document's URL, SHA-256 and
+retrieval date, and \texttt{scripts/fetch\_corpus.sh} reproduces them from the
+publishers.
 
 \section{Conclusion}
 \label{sec:conclusion}
