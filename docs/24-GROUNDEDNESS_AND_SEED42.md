@@ -3,6 +3,14 @@
 **Status:** Decided 27 Aug 2026 · Decision owner: Anugrah Shetty (Track 1, holding both arms)
 · **Amends** `docs/30-MEASUREMENT_PROTOCOL.md` §1 and §4
 
+> ### ⚠️ AMENDED — 28 Aug 2026
+>
+> The groundedness detector §5 asked for landed, is validated against this section's
+> hand-trace, and resolved §4's outstanding check in place below. `docs/32` is the fuller,
+> canonical write-up (§8) — the fifth concept class it needed (`root_authored`, for seeds 11
+> and 23) and the architectural-instability finding it surfaced go there, not here.
+> **Read `docs/32` before writing paper §4.**
+
 ## 1. What happened
 
 Seed 42 of the vanilla-RLM arm on `introcs` completed with `status: "ok"`, no exception, and
@@ -95,6 +103,23 @@ trees*).
 signal about the final guide, not a count of it. This project's own audit history
 (`CONTEXT.md` §2.3) is a list of confident numbers that came from adjacent places.
 
+> **RESOLVED 28 Aug 2026 — measured at 41/75**, by `eval/groundedness.py` against the final
+> artefact, reproducing the hand-trace above. The figure may now be quoted.
+>
+> **The independence check is done, and the answer is the unflattering one:
+> it is ONE signal, not two** (`docs/32` §3). `missing_outline`'s members and the detector's
+> `ungrounded` set are the same concepts **by construction** — every name in that counter was
+> immediately re-generated with a zero-source template, the result overwrote the explanation
+> unconditionally, and no later regeneration followed. Pinned by
+> `tests/test_groundedness.py::test_ungrounded_count_is_exactly_the_missing_outline_batch`,
+> which shows all 41 are the *last* trajectory entry for their concept — the shape a
+> never-revisited fill-in batch produces and little else does.
+>
+> **So: cite the detector's count, traceable to `runs/…s42…/events.jsonl`, and retire the
+> console figure. Do not present the two as separate evidence agreeing.** The figure is
+> confirmed reproducible from committed artefacts, which is what it was missing; it is not
+> corroborated by a second measurement, which is what an exact match superficially suggests.
+
 ## 5. The groundedness detector — spec
 
 Turns one anecdote into a measured axis across every run and **both arms**. No new runs, no
@@ -147,3 +172,25 @@ the pattern is the point:
 | 2 | Batched-call metadata was complete | Metadata bug found and fixed |
 | 3 | Concept counts were 156 vs 190 | Counting heuristic was wrong; corrected to 156 / 190 / 75 |
 | 4 | Seed 42 was a heading-format quirk | Confirmed ungrounded content, §1 above |
+
+---
+
+## 8. Superseded by `docs/32`
+
+Sections 8 and 9 were drafted here on 28 Aug while the `docs/26` session was
+independently writing the same findings up in
+[`32-GROUNDEDNESS_RESULTS_AND_ARCHITECTURAL_INSTABILITY.md`](32-GROUNDEDNESS_RESULTS_AND_ARCHITECTURAL_INSTABILITY.md).
+**`docs/32` is canonical** — it is more detailed, it carries the code and test references,
+and it settles the independence question §4 above raised. This section is a pointer so the
+two accounts cannot drift apart.
+
+`docs/32` covers:
+
+- **§1** — the detector validated against the seed-42 hand-trace, and why `docs/26` §3's
+  cross-run gate could not be checked as phrased.
+- **§2** — the fourth class, `root_authored`, plus a run-level `root_authored_context`
+  field. Seeds 11 and 23 are that, not `None`: their background sub-calls are fully
+  inspectable, they are simply not scoped to one concept.
+- **§3** — the independence check, answered. See §4 above.
+- **§4** — three repeats, three self-authored architectures, and what that constrains about
+  how §4 of the manuscript may report them.

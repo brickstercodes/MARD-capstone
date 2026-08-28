@@ -1,0 +1,361 @@
+[
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch01",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18187,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 0,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch01",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16627
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 6,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch02",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18144,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 1,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch02",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16633
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 8,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch03",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18610,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 2,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch03",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16657
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 5,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch04",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18272,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 3,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch04",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16632
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 1,
+    "rejected": [
+      "edge 'introcs.3.3-formal-properties-of-algorithms' -> 'computational-models-purpose' names a concept that was never declared",
+      "edge 'introcs.3.6-computer-science-theory' -> 'computational-models-purpose' names a concept that was never declared",
+      "edge 'introcs.3.6-computer-science-theory' -> 'turing-machine-model' names a concept that was never declared",
+      "edge 'introcs.3.6-computer-science-theory' -> 'lambda-calculus-model' names a concept that was never declared",
+      "edge 'introcs.3.6-computer-science-theory' -> 'equivalence-church-turing-thesis' names a concept that was never declared",
+      "edge 'introcs.3.3-formal-properties-of-algorithms' -> 'register-ram-model' names a concept that was never declared",
+      "edge 'introcs.3.3-formal-properties-of-algorithms' -> 'efficiency-across-models' names a concept that was never declared"
+    ]
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch05",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18449,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 4,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch05",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16640
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 0,
+    "rejected": [
+      "edge '1-1-computer-science' -> 'von-neumann-architecture' names a concept that was never declared",
+      "edge '3-1-introduction-to-data-structures-and-algorithms' -> 'performance-bottlenecks-overview' names a concept that was never declared",
+      "edge '3-3-formal-properties-of-algorithms' -> 'performance-bottlenecks-overview' names a concept that was never declared",
+      "edge '4-1-models-of-computation' -> 'von-neumann-architecture' names a concept that was never declared",
+      "edge '4-1-models-of-computation' -> 'cpu-internal-organization' names a concept that was never declared"
+    ]
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch06",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18319,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 5,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch06",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16639
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 6,
+    "rejected": []
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch07",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18247,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 6,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch07",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16643
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 0,
+    "rejected": [
+      "edge 'data-structures-and-algorithms-3' -> 'semantics' names a concept that was never declared",
+      "edge 'data-structures-and-algorithms-3' -> 'runtime-execution-model' names a concept that was never declared",
+      "edge 'linguistic-realization-low-level-programming-languages' -> 'abstraction-and-levels' names a concept that was never declared",
+      "edge 'models-of-computation' -> 'runtime-execution-model' names a concept that was never declared",
+      "edge 'machine-level-program-representation' -> 'program-representation-and-translation' names a concept that was never declared",
+      "edge 'computer-levels-of-abstraction' -> 'abstraction-and-levels' names a concept that was never declared"
+    ]
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch08",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18576,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 7,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch08",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16632
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 0,
+    "rejected": [
+      "edge 'computational-thinking' -> 'data-lifecycle-management' names a concept that was never declared",
+      "edge 'computational-thinking' -> 'data-quality-dimensions' names a concept that was never declared",
+      "edge 'computer-systems-organization' -> 'data-security-and-risk-management' names a concept that was never declared",
+      "edge 'operating-systems-reliability-and-security' -> 'data-security-and-risk-management' names a concept that was never declared",
+      "edge 'computer-science-and-the-future-of-society' -> 'privacy-and-ethics-in-data-management' names a concept that was never declared",
+      "edge 'software-engineering-fundamentals' -> 'data-governance' names a concept that was never declared",
+      "edge 'data-structures-and-algorithms' -> 'data-integration-and-interoperability' names a concept that was never declared"
+    ]
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch09",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18191,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 8,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch09",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16644
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 7,
+    "rejected": [
+      "edge 'introcs.2-1-computational-thinking' -> 'software-design-and-architecture' names a concept that was never declared"
+    ]
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch10",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18174,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 9,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch10",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16631
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 6,
+    "rejected": [
+      "edge 'introcs.2-2-architecting-solutions-with-adaptive-design-reuse-in-mind' -> 'pattern-reuse-for-adaptive-architectures' names a concept that was never declared",
+      "edge 'introcs.9-1-software-engineering-fundamentals' -> 'pattern-governance-and-lifecycle' names a concept that was never declared",
+      "edge 'introcs.9-2-software-engineering-process' -> 'pattern-governance-and-lifecycle' names a concept that was never declared"
+    ]
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch11",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18701,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 10,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch11",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16649
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 0,
+    "rejected": [
+      "edge 'software-engineering-fundamentals' -> 'microservices-vs-monolith' names a concept that was never declared",
+      "edge 'software-engineering-process' -> 'deployment-and-operational-architecture-for-web-apps' names a concept that was never declared",
+      "edge 'enterprise-and-solution-architectures-management' -> 'client-server-and-api-layering' names a concept that was never declared",
+      "edge 'patterns-management' -> 'microservices-vs-monolith' names a concept that was never declared",
+      "edge 'fundamental-os-concepts' -> 'deployment-and-operational-architecture-for-web-apps' names a concept that was never declared",
+      "edge 'reliability-and-security' -> 'authentication-authorization-and-session-models' names a concept that was never declared",
+      "edge 'data-management-systems' -> 'client-server-and-api-layering' names a concept that was never declared",
+      "edge 'relational-database-management-systems' -> 'client-server-and-api-layering' names a concept that was never declared"
+    ]
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch12",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18383,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 11,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch12",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16653
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 0,
+    "rejected": [
+      "edge 'Software Engineering 9' -> 'cloud-native-devops-and-automation' names a concept that was never declared",
+      "edge 'Software Engineering 9' -> 'microservices-and-service-decomposition' names a concept that was never declared",
+      "edge 'Infrastructure Abstraction Layer: Operating Systems 6' -> 'containers-and-immutable-deployables' names a concept that was never declared",
+      "edge '6.3 Processes and Concurrency' -> 'resilience-and-cloud-failure-model' names a concept that was never declared",
+      "edge 'Enterprise and Solution Architectures Management 10' -> 'microservices-and-service-decomposition' names a concept that was never declared",
+      "edge '12.1 Introduction to Cloud-Native Applications' -> 'twelve-factor-and-operational-principles' names a concept that was never declared"
+    ]
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch13",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18464,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 12,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch13",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16657
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 0,
+    "rejected": [
+      "edge 'cloud-native-principles' -> 'architecture-patterns-for-hybrid-multicloud' names a concept that was never declared",
+      "edge 'cloud-deployment-technologies' -> 'operations-and-management-in-multicloud' names a concept that was never declared",
+      "edge 'modern-web-application-architectures' -> 'cloud-mashup-integration' names a concept that was never declared",
+      "edge 'data-management-systems' -> 'data-and-workload-placement' names a concept that was never declared",
+      "edge 'software-engineering-process-and-devops' -> 'operations-and-management-in-multicloud' names a concept that was never declared",
+      "edge 'reliability-and-security-os-concepts' -> 'identity-security-and-governance-across-clouds' names a concept that was never declared"
+    ]
+  },
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch14",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 18156,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 13,
+      "findings_shown": 0,
+      "suppress_findings": true,
+      "target_section_id": "introcs.ch14",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16649
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 0,
+    "rejected": [
+      "edge 'software-engineering-9-1' -> 'it-service-management-itsm' names a concept that was never declared",
+      "edge 'software-engineering-9-2' -> 'itil-framework' names a concept that was never declared",
+      "edge 'enterprise-and-solution-architectures-management-10-2' -> 'cobit-governance' names a concept that was never declared",
+      "edge 'cyber-resources-qualities-and-cyber-computing-governance-14' -> 'risk-management-and-compliance' names a concept that was never declared",
+      "edge 'operating-systems-6-6' -> 'information-security-management-isms' names a concept that was never declared",
+      "edge 'software-engineering-9-1' -> 'metrics-and-continual-improvement' names a concept that was never declared"
+    ]
+  }
+]

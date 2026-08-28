@@ -1,0 +1,37 @@
+{
+  "run_id": "20260828T083754__mard__introcs__s42__548fe0",
+  "status": "ok",
+  "system": "mard",
+  "document_id": "introcs",
+  "seed": 42,
+  "wall_clock_s": 448.15,
+  "totals": {
+    "calls": 99,
+    "input_tokens": 94660,
+    "output_tokens": 109943,
+    "per_model": {
+      "gpt-5-mini": {
+        "input_tokens": 9527,
+        "output_tokens": 92821,
+        "cost": 0.18802375
+      },
+      "gpt-5.2": {
+        "input_tokens": 85133,
+        "output_tokens": 17122,
+        "cost": 0.38869075
+      }
+    },
+    "cost": 0.5767145,
+    "unpriced_models": [],
+    "stale_rates": []
+  },
+  "result": {
+    "compiled": true,
+    "concepts_accepted": 84,
+    "edges_accepted": 133,
+    "cross_chapter_edges": 119,
+    "never_declared_rejections": 0
+  },
+  "error": null,
+  "finished_at": "2026-08-28T08:45:23.005567+00:00"
+}

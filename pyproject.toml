@@ -30,6 +30,7 @@ packages = [
     "corpus",
     "provider",
     "vanilla",
+    "mard",
 ]
 
 [tool.setuptools.package-data]

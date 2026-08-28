@@ -20,6 +20,18 @@ Two design rules follow directly, and both are tested:
 The A1 ablation ("envelope removed", `docs/31-ABLATIONS.md`) is expressed here as
 `Envelope.stripped()` rather than as a flag threaded through the call sites, so the
 vanilla-RLM control is one obvious object and not a scattered condition.
+
+**The envelope has two channels, and the first real A1 run only removed one of
+them.** `docs/28-MARD_ARM_FINDINGS.md` §6/§7 (28 Aug 2026, Anugrah's call): running
+`.stripped()` and measuring near-unchanged cross-chapter structure did not
+contradict the envelope hypothesis — it left the hypothesis untested, because
+`.stripped()` empties the skeleton but `pass1.run_pass1`'s frozen `with_findings`
+accumulation keeps growing regardless, and `render()`'s findings block was never
+gated on the stripped state. Relabelled A1s (skeleton removed) rather than
+discarded — the run is real, it just isolates a different, also-real effect (Tier
+1 input tokens, not cross-chapter structure). `findings_suppressed()` below adds
+the other half, A1f (findings removed, skeleton kept), as a genuine second
+single-variable cut rather than editing `.stripped()`'s existing meaning.
 """
 
 from __future__ import annotations
@@ -72,6 +84,16 @@ class Envelope:
     directive: str | None = None
     target_section_id: str | None = None
     finding_window: int = field(default=DEFAULT_FINDING_WINDOW)
+    suppress_findings: bool = False
+    """A1f ablation switch: keep the skeleton, but never render `FINDINGS SO FAR`.
+
+    Deliberately a display-time gate on `render()`, not a change to `with_findings`
+    or `for_child` (both frozen in `envelope.pass1.run_pass1`): findings still
+    accumulate onto `self.findings` exactly as in MARD full, so `to_dict()`'s
+    `findings_total` still reports the real count for auditing, and this field —
+    set once, at the start, via `findings_suppressed()` — survives every
+    `replace()` call in `with_findings`/`for_child` because neither overrides it.
+    """
 
     @classmethod
     def from_skeleton(cls, skeleton: Skeleton) -> Envelope:
@@ -111,6 +133,16 @@ class Envelope:
             finding_window=self.finding_window,
         )
 
+    def findings_suppressed(self) -> Envelope:
+        """Ablation A1f: findings removed, skeleton kept.
+
+        The complement of `stripped()` (A1s: skeleton removed, findings kept) —
+        together the two isolate the envelope's two channels one at a time,
+        instead of `stripped()`'s original all-at-once cut, which turned out to
+        remove only the skeleton in practice (see the module docstring).
+        """
+        return replace(self, suppress_findings=True)
+
     @property
     def is_stripped(self) -> bool:
         return self.skeleton.is_empty and not self.findings and self.directive is None
@@ -129,7 +161,7 @@ class Envelope:
         if not self.skeleton.is_empty:
             blocks.append("## STRUCTURAL MAP\n" + self.skeleton.render())
 
-        if self.findings:
+        if self.findings and not self.suppress_findings:
             recent = self.findings[-self.finding_window :]
             omitted = len(self.findings) - len(recent)
             header = "## FINDINGS SO FAR"
@@ -156,7 +188,10 @@ class Envelope:
             "provenance": self.skeleton.provenance,
             "skeleton_sections": len(self.skeleton.sections),
             "findings_total": len(self.findings),
-            "findings_shown": min(len(self.findings), self.finding_window),
+            "findings_shown": 0
+            if self.suppress_findings
+            else min(len(self.findings), self.finding_window),
+            "suppress_findings": self.suppress_findings,
             "target_section_id": self.target_section_id,
             "has_directive": self.directive is not None,
             "is_stripped": self.is_stripped,

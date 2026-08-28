@@ -1,0 +1,6 @@
+{"at": "2026-08-28T08:06:50.545060+00:00", "kind": "mard_pass0", "pass": 0, "prompt_version": "pass0-topics-v1", "section_count": 120, "provenance": "derived_from_text", "degenerate": false, "labeller": "SyncTopicLabeller", "prompt_chars": 12985, "topics_requested": 120, "topics_accepted": 120, "topics_invented_and_dropped": [], "labelled_fraction": 1.0, "estimated_render_tokens": 3930}
+{"at": "2026-08-28T08:06:50.546060+00:00", "kind": "envelope_snapshot", "pass": 0, "path": "pass_0_initial.json"}
+{"at": "2026-08-28T08:09:43.110585+00:00", "kind": "envelope_snapshot", "pass": 1, "path": "pass_1_final.json"}
+{"at": "2026-08-28T08:09:43.110955+00:00", "kind": "mard_pass1", "chapters_explored": 14, "chapters_total": 15, "concepts_accepted": 84, "edges_accepted": 126}
+{"at": "2026-08-28T08:09:43.111207+00:00", "kind": "mard_cross_chapter_edges", "cross_chapter_edges": 121, "total_edges": 126, "never_declared_rejections": 0}
+{"at": "2026-08-28T08:09:43.111874+00:00", "kind": "mard_unsequenceable_plan", "error": "prerequisite cycle among these concepts, so no study sequence can satisfy them: "}

@@ -111,6 +111,25 @@ def test_stripped_envelope_is_the_a1_ablation():
     assert stripped.document_id == full.document_id
 
 
+def test_findings_suppressed_is_the_a1f_ablation():
+    """A1f removes only the findings channel — skeleton and directive still render,
+    and findings still accumulate (for auditing), they are just never shown."""
+    parent = Envelope.from_skeleton(_skeleton(_section(0, "Intro", 1, 10))).with_findings(
+        Finding(section_id="doc.intro", pass_index=1, concepts=("paging",))
+    )
+
+    suppressed = parent.findings_suppressed()
+    child = suppressed.for_child("doc.intro", "Do the thing.")
+
+    assert not child.is_stripped
+    assert "STRUCTURAL MAP" in child.render()
+    assert "FINDINGS SO FAR" not in child.render()
+    assert "paging" not in child.render()
+    assert len(child.findings) == 1  # still accumulated, just not rendered
+    assert child.to_dict()["findings_total"] == 1
+    assert child.to_dict()["findings_shown"] == 0
+
+
 def test_directive_is_rendered_last():
     envelope = Envelope.from_skeleton(_skeleton(_section(0, "Intro", 1, 10))).for_child(
         "doc.intro", "THE INSTRUCTION"

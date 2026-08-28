@@ -5,7 +5,7 @@
     "set_on": "2026-08-22",
     "note": "Rs 75,000 at Rs 95.13/USD on 9 Aug 2026, rounded down"
   },
-  "spent_usd": 2.65663,
+  "spent_usd": 8.500793,
   "uncounted_runs": [],
   "entries": [
     {
@@ -39,6 +39,102 @@
       "seed": 42,
       "cost_usd": 1.6001845000000001,
       "at": "2026-08-27T20:08:08.626382+00:00"
+    },
+    {
+      "run_id": "20260828T075321__mard_smoke__introcs__s0__e4f7f0",
+      "system": "mard_smoke",
+      "document_id": "introcs",
+      "seed": 0,
+      "cost_usd": 0.08614775,
+      "at": "2026-08-28T07:54:33.111860+00:00"
+    },
+    {
+      "run_id": "20260828T080609__mard__introcs__s11__4a62fd",
+      "system": "mard",
+      "document_id": "introcs",
+      "seed": 11,
+      "cost_usd": 0.37554475,
+      "at": "2026-08-28T08:09:43.175624+00:00"
+    },
+    {
+      "run_id": "20260828T081414__mard__introcs__s11__a38379",
+      "system": "mard",
+      "document_id": "introcs",
+      "seed": 11,
+      "cost_usd": 0.5824105,
+      "at": "2026-08-28T08:21:16.416683+00:00"
+    },
+    {
+      "run_id": "20260828T082226__mard__introcs__s11__13de68",
+      "system": "mard",
+      "document_id": "introcs",
+      "seed": 11,
+      "cost_usd": 0.590031,
+      "at": "2026-08-28T08:29:50.775283+00:00"
+    },
+    {
+      "run_id": "20260828T083017__mard__introcs__s23__d03195",
+      "system": "mard",
+      "document_id": "introcs",
+      "seed": 23,
+      "cost_usd": 0.5684137499999999,
+      "at": "2026-08-28T08:37:34.549244+00:00"
+    },
+    {
+      "run_id": "20260828T083754__mard__introcs__s42__548fe0",
+      "system": "mard",
+      "document_id": "introcs",
+      "seed": 42,
+      "cost_usd": 0.5767145,
+      "at": "2026-08-28T08:45:23.006774+00:00"
+    },
+    {
+      "run_id": "20260828T084613__mard_a1__introcs__s11__a1a24e",
+      "system": "mard_a1",
+      "document_id": "introcs",
+      "seed": 11,
+      "cost_usd": 0.49306125,
+      "at": "2026-08-28T08:52:54.491918+00:00"
+    },
+    {
+      "run_id": "20260828T085334__mard_a1__introcs__s23__6613c4",
+      "system": "mard_a1",
+      "document_id": "introcs",
+      "seed": 23,
+      "cost_usd": 0.5016769999999999,
+      "at": "2026-08-28T09:00:13.773294+00:00"
+    },
+    {
+      "run_id": "20260828T090031__mard_a1__introcs__s42__77b25a",
+      "system": "mard_a1",
+      "document_id": "introcs",
+      "seed": 42,
+      "cost_usd": 0.49793124999999994,
+      "at": "2026-08-28T09:07:04.331080+00:00"
+    },
+    {
+      "run_id": "20260828T092525__mard_a1f__introcs__s11__4372f1",
+      "system": "mard_a1f",
+      "document_id": "introcs",
+      "seed": 11,
+      "cost_usd": 0.5346292500000001,
+      "at": "2026-08-28T09:32:58.651773+00:00"
+    },
+    {
+      "run_id": "20260828T093323__mard_a1f__introcs__s23__c3d7d1",
+      "system": "mard_a1f",
+      "document_id": "introcs",
+      "seed": 23,
+      "cost_usd": 0.514527,
+      "at": "2026-08-28T09:40:36.873368+00:00"
+    },
+    {
+      "run_id": "20260828T095152__mard_a1f__introcs__s42__2f00df",
+      "system": "mard_a1f",
+      "document_id": "introcs",
+      "seed": 42,
+      "cost_usd": 0.523074,
+      "at": "2026-08-28T09:58:50.135228+00:00"
     }
   ]
 }

@@ -174,3 +174,49 @@ the paper unchanged.
 - **Escalate rather than invent.** Four things in this repo are currently wrong because
   somebody's plausible-sounding inference went unchecked; all four are listed in `docs/24`
   §7 and each was caught by running the thing rather than reasoning about it.
+
+---
+
+## 6. What landed, 28 Aug 2026
+
+Both tasks complete. 232 tests pass; `ruff`, `mypy` and `scripts/preflight.sh` clean. Nothing
+outside the §1 footprint was touched.
+
+### Task A — `eval/flatten.py`
+
+- **A text-level strip would have been a no-op ablation, and the session caught that.**
+  `ingest.sections.build_sections` reads block `kind`/`level` (derived from PDF font metrics),
+  never `document.txt`'s ATX markers — so stripping `#` characters alone would have left the
+  structure fully intact while appearing to remove it. The flattener therefore relabels
+  `kind="heading"` → `"body"` at the block level. **This is the difference between a real
+  control and one that silently does nothing.**
+- `[[page:N]]` markers dropped, as §2 leaned toward; documented in the module docstring.
+- `corpus/introcs_flat/` exists with a pinned manifest recording `shuffle_seed: 20260827` and
+  the section permutation.
+- Verified through the real `build_sections` → `run_pass0` path rather than a hand-built empty
+  list: `is_empty=True`, `degenerate=True`.
+- The flat configuration has **not** been run — it needs `mard/run.py`.
+
+### Task B — `eval/groundedness.py`
+
+- Classifies via a `SOURCE:` marker check **corroborated by `input_tokens`**, which is robust
+  against `vanilla/run.py`'s 500-character prompt-preview truncation.
+- **Seed 42 measured at 41/75 ungrounded**, reproducing `docs/24` §1's hand-trace exactly.
+  See `docs/24` §4 for the one confirmation still outstanding.
+- `mis-sourced` deliberately **not** implemented — no expected chapter span is recorded, and
+  source text is usually truncated past its origin. Reasons in the docstring.
+
+### The finding that outgrew the brief
+
+Seeds 11 and 23 have **no per-concept generating call at all**; the root wrote every
+explanation itself. That makes §3's validation gate uncheckable as written, and it turned out
+to be a larger result than the detector.
+
+The session stopped and escalated rather than reinterpreting its own gate — Anugrah confirmed
+the seed-42 hand-trace match was the real gate and it passed, then asked for three follow-ups:
+a fourth concept class for root-authored writing, confirmation that the detector's 41/75 and
+the old `missing_outline` figure are independent (they are not — same signal, two routes),
+and this write-up. All three landed in
+[`docs/32-GROUNDEDNESS_RESULTS_AND_ARCHITECTURAL_INSTABILITY.md`](32-GROUNDEDNESS_RESULTS_AND_ARCHITECTURAL_INSTABILITY.md),
+now canonical; `docs/24` §4 and §8 point to it. Escalating rather than reinterpreting the gate
+was the correct call and is the behaviour these briefs are trying to produce.

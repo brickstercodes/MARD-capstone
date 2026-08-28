@@ -162,6 +162,16 @@ def compile_master_plan(
     """Turn Pass 1's findings into a Master Plan the tier boundary will accept."""
     spans = {section.section_id: section for section in sections}
 
+    concepts, merges = _merge_concepts(concepts)
+    aliases_by_id = {
+        merge["concept_id"]: tuple(
+            dict.fromkeys(  # de-duplicate, preserve order, drop the kept label itself
+                occ["label"] for occ in merge["occurrences"] if occ["label"] != merge["kept_label"]
+            )
+        )
+        for merge in merges
+    }
+
     unanchored = [c.concept_id for c in concepts if c.section_id not in spans]
     if unanchored:
         raise UnsequenceablePlanError(
@@ -181,7 +191,7 @@ def compile_master_plan(
             "id": concept.concept_id,
             "label": concept.label,
             "source": _span_payload(spans[concept.section_id]),
-            "aliases": [],
+            "aliases": list(aliases_by_id.get(concept.concept_id, ())),
         }
         for concept in sorted(concepts, key=lambda c: book_rank[c.concept_id])
     ]
@@ -237,6 +247,7 @@ def compile_master_plan(
 
     trace = {
         "concepts": len(concept_payload),
+        "concepts_merged": merges,
         "edges": len(edge_payload),
         "edges_by_evidence": _count_by(edges),
         "edges_dropped": dropped_edges,
@@ -246,6 +257,71 @@ def compile_master_plan(
         "plan_order": order,
     }
     return CompiledPlan(plan=plan, trace=trace)
+
+
+def _merge_concepts(
+    concepts: list[ExtractedConcept],
+) -> tuple[list[ExtractedConcept], list[dict[str, Any]]]:
+    """Collapse a concept id independently declared by more than one chapter into
+    one node — a merge, not a rejection — and record every contributing
+    declaration in the trace.
+
+    `envelope.pass1.run_pass1` explores one chapter at a time, and a chapter never
+    learns of an id a later chapter will choose — `known_ids` only accumulates
+    forward. So two chapters can legitimately land on the same "natural" id
+    (verified first-hand: seed 11, 28 Aug 2026, two chapters both produced
+    `abstraction-and-modeling`). Left as two nodes, this used to make
+    `_topological_order`'s "did everyone get ordered" check compare a raw
+    concept-id *list* (with the duplicate counted twice) against its own *set* of
+    unique ids, misreporting a nonexistent prerequisite cycle with an empty list of
+    implicated concepts.
+
+    Anugrah's call (28 Aug 2026): this recurrence is signal the envelope's
+    cross-chapter accumulation is meant to surface — the same concept genuinely
+    re-appearing — not noise to discard. `plan.models.Concept.source` is one
+    `SourceSpan`, not a list, so the merge keeps the earliest (book-order)
+    declaration's span as the concept's citation anchor — accurate, not a
+    synthesised range spanning pages a chapter never wrote — while every other
+    declaration's label survives into `Concept.aliases`
+    (`compile_master_plan`'s caller), and every declaration's chapter, section and
+    directive is recorded in this trace, not only the surviving one. Edges are
+    untouched by this function: an edge naming this id already refers to the one
+    merged node regardless of which chapter's declaration produced it, so nothing
+    here is dropped from `edges` the way `_clean_edges` drops a duplicate pair.
+    """
+    by_id: dict[str, list[ExtractedConcept]] = {}
+    order: list[str] = []
+    for concept in concepts:
+        if concept.concept_id not in by_id:
+            order.append(concept.concept_id)
+        by_id.setdefault(concept.concept_id, []).append(concept)
+
+    kept: list[ExtractedConcept] = []
+    merges: list[dict[str, Any]] = []
+    for concept_id in order:
+        occurrences = by_id[concept_id]
+        primary = occurrences[0]  # earliest chapter — pass1 explores in book order
+        kept.append(primary)
+        if len(occurrences) > 1:
+            merges.append(
+                {
+                    "concept_id": concept_id,
+                    "kept_chapter_id": primary.chapter_id,
+                    "kept_section_id": primary.section_id,
+                    "kept_label": primary.label,
+                    "occurrences": [
+                        {
+                            "chapter_id": occ.chapter_id,
+                            "section_id": occ.section_id,
+                            "label": occ.label,
+                            "directive": occ.directive,
+                        }
+                        for occ in occurrences
+                    ],
+                }
+            )
+
+    return kept, merges
 
 
 def _clean_edges(

@@ -23,6 +23,7 @@
 \IEEEoverridecommandlockouts
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -557,7 +558,63 @@ The join additionally validates non-empty output per plan step and raises
 rather than returning a partial artefact, so a run that produced a short
 result fails visibly instead of scoring as a complete but poor one.
 
+\subsubsection{What MARD changes, and what it inherits}
+\label{sec:comparison}
+Table~\ref{tab:arch} sets the two arms side by side. It is grouped deliberately: the
+upper block is what MARD takes unchanged from the base paper, and only the lower
+block is ours. Presenting the comparison the other way round---differences
+first, shared machinery unstated---would let a reader credit MARD with the
+recursion and the tiering, which are not our contribution
+(Section~\ref{sec:baselib}).
+
+\begin{table*}[!t]
+\caption{Architectural Comparison of the Two Arms. Both Run on One
+Implementation, at Matched Recursion Depth, on Identical Inputs. The Upper
+Block is Inherited from the Base Paper and is Not Claimed as a Contribution}
+\label{tab:arch}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{3.5cm}p{6.0cm}p{6.4cm}@{}}
+\toprule
+\textbf{Aspect} & \textbf{Vanilla RLM (B1)} & \textbf{MARD} \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Inherited from the base paper --- identical in both arms, and not our contribution}} \\
+\midrule
+Document placement & Bound to a REPL variable; never enters a prompt & Identical \\
+Model tiering & Frontier root, budget sub-calls & Frontier Scout, budget Swarm --- the same economics \\
+Recursion depth & Sub-calls are plain completions & Matched, by construction \\
+Input & Cleaned text stream; front matter excluded, publisher outline withheld & Identical, by construction \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Where MARD differs}} \\
+\midrule
+Exploration strategy & Authored at run time by the root model as REPL code & Fixed pass structure; the model supplies findings, not control flow \\
+Structural map & None. Any structure must be re-derived by code the root writes & Pass~0 skeleton, derived from the document's own text \\
+What a sub-call receives & A raw text slice & Slice \emph{plus} skeleton, accumulated findings, and a parent directive \\
+State across calls & None; each sub-call is independent & Envelope accumulates; a later chapter sees earlier chapters' findings \\
+Direction of metadata & Upward, observational --- recorded after the fact & Downward, operative --- enters the prompt before the call runs \\
+Unit of dispatch & Chosen by the root at run time & Chapter for exploration; section for generation \\
+Intermediate artefact & None; free text inside the root's own history & Typed Master Plan: concept graph, ordered sequence, reordering rationale \\
+Source binding at generation & The model matches text to a concept at generation time & The brief is constructed from the plan's recorded source span \\
+Output ordering & Whatever the root emits & Master Plan order, i.e.\ dependency order \\
+Malformed intermediate & No intermediate to validate; execution proceeds & Schema validation at the tier boundary; a malformed plan fails loudly \\
+Empty generation & Included in the output; run reports success & Join validates non-empty text per plan step and raises \\
+Parallelism & As the root's code chooses & $N$ builders fork--join; wall-clock is $\max_i$, not $\sum_i$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Three rows in the lower block are worth reading together, because they describe
+a single property rather than three. \emph{Source binding}, \emph{malformed
+intermediate} and \emph{empty generation} are the points at which MARD can
+refuse to proceed. Vanilla RLM has no equivalent of any of them: it has no
+typed intermediate to validate, and no record of which span a given concept
+should have been written from, so there is nothing against which a generation
+step could be checked. That asymmetry is the mechanism behind the
+faithfulness observation reported in Section~\ref{sec:grounding}, and it is
+architectural rather than incidental.
+
 \subsubsection{The stated precondition}
+\label{sec:precondition}
 MARD requires exploitable structure. On a flat context there is no skeleton
 to extract, $F$ carries no positional meaning, and the envelope reduces to
 overhead. We therefore predict that MARD degenerates to vanilla-RLM behaviour
@@ -580,7 +637,53 @@ evaluation artefacts and is run in the full study
 
 \subsection{Algorithm and Implementation}
 \label{sec:impl}
-\noindent\textbf{Model pair.}
+\label{sec:setup}
+
+\subsubsection{The algorithm}
+Algorithm~\ref{alg:mard} states MARD end to end. Three lines carry properties
+argued for elsewhere in this section and are worth reading as such. Line~3 is
+the boundary condition of Section~\ref{sec:precondition}: a document from
+which no skeleton can be derived returns a recorded degenerate condition
+rather than an error, so graceful degeneration appears in the run log as a
+finding. Line~9 is the validation boundary---an edge naming a concept no call
+has declared is rejected and logged, which makes the rejection log itself a
+measurement of what exploration could not reach. Line~16 is the source
+binding: a builder's brief is constructed from the plan's recorded span, so
+generation never depends on a model matching text to a concept.
+
+\begin{algorithm}[!t]
+\caption{MARD (two-pass configuration)}
+\label{alg:mard}
+\begin{algorithmic}[1]
+\REQUIRE document $D$ with section index; frontier model $M_1$; budget model $M_2$
+\ENSURE dependency-ordered artefact, or a loud failure
+\STATE $K \leftarrow \textsc{Skeleton}(D)$ \COMMENT{Pass 0; text-derived only}
+\IF{$K = \emptyset$}
+  \RETURN \textsc{Degenerate} \COMMENT{O4 boundary; recorded, not an error}
+\ENDIF
+\STATE $E \leftarrow \textsc{Envelope}(K,\ F {=} \emptyset,\ d {=} \textbf{nil})$
+\FOR{each chapter $c \in K$ \textbf{in book order}}
+  \STATE $E_c \leftarrow E.\textsc{ForChild}(c,\ \textsc{Directive}(c))$
+  \STATE $R \leftarrow M_1(\textsc{Render}(E_c) \,\Vert\, \textsc{Text}(c))$ \COMMENT{Pass 1}
+  \STATE $C_c, X_c \leftarrow \textsc{Validate}(R,\ \textsc{Known})$ \COMMENT{reject undeclared}
+  \STATE $E \leftarrow E.\textsc{WithFindings}(c,\ C_c,\ X_c)$ \COMMENT{envelope grows}
+\ENDFOR
+\STATE $P \leftarrow \textsc{CompilePlan}(C,\ X,\ K)$ \COMMENT{typed Master Plan}
+\IF{$P$ fails schema validation}
+  \STATE \textbf{fail loudly} \COMMENT{never dispatch on a malformed plan}
+\ENDIF
+\STATE $B \leftarrow \textsc{BriefsFor}(P)$ \COMMENT{each brief carries $P$'s recorded span}
+\FORALL{$b \in B$ \textbf{in parallel}}
+  \STATE $s_b \leftarrow M_2(\textsc{Prompt}(b))$ \COMMENT{Tier 2; wall-clock $\max_i$}
+\ENDFOR
+\IF{any $s_b$ is empty}
+  \STATE \textbf{raise} \textsc{IncompleteArtefact}
+\ENDIF
+\RETURN $\textsc{Join}(\{s_b\},\ P.\textsc{sequence})$ \COMMENT{plan order, not book order}
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Model pair, parity and cost}
 The frontier tier (Scout) is \texttt{gpt-5.2}; the budget tier (Swarm, and the
 baseline's sub-calls) is \texttt{gpt-5-mini}. Rates were read from the
 provider's own pricing page on the day the rate card was written and are
@@ -670,9 +773,6 @@ assumed ratio; pending confirmation with a tokeniser.
 averaged, for the reason given in Section~\ref{sec:variance}.
 \end{minipage}
 \end{table}
-
-\subsection{Experimental Setup}
-\label{sec:setup}
 
 \subsubsection{Corpus and licensing}
 Our corpus consists of openly licensed textbooks spanning distinct domains,
@@ -825,15 +925,35 @@ from project documentation rather than from the implementation's call
 structure. Confirm against the Pass~1 source before this paragraph is final.}
 
 \subsubsection{Metrics}
-Every run of every system records seven fields, and a number that cannot be
-traced to all seven from a logged run is not admitted to this paper: task
-score; tokens consumed (input and output, summed over every model call and
-reported separately in the log); calls issued, split by tier; cost at the
-same-day published provider rate; wall-clock latency (both $\max$ and $\sum$
-over builders); run identifier; and a full configuration snapshot including
-model identifiers, prompt-template versions, depth setting, active ablation,
-and document. Systems producing per-concept output additionally record the
-groundedness fields defined in Section~\ref{sec:grounding}.
+Every run of every system records the fields in Table~\ref{tab:fields}. A
+number that cannot be traced back to all of them from a logged run is not
+admitted to this paper.
+
+\begin{table}[!t]
+\caption{Recorded Per Run. A Number Not Traceable to All of These From a
+Logged Run is Not Admitted}
+\label{tab:fields}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{2.2cm}p{5.6cm}@{}}
+\toprule
+\textbf{Field} & \textbf{Definition} \\
+\midrule
+Task score & Explanation quality against document-native ground truth \\
+Tokens & Input and output, summed over every model call, logged separately \\
+Calls issued & Split by tier \\
+Cost & At the same-day published provider rate \\
+Wall-clock & Both $\max_i$ and $\sum_i$ over builders, so the parallelism claim is checkable \\
+Run identifier & System, document, repeat \\
+Config snapshot & Model identifiers, prompt-template versions, depth, active ablation, document, library revision \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Additionally, for systems producing per-concept output}} \\
+\midrule
+Groundedness rate & Grounded concepts as a fraction of the total (Section~\ref{sec:grounding}) \\
+Regenerations & Concepts with $\geq$1 discarded prior attempt \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \noindent\textbf{Task score.}
 The evaluated output modality is explanations only. Flashcards, quizzes and

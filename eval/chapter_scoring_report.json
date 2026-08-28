@@ -1,0 +1,4526 @@
+[
+  {
+    "run_id": "20260827T193317__vanilla_rlm__introcs__s11__ec9d17",
+    "system": "vanilla_rlm",
+    "seed": 11,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 12,
+            "fraction": 0.8333333333333334
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 7,
+            "total": 12,
+            "fraction": 0.5833333333333334
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 12,
+            "fraction": 0.25
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 7,
+            "total": 7,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 7,
+            "total": 7,
+            "fraction": 1.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 7,
+            "fraction": 1.0
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 19,
+            "total": 20,
+            "fraction": 0.95
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 16,
+            "total": 20,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 13,
+            "fraction": 0.9230769230769231
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 13,
+            "fraction": 0.9230769230769231
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 13,
+            "fraction": 0.6923076923076923
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 13,
+            "total": 20,
+            "fraction": 0.65
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 15,
+            "fraction": 0.8666666666666667
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 15,
+            "fraction": 0.7333333333333333
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 15,
+            "fraction": 0.3333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 20,
+            "fraction": 0.2
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 30,
+            "total": 35,
+            "fraction": 0.8571428571428571
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 20,
+            "total": 35,
+            "fraction": 0.5714285714285714
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 35,
+            "fraction": 0.2571428571428571
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 9,
+            "total": 11,
+            "fraction": 0.8181818181818182
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 11,
+            "fraction": 0.7272727272727273
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 11,
+            "fraction": 0.6363636363636364
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 10,
+            "fraction": 0.9
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 28,
+            "total": 28,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 28,
+            "total": 28,
+            "fraction": 1.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 25,
+            "total": 28,
+            "fraction": 0.8928571428571429
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 15,
+            "fraction": 0.6666666666666666
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 15,
+            "fraction": 0.5333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 16,
+            "total": 17,
+            "fraction": 0.9411764705882353
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 16,
+            "total": 17,
+            "fraction": 0.9411764705882353
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 10,
+            "total": 17,
+            "fraction": 0.5882352941176471
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 20,
+            "total": 20,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 17,
+            "total": 20,
+            "fraction": 0.85
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 14,
+            "total": 20,
+            "fraction": 0.7
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 241,
+        "total": 243,
+        "fraction": 0.9917695473251029
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 236,
+        "total": 243,
+        "fraction": 0.9711934156378601
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 222,
+        "total": 243,
+        "fraction": 0.9135802469135802
+      }
+    }
+  },
+  {
+    "run_id": "20260827T194259__vanilla_rlm__introcs__s23__a39374",
+    "system": "vanilla_rlm",
+    "seed": 23,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 9,
+            "total": 12,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 6,
+            "total": 12,
+            "fraction": 0.5
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 12,
+            "fraction": 0.25
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 7,
+            "total": 7,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 6,
+            "total": 7,
+            "fraction": 0.8571428571428571
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 18,
+            "total": 20,
+            "fraction": 0.9
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 20,
+            "fraction": 0.3
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 11,
+            "total": 13,
+            "fraction": 0.8461538461538461
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 13,
+            "fraction": 0.6153846153846154
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 13,
+            "fraction": 0.6153846153846154
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 7,
+            "total": 20,
+            "fraction": 0.35
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 20,
+            "fraction": 0.15
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 8,
+            "total": 15,
+            "fraction": 0.5333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 6,
+            "total": 15,
+            "fraction": 0.4
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 1,
+            "total": 15,
+            "fraction": 0.06666666666666667
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 20,
+            "fraction": 0.2
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 35,
+            "fraction": 0.42857142857142855
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 35,
+            "fraction": 0.2571428571428571
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 35,
+            "fraction": 0.08571428571428572
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 11,
+            "fraction": 0.9090909090909091
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 6,
+            "total": 11,
+            "fraction": 0.5454545454545454
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 11,
+            "fraction": 0.2727272727272727
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 10,
+            "fraction": 0.9
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 10,
+            "fraction": 0.5
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 25,
+            "total": 28,
+            "fraction": 0.8928571428571429
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 22,
+            "total": 28,
+            "fraction": 0.7857142857142857
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 17,
+            "total": 28,
+            "fraction": 0.6071428571428571
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 15,
+            "fraction": 0.6666666666666666
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 15,
+            "fraction": 0.5333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 17,
+            "fraction": 0.8823529411764706
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 13,
+            "total": 17,
+            "fraction": 0.7647058823529411
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 11,
+            "total": 17,
+            "fraction": 0.6470588235294118
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 19,
+            "total": 20,
+            "fraction": 0.95
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 14,
+            "total": 20,
+            "fraction": 0.7
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 20,
+            "fraction": 0.25
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 241,
+        "total": 243,
+        "fraction": 0.9917695473251029
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 233,
+        "total": 243,
+        "fraction": 0.9588477366255144
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 215,
+        "total": 243,
+        "fraction": 0.8847736625514403
+      }
+    }
+  },
+  {
+    "run_id": "20260827T195512__vanilla_rlm__introcs__s42__1dbe85",
+    "system": "vanilla_rlm",
+    "seed": 42,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 8,
+            "total": 12,
+            "fraction": 0.6666666666666666
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 7,
+            "total": 12,
+            "fraction": 0.5833333333333334
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 12,
+            "fraction": 0.3333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 2,
+            "total": 7,
+            "fraction": 0.2857142857142857
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 7,
+            "fraction": 0.0
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 13,
+            "total": 20,
+            "fraction": 0.65
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 20,
+            "fraction": 0.3
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 9,
+            "total": 13,
+            "fraction": 0.6923076923076923
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 13,
+            "fraction": 0.6153846153846154
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 13,
+            "fraction": 0.46153846153846156
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 20,
+            "fraction": 0.2
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 1,
+            "total": 15,
+            "fraction": 0.06666666666666667
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 0,
+            "total": 15,
+            "fraction": 0.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 15,
+            "fraction": 0.0
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 5,
+            "total": 20,
+            "fraction": 0.25
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 3,
+            "total": 20,
+            "fraction": 0.15
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 1,
+            "total": 20,
+            "fraction": 0.05
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 35,
+            "fraction": 0.2857142857142857
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 5,
+            "total": 35,
+            "fraction": 0.14285714285714285
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 35,
+            "fraction": 0.0
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": false,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 0,
+            "total": 11,
+            "fraction": null
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 0,
+            "total": 11,
+            "fraction": null
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 11,
+            "fraction": null
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": false,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 0,
+            "total": 10,
+            "fraction": null
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 0,
+            "total": 10,
+            "fraction": null
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 10,
+            "fraction": null
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": false,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 0,
+            "total": 28,
+            "fraction": null
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 0,
+            "total": 28,
+            "fraction": null
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 28,
+            "fraction": null
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": false,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 0,
+            "total": 15,
+            "fraction": null
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 0,
+            "total": 15,
+            "fraction": null
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 15,
+            "fraction": null
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 7,
+            "total": 17,
+            "fraction": 0.4117647058823529
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 4,
+            "total": 17,
+            "fraction": 0.23529411764705882
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 1,
+            "total": 17,
+            "fraction": 0.058823529411764705
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": false,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 0,
+            "total": 20,
+            "fraction": null
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 0,
+            "total": 20,
+            "fraction": null
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 20,
+            "fraction": null
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 233,
+        "total": 243,
+        "fraction": 0.9588477366255144
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 218,
+        "total": 243,
+        "fraction": 0.897119341563786
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 182,
+        "total": 243,
+        "fraction": 0.7489711934156379
+      }
+    }
+  },
+  {
+    "run_id": "20260828T082226__mard__introcs__s11__13de68",
+    "system": "mard",
+    "seed": 11,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 4,
+            "total": 12,
+            "fraction": 0.3333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 2,
+            "total": 12,
+            "fraction": 0.16666666666666666
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 12,
+            "fraction": 0.0
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 5,
+            "total": 7,
+            "fraction": 0.7142857142857143
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 20,
+            "fraction": 0.7
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 20,
+            "fraction": 0.15
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 13,
+            "fraction": 0.9230769230769231
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 13,
+            "fraction": 0.8461538461538461
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 13,
+            "fraction": 0.6153846153846154
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 20,
+            "fraction": 0.7
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 20,
+            "fraction": 0.2
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 15,
+            "fraction": 0.8666666666666667
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 15,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 18,
+            "total": 20,
+            "fraction": 0.9
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 13,
+            "total": 20,
+            "fraction": 0.65
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 20,
+            "fraction": 0.35
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 30,
+            "total": 35,
+            "fraction": 0.8571428571428571
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 18,
+            "total": 35,
+            "fraction": 0.5142857142857142
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 11,
+            "total": 35,
+            "fraction": 0.3142857142857143
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 8,
+            "total": 11,
+            "fraction": 0.7272727272727273
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 6,
+            "total": 11,
+            "fraction": 0.5454545454545454
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 11,
+            "fraction": 0.36363636363636365
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 8,
+            "total": 10,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 10,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 10,
+            "fraction": 0.3
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 22,
+            "total": 28,
+            "fraction": 0.7857142857142857
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 18,
+            "total": 28,
+            "fraction": 0.6428571428571429
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 12,
+            "total": 28,
+            "fraction": 0.42857142857142855
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 15,
+            "fraction": 0.8666666666666667
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 15,
+            "fraction": 0.6666666666666666
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 15,
+            "fraction": 0.6
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 17,
+            "fraction": 0.8235294117647058
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 17,
+            "fraction": 0.6470588235294118
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 17,
+            "fraction": 0.23529411764705882
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 20,
+            "fraction": 0.5
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 20,
+            "fraction": 0.45
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 241,
+        "total": 243,
+        "fraction": 0.9917695473251029
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 232,
+        "total": 243,
+        "fraction": 0.9547325102880658
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 212,
+        "total": 243,
+        "fraction": 0.8724279835390947
+      }
+    }
+  },
+  {
+    "run_id": "20260828T083017__mard__introcs__s23__d03195",
+    "system": "mard",
+    "seed": 23,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 8,
+            "total": 12,
+            "fraction": 0.6666666666666666
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 7,
+            "total": 12,
+            "fraction": 0.5833333333333334
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 12,
+            "fraction": 0.25
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 20,
+            "fraction": 0.45
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 20,
+            "fraction": 0.25
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 13,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 13,
+            "total": 13,
+            "fraction": 1.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 13,
+            "fraction": 0.6923076923076923
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 16,
+            "total": 20,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 20,
+            "fraction": 0.35
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 15,
+            "fraction": 0.8666666666666667
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 15,
+            "fraction": 0.6666666666666666
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 15,
+            "fraction": 0.26666666666666666
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 20,
+            "fraction": 0.2
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 24,
+            "total": 35,
+            "fraction": 0.6857142857142857
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 15,
+            "total": 35,
+            "fraction": 0.42857142857142855
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 35,
+            "fraction": 0.2571428571428571
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 8,
+            "total": 11,
+            "fraction": 0.7272727272727273
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 5,
+            "total": 11,
+            "fraction": 0.45454545454545453
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 11,
+            "fraction": 0.36363636363636365
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 10,
+            "fraction": 0.7
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 28,
+            "total": 28,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 26,
+            "total": 28,
+            "fraction": 0.9285714285714286
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 21,
+            "total": 28,
+            "fraction": 0.75
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 15,
+            "fraction": 0.8666666666666667
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 15,
+            "fraction": 0.5333333333333333
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 15,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 17,
+            "fraction": 0.7058823529411765
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 17,
+            "fraction": 0.47058823529411764
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 2,
+            "total": 17,
+            "fraction": 0.11764705882352941
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 16,
+            "total": 20,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 20,
+            "fraction": 0.3
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 239,
+        "total": 243,
+        "fraction": 0.9835390946502057
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 234,
+        "total": 243,
+        "fraction": 0.9629629629629629
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 211,
+        "total": 243,
+        "fraction": 0.8683127572016461
+      }
+    }
+  },
+  {
+    "run_id": "20260828T083754__mard__introcs__s42__548fe0",
+    "system": "mard",
+    "seed": 42,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 9,
+            "total": 12,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 4,
+            "total": 12,
+            "fraction": 0.3333333333333333
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 0,
+            "total": 12,
+            "fraction": 0.0
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 20,
+            "fraction": 0.45
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 20,
+            "fraction": 0.3
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 13,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 13,
+            "fraction": 0.9230769230769231
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 13,
+            "fraction": 0.6153846153846154
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 18,
+            "total": 20,
+            "fraction": 0.9
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 20,
+            "fraction": 0.35
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 15,
+            "fraction": 0.8666666666666667
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 15,
+            "fraction": 0.6666666666666666
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 15,
+            "fraction": 0.2
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 17,
+            "total": 20,
+            "fraction": 0.85
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 16,
+            "total": 20,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 10,
+            "total": 20,
+            "fraction": 0.5
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 26,
+            "total": 35,
+            "fraction": 0.7428571428571429
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 19,
+            "total": 35,
+            "fraction": 0.5428571428571428
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 35,
+            "fraction": 0.2
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 11,
+            "fraction": 0.9090909090909091
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 11,
+            "fraction": 0.7272727272727273
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 11,
+            "fraction": 0.2727272727272727
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 10,
+            "fraction": 0.9
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 10,
+            "fraction": 0.6
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 26,
+            "total": 28,
+            "fraction": 0.9285714285714286
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 20,
+            "total": 28,
+            "fraction": 0.7142857142857143
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 14,
+            "total": 28,
+            "fraction": 0.5
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 10,
+            "total": 15,
+            "fraction": 0.6666666666666666
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 17,
+            "fraction": 0.8235294117647058
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 17,
+            "fraction": 0.7058823529411765
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 17,
+            "fraction": 0.47058823529411764
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 20,
+            "fraction": 0.45
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 240,
+        "total": 243,
+        "fraction": 0.9876543209876543
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 232,
+        "total": 243,
+        "fraction": 0.9547325102880658
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 216,
+        "total": 243,
+        "fraction": 0.8888888888888888
+      }
+    }
+  },
+  {
+    "run_id": "20260828T084613__mard_a1__introcs__s11__a1a24e",
+    "system": "mard_a1",
+    "seed": 11,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 12,
+            "fraction": 0.8333333333333334
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 12,
+            "fraction": 0.75
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 12,
+            "fraction": 0.5
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 5,
+            "total": 7,
+            "fraction": 0.7142857142857143
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 5,
+            "total": 7,
+            "fraction": 0.7142857142857143
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 16,
+            "total": 20,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 14,
+            "total": 20,
+            "fraction": 0.7
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 13,
+            "fraction": 0.9230769230769231
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 13,
+            "fraction": 0.7692307692307693
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 13,
+            "fraction": 0.3076923076923077
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 19,
+            "total": 20,
+            "fraction": 0.95
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 14,
+            "total": 20,
+            "fraction": 0.7
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 11,
+            "total": 15,
+            "fraction": 0.7333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 15,
+            "fraction": 0.6666666666666666
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 15,
+            "fraction": 0.4666666666666667
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 20,
+            "fraction": 0.35
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 30,
+            "total": 35,
+            "fraction": 0.8571428571428571
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 26,
+            "total": 35,
+            "fraction": 0.7428571428571429
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 16,
+            "total": 35,
+            "fraction": 0.45714285714285713
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 11,
+            "total": 11,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 11,
+            "fraction": 0.7272727272727273
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 11,
+            "fraction": 0.6363636363636364
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 10,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 10,
+            "fraction": 0.5
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 28,
+            "total": 28,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 28,
+            "total": 28,
+            "fraction": 1.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 26,
+            "total": 28,
+            "fraction": 0.9285714285714286
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 17,
+            "fraction": 0.7647058823529411
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 17,
+            "fraction": 0.6470588235294118
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 17,
+            "fraction": 0.35294117647058826
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 20,
+            "fraction": 0.65
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 20,
+            "fraction": 0.3
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 242,
+        "total": 243,
+        "fraction": 0.9958847736625515
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 236,
+        "total": 243,
+        "fraction": 0.9711934156378601
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 229,
+        "total": 243,
+        "fraction": 0.9423868312757202
+      }
+    }
+  },
+  {
+    "run_id": "20260828T085334__mard_a1__introcs__s23__6613c4",
+    "system": "mard_a1",
+    "seed": 23,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 11,
+            "total": 12,
+            "fraction": 0.9166666666666666
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 12,
+            "fraction": 0.6666666666666666
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 12,
+            "fraction": 0.6666666666666666
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 13,
+            "fraction": 0.9230769230769231
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 13,
+            "fraction": 0.7692307692307693
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 13,
+            "fraction": 0.38461538461538464
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 19,
+            "total": 20,
+            "fraction": 0.95
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 16,
+            "total": 20,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 10,
+            "total": 20,
+            "fraction": 0.5
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 15,
+            "fraction": 0.3333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 16,
+            "total": 20,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 20,
+            "fraction": 0.3
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 31,
+            "total": 35,
+            "fraction": 0.8857142857142857
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 25,
+            "total": 35,
+            "fraction": 0.7142857142857143
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 17,
+            "total": 35,
+            "fraction": 0.4857142857142857
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 11,
+            "fraction": 0.9090909090909091
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 11,
+            "fraction": 0.9090909090909091
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 11,
+            "fraction": 0.7272727272727273
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 10,
+            "fraction": 0.9
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 28,
+            "total": 28,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 28,
+            "total": 28,
+            "fraction": 1.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 26,
+            "total": 28,
+            "fraction": 0.9285714285714286
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 13,
+            "total": 15,
+            "fraction": 0.8666666666666667
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 16,
+            "total": 17,
+            "fraction": 0.9411764705882353
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 14,
+            "total": 17,
+            "fraction": 0.8235294117647058
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 17,
+            "fraction": 0.5294117647058824
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 20,
+            "fraction": 0.65
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 20,
+            "fraction": 0.5
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 20,
+            "fraction": 0.2
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 242,
+        "total": 243,
+        "fraction": 0.9958847736625515
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 237,
+        "total": 243,
+        "fraction": 0.9753086419753086
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 227,
+        "total": 243,
+        "fraction": 0.934156378600823
+      }
+    }
+  },
+  {
+    "run_id": "20260828T090031__mard_a1__introcs__s42__77b25a",
+    "system": "mard_a1",
+    "seed": 42,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 12,
+            "fraction": 0.8333333333333334
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 12,
+            "fraction": 0.6666666666666666
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 12,
+            "fraction": 0.4166666666666667
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 5,
+            "total": 7,
+            "fraction": 0.7142857142857143
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 17,
+            "total": 20,
+            "fraction": 0.85
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 10,
+            "total": 20,
+            "fraction": 0.5
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 11,
+            "total": 13,
+            "fraction": 0.8461538461538461
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 7,
+            "total": 13,
+            "fraction": 0.5384615384615384
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 13,
+            "fraction": 0.46153846153846156
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 19,
+            "total": 20,
+            "fraction": 0.95
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 16,
+            "total": 20,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 15,
+            "fraction": 0.7333333333333333
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 15,
+            "fraction": 0.3333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 17,
+            "total": 20,
+            "fraction": 0.85
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 20,
+            "fraction": 0.25
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 31,
+            "total": 35,
+            "fraction": 0.8857142857142857
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 26,
+            "total": 35,
+            "fraction": 0.7428571428571429
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 19,
+            "total": 35,
+            "fraction": 0.5428571428571428
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 9,
+            "total": 11,
+            "fraction": 0.8181818181818182
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 11,
+            "fraction": 0.8181818181818182
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 11,
+            "fraction": 0.36363636363636365
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 10,
+            "fraction": 0.7
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 26,
+            "total": 28,
+            "fraction": 0.9285714285714286
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 24,
+            "total": 28,
+            "fraction": 0.8571428571428571
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 18,
+            "total": 28,
+            "fraction": 0.6428571428571429
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 11,
+            "total": 15,
+            "fraction": 0.7333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 16,
+            "total": 17,
+            "fraction": 0.9411764705882353
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 15,
+            "total": 17,
+            "fraction": 0.8823529411764706
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 14,
+            "total": 17,
+            "fraction": 0.8235294117647058
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 17,
+            "total": 20,
+            "fraction": 0.85
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 20,
+            "fraction": 0.45
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 241,
+        "total": 243,
+        "fraction": 0.9917695473251029
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 237,
+        "total": 243,
+        "fraction": 0.9753086419753086
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 231,
+        "total": 243,
+        "fraction": 0.9506172839506173
+      }
+    }
+  },
+  {
+    "run_id": "20260828T092525__mard_a1f__introcs__s11__4372f1",
+    "system": "mard_a1f",
+    "seed": 11,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 6,
+            "total": 12,
+            "fraction": 0.5
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 5,
+            "total": 12,
+            "fraction": 0.4166666666666667
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 12,
+            "fraction": 0.3333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 13,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 13,
+            "fraction": 0.8461538461538461
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 13,
+            "fraction": 0.5384615384615384
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 7,
+            "total": 20,
+            "fraction": 0.35
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 20,
+            "fraction": 0.2
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 15,
+            "fraction": 0.5333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 16,
+            "total": 20,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 20,
+            "fraction": 0.3
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 23,
+            "total": 35,
+            "fraction": 0.6571428571428571
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 14,
+            "total": 35,
+            "fraction": 0.4
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 35,
+            "fraction": 0.22857142857142856
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 11,
+            "fraction": 0.9090909090909091
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 11,
+            "fraction": 0.7272727272727273
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 11,
+            "fraction": 0.6363636363636364
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 9,
+            "total": 10,
+            "fraction": 0.9
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 10,
+            "fraction": 0.9
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 10,
+            "fraction": 0.8
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 22,
+            "total": 28,
+            "fraction": 0.7857142857142857
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 14,
+            "total": 28,
+            "fraction": 0.5
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 28,
+            "fraction": 0.32142857142857145
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 15,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 15,
+            "fraction": 0.4666666666666667
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 17,
+            "fraction": 0.8823529411764706
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 17,
+            "fraction": 0.7058823529411765
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 17,
+            "fraction": 0.5294117647058824
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 6,
+            "total": 20,
+            "fraction": 0.3
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 20,
+            "fraction": 0.2
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 239,
+        "total": 243,
+        "fraction": 0.9835390946502057
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 234,
+        "total": 243,
+        "fraction": 0.9629629629629629
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 215,
+        "total": 243,
+        "fraction": 0.8847736625514403
+      }
+    }
+  },
+  {
+    "run_id": "20260828T093323__mard_a1f__introcs__s23__c3d7d1",
+    "system": "mard_a1f",
+    "seed": 23,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 9,
+            "total": 12,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 4,
+            "total": 12,
+            "fraction": 0.3333333333333333
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 12,
+            "fraction": 0.25
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 7,
+            "fraction": 0.42857142857142855
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 20,
+            "fraction": 0.55
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 20,
+            "fraction": 0.35
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 13,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 13,
+            "fraction": 0.9230769230769231
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 13,
+            "fraction": 0.46153846153846156
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 20,
+            "fraction": 0.5
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 20,
+            "fraction": 0.25
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 15,
+            "fraction": 0.5333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 17,
+            "total": 20,
+            "fraction": 0.85
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 20,
+            "fraction": 0.2
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 25,
+            "total": 35,
+            "fraction": 0.7142857142857143
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 17,
+            "total": 35,
+            "fraction": 0.4857142857142857
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 35,
+            "fraction": 0.22857142857142856
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 11,
+            "fraction": 0.9090909090909091
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 11,
+            "fraction": 0.9090909090909091
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 11,
+            "fraction": 0.8181818181818182
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 10,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 10,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 28,
+            "total": 28,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 24,
+            "total": 28,
+            "fraction": 0.8571428571428571
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 17,
+            "total": 28,
+            "fraction": 0.6071428571428571
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 15,
+            "fraction": 0.8
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 11,
+            "total": 15,
+            "fraction": 0.7333333333333333
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 17,
+            "fraction": 0.8823529411764706
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 13,
+            "total": 17,
+            "fraction": 0.7647058823529411
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 17,
+            "fraction": 0.5294117647058824
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 20,
+            "fraction": 0.5
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 20,
+            "fraction": 0.35
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 242,
+        "total": 243,
+        "fraction": 0.9958847736625515
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 236,
+        "total": 243,
+        "fraction": 0.9711934156378601
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 222,
+        "total": 243,
+        "fraction": 0.9135802469135802
+      }
+    }
+  },
+  {
+    "run_id": "20260828T095152__mard_a1f__introcs__s42__2f00df",
+    "system": "mard_a1f",
+    "seed": 42,
+    "chapters": [
+      {
+        "chapter": 1,
+        "objective_count": 12,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 9,
+            "total": 12,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 6,
+            "total": 12,
+            "fraction": 0.5
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 12,
+            "fraction": 0.25
+          }
+        }
+      },
+      {
+        "chapter": 2,
+        "objective_count": 7,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 7,
+            "fraction": 0.5714285714285714
+          }
+        }
+      },
+      {
+        "chapter": 3,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 20,
+            "fraction": 0.7
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 4,
+        "objective_count": 13,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 11,
+            "total": 13,
+            "fraction": 0.8461538461538461
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 13,
+            "fraction": 0.6153846153846154
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 3,
+            "total": 13,
+            "fraction": 0.23076923076923078
+          }
+        }
+      },
+      {
+        "chapter": 5,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 15,
+            "total": 20,
+            "fraction": 0.75
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 7,
+            "total": 20,
+            "fraction": 0.35
+          }
+        }
+      },
+      {
+        "chapter": 6,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 15,
+            "fraction": 0.8666666666666667
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 15,
+            "fraction": 0.7333333333333333
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 15,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 7,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 20,
+            "fraction": 0.7
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 13,
+            "total": 20,
+            "fraction": 0.65
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 8,
+            "total": 20,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 8,
+        "objective_count": 35,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 29,
+            "total": 35,
+            "fraction": 0.8285714285714286
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 24,
+            "total": 35,
+            "fraction": 0.6857142857142857
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 14,
+            "total": 35,
+            "fraction": 0.4
+          }
+        }
+      },
+      {
+        "chapter": 9,
+        "objective_count": 11,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 9,
+            "total": 11,
+            "fraction": 0.8181818181818182
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 5,
+            "total": 11,
+            "fraction": 0.45454545454545453
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 4,
+            "total": 11,
+            "fraction": 0.36363636363636365
+          }
+        }
+      },
+      {
+        "chapter": 10,
+        "objective_count": 10,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 10,
+            "total": 10,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 9,
+            "total": 10,
+            "fraction": 0.9
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 10,
+            "fraction": 0.5
+          }
+        }
+      },
+      {
+        "chapter": 11,
+        "objective_count": 28,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 28,
+            "total": 28,
+            "fraction": 1.0
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 27,
+            "total": 28,
+            "fraction": 0.9642857142857143
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 22,
+            "total": 28,
+            "fraction": 0.7857142857142857
+          }
+        }
+      },
+      {
+        "chapter": 12,
+        "objective_count": 15,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 15,
+            "fraction": 0.9333333333333333
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 11,
+            "total": 15,
+            "fraction": 0.7333333333333333
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 9,
+            "total": 15,
+            "fraction": 0.6
+          }
+        }
+      },
+      {
+        "chapter": 13,
+        "objective_count": 17,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 13,
+            "total": 17,
+            "fraction": 0.7647058823529411
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 10,
+            "total": 17,
+            "fraction": 0.5882352941176471
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 6,
+            "total": 17,
+            "fraction": 0.35294117647058826
+          }
+        }
+      },
+      {
+        "chapter": 14,
+        "objective_count": 20,
+        "mappable": true,
+        "coverage_by_threshold": {
+          "0.5": {
+            "threshold": 0.5,
+            "covered": 14,
+            "total": 20,
+            "fraction": 0.7
+          },
+          "0.6": {
+            "threshold": 0.6,
+            "covered": 12,
+            "total": 20,
+            "fraction": 0.6
+          },
+          "0.7": {
+            "threshold": 0.7,
+            "covered": 5,
+            "total": 20,
+            "fraction": 0.25
+          }
+        }
+      }
+    ],
+    "whole_document_fallback": {
+      "0.5": {
+        "threshold": 0.5,
+        "covered": 239,
+        "total": 243,
+        "fraction": 0.9835390946502057
+      },
+      "0.6": {
+        "threshold": 0.6,
+        "covered": 232,
+        "total": 243,
+        "fraction": 0.9547325102880658
+      },
+      "0.7": {
+        "threshold": 0.7,
+        "covered": 210,
+        "total": 243,
+        "fraction": 0.8641975308641975
+      }
+    }
+  }
+]

@@ -1,0 +1,197 @@
+{
+  "schema_version": "1",
+  "document_id": "introcs",
+  "concept_graph": {
+    "concepts": [
+      {
+        "id": "algorithms",
+        "label": "Algorithms",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computation-and-problem-solving",
+        "label": "Computation and Problem Solving",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computing-systems-context",
+        "label": "Computing Systems Context (Hardware/Software/System)",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-and-information-representation",
+        "label": "Data and Information Representation",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "levels-of-abstraction",
+        "label": "Levels of Abstraction in Computing",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "programs-as-implementations",
+        "label": "Programs as Implementations of Algorithms",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      }
+    ],
+    "edges": [
+      {
+        "prerequisite": "computation-and-problem-solving",
+        "dependent": "algorithms",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "computation-and-problem-solving",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms",
+        "dependent": "programs-as-implementations",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "programs-as-implementations",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "programs-as-implementations",
+        "dependent": "computing-systems-context",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computation-and-problem-solving",
+        "dependent": "levels-of-abstraction",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms",
+        "dependent": "levels-of-abstraction",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "programs-as-implementations",
+        "dependent": "levels-of-abstraction",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      }
+    ]
+  },
+  "study_sequence": [
+    {
+      "position": 1,
+      "concept_id": "data-and-information-representation",
+      "directive": "Describe how problems and solutions depend on representing information as data that a computer can process. Summarize the chapter\u2019s points about what representation enables and why it matters for computation."
+    },
+    {
+      "position": 2,
+      "concept_id": "computation-and-problem-solving",
+      "directive": "Explain what \u201ccomputation\u201d means in this textbook and how computer science frames problems as computable tasks. Include what kinds of problems are in-scope and what it means to solve them with a computer."
+    },
+    {
+      "position": 3,
+      "concept_id": "algorithms",
+      "directive": "Define an algorithm and describe how algorithms relate to solving problems by computation. State the key properties the chapter emphasizes (e.g., step-by-step procedure, inputs/outputs, correctness/termination at an informal level)."
+    },
+    {
+      "position": 4,
+      "concept_id": "programs-as-implementations",
+      "directive": "Explain the relationship between an algorithm and a program in the chapter\u2019s terms. Describe how a program realizes an algorithm for execution on a computer."
+    },
+    {
+      "position": 5,
+      "concept_id": "computing-systems-context",
+      "directive": "Identify the core components the chapter treats as part of a computing system and how they cooperate to carry out computation. Describe, at a high level, the roles of hardware and software in executing programs."
+    },
+    {
+      "position": 6,
+      "concept_id": "levels-of-abstraction",
+      "directive": "Summarize the chapter\u2019s view of abstraction layers (e.g., problem \u2192 algorithm \u2192 program \u2192 machine execution) and why abstraction is essential to managing complexity. Provide a short example showing how the same problem can be viewed at different levels."
+    }
+  ],
+  "reordering_rationale": [
+    {
+      "concept_id": "data-and-information-representation",
+      "from_book_position": 3,
+      "to_plan_position": 1,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "algorithms",
+      "from_book_position": 3,
+      "to_plan_position": 3,
+      "reason": "Book order teaches this before 'computation-and-problem-solving', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "programs-as-implementations",
+      "from_book_position": 3,
+      "to_plan_position": 4,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "computing-systems-context",
+      "from_book_position": 3,
+      "to_plan_position": 5,
+      "reason": "Book order teaches this before 'programs-as-implementations', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "levels-of-abstraction",
+      "from_book_position": 3,
+      "to_plan_position": 6,
+      "reason": "Book order teaches this before 'programs-as-implementations', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    }
+  ],
+  "run_id": null
+}

@@ -252,6 +252,59 @@ def test_the_same_edge_from_two_chapters_is_deduplicated():
     _assert_boundary_rules(compiled.plan)
 
 
+def test_a_concept_id_reused_by_a_later_chapter_is_merged_not_rejected():
+    """Two chapters can independently land on the same "natural" id — verified
+    first-hand (seed 11, 28 Aug 2026): two chapters both produced
+    "abstraction-and-modeling". This is signal (the same concept genuinely
+    recurring), not noise: the merge keeps the earlier chapter's span as the
+    citation anchor, folds the later chapter's label into `aliases` rather than
+    discarding it, and records both declarations in `concepts_merged` — nothing
+    is silently lost, and (before this fix) the naive length check this collapses
+    could misreport an empty-list "cycle" that was really just this collision."""
+    sections = _sparse_sections()[:2]
+    first = ExtractedConcept(
+        concept_id="dup",
+        label="First Chapter's Version",
+        section_id=sections[0].section_id,
+        directive="Explain the first chapter's version of this concept.",
+        chapter_id="doc.ch01",
+    )
+    second = ExtractedConcept(
+        concept_id="dup",
+        label="Second Chapter's Version",
+        section_id=sections[1].section_id,
+        directive="Explain the second chapter's version of this concept.",
+        chapter_id="doc.ch02",
+    )
+
+    compiled = compile_master_plan("doc", [first, second], [], sections)
+
+    concepts = compiled.plan["concept_graph"]["concepts"]
+    assert len(concepts) == 1
+    assert concepts[0]["label"] == "First Chapter's Version"
+    assert concepts[0]["source"]["section_id"] == sections[0].section_id
+    assert concepts[0]["aliases"] == ["Second Chapter's Version"]
+
+    [merge] = compiled.trace["concepts_merged"]
+    assert merge["concept_id"] == "dup"
+    assert merge["kept_chapter_id"] == "doc.ch01"
+    assert {occ["chapter_id"] for occ in merge["occurrences"]} == {"doc.ch01", "doc.ch02"}
+    _assert_boundary_rules(compiled.plan)
+
+
+def test_a_genuine_cycle_is_still_reported_correctly_alongside_the_dedup_fix():
+    """The dedup fix must not swallow a real cycle — this is the case it must stay
+    distinct from."""
+    sections = _sparse_sections()[:2]
+    concepts = [_concept("a", sections[0]), _concept("b", sections[1])]
+
+    with pytest.raises(UnsequenceablePlanError) as err:
+        compile_master_plan("doc", concepts, [_edge("a", "b"), _edge("b", "a")], sections)
+
+    assert "cycle" in str(err.value)
+    assert "a" in str(err.value) and "b" in str(err.value)
+
+
 def test_a_cross_reference_edge_gets_a_located_at_span():
     sections = _sparse_sections()[:2]
     concepts = [_concept("a", sections[0]), _concept("b", sections[1])]

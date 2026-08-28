@@ -1,0 +1,263 @@
+[
+  {
+    "run_id": "20260828T082226__mard__introcs__s11__13de68",
+    "system": "mard",
+    "seed": 11,
+    "book_order": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "book_order_on_mappable_subset": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_kept_chapter_only": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_with_aliases": null
+  },
+  {
+    "run_id": "20260828T083017__mard__introcs__s23__d03195",
+    "system": "mard",
+    "seed": 23,
+    "book_order": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "book_order_on_mappable_subset": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_kept_chapter_only": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_with_aliases": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    }
+  },
+  {
+    "run_id": "20260828T083754__mard__introcs__s42__548fe0",
+    "system": "mard",
+    "seed": 42,
+    "book_order": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "book_order_on_mappable_subset": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_kept_chapter_only": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_with_aliases": null
+  },
+  {
+    "run_id": "20260828T084613__mard_a1__introcs__s11__a1a24e",
+    "system": "mard_a1",
+    "seed": 11,
+    "book_order": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "book_order_on_mappable_subset": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_kept_chapter_only": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_with_aliases": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    }
+  },
+  {
+    "run_id": "20260828T085334__mard_a1__introcs__s23__6613c4",
+    "system": "mard_a1",
+    "seed": 23,
+    "book_order": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "book_order_on_mappable_subset": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_kept_chapter_only": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_with_aliases": null
+  },
+  {
+    "run_id": "20260828T090031__mard_a1__introcs__s42__77b25a",
+    "system": "mard_a1",
+    "seed": 42,
+    "book_order": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "book_order_on_mappable_subset": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_kept_chapter_only": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_with_aliases": null
+  },
+  {
+    "run_id": "20260828T092525__mard_a1f__introcs__s11__4372f1",
+    "system": "mard_a1f",
+    "seed": 11,
+    "book_order": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "book_order_on_mappable_subset": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_kept_chapter_only": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_with_aliases": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    }
+  },
+  {
+    "run_id": "20260828T093323__mard_a1f__introcs__s23__c3d7d1",
+    "system": "mard_a1f",
+    "seed": 23,
+    "book_order": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "book_order_on_mappable_subset": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_kept_chapter_only": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_with_aliases": null
+  },
+  {
+    "run_id": "20260828T095152__mard_a1f__introcs__s42__2f00df",
+    "system": "mard_a1f",
+    "seed": 42,
+    "book_order": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "book_order_on_mappable_subset": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_kept_chapter_only": {
+      "total": 50,
+      "forward": 33,
+      "backward": 17,
+      "same_chapter": 0,
+      "unmappable": 0
+    },
+    "plan_order_with_aliases": null
+  }
+]

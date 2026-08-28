@@ -1,0 +1,2331 @@
+{
+  "schema_version": "1",
+  "document_id": "introcs",
+  "concept_graph": {
+    "concepts": [
+      {
+        "id": "algorithms-and-abstraction",
+        "label": "Algorithms and Abstraction",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computing-as-transformation-of-information",
+        "label": "Computing as Transforming Information",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computing-domains-and-applications",
+        "label": "Computing Domains and Application Areas",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-and-information-representation",
+        "label": "Data and Information Representation",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "limits-and-tradeoffs-in-computing",
+        "label": "Limits and Tradeoffs in Computing Solutions",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "problem-solving-process-in-cs",
+        "label": "Computer Science Problem-Solving Process",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "abstraction-and-modeling",
+        "label": "Abstraction and Modeling",
+        "source": {
+          "section_id": "introcs.2-1-computational-thinking",
+          "book_position": 10,
+          "page_start": 50,
+          "page_end": 61
+        },
+        "aliases": []
+      },
+      {
+        "id": "algorithmic-thinking",
+        "label": "Algorithmic Thinking",
+        "source": {
+          "section_id": "introcs.2-1-computational-thinking",
+          "book_position": 10,
+          "page_start": 50,
+          "page_end": 61
+        },
+        "aliases": []
+      },
+      {
+        "id": "computational-thinking-process",
+        "label": "Computational Thinking as a Problem-Solving Process",
+        "source": {
+          "section_id": "introcs.2-1-computational-thinking",
+          "book_position": 10,
+          "page_start": 50,
+          "page_end": 61
+        },
+        "aliases": []
+      },
+      {
+        "id": "decomposition",
+        "label": "Decomposition",
+        "source": {
+          "section_id": "introcs.2-1-computational-thinking",
+          "book_position": 10,
+          "page_start": 50,
+          "page_end": 61
+        },
+        "aliases": []
+      },
+      {
+        "id": "evaluation-and-iteration",
+        "label": "Evaluation, Testing, and Iteration",
+        "source": {
+          "section_id": "introcs.2-1-computational-thinking",
+          "book_position": 10,
+          "page_start": 50,
+          "page_end": 61
+        },
+        "aliases": []
+      },
+      {
+        "id": "pattern-recognition-and-generalization",
+        "label": "Pattern Recognition and Generalization",
+        "source": {
+          "section_id": "introcs.2-1-computational-thinking",
+          "book_position": 10,
+          "page_start": 50,
+          "page_end": 61
+        },
+        "aliases": []
+      },
+      {
+        "id": "adt-and-interface-vs-implementation",
+        "label": "Abstract Data Types (ADTs): Interface vs. Implementation",
+        "source": {
+          "section_id": "introcs.3-1-introduction-to-data-structures-and-algorithms",
+          "book_position": 16,
+          "page_start": 99,
+          "page_end": 99
+        },
+        "aliases": []
+      },
+      {
+        "id": "algorithm-efficiency-and-complexity-intuition",
+        "label": "Algorithm Efficiency and Complexity (Intuition)",
+        "source": {
+          "section_id": "introcs.3-1-introduction-to-data-structures-and-algorithms",
+          "book_position": 16,
+          "page_start": 99,
+          "page_end": 99
+        },
+        "aliases": []
+      },
+      {
+        "id": "correctness-and-specification-basics",
+        "label": "Correctness Grounded in Problem Specifications",
+        "source": {
+          "section_id": "introcs.3-1-introduction-to-data-structures-and-algorithms",
+          "book_position": 16,
+          "page_start": 99,
+          "page_end": 99
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-organization-for-efficiency",
+        "label": "Data Organization for Efficient Operations",
+        "source": {
+          "section_id": "introcs.3-1-introduction-to-data-structures-and-algorithms",
+          "book_position": 16,
+          "page_start": 99,
+          "page_end": 99
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-structures-vs-algorithms-relationship",
+        "label": "Relationship Between Data Structures and Algorithms",
+        "source": {
+          "section_id": "introcs.3-1-introduction-to-data-structures-and-algorithms",
+          "book_position": 16,
+          "page_start": 99,
+          "page_end": 99
+        },
+        "aliases": []
+      },
+      {
+        "id": "representation-choice-impacts",
+        "label": "Impact of Representation Choices",
+        "source": {
+          "section_id": "introcs.3-1-introduction-to-data-structures-and-algorithms",
+          "book_position": 16,
+          "page_start": 99,
+          "page_end": 99
+        },
+        "aliases": []
+      },
+      {
+        "id": "equivalence-and-tradeoffs-between-models",
+        "label": "Equivalence and Tradeoffs Across Computation Models",
+        "source": {
+          "section_id": "introcs.4-1-models-of-computation",
+          "book_position": 28,
+          "page_start": 154,
+          "page_end": 166
+        },
+        "aliases": []
+      },
+      {
+        "id": "finite-state-machines-and-automata",
+        "label": "Finite-State Machines (Automata) as a Computation Model",
+        "source": {
+          "section_id": "introcs.4-1-models-of-computation",
+          "book_position": 28,
+          "page_start": 154,
+          "page_end": 166
+        },
+        "aliases": []
+      },
+      {
+        "id": "lambda-calculus-and-functional-model",
+        "label": "Lambda Calculus / Functional Model of Computation",
+        "source": {
+          "section_id": "introcs.4-1-models-of-computation",
+          "book_position": 28,
+          "page_start": 154,
+          "page_end": 166
+        },
+        "aliases": []
+      },
+      {
+        "id": "models-of-computation-purpose-and-scope",
+        "label": "Why Computation Models Matter (Purpose and Scope)",
+        "source": {
+          "section_id": "introcs.4-1-models-of-computation",
+          "book_position": 28,
+          "page_start": 154,
+          "page_end": 166
+        },
+        "aliases": []
+      },
+      {
+        "id": "turing-machine-and-computability",
+        "label": "Turing Machine Model and Computability Intuition",
+        "source": {
+          "section_id": "introcs.4-1-models-of-computation",
+          "book_position": 28,
+          "page_start": 154,
+          "page_end": 166
+        },
+        "aliases": []
+      },
+      {
+        "id": "von-neumann-stored-program-model",
+        "label": "Von Neumann Stored-Program (Imperative) Model",
+        "source": {
+          "section_id": "introcs.4-1-models-of-computation",
+          "book_position": 28,
+          "page_start": 154,
+          "page_end": 166
+        },
+        "aliases": []
+      },
+      {
+        "id": "hardware-software-interface-in-system-organization",
+        "label": "Hardware\u2013Software Interface in System Organization",
+        "source": {
+          "section_id": "introcs.5-1-computer-systems-organization",
+          "book_position": 37,
+          "page_start": 204,
+          "page_end": 208
+        },
+        "aliases": []
+      },
+      {
+        "id": "instruction-execution-data-path-overview",
+        "label": "Instruction Execution and Data Path Overview",
+        "source": {
+          "section_id": "introcs.5-1-computer-systems-organization",
+          "book_position": 37,
+          "page_start": 204,
+          "page_end": 208
+        },
+        "aliases": []
+      },
+      {
+        "id": "io-subsystems-and-device-interfaces",
+        "label": "I/O Subsystems and Device Interfaces",
+        "source": {
+          "section_id": "introcs.5-1-computer-systems-organization",
+          "book_position": 37,
+          "page_start": 204,
+          "page_end": 208
+        },
+        "aliases": []
+      },
+      {
+        "id": "major-computer-system-components",
+        "label": "Major Computer System Components (CPU, Memory, I/O, Storage)",
+        "source": {
+          "section_id": "introcs.5-1-computer-systems-organization",
+          "book_position": 37,
+          "page_start": 204,
+          "page_end": 208
+        },
+        "aliases": []
+      },
+      {
+        "id": "performance-bottlenecks-and-tradeoffs-in-organization",
+        "label": "Performance Bottlenecks and Organizational Tradeoffs",
+        "source": {
+          "section_id": "introcs.5-1-computer-systems-organization",
+          "book_position": 37,
+          "page_start": 204,
+          "page_end": 208
+        },
+        "aliases": []
+      },
+      {
+        "id": "system-bus-and-interconnects",
+        "label": "System Buses and Interconnects",
+        "source": {
+          "section_id": "introcs.5-1-computer-systems-organization",
+          "book_position": 37,
+          "page_start": 204,
+          "page_end": 208
+        },
+        "aliases": []
+      },
+      {
+        "id": "os-as-abstraction-layer-and-resource-manager",
+        "label": "OS as Abstraction Layer and Resource Manager",
+        "source": {
+          "section_id": "introcs.6-1-what-is-an-operating-system",
+          "book_position": 47,
+          "page_start": 250,
+          "page_end": 256
+        },
+        "aliases": []
+      },
+      {
+        "id": "os-services-and-interfaces",
+        "label": "Core OS Services and Interfaces",
+        "source": {
+          "section_id": "introcs.6-1-what-is-an-operating-system",
+          "book_position": 47,
+          "page_start": 250,
+          "page_end": 256
+        },
+        "aliases": []
+      },
+      {
+        "id": "os-structure-kernel-and-system-programs",
+        "label": "OS Structure: Kernel vs. System Programs",
+        "source": {
+          "section_id": "introcs.6-1-what-is-an-operating-system",
+          "book_position": 47,
+          "page_start": 250,
+          "page_end": 256
+        },
+        "aliases": []
+      },
+      {
+        "id": "protection-and-security-goals-in-os",
+        "label": "Protection and Security Goals in an OS",
+        "source": {
+          "section_id": "introcs.6-1-what-is-an-operating-system",
+          "book_position": 47,
+          "page_start": 250,
+          "page_end": 256
+        },
+        "aliases": []
+      },
+      {
+        "id": "resource-sharing-and-multiprogramming-motivation",
+        "label": "Why OSs Exist: Efficient Resource Sharing (Multiprogramming)",
+        "source": {
+          "section_id": "introcs.6-1-what-is-an-operating-system",
+          "book_position": 47,
+          "page_start": 250,
+          "page_end": 256
+        },
+        "aliases": []
+      },
+      {
+        "id": "virtualization-view-of-resources",
+        "label": "Virtualized View of Resources",
+        "source": {
+          "section_id": "introcs.6-1-what-is-an-operating-system",
+          "book_position": 47,
+          "page_start": 250,
+          "page_end": 256
+        },
+        "aliases": []
+      },
+      {
+        "id": "binding-scope-and-lifetime",
+        "label": "Binding, Scope, and Lifetime",
+        "source": {
+          "section_id": "introcs.7-1-programming-language-foundations",
+          "book_position": 57,
+          "page_start": 308,
+          "page_end": 320
+        },
+        "aliases": []
+      },
+      {
+        "id": "control-flow-and-evaluation-models",
+        "label": "Control Flow and Evaluation Models",
+        "source": {
+          "section_id": "introcs.7-1-programming-language-foundations",
+          "book_position": 57,
+          "page_start": 308,
+          "page_end": 320
+        },
+        "aliases": []
+      },
+      {
+        "id": "errors-and-exceptions",
+        "label": "Errors and Exceptions",
+        "source": {
+          "section_id": "introcs.7-1-programming-language-foundations",
+          "book_position": 57,
+          "page_start": 308,
+          "page_end": 320
+        },
+        "aliases": []
+      },
+      {
+        "id": "runtime-model-stack-heap-and-activation-records",
+        "label": "Runtime Model: Stack/Heap and Activation Records",
+        "source": {
+          "section_id": "introcs.7-1-programming-language-foundations",
+          "book_position": 57,
+          "page_start": 308,
+          "page_end": 320
+        },
+        "aliases": []
+      },
+      {
+        "id": "syntax-semantics-and-pragmatics",
+        "label": "Syntax, Semantics, and Pragmatics",
+        "source": {
+          "section_id": "introcs.7-1-programming-language-foundations",
+          "book_position": 57,
+          "page_start": 308,
+          "page_end": 320
+        },
+        "aliases": []
+      },
+      {
+        "id": "types-and-type-systems",
+        "label": "Types and Type Systems",
+        "source": {
+          "section_id": "introcs.7-1-programming-language-foundations",
+          "book_position": 57,
+          "page_start": 308,
+          "page_end": 320
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-governance-and-compliance",
+        "label": "Data Governance and Compliance",
+        "source": {
+          "section_id": "introcs.8-1-data-management-focus",
+          "book_position": 65,
+          "page_start": 370,
+          "page_end": 376
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-integration-and-interoperability",
+        "label": "Data Integration and Interoperability",
+        "source": {
+          "section_id": "introcs.8-1-data-management-focus",
+          "book_position": 65,
+          "page_start": 370,
+          "page_end": 376
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-lifecycle-and-stewardship",
+        "label": "Data Lifecycle and Stewardship",
+        "source": {
+          "section_id": "introcs.8-1-data-management-focus",
+          "book_position": 65,
+          "page_start": 370,
+          "page_end": 376
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-quality-and-trust",
+        "label": "Data Quality and Trustworthiness",
+        "source": {
+          "section_id": "introcs.8-1-data-management-focus",
+          "book_position": 65,
+          "page_start": 370,
+          "page_end": 376
+        },
+        "aliases": []
+      },
+      {
+        "id": "metadata-and-data-modeling-basics",
+        "label": "Metadata and Data Modeling Basics",
+        "source": {
+          "section_id": "introcs.8-1-data-management-focus",
+          "book_position": 65,
+          "page_start": 370,
+          "page_end": 376
+        },
+        "aliases": []
+      },
+      {
+        "id": "privacy-security-and-access-control",
+        "label": "Privacy, Security, and Access Control for Data",
+        "source": {
+          "section_id": "introcs.8-1-data-management-focus",
+          "book_position": 65,
+          "page_start": 370,
+          "page_end": 376
+        },
+        "aliases": []
+      },
+      {
+        "id": "documentation-and-team-practices-basics",
+        "label": "Documentation and Team Practices Basics",
+        "source": {
+          "section_id": "introcs.9-1-software-engineering-fundamentals",
+          "book_position": 76,
+          "page_start": 440,
+          "page_end": 450
+        },
+        "aliases": []
+      },
+      {
+        "id": "quality-attributes-and-tradeoffs",
+        "label": "Quality Attributes and Tradeoffs",
+        "source": {
+          "section_id": "introcs.9-1-software-engineering-fundamentals",
+          "book_position": 76,
+          "page_start": 440,
+          "page_end": 450
+        },
+        "aliases": []
+      },
+      {
+        "id": "software-design-and-architecture-basics",
+        "label": "Software Design and Architecture Basics",
+        "source": {
+          "section_id": "introcs.9-1-software-engineering-fundamentals",
+          "book_position": 76,
+          "page_start": 440,
+          "page_end": 450
+        },
+        "aliases": []
+      },
+      {
+        "id": "software-maintenance-and-evolution",
+        "label": "Software Maintenance and Evolution",
+        "source": {
+          "section_id": "introcs.9-1-software-engineering-fundamentals",
+          "book_position": 76,
+          "page_start": 440,
+          "page_end": 450
+        },
+        "aliases": []
+      },
+      {
+        "id": "software-requirements-and-specification",
+        "label": "Software Requirements and Specification",
+        "source": {
+          "section_id": "introcs.9-1-software-engineering-fundamentals",
+          "book_position": 76,
+          "page_start": 440,
+          "page_end": 450
+        },
+        "aliases": []
+      },
+      {
+        "id": "verification-validation-and-testing-basics",
+        "label": "Verification, Validation, and Testing Basics",
+        "source": {
+          "section_id": "introcs.9-1-software-engineering-fundamentals",
+          "book_position": 76,
+          "page_start": 440,
+          "page_end": 450
+        },
+        "aliases": []
+      },
+      {
+        "id": "pattern-application-and-tailoring",
+        "label": "Applying and Tailoring Patterns to Solutions",
+        "source": {
+          "section_id": "introcs.10-1-patterns-management",
+          "book_position": 83,
+          "page_start": 512,
+          "page_end": 519
+        },
+        "aliases": []
+      },
+      {
+        "id": "pattern-cataloging-and-classification",
+        "label": "Pattern Cataloging and Classification",
+        "source": {
+          "section_id": "introcs.10-1-patterns-management",
+          "book_position": 83,
+          "page_start": 512,
+          "page_end": 519
+        },
+        "aliases": []
+      },
+      {
+        "id": "pattern-governance-lifecycle-and-ownership",
+        "label": "Pattern Governance, Lifecycle, and Ownership",
+        "source": {
+          "section_id": "introcs.10-1-patterns-management",
+          "book_position": 83,
+          "page_start": 512,
+          "page_end": 519
+        },
+        "aliases": []
+      },
+      {
+        "id": "pattern-management-purpose-and-scope",
+        "label": "Purpose and Scope of Patterns Management",
+        "source": {
+          "section_id": "introcs.10-1-patterns-management",
+          "book_position": 83,
+          "page_start": 512,
+          "page_end": 519
+        },
+        "aliases": []
+      },
+      {
+        "id": "pattern-types-and-levels-of-abstraction",
+        "label": "Pattern Types and Levels of Abstraction",
+        "source": {
+          "section_id": "introcs.10-1-patterns-management",
+          "book_position": 83,
+          "page_start": 512,
+          "page_end": 519
+        },
+        "aliases": []
+      },
+      {
+        "id": "pattern-value-measurement-and-continuous-improvement",
+        "label": "Measuring Pattern Value and Continuous Improvement",
+        "source": {
+          "section_id": "introcs.10-1-patterns-management",
+          "book_position": 83,
+          "page_start": 512,
+          "page_end": 519
+        },
+        "aliases": []
+      },
+      {
+        "id": "client-server-and-api-architecture",
+        "label": "Client\u2013Server and API-Centered Architecture",
+        "source": {
+          "section_id": "introcs.11-1-modern-web-applications-architectures",
+          "book_position": 90,
+          "page_start": 570,
+          "page_end": 587
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-and-state-management-in-web-apps",
+        "label": "Data and State Management in Web Applications",
+        "source": {
+          "section_id": "introcs.11-1-modern-web-applications-architectures",
+          "book_position": 90,
+          "page_start": 570,
+          "page_end": 587
+        },
+        "aliases": []
+      },
+      {
+        "id": "deployment-and-scaling-for-web-apps",
+        "label": "Deployment, Scaling, and Availability for Web Applications",
+        "source": {
+          "section_id": "introcs.11-1-modern-web-applications-architectures",
+          "book_position": 90,
+          "page_start": 570,
+          "page_end": 587
+        },
+        "aliases": []
+      },
+      {
+        "id": "microservices-and-service-decomposition",
+        "label": "Microservices and Service Decomposition",
+        "source": {
+          "section_id": "introcs.11-1-modern-web-applications-architectures",
+          "book_position": 90,
+          "page_start": 570,
+          "page_end": 587
+        },
+        "aliases": []
+      },
+      {
+        "id": "spa-and-frontend-architecture",
+        "label": "Single-Page Applications (SPAs) and Frontend Architecture",
+        "source": {
+          "section_id": "introcs.11-1-modern-web-applications-architectures",
+          "book_position": 90,
+          "page_start": 570,
+          "page_end": 587
+        },
+        "aliases": []
+      },
+      {
+        "id": "web-security-and-trust-boundaries",
+        "label": "Web Security Basics and Trust Boundaries",
+        "source": {
+          "section_id": "introcs.11-1-modern-web-applications-architectures",
+          "book_position": 90,
+          "page_start": 570,
+          "page_end": 587
+        },
+        "aliases": []
+      },
+      {
+        "id": "cloud-native-definition-and-characteristics",
+        "label": "Cloud-Native Definition and Key Characteristics",
+        "source": {
+          "section_id": "introcs.12-1-introduction-to-cloud-native-applications",
+          "book_position": 100,
+          "page_start": 670,
+          "page_end": 694
+        },
+        "aliases": []
+      },
+      {
+        "id": "cloud-native-observability-and-operations",
+        "label": "Cloud-Native Observability and Operational Readiness",
+        "source": {
+          "section_id": "introcs.12-1-introduction-to-cloud-native-applications",
+          "book_position": 100,
+          "page_start": 670,
+          "page_end": 694
+        },
+        "aliases": []
+      },
+      {
+        "id": "containers-and-immutable-packaging",
+        "label": "Containers and Immutable Application Packaging",
+        "source": {
+          "section_id": "introcs.12-1-introduction-to-cloud-native-applications",
+          "book_position": 100,
+          "page_start": 670,
+          "page_end": 694
+        },
+        "aliases": []
+      },
+      {
+        "id": "elastic-scaling-and-load-distribution",
+        "label": "Elastic Scaling and Load Distribution",
+        "source": {
+          "section_id": "introcs.12-1-introduction-to-cloud-native-applications",
+          "book_position": 100,
+          "page_start": 670,
+          "page_end": 694
+        },
+        "aliases": []
+      },
+      {
+        "id": "resilience-and-failure-management",
+        "label": "Resilience and Failure Management in Distributed Systems",
+        "source": {
+          "section_id": "introcs.12-1-introduction-to-cloud-native-applications",
+          "book_position": 100,
+          "page_start": 670,
+          "page_end": 694
+        },
+        "aliases": []
+      },
+      {
+        "id": "cloud-mashup-and-service-composition",
+        "label": "Cloud Mashups and Cross-Cloud Service Composition",
+        "source": {
+          "section_id": "introcs.13-1-hybrid-multicloud-solutions-and-cloud-mashups",
+          "book_position": 107,
+          "page_start": 766,
+          "page_end": 770
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-mobility-and-consistency-across-clouds",
+        "label": "Data Mobility, Synchronization, and Consistency Across Clouds",
+        "source": {
+          "section_id": "introcs.13-1-hybrid-multicloud-solutions-and-cloud-mashups",
+          "book_position": 107,
+          "page_start": 766,
+          "page_end": 770
+        },
+        "aliases": []
+      },
+      {
+        "id": "hybrid-multicloud-architecture-motivation",
+        "label": "Why Hybrid Multicloud (Drivers and Use Cases)",
+        "source": {
+          "section_id": "introcs.13-1-hybrid-multicloud-solutions-and-cloud-mashups",
+          "book_position": 107,
+          "page_start": 766,
+          "page_end": 770
+        },
+        "aliases": []
+      },
+      {
+        "id": "hybrid-multicloud-security-and-trust-boundaries",
+        "label": "Security and Trust Boundaries in Hybrid Multicloud",
+        "source": {
+          "section_id": "introcs.13-1-hybrid-multicloud-solutions-and-cloud-mashups",
+          "book_position": 107,
+          "page_start": 766,
+          "page_end": 770
+        },
+        "aliases": []
+      },
+      {
+        "id": "integration-and-interoperability-mechanisms",
+        "label": "Integration Mechanisms for Hybrid Multicloud",
+        "source": {
+          "section_id": "introcs.13-1-hybrid-multicloud-solutions-and-cloud-mashups",
+          "book_position": 107,
+          "page_start": 766,
+          "page_end": 770
+        },
+        "aliases": []
+      },
+      {
+        "id": "operational-governance-and-vendor-management",
+        "label": "Operations, Governance, and Vendor/Service Management",
+        "source": {
+          "section_id": "introcs.13-1-hybrid-multicloud-solutions-and-cloud-mashups",
+          "book_position": 107,
+          "page_start": 766,
+          "page_end": 770
+        },
+        "aliases": []
+      },
+      {
+        "id": "cobit-governance-and-control-objectives",
+        "label": "COBIT Governance and Control Objectives",
+        "source": {
+          "section_id": "introcs.14-1-cyber-resources-management-frameworks",
+          "book_position": 115,
+          "page_start": 822,
+          "page_end": 843
+        },
+        "aliases": []
+      },
+      {
+        "id": "governance-risk-and-compliance-grc-model",
+        "label": "Governance, Risk, and Compliance (GRC) Model",
+        "source": {
+          "section_id": "introcs.14-1-cyber-resources-management-frameworks",
+          "book_position": 115,
+          "page_start": 822,
+          "page_end": 843
+        },
+        "aliases": []
+      },
+      {
+        "id": "iso-iec-20000-and-iso-iec-27001-standards",
+        "label": "ISO/IEC Service & Security Management Standards (20000, 27001)",
+        "source": {
+          "section_id": "introcs.14-1-cyber-resources-management-frameworks",
+          "book_position": 115,
+          "page_start": 822,
+          "page_end": 843
+        },
+        "aliases": []
+      },
+      {
+        "id": "it-service-management-and-itsm-frameworks",
+        "label": "IT Service Management (ITSM) Frameworks",
+        "source": {
+          "section_id": "introcs.14-1-cyber-resources-management-frameworks",
+          "book_position": 115,
+          "page_start": 822,
+          "page_end": 843
+        },
+        "aliases": []
+      },
+      {
+        "id": "itil-service-lifecycle-and-practices",
+        "label": "ITIL Service Lifecycle and Practices",
+        "source": {
+          "section_id": "introcs.14-1-cyber-resources-management-frameworks",
+          "book_position": 115,
+          "page_start": 822,
+          "page_end": 843
+        },
+        "aliases": []
+      },
+      {
+        "id": "service-quality-metrics-and-continual-improvement",
+        "label": "Service Quality Metrics and Continual Improvement",
+        "source": {
+          "section_id": "introcs.14-1-cyber-resources-management-frameworks",
+          "book_position": 115,
+          "page_start": 822,
+          "page_end": 843
+        },
+        "aliases": []
+      }
+    ],
+    "edges": [
+      {
+        "prerequisite": "computing-as-transformation-of-information",
+        "dependent": "problem-solving-process-in-cs",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "computing-as-transformation-of-information",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms-and-abstraction",
+        "dependent": "problem-solving-process-in-cs",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "algorithms-and-abstraction",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computing-as-transformation-of-information",
+        "dependent": "computing-domains-and-applications",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "problem-solving-process-in-cs",
+        "dependent": "limits-and-tradeoffs-in-computing",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "problem-solving-process-in-cs",
+        "dependent": "computational-thinking-process",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "problem-solving-process-in-cs",
+        "dependent": "decomposition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms-and-abstraction",
+        "dependent": "abstraction-and-modeling",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "abstraction-and-modeling",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "problem-solving-process-in-cs",
+        "dependent": "pattern-recognition-and-generalization",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms-and-abstraction",
+        "dependent": "algorithmic-thinking",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "evaluation-and-iteration",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms-and-abstraction",
+        "dependent": "data-structures-vs-algorithms-relationship",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "data-structures-vs-algorithms-relationship",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "adt-and-interface-vs-implementation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "adt-and-interface-vs-implementation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "data-organization-for-efficiency",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "algorithm-efficiency-and-complexity-intuition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "problem-solving-process-in-cs",
+        "dependent": "correctness-and-specification-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "representation-choice-impacts",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms-and-abstraction",
+        "dependent": "representation-choice-impacts",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms-and-abstraction",
+        "dependent": "models-of-computation-purpose-and-scope",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "models-of-computation-purpose-and-scope",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "finite-state-machines-and-automata",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithmic-thinking",
+        "dependent": "finite-state-machines-and-automata",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms-and-abstraction",
+        "dependent": "turing-machine-and-computability",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "lambda-calculus-and-functional-model",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "von-neumann-stored-program-model",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms-and-abstraction",
+        "dependent": "von-neumann-stored-program-model",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "equivalence-and-tradeoffs-between-models",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "representation-choice-impacts",
+        "dependent": "equivalence-and-tradeoffs-between-models",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "major-computer-system-components",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "von-neumann-stored-program-model",
+        "dependent": "instruction-execution-data-path-overview",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computing-as-transformation-of-information",
+        "dependent": "major-computer-system-components",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computing-as-transformation-of-information",
+        "dependent": "io-subsystems-and-device-interfaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "performance-bottlenecks-and-tradeoffs-in-organization",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "models-of-computation-purpose-and-scope",
+        "dependent": "hardware-software-interface-in-system-organization",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "major-computer-system-components",
+        "dependent": "os-as-abstraction-layer-and-resource-manager",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "hardware-software-interface-in-system-organization",
+        "dependent": "os-as-abstraction-layer-and-resource-manager",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "major-computer-system-components",
+        "dependent": "os-services-and-interfaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "io-subsystems-and-device-interfaces",
+        "dependent": "os-services-and-interfaces",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "resource-sharing-and-multiprogramming-motivation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "performance-bottlenecks-and-tradeoffs-in-organization",
+        "dependent": "resource-sharing-and-multiprogramming-motivation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "major-computer-system-components",
+        "dependent": "os-structure-kernel-and-system-programs",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "hardware-software-interface-in-system-organization",
+        "dependent": "os-structure-kernel-and-system-programs",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "protection-and-security-goals-in-os",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "virtualization-view-of-resources",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "hardware-software-interface-in-system-organization",
+        "dependent": "virtualization-view-of-resources",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms-and-abstraction",
+        "dependent": "syntax-semantics-and-pragmatics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "syntax-semantics-and-pragmatics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "types-and-type-systems",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "types-and-type-systems",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "problem-solving-process-in-cs",
+        "dependent": "binding-scope-and-lifetime",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithmic-thinking",
+        "dependent": "control-flow-and-evaluation-models",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "von-neumann-stored-program-model",
+        "dependent": "runtime-model-stack-heap-and-activation-records",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "major-computer-system-components",
+        "dependent": "runtime-model-stack-heap-and-activation-records",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "correctness-and-specification-basics",
+        "dependent": "errors-and-exceptions",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "errors-and-exceptions",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "metadata-and-data-modeling-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "metadata-and-data-modeling-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "data-quality-and-trust",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "os-as-abstraction-layer-and-resource-manager",
+        "dependent": "privacy-security-and-access-control",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "protection-and-security-goals-in-os",
+        "dependent": "privacy-security-and-access-control",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "virtualization-view-of-resources",
+        "dependent": "data-governance-and-compliance",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computing-domains-and-applications",
+        "dependent": "data-lifecycle-and-stewardship",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "data-integration-and-interoperability",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "problem-solving-process-in-cs",
+        "dependent": "software-requirements-and-specification",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "correctness-and-specification-basics",
+        "dependent": "software-requirements-and-specification",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "software-design-and-architecture-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "decomposition",
+        "dependent": "software-design-and-architecture-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "representation-choice-impacts",
+        "dependent": "software-design-and-architecture-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "correctness-and-specification-basics",
+        "dependent": "verification-validation-and-testing-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "evaluation-and-iteration",
+        "dependent": "verification-validation-and-testing-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "quality-attributes-and-tradeoffs",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "performance-bottlenecks-and-tradeoffs-in-organization",
+        "dependent": "quality-attributes-and-tradeoffs",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "protection-and-security-goals-in-os",
+        "dependent": "quality-attributes-and-tradeoffs",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "errors-and-exceptions",
+        "dependent": "verification-validation-and-testing-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-lifecycle-and-stewardship",
+        "dependent": "software-maintenance-and-evolution",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-governance-and-compliance",
+        "dependent": "documentation-and-team-practices-basics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "software-design-and-architecture-basics",
+        "dependent": "pattern-management-purpose-and-scope",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "quality-attributes-and-tradeoffs",
+        "dependent": "pattern-management-purpose-and-scope",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "pattern-types-and-levels-of-abstraction",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "software-design-and-architecture-basics",
+        "dependent": "pattern-types-and-levels-of-abstraction",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "documentation-and-team-practices-basics",
+        "dependent": "pattern-cataloging-and-classification",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "representation-choice-impacts",
+        "dependent": "pattern-cataloging-and-classification",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "software-requirements-and-specification",
+        "dependent": "pattern-application-and-tailoring",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "quality-attributes-and-tradeoffs",
+        "dependent": "pattern-application-and-tailoring",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "evaluation-and-iteration",
+        "dependent": "pattern-application-and-tailoring",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "software-maintenance-and-evolution",
+        "dependent": "pattern-governance-lifecycle-and-ownership",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "documentation-and-team-practices-basics",
+        "dependent": "pattern-governance-lifecycle-and-ownership",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "quality-attributes-and-tradeoffs",
+        "dependent": "pattern-value-measurement-and-continuous-improvement",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "verification-validation-and-testing-basics",
+        "dependent": "pattern-value-measurement-and-continuous-improvement",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "software-design-and-architecture-basics",
+        "dependent": "client-server-and-api-architecture",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "os-services-and-interfaces",
+        "dependent": "client-server-and-api-architecture",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "syntax-semantics-and-pragmatics",
+        "dependent": "spa-and-frontend-architecture",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "control-flow-and-evaluation-models",
+        "dependent": "spa-and-frontend-architecture",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "decomposition",
+        "dependent": "microservices-and-service-decomposition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "quality-attributes-and-tradeoffs",
+        "dependent": "microservices-and-service-decomposition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "performance-bottlenecks-and-tradeoffs-in-organization",
+        "dependent": "deployment-and-scaling-for-web-apps",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "deployment-and-scaling-for-web-apps",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "protection-and-security-goals-in-os",
+        "dependent": "web-security-and-trust-boundaries",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "privacy-security-and-access-control",
+        "dependent": "web-security-and-trust-boundaries",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "metadata-and-data-modeling-basics",
+        "dependent": "data-and-state-management-in-web-apps",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "quality-attributes-and-tradeoffs",
+        "dependent": "cloud-native-definition-and-characteristics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "deployment-and-scaling-for-web-apps",
+        "dependent": "cloud-native-definition-and-characteristics",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "os-as-abstraction-layer-and-resource-manager",
+        "dependent": "containers-and-immutable-packaging",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "virtualization-view-of-resources",
+        "dependent": "containers-and-immutable-packaging",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "limits-and-tradeoffs-in-computing",
+        "dependent": "resilience-and-failure-management",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "deployment-and-scaling-for-web-apps",
+        "dependent": "elastic-scaling-and-load-distribution",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "performance-bottlenecks-and-tradeoffs-in-organization",
+        "dependent": "elastic-scaling-and-load-distribution",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "verification-validation-and-testing-basics",
+        "dependent": "cloud-native-observability-and-operations",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "cloud-native-definition-and-characteristics",
+        "dependent": "hybrid-multicloud-architecture-motivation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "deployment-and-scaling-for-web-apps",
+        "dependent": "hybrid-multicloud-architecture-motivation",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "client-server-and-api-architecture",
+        "dependent": "cloud-mashup-and-service-composition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "microservices-and-service-decomposition",
+        "dependent": "cloud-mashup-and-service-composition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-integration-and-interoperability",
+        "dependent": "integration-and-interoperability-mechanisms",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "os-services-and-interfaces",
+        "dependent": "integration-and-interoperability-mechanisms",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "metadata-and-data-modeling-basics",
+        "dependent": "data-mobility-and-consistency-across-clouds",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-lifecycle-and-stewardship",
+        "dependent": "data-mobility-and-consistency-across-clouds",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-governance-and-compliance",
+        "dependent": "data-mobility-and-consistency-across-clouds",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "web-security-and-trust-boundaries",
+        "dependent": "hybrid-multicloud-security-and-trust-boundaries",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "privacy-security-and-access-control",
+        "dependent": "hybrid-multicloud-security-and-trust-boundaries",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "cloud-native-observability-and-operations",
+        "dependent": "operational-governance-and-vendor-management",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "quality-attributes-and-tradeoffs",
+        "dependent": "operational-governance-and-vendor-management",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "quality-attributes-and-tradeoffs",
+        "dependent": "it-service-management-and-itsm-frameworks",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "os-as-abstraction-layer-and-resource-manager",
+        "dependent": "it-service-management-and-itsm-frameworks",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "documentation-and-team-practices-basics",
+        "dependent": "it-service-management-and-itsm-frameworks",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "verification-validation-and-testing-basics",
+        "dependent": "service-quality-metrics-and-continual-improvement",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "quality-attributes-and-tradeoffs",
+        "dependent": "service-quality-metrics-and-continual-improvement",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "pattern-management-purpose-and-scope",
+        "dependent": "itil-service-lifecycle-and-practices",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-governance-and-compliance",
+        "dependent": "iso-iec-20000-and-iso-iec-27001-standards",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "privacy-security-and-access-control",
+        "dependent": "iso-iec-20000-and-iso-iec-27001-standards",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-governance-and-compliance",
+        "dependent": "governance-risk-and-compliance-grc-model",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "protection-and-security-goals-in-os",
+        "dependent": "cobit-governance-and-control-objectives",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "operational-governance-and-vendor-management",
+        "dependent": "cobit-governance-and-control-objectives",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      }
+    ]
+  },
+  "study_sequence": [
+    {
+      "position": 1,
+      "concept_id": "data-and-information-representation",
+      "directive": "Explain what counts as data vs. information in computing and why representation matters (e.g., encoding choices affect what can be computed and how reliably). Include at least one example of representing a real-world phenomenon as data."
+    },
+    {
+      "position": 2,
+      "concept_id": "algorithms-and-abstraction",
+      "directive": "Define an algorithm as a precise, step-by-step method and explain abstraction as hiding irrelevant detail to manage complexity. Provide a brief illustration of how abstraction supports algorithm design."
+    },
+    {
+      "position": 3,
+      "concept_id": "computing-as-transformation-of-information",
+      "directive": "Explain computing as the purposeful transformation of information (input-to-output) under explicit rules, and distinguish it from general \u201cusing computers.\u201d Include a simple example mapping inputs, processing steps, and outputs."
+    },
+    {
+      "position": 4,
+      "concept_id": "computing-domains-and-applications",
+      "directive": "Identify major domains where computing is applied (e.g., scientific computing, data-centric computing, embedded systems, AI, human-centered computing) and briefly characterize what problems each domain emphasizes. Provide one concrete example per domain you list."
+    },
+    {
+      "position": 5,
+      "concept_id": "problem-solving-process-in-cs",
+      "directive": "Describe a CS-oriented problem-solving workflow (understand/specify the problem, design a solution, implement, test/validate, iterate). State what artifacts are produced at each step (e.g., requirements, algorithm, program, tests)."
+    },
+    {
+      "position": 6,
+      "concept_id": "limits-and-tradeoffs-in-computing",
+      "directive": "State that computing solutions involve constraints and tradeoffs (correctness, performance, resources, usability, risk) and that not all problems are equally feasible to solve computationally. Give a short scenario where a tradeoff changes the chosen solution."
+    },
+    {
+      "position": 7,
+      "concept_id": "abstraction-and-modeling",
+      "directive": "Describe how to ignore irrelevant details and represent the essential aspects of a problem using models (data, relationships, and rules). Show how abstraction supports general solutions and manageability."
+    },
+    {
+      "position": 8,
+      "concept_id": "algorithmic-thinking",
+      "directive": "Define algorithmic thinking as creating precise, step-by-step procedures for solving the decomposed problem. Emphasize clarity, unambiguity, and suitability for execution."
+    },
+    {
+      "position": 9,
+      "concept_id": "computational-thinking-process",
+      "directive": "Define computational thinking as an iterative, structured approach to solving problems so that solutions can be executed (or assisted) by a computer. Present the overall workflow that frames the rest of the chapter\u2019s skills."
+    },
+    {
+      "position": 10,
+      "concept_id": "decomposition",
+      "directive": "Explain how to break a complex problem into smaller subproblems with clear responsibilities and boundaries. Provide guidance for identifying sub-tasks and integrating partial solutions."
+    },
+    {
+      "position": 11,
+      "concept_id": "evaluation-and-iteration",
+      "directive": "Explain how to validate solutions (including intermediate sub-solutions) against requirements and constraints, then refine them iteratively. Include criteria such as correctness, efficiency, and fitness for purpose."
+    },
+    {
+      "position": 12,
+      "concept_id": "pattern-recognition-and-generalization",
+      "directive": "Teach learners to identify similarities across cases, reuse previously seen structures, and generalize solutions into reusable patterns. Include how recognizing patterns reduces redundancy and enables reuse."
+    },
+    {
+      "position": 13,
+      "concept_id": "adt-and-interface-vs-implementation",
+      "directive": "Define an abstract data type in terms of supported operations and their behavior, and distinguish the ADT specification from the underlying data representation and implementation choices."
+    },
+    {
+      "position": 14,
+      "concept_id": "algorithm-efficiency-and-complexity-intuition",
+      "directive": "Introduce the idea of measuring algorithm performance (time and/or space) as input size grows, and connect those measures to practical tradeoffs when selecting algorithms and data structures."
+    },
+    {
+      "position": 15,
+      "concept_id": "correctness-and-specification-basics",
+      "directive": "State how a problem specification (inputs, outputs, constraints) defines what it means for an algorithm to be correct, and outline the role of preconditions/postconditions or similar specification ideas at a high level."
+    },
+    {
+      "position": 16,
+      "concept_id": "data-organization-for-efficiency",
+      "directive": "Identify common operation goals (e.g., search, insert, delete, traverse, update) and describe how different ways of structuring data can speed up or slow down these operations."
+    },
+    {
+      "position": 17,
+      "concept_id": "data-structures-vs-algorithms-relationship",
+      "directive": "Explain how organizing data (data structures) and procedures for operating on it (algorithms) co-determine correctness and efficiency of solutions, and why the choice of one affects the other."
+    },
+    {
+      "position": 18,
+      "concept_id": "representation-choice-impacts",
+      "directive": "Describe how representing information in different ways changes what operations are easy or hard, and why representation decisions are central when designing data structures and algorithms together."
+    },
+    {
+      "position": 19,
+      "concept_id": "equivalence-and-tradeoffs-between-models",
+      "directive": "State (at an intuitive level) that several models are computationally equivalent in what they can compute, but differ in expressiveness, ease of reasoning, and suitability for certain problem types; relate those differences to engineering tradeoffs."
+    },
+    {
+      "position": 20,
+      "concept_id": "finite-state-machines-and-automata",
+      "directive": "Define finite-state machines (states, transitions, inputs, acceptance/output) and describe what kinds of problems they can and cannot model, emphasizing their limited memory and typical use in pattern/event-driven behavior."
+    },
+    {
+      "position": 21,
+      "concept_id": "lambda-calculus-and-functional-model",
+      "directive": "Introduce lambda calculus (functions, application, substitution/reduction) as a computation model and explain how it offers an alternative, math-like way to represent computation that is equivalent in power to other universal models."
+    },
+    {
+      "position": 22,
+      "concept_id": "models-of-computation-purpose-and-scope",
+      "directive": "Explain what a model of computation is (an abstract machine + rules of execution) and why different models are used to express and reason about algorithms, program behavior, and limits of what can be computed."
+    },
+    {
+      "position": 23,
+      "concept_id": "turing-machine-and-computability",
+      "directive": "Describe the Turing machine as a canonical general-purpose model (tape, head, transition function) and connect it to the idea of computability\u2014what it means for a problem to be solvable by an algorithm in principle."
+    },
+    {
+      "position": 24,
+      "concept_id": "von-neumann-stored-program-model",
+      "directive": "Explain the stored-program concept (memory holding both instructions and data) and the execute cycle at a high level, highlighting how this model motivates imperative programs with variables, assignment, and sequential control flow."
+    },
+    {
+      "position": 25,
+      "concept_id": "hardware-software-interface-in-system-organization",
+      "directive": "State what software needs from hardware to run (an execution model, memory and I/O access mechanisms) and how system organization provides the foundation for higher-level abstractions."
+    },
+    {
+      "position": 26,
+      "concept_id": "instruction-execution-data-path-overview",
+      "directive": "Summarize how a stored program is fetched and executed by the CPU, including the idea that instructions and data reside in memory and are moved/operated on through CPU-controlled steps."
+    },
+    {
+      "position": 27,
+      "concept_id": "io-subsystems-and-device-interfaces",
+      "directive": "Characterize how input/output devices connect to and are managed by a computer system (controllers/interfaces), and outline why I/O differs from CPU/memory in latency and interaction style."
+    },
+    {
+      "position": 28,
+      "concept_id": "major-computer-system-components",
+      "directive": "Describe the core hardware components of a computer system (processor, main memory, persistent storage, and I/O subsystems) and state each component\u2019s primary role in executing programs and moving data."
+    },
+    {
+      "position": 29,
+      "concept_id": "performance-bottlenecks-and-tradeoffs-in-organization",
+      "directive": "Identify common bottlenecks (CPU vs memory vs I/O) and articulate high-level tradeoffs in system organization (cost, speed, capacity, complexity) that influence design choices."
+    },
+    {
+      "position": 30,
+      "concept_id": "system-bus-and-interconnects",
+      "directive": "Explain how components communicate via interconnects (e.g., buses) and distinguish data, address, and control signaling at a conceptual level."
+    },
+    {
+      "position": 31,
+      "concept_id": "os-as-abstraction-layer-and-resource-manager",
+      "directive": "Explain an operating system as the software layer between applications/users and hardware that both abstracts hardware details and manages shared resources (CPU, memory, storage, I/O). Include a concrete example of what gets abstracted and what gets managed."
+    },
+    {
+      "position": 32,
+      "concept_id": "os-services-and-interfaces",
+      "directive": "Enumerate the main services an OS provides (e.g., program execution, I/O, file/directory services, communications, error detection) and identify the primary interface(s) through which programs request them (user interface and/or programmatic interface)."
+    },
+    {
+      "position": 33,
+      "concept_id": "os-structure-kernel-and-system-programs",
+      "directive": "Distinguish the kernel (privileged core) from system programs/utilities and describe how this separation supports OS responsibilities (management, protection, and service provision)."
+    },
+    {
+      "position": 34,
+      "concept_id": "protection-and-security-goals-in-os",
+      "directive": "Define OS protection (controlling access to resources) and security (defending against threats) at a goal level, and connect these goals to why multiuser/multiprogramming systems require isolation and controlled sharing."
+    },
+    {
+      "position": 35,
+      "concept_id": "resource-sharing-and-multiprogramming-motivation",
+      "directive": "Describe the motivation for operating systems in terms of efficient utilization of hardware (especially CPU and I/O) through sharing among multiple programs/users, and outline the basic idea of concurrent/overlapped activity at a conceptual level."
+    },
+    {
+      "position": 36,
+      "concept_id": "virtualization-view-of-resources",
+      "directive": "Introduce the idea that an OS provides a virtual (logical) view of hardware resources (e.g., processes as virtual CPUs, virtual memory as an illusion of large memory), and state why this improves usability and isolation."
+    },
+    {
+      "position": 37,
+      "concept_id": "binding-scope-and-lifetime",
+      "directive": "Describe how names become associated with entities (binding), how visibility rules work (scope), and how long data exists (lifetime), including typical consequences for correctness and maintainability."
+    },
+    {
+      "position": 38,
+      "concept_id": "control-flow-and-evaluation-models",
+      "directive": "Characterize how programs execute (sequence, selection, iteration, and function evaluation), and summarize common evaluation rules (e.g., expression evaluation order) and why they matter for program behavior."
+    },
+    {
+      "position": 39,
+      "concept_id": "errors-and-exceptions",
+      "directive": "Differentiate compile-time vs run-time errors and explain the role of exceptions (or similar mechanisms) for signaling and handling abnormal conditions."
+    },
+    {
+      "position": 40,
+      "concept_id": "runtime-model-stack-heap-and-activation-records",
+      "directive": "Present a language-agnostic runtime memory model (stack frames/activation records, heap allocation) and relate it to function calls, local variables, and dynamic data."
+    },
+    {
+      "position": 41,
+      "concept_id": "syntax-semantics-and-pragmatics",
+      "directive": "Explain the differences between a language\u2019s syntax (form), semantics (meaning), and pragmatics (usability), and show how each affects writing and reasoning about programs."
+    },
+    {
+      "position": 42,
+      "concept_id": "types-and-type-systems",
+      "directive": "Define what a type is and what a type system does; distinguish key dimensions such as static vs dynamic typing and strong vs weak typing, and connect types to error prevention and program design."
+    },
+    {
+      "position": 43,
+      "concept_id": "data-governance-and-compliance",
+      "directive": "Summarize governance goals (policies, roles, standards, accountability) and connect them to compliance obligations and organizational decision-making about data."
+    },
+    {
+      "position": 44,
+      "concept_id": "data-integration-and-interoperability",
+      "directive": "Explain the need to integrate data from multiple sources and describe interoperability challenges (format/schema mismatches, semantics) and the role of standards in enabling reuse."
+    },
+    {
+      "position": 45,
+      "concept_id": "data-lifecycle-and-stewardship",
+      "directive": "Describe the stages data passes through (creation/collection, storage, use, sharing, archival/deletion) and identify stewardship responsibilities for managing data across these stages."
+    },
+    {
+      "position": 46,
+      "concept_id": "data-quality-and-trust",
+      "directive": "Define the main dimensions of data quality (e.g., accuracy, completeness, consistency, timeliness) and explain why managing quality is central to trustworthy use of data in systems and decision-making."
+    },
+    {
+      "position": 47,
+      "concept_id": "metadata-and-data-modeling-basics",
+      "directive": "Explain what metadata is (descriptive, structural, administrative) and how basic data modeling captures meaning, structure, and constraints so data can be understood and reused."
+    },
+    {
+      "position": 48,
+      "concept_id": "privacy-security-and-access-control",
+      "directive": "State the core privacy/security concerns in managing data and outline basic controls (authorization, least privilege, auditing, protection of sensitive data) that reduce misuse and breaches."
+    },
+    {
+      "position": 49,
+      "concept_id": "documentation-and-team-practices-basics",
+      "directive": "Summarize the minimum documentation and coordination practices needed for multi-person software work, producing artifacts (e.g., coding standards, issue tracking conventions, review notes) that support collaboration."
+    },
+    {
+      "position": 50,
+      "concept_id": "quality-attributes-and-tradeoffs",
+      "directive": "Identify key quality attributes (e.g., reliability, performance, security, usability) and produce an explicit set of tradeoffs/acceptance criteria that guide design and evaluation."
+    },
+    {
+      "position": 51,
+      "concept_id": "software-design-and-architecture-basics",
+      "directive": "Explain how a system is structured into components/modules and interfaces, and produce a high-level design that supports the stated requirements and quality attributes."
+    },
+    {
+      "position": 52,
+      "concept_id": "software-maintenance-and-evolution",
+      "directive": "Describe why software changes over time, categorize maintenance work (e.g., corrective/adaptive/perfective), and produce a plan for managing change and releases."
+    },
+    {
+      "position": 53,
+      "concept_id": "software-requirements-and-specification",
+      "directive": "Define how requirements are elicited and documented (functional vs. nonfunctional), and produce a clear specification that can be validated and tested."
+    },
+    {
+      "position": 54,
+      "concept_id": "verification-validation-and-testing-basics",
+      "directive": "Differentiate verification vs. validation and outline core testing levels/strategies, producing a basic test plan that traces tests to requirements."
+    },
+    {
+      "position": 55,
+      "concept_id": "pattern-application-and-tailoring",
+      "directive": "Define a repeatable method for applying patterns to a concrete solution: assess context, map forces and constraints, adapt the pattern, and document deviations. Include how to validate that the tailored pattern still satisfies requirements and quality attributes."
+    },
+    {
+      "position": 56,
+      "concept_id": "pattern-cataloging-and-classification",
+      "directive": "Describe how to build and maintain a pattern catalog: naming, intent/problem statement, context, forces/tradeoffs, structure, consequences, and known uses. Specify a classification scheme (domain, quality attributes, constraints) that makes patterns searchable and reusable."
+    },
+    {
+      "position": 57,
+      "concept_id": "pattern-governance-lifecycle-and-ownership",
+      "directive": "Specify governance roles and processes for patterns (owners, reviewers, approval, versioning, deprecation) and how patterns evolve based on feedback and incidents. Define decision gates and how compliance to approved patterns is assessed."
+    },
+    {
+      "position": 58,
+      "concept_id": "pattern-management-purpose-and-scope",
+      "directive": "Explain what patterns management is meant to achieve in an organization (reuse, consistency, governance) and what kinds of artifacts it covers (architectural patterns, design patterns, reference architectures). State when patterns management is appropriate versus ad-hoc reuse."
+    },
+    {
+      "position": 59,
+      "concept_id": "pattern-types-and-levels-of-abstraction",
+      "directive": "Differentiate key pattern categories (e.g., architectural vs design vs integration patterns) and describe how each operates at a different level of abstraction and decision impact. Provide criteria for selecting the right level for a given problem."
+    },
+    {
+      "position": 60,
+      "concept_id": "pattern-value-measurement-and-continuous-improvement",
+      "directive": "Propose how to measure benefits and costs of patterns management (reuse rate, delivery time, defect reduction, consistency, operational outcomes) and how metrics feed back into improving the catalog. Include mechanisms for capturing lessons learned and updating patterns."
+    },
+    {
+      "position": 61,
+      "concept_id": "client-server-and-api-architecture",
+      "directive": "Explain the roles of browser/mobile clients, web servers, and API layers (REST/HTTP) in a modern web application, including how requests flow and where responsibilities are placed."
+    },
+    {
+      "position": 62,
+      "concept_id": "data-and-state-management-in-web-apps",
+      "directive": "Explain where application state lives (client, server, database), how sessions/tokens and persistence are handled, and why state placement affects scalability and correctness."
+    },
+    {
+      "position": 63,
+      "concept_id": "deployment-and-scaling-for-web-apps",
+      "directive": "Summarize common deployment topologies (load balancing, horizontal scaling, stateless services) and explain how availability, latency, and cost trade off in web architectures."
+    },
+    {
+      "position": 64,
+      "concept_id": "microservices-and-service-decomposition",
+      "directive": "Define microservices and contrast them with monolithic architectures, detailing service boundaries, independent deployment, and the impact on complexity, reliability, and team ownership."
+    },
+    {
+      "position": 65,
+      "concept_id": "spa-and-frontend-architecture",
+      "directive": "Describe SPA structure (routing, state, rendering), how it differs from server-rendered pages, and what tradeoffs it introduces for performance, security, and maintainability."
+    },
+    {
+      "position": 66,
+      "concept_id": "web-security-and-trust-boundaries",
+      "directive": "Identify key web security concerns (authentication/authorization, data protection in transit, common attack surfaces) and explain how architecture defines trust boundaries and mitigations."
+    },
+    {
+      "position": 67,
+      "concept_id": "cloud-native-definition-and-characteristics",
+      "directive": "Define what 'cloud-native' means in contrast to traditional/cloud-hosted applications, and enumerate the core characteristics emphasized in the section (e.g., elasticity, resilience, automation, rapid iteration)."
+    },
+    {
+      "position": 68,
+      "concept_id": "cloud-native-observability-and-operations",
+      "directive": "Describe the operational capabilities expected for cloud-native applications (monitoring, logging, tracing, SLO/SLA thinking) and how these support reliability and rapid change."
+    },
+    {
+      "position": 69,
+      "concept_id": "containers-and-immutable-packaging",
+      "directive": "Explain the role of containers as the unit of packaging and deployment, including what is bundled, why immutability matters, and how containerized packaging supports portability and repeatable releases."
+    },
+    {
+      "position": 70,
+      "concept_id": "elastic-scaling-and-load-distribution",
+      "directive": "Explain how cloud-native systems scale (horizontal scaling emphasis), what triggers scaling decisions, and how traffic/load is distributed across replicas/services as presented in the section."
+    },
+    {
+      "position": 71,
+      "concept_id": "resilience-and-failure-management",
+      "directive": "State the resilience goals for cloud-native systems (tolerate failures, graceful degradation) and identify the failure modes and mitigation ideas introduced (retries/timeouts, redundancy, health checks)."
+    },
+    {
+      "position": 72,
+      "concept_id": "cloud-mashup-and-service-composition",
+      "directive": "Describe what a cloud mashup is and how solutions compose capabilities from different clouds and on-prem systems via APIs/integration, including the kinds of compositions (data, function, workflow) commonly used."
+    },
+    {
+      "position": 73,
+      "concept_id": "data-mobility-and-consistency-across-clouds",
+      "directive": "Explain how data is moved, shared, or synchronized across on-prem and multiple clouds, and identify the main consistency, latency, and governance issues that arise from cross-cloud data flows."
+    },
+    {
+      "position": 74,
+      "concept_id": "hybrid-multicloud-architecture-motivation",
+      "directive": "Explain the primary business/technical drivers for combining on-premises resources with multiple public clouds, and describe the typical use cases (e.g., latency, compliance, resilience, best-of-breed services) that justify hybrid multicloud."
+    },
+    {
+      "position": 75,
+      "concept_id": "hybrid-multicloud-security-and-trust-boundaries",
+      "directive": "Identify the major security challenges created by spanning multiple providers and on-prem systems, and outline the controls typically required (identity, access control, encryption, segmentation, monitoring) at trust boundaries."
+    },
+    {
+      "position": 76,
+      "concept_id": "integration-and-interoperability-mechanisms",
+      "directive": "Summarize the key mechanisms used to integrate across environments (API gateways, messaging/eventing, ETL/replication, identity federation, service mesh), and state when each mechanism is appropriate."
+    },
+    {
+      "position": 77,
+      "concept_id": "operational-governance-and-vendor-management",
+      "directive": "Describe the operational and governance practices needed to run hybrid multicloud systems (policy, cost/FinOps, observability, SLOs, change management) and how vendor/service differences affect management."
+    },
+    {
+      "position": 78,
+      "concept_id": "cobit-governance-and-control-objectives",
+      "directive": "Describe COBIT as a governance-oriented framework that translates business goals into IT governance objectives/controls and helps assess, direct, and monitor cyber/IT resources."
+    },
+    {
+      "position": 79,
+      "concept_id": "governance-risk-and-compliance-grc-model",
+      "directive": "Present GRC as an integrated way to align cyber resource decisions with governance structures, risk management, and compliance obligations, including why separating these concerns causes gaps."
+    },
+    {
+      "position": 80,
+      "concept_id": "iso-iec-20000-and-iso-iec-27001-standards",
+      "directive": "Define what it means to manage services/security against ISO/IEC standards and outline the kinds of requirements and management-system elements (policies, processes, continual improvement) those standards emphasize."
+    },
+    {
+      "position": 81,
+      "concept_id": "it-service-management-and-itsm-frameworks",
+      "directive": "Explain ITSM as a framework approach for managing IT/cyber services end-to-end (from request to delivery and improvement), including why standard processes and roles improve service quality and reliability."
+    },
+    {
+      "position": 82,
+      "concept_id": "itil-service-lifecycle-and-practices",
+      "directive": "Summarize ITIL\u2019s core ideas (service value, lifecycle/practices) and describe a few representative practices (e.g., incident, problem, change) and what outcomes they are meant to achieve."
+    },
+    {
+      "position": 83,
+      "concept_id": "service-quality-metrics-and-continual-improvement",
+      "directive": "Explain how service quality is measured (e.g., SLAs/KPIs) and how measurement feeds continual improvement cycles for cyber resources and services."
+    }
+  ],
+  "reordering_rationale": [
+    {
+      "concept_id": "data-and-information-representation",
+      "from_book_position": 3,
+      "to_plan_position": 1,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "algorithms-and-abstraction",
+      "from_book_position": 3,
+      "to_plan_position": 2,
+      "reason": "Book order teaches this before 'data-and-information-representation', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "computing-as-transformation-of-information",
+      "from_book_position": 3,
+      "to_plan_position": 3,
+      "reason": "Book order teaches this before 'data-and-information-representation', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "computing-domains-and-applications",
+      "from_book_position": 3,
+      "to_plan_position": 4,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "problem-solving-process-in-cs",
+      "from_book_position": 3,
+      "to_plan_position": 5,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "limits-and-tradeoffs-in-computing",
+      "from_book_position": 3,
+      "to_plan_position": 6,
+      "reason": "Book order teaches this before 'problem-solving-process-in-cs', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    }
+  ],
+  "run_id": null
+}

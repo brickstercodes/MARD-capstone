@@ -15,13 +15,21 @@ Written 27 Aug 2026, for the Saturday-afternoon-onward block.
 1. **`docs/00-START_HERE.md`** — current state and standing rules.
 2. `docs/30-MEASUREMENT_PROTOCOL.md` — including its banner. §1's seven fields decide what is
    admissible; §4's variance rule decides how it is reported.
-3. `docs/24-GROUNDEDNESS_AND_SEED42.md` — **§2 and §4 in full.** The most likely way this
-   session damages the paper is by tidying away the seed-42 result or printing an unverified
-   count.
-4. `docs/23-GROUNDTRUTH_SPEC.md` §6 — what §4 of the paper must disclose about ground-truth
+3. `docs/24-GROUNDEDNESS_AND_SEED42.md` — **§2 and §4 in full, and its 28 Aug banner.** The
+   most likely way this session damages the paper is by tidying away the seed-42 result or
+   printing an unverified count.
+4. `docs/32-GROUNDEDNESS_RESULTS_AND_ARCHITECTURAL_INSTABILITY.md` — **read in full before
+   writing §4.** The validated groundedness numbers, why "41 of 75" and the old
+   `missing_outline` figure are one signal not two, and the stronger result underneath both:
+   three identical-prompt repeats produced three structurally different self-authored
+   architectures. §4's "measurement constraints" list is not optional.
+5. **`docs/28-MARD_ARM_FINDINGS.md`** — what the first real MARD runs surfaced. §4 carries an
+   `[UNVERIFIED]` cross-chapter edge figure that **must not be quoted until re-measured**, and
+   §2 carries a design guard that earned its place and belongs in the results.
+6. `docs/23-GROUNDTRUTH_SPEC.md` §6 — what §4 of the paper must disclose about ground-truth
    sources.
-5. `docs/40-LITERATURE_LOG.md` — the citation gate.
-6. `paper/main.tex` — read the whole file before editing it.
+7. `docs/40-LITERATURE_LOG.md` — the citation gate.
+8. `paper/main.tex` — read the whole file before editing it.
 
 ---
 

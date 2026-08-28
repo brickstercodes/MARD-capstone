@@ -1,0 +1,35 @@
+{
+  "run_id": "20260828T075502__mard__introcs__s11__b9c660",
+  "status": "failed",
+  "system": "mard",
+  "document_id": "introcs",
+  "seed": 11,
+  "wall_clock_s": 505.824,
+  "totals": {
+    "calls": 99,
+    "input_tokens": 92445,
+    "output_tokens": 151153,
+    "per_model": {
+      "gpt-5.2": {
+        "input_tokens": 82940,
+        "output_tokens": 16739,
+        "cost": 0.379491
+      },
+      "gpt-5-mini": {
+        "input_tokens": 9505,
+        "output_tokens": 134414,
+        "cost": 0.27120425
+      }
+    },
+    "cost": 0.6506952500000001,
+    "unpriced_models": [],
+    "stale_rates": []
+  },
+  "result": null,
+  "error": {
+    "type": "IncompleteArtefactError",
+    "message": "cannot join introcs: the spans do not match the Master Plan's 84 steps\n  empty span for position(s): 10 (problem-decomposition), 12 (solution-evaluation-and-iteration), 24 (turing-machine-model), 37 (binding-scope-and-lifetime), 39 (program-representation-translation-pipeline), 42 (type-systems-and-type-checking), 49 (requirements-engineering), 51 (software-design-principles), 57 (pattern-catalog-and-classification), 59 (pattern-selection-and-fit-assessment), 64 (reference-stack-and-framework-selection), 66 (web-quality-attributes-and-tradeoffs), 74 (data-portability-and-consistency-across-clouds), 76 (identity-security-and-trust-boundaries-across-clouds), 78 (multicloud-operations-and-governance)",
+    "traceback": "Traceback (most recent call last):\n  File \"/Users/giant02/Desktop/Capstone/MARD-capstone/scripts/run_mard_full.py\", line 65, in main\n    result = run_mard(\n        CORPUS_DIR,\n    ...<4 lines>...\n        ablation=args.ablation,\n    )\n  File \"/Users/giant02/Desktop/Capstone/MARD-capstone/mard/run.py\", line 235, in run_mard\n    artefact = execute_plan_sync(plan, builder, logger)\n  File \"/Users/giant02/Desktop/Capstone/MARD-capstone/orchestrate/builder.py\", line 288, in execute_plan_sync\n    return asyncio.run(execute_plan(plan, builder, logger))\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py\", line 204, in run\n    return runner.run(main)\n           ~~~~~~~~~~^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py\", line 127, in run\n    return self._loop.run_until_complete(task)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py\", line 719, in run_until_complete\n    return future.result()\n           ~~~~~~~~~~~~~^^\n  File \"/Users/giant02/Desktop/Capstone/MARD-capstone/orchestrate/builder.py\", line 262, in execute_plan\n    artefact = join_in_plan_order(spans, plan)\n  File \"/Users/giant02/Desktop/Capstone/MARD-capstone/orchestrate/builder.py\", line 200, in join_in_plan_order\n    raise IncompleteArtefactError(\n        _join_failure(plan, sorted(set(duplicates)), missing, unexpected, mismatched, empty)\n    )\norchestrate.builder.IncompleteArtefactError: cannot join introcs: the spans do not match the Master Plan's 84 steps\n  empty span for position(s): 10 (problem-decomposition), 12 (solution-evaluation-and-iteration), 24 (turing-machine-model), 37 (binding-scope-and-lifetime), 39 (program-representation-translation-pipeline), 42 (type-systems-and-type-checking), 49 (requirements-engineering), 51 (software-design-principles), 57 (pattern-catalog-and-classification), 59 (pattern-selection-and-fit-assessment), 64 (reference-stack-and-framework-selection), 66 (web-quality-attributes-and-tradeoffs), 74 (data-portability-and-consistency-across-clouds), 76 (identity-security-and-trust-boundaries-across-clouds), 78 (multicloud-operations-and-governance)\n"
+  },
+  "finished_at": "2026-08-28T08:03:28.771299+00:00"
+}

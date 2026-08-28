@@ -1,0 +1,50 @@
+[
+  {
+    "run_id": "20260827T193317__vanilla_rlm__introcs__s11__ec9d17",
+    "total_concepts": 156,
+    "resolved": 0,
+    "root_authored": 156,
+    "root_authored_context": {
+      "grounded": 14,
+      "ungrounded": 0
+    },
+    "unresolved": 0,
+    "grounded": 0,
+    "ungrounded": 0,
+    "regenerated": 0,
+    "groundedness_rate": null,
+    "mis_sourced": null
+  },
+  {
+    "run_id": "20260827T194259__vanilla_rlm__introcs__s23__a39374",
+    "total_concepts": 190,
+    "resolved": 0,
+    "root_authored": 190,
+    "root_authored_context": {
+      "grounded": 29,
+      "ungrounded": 0
+    },
+    "unresolved": 0,
+    "grounded": 0,
+    "ungrounded": 0,
+    "regenerated": 0,
+    "groundedness_rate": null,
+    "mis_sourced": null
+  },
+  {
+    "run_id": "20260827T195512__vanilla_rlm__introcs__s42__1dbe85",
+    "total_concepts": 75,
+    "resolved": 75,
+    "root_authored": 0,
+    "root_authored_context": {
+      "grounded": 24,
+      "ungrounded": 0
+    },
+    "unresolved": 0,
+    "grounded": 34,
+    "ungrounded": 41,
+    "regenerated": 37,
+    "groundedness_rate": 0.4533333333333333,
+    "mis_sourced": null
+  }
+]

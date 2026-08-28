@@ -25,6 +25,8 @@ import re
 from dataclasses import asdict, dataclass
 from typing import Any
 
+from ingest.chapters import CHAPTER_OPENER, CHAPTER_PREFIX
+
 BULLET_PATTERN = re.compile(r"•\s*")
 PAGE_MARKER_PATTERN = re.compile(r"^\[\[page:(\d+)\]\]$")
 
@@ -69,10 +71,57 @@ class CrossReference:
 
 
 def _chapter_for_page(chapters: list[dict[str, Any]], page: int) -> int | None:
+    """Page -> chapter, by range membership. **Fallback only** — every chapter
+    boundary in `corpus/introcs/chapters.json` overlaps its neighbour by exactly one
+    shared page (chapter N's `page_end` equals chapter N+1's `page_start`, since a
+    chapter can begin partway down the page the previous one ends on), so this
+    function's first-match resolution silently favours the *earlier* chapter for
+    anything on a boundary page — verified directly: block 529 (the "Learning
+    Objectives" marker opening chapter 2's first section, on page 50, which chapter
+    1 also ends on) resolved to chapter 1 under this function alone. `eval.ordering.
+    chapter_for_page` hit the identical bug for MARD concepts (`docs/35` §2.2,
+    `docs/38` §5.1); this is the third instance of the same mistake, now fixed at
+    its root by preferring `_chapter_for_block`/structural chapter tracking, which
+    read the document's own headings instead of doing page arithmetic. Kept only as
+    what `_chapter_for_block` falls back to when no numbered heading precedes a
+    marker at all (a case that does not occur anywhere in the real corpus — verified,
+    zero of 61 markers need it — but a degenerate/synthetic input might still hit it,
+    and returning `None` outright there would be a worse regression than an
+    occasionally-wrong page guess).
+    """
     for chapter in chapters:
         number = chapter.get("number")
         if number is not None and chapter["page_start"] <= page <= chapter["page_end"]:
             return int(number)
+    return None
+
+
+def _chapter_number_from_heading(text: str) -> int | None:
+    """A heading's own declared chapter number — "1.1 Computer Science" -> 1,
+    "Chapter 4 Processes" -> 4 — via the same patterns `ingest.chapters` uses to
+    group sections into chapters, so a heading is read identically wherever this
+    project reads one."""
+    for pattern in (CHAPTER_PREFIX, CHAPTER_OPENER):
+        match = pattern.match(text)
+        if match:
+            return int(match.group(1))
+    return None
+
+
+def _chapter_for_block(blocks: list[dict[str, Any]], index: int) -> int | None:
+    """Walk backward from `blocks[index]` to the nearest heading that declares a
+    chapter number, and return it. Structural — document order, not page position —
+    so it is immune to the page-boundary-sharing bug `_chapter_for_page` has:
+    a marker block on a page two chapters share is still preceded, in block order,
+    by exactly one real heading, and that heading is unambiguous about which
+    chapter it opens."""
+    for position in range(index, -1, -1):
+        block = blocks[position]
+        if block.get("kind") != "heading":
+            continue
+        number = _chapter_number_from_heading(block["text"])
+        if number is not None:
+            return number
     return None
 
 
@@ -92,6 +141,15 @@ def extract_learning_objectives(
     (`"The field of computer science (CS) is the study of computing..."`), and that
     prose would `split()` into one bogus, unbulleted "objective" per paragraph if
     collection did not stop the moment the bullets run out.
+
+    `chapter_number` is attributed via `_chapter_for_block` — the nearest preceding
+    numbered heading in *document order* — not via the marker's page number. A page
+    lookup silently misattributes any marker on a page two chapters share (every
+    chapter boundary in this corpus is such a page): block 529, the marker opening
+    chapter 2's first section on page 50 — the page chapter 1 also ends on —
+    resolved to chapter 1 under a page-range lookup alone. 42 of 243 objectives sit
+    on a shared boundary page; 39 of 243 move chapters once attribution is
+    structural instead.
     """
     objectives: list[LearningObjective] = []
     index = 0
@@ -102,7 +160,12 @@ def extract_learning_objectives(
             continue
 
         marker_page = marker["page"]
-        chapter_number = _chapter_for_page(chapters, marker_page)
+        chapter_number = _chapter_for_block(blocks, index)
+        if chapter_number is None:
+            # No numbered heading precedes this marker at all — does not happen
+            # anywhere in the real corpus (verified: 0 of 61 markers), but fall
+            # back to the page-range guess rather than giving up outright.
+            chapter_number = _chapter_for_page(chapters, marker_page)
 
         cursor = index + 1
         source_ids = [marker["block_id"]]
@@ -138,15 +201,28 @@ def extract_cross_references(
 ) -> list[CrossReference]:
     """Regex over `document.txt` for in-text "Chapter N" references.
 
-    docs/23-GROUNDTRUTH_SPEC.md §3.2: classify forward or backward by comparing the
-    referenced chapter's page range against the citing page. Scored against
-    references extracted from the text, never against edges a model emitted — the
-    latter would repeat the circularity §1 rejects for concept/prerequisite ground
-    truth in a more respectable form.
+    docs/23-GROUNDTRUTH_SPEC.md §3.2: classify forward, backward, or same-chapter.
+    Scored against references extracted from the text, never against edges a model
+    emitted — the latter would repeat the circularity §1 rejects for concept/
+    prerequisite ground truth in a more respectable form.
+
+    **Classified by the citing *chapter*, tracked structurally from the document's
+    own ATX headings — not by comparing the citing page number against the target
+    chapter's page range.** The latter has the identical failure mode
+    `_chapter_for_page` has (`extract_learning_objectives`'s docstring): a citing
+    line that falls on a page two chapters share cannot be told apart from a page
+    arithmetic comparison alone. `current_chapter` is updated every time a `# N.M
+    Title` or `# Chapter N` heading is seen, in document order, and classification
+    compares chapter numbers directly (`current_chapter` vs the referenced chapter)
+    once a heading has been seen at all. Before the first numbered heading in the
+    document, `current_chapter` is `None` and classification falls back to the old
+    page-range comparison against the target chapter — a page that precedes every
+    heading cannot be chapter-boundary-ambiguous in the first place.
     """
     by_number = {c["number"]: c for c in chapters if c.get("number") is not None}
     references: list[CrossReference] = []
     current_page: int | None = None
+    current_chapter: int | None = None
 
     for raw_line in document_text.splitlines():
         line = raw_line.strip()
@@ -154,7 +230,12 @@ def extract_cross_references(
         if page_match:
             current_page = int(page_match.group(1))
             continue
-        if current_page is None or line.startswith("#"):
+        if line.startswith("#"):
+            heading_number = _chapter_number_from_heading(line.lstrip("#").strip())
+            if heading_number is not None:
+                current_chapter = heading_number
+            continue
+        if current_page is None:
             continue
 
         for match in CHAPTER_REF_PATTERN.finditer(raw_line):
@@ -172,7 +253,14 @@ def extract_cross_references(
                 continue
 
             page_start, page_end = target["page_start"], target["page_end"]
-            if current_page < page_start:
+            if current_chapter is not None:
+                if current_chapter == referenced:
+                    classification = "same_chapter"
+                elif current_chapter < referenced:
+                    classification = "forward"
+                else:
+                    classification = "backward"
+            elif current_page < page_start:
                 classification = "forward"
             elif current_page > page_end:
                 classification = "backward"
