@@ -53,7 +53,9 @@ in one document still points where it did when it was written.
 **Vocabulary.** `W0`–`W5` are project week milestones; `W0` is planning and `W3`
 is the measurement campaign. `Track 1`–`Track 4` were parallel workstreams
 (design, orchestration, evaluation, ingestion). `O1`–`O6` are the research
-objectives listed in the manuscript's Section 1.
+objectives, listed with the outcome each returned in Table I of the
+manuscript (Section 1.3, *Objectives, and what each returned*). `O6` is
+deferred: only the vanilla-RLM isolation baseline was run.
 
 **Amendment banners.** Several documents open with a banner recording that a
 figure below was later corrected. Those are deliberate: three measurement

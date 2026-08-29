@@ -1,0 +1,61 @@
+{
+  "config": {
+    "run_id": "20260829T045208__mard__axler__s42__ad076a",
+    "system": "mard",
+    "document_id": "axler",
+    "seed": 42,
+    "models": {
+      "tier1": "gpt-5.2",
+      "tier2": "gpt-5-mini"
+    },
+    "params": {
+      "ablation": null,
+      "tier1_reasoning_effort": null,
+      "tier2_reasoning_effort": "low",
+      "tier2_max_tokens": 4096
+    },
+    "git": {
+      "commit": "79eb236790a96f02b929283ab68d2b55f3499669",
+      "branch": "main",
+      "dirty": true
+    },
+    "environment": {
+      "python": "3.14.5",
+      "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+      "packages": {
+        "pydantic": "2.13.4",
+        "openai": "2.53.0",
+        "anthropic": "0.121.0",
+        "pymupdf": "1.28.2",
+        "pdfplumber": "0.11.10"
+      }
+    },
+    "captured_at": "2026-08-29T04:52:08.525255+00:00"
+  },
+  "seeding": {
+    "seed": 42,
+    "python_random": true,
+    "pythonhashseed_env": null,
+    "numpy": false,
+    "torch": false
+  },
+  "rate_card": {
+    "gpt-5.2": {
+      "model": "gpt-5.2",
+      "input_per_million": 1.75,
+      "output_per_million": 14.0,
+      "currency": "USD",
+      "retrieved_on": "2026-08-27",
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    "gpt-5-mini": {
+      "model": "gpt-5-mini",
+      "input_per_million": 0.25,
+      "output_per_million": 2.0,
+      "currency": "USD",
+      "retrieved_on": "2026-08-27",
+      "source_url": "https://developers.openai.com/api/docs/pricing"
+    }
+  },
+  "started_at": "2026-08-29T04:52:08.525318+00:00"
+}

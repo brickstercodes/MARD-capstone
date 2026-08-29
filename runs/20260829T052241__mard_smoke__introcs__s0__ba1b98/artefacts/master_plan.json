@@ -1,0 +1,183 @@
+{
+  "schema_version": "1",
+  "document_id": "introcs",
+  "concept_graph": {
+    "concepts": [
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computational-system-components",
+        "label": "Computational System Components",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computer-science-scope-and-subfields",
+        "label": "Computer Science Scope and Subfields",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computing-problem-definition",
+        "label": "Computing Problem Definition",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-and-information-representation",
+        "label": "Data and Information Representation",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "program-and-execution",
+        "label": "Program and Execution (Computer as Executor)",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      }
+    ],
+    "edges": [
+      {
+        "prerequisite": "computing-problem-definition",
+        "dependent": "algorithm",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithm",
+        "dependent": "program-and-execution",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "computing-problem-definition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computational-system-components",
+        "dependent": "program-and-execution",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithm",
+        "dependent": "computer-science-scope-and-subfields",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computational-system-components",
+        "dependent": "computer-science-scope-and-subfields",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      }
+    ]
+  },
+  "study_sequence": [
+    {
+      "position": 1,
+      "concept_id": "computational-system-components",
+      "directive": "Describe the major components involved in computation (e.g., hardware, software, data) and how they work together to perform computation for a user\u2019s task."
+    },
+    {
+      "position": 2,
+      "concept_id": "data-and-information-representation",
+      "directive": "Describe what counts as data in computing, how information is represented in a form a computer can process, and why representation choices matter for solving problems."
+    },
+    {
+      "position": 3,
+      "concept_id": "computing-problem-definition",
+      "directive": "State what a computing problem is in terms of required input(s), desired output(s), and constraints, and show how the same real-world task can be framed as a precise, solvable computing problem."
+    },
+    {
+      "position": 4,
+      "concept_id": "algorithm",
+      "directive": "Define an algorithm as a step-by-step procedure for solving a computing problem and distinguish it from a program by emphasizing language-independence and the need for unambiguous steps."
+    },
+    {
+      "position": 5,
+      "concept_id": "computer-science-scope-and-subfields",
+      "directive": "Summarize what computer science studies (problems, algorithms, and systems) and outline major subareas to show how they relate to building and analyzing computational solutions."
+    },
+    {
+      "position": 6,
+      "concept_id": "program-and-execution",
+      "directive": "Explain how an algorithm is represented as a program that a computer can execute, and describe at a high level what it means for a computer system to carry out the program\u2019s steps."
+    }
+  ],
+  "reordering_rationale": [
+    {
+      "concept_id": "computational-system-components",
+      "from_book_position": 3,
+      "to_plan_position": 1,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "data-and-information-representation",
+      "from_book_position": 3,
+      "to_plan_position": 2,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "computing-problem-definition",
+      "from_book_position": 3,
+      "to_plan_position": 3,
+      "reason": "Book order teaches this before 'data-and-information-representation', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "algorithm",
+      "from_book_position": 3,
+      "to_plan_position": 4,
+      "reason": "Book order teaches this before 'computing-problem-definition', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "computer-science-scope-and-subfields",
+      "from_book_position": 3,
+      "to_plan_position": 5,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    }
+  ],
+  "run_id": null
+}

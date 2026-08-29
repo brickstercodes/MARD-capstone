@@ -217,6 +217,63 @@ success (Section~\ref{sec:grounding}). The envelope's structural apparatus
 makes that failure mode loud rather than silent, which is a claim about
 \emph{faithfulness and auditability} distinct from output quality.
 
+\subsection{Objectives, and what each returned}
+\label{sec:objectives}
+The work was scoped around six objectives, fixed before any run. We state
+them here together with the outcome each returned, so that the boundary
+between what this manuscript establishes and what it defers is visible
+before the first result is read rather than reconstructed from
+Section~\ref{sec:future} afterwards.
+
+\begin{table}[!t]
+\caption{Research Objectives, With Outcome. ``Deferred'' Means Specified and
+Not Run, Not Abandoned. The Section Named Reports the Outcome}
+\label{tab:objectives}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{0.45cm}p{3.9cm}p{2.75cm}@{}}
+\toprule
+& \textbf{Objective} & \textbf{Outcome} \\
+\midrule
+O1 & Formalise MARD: define the metadata envelope and its pass structure,
+and draw the line against the metadata the base library already carries
+& Met (\S\ref{sec:baselib}, \S\ref{sec:passes}) \\
+O2 & Implement it end to end at textbook scale under a fixed budget
+& Met as two passes; Pass~2 specified, not run (\S\ref{sec:passes}) \\
+O3 & Measure quality and tokens independently against vanilla RLM, at
+matched models and matched recursion depth
+& Quality indistinguishable, reported as a null; input tokens
+$15.8\times$ lower (\S\ref{sec:isolate}) \\
+O4 & Establish that the artefact is repeatable and attributable to the
+source: repeat variance, span resolution, provenance
+& Met, and sharper than planned---it became the principal finding
+(\S\ref{sec:variance}, \S\ref{sec:grounding}) \\
+O5 & Ablate the envelope by channel, and test degeneration on input
+without exploitable structure
+& Partial: A1, split into A1s and A1f, and the negative control were run;
+A3 and A4 deferred (\S\ref{sec:ablation}, \S\ref{sec:negcontrol}) \\
+O6 & Compare against a broader baseline set---full context, naive
+chunking, retrieval---and generalise the cost model
+& Deferred; only the vanilla-RLM isolation baseline was run
+(\S\ref{sec:future}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two of these returned something other than what was planned, and we flag
+both here rather than let a reader meet them late. O3 returned a null: the
+envelope does not make the generated explanations better, and we report the
+comparison as indistinguishable rather than as a small win
+(Section~\ref{sec:isolate}). O5 returned a result narrower than the
+architecture we proposed: of the envelope's two downward channels only the
+accumulated findings carry the measured effect, while the structural
+skeleton---the more expensive of the two on every frontier call---changes
+nothing we can measure (Section~\ref{sec:ablation}). The faithfulness and
+provenance result of Section~\ref{sec:grounding} runs the other way. It was
+not an objective at all; it was added as instrumentation after we observed
+the baseline generate content without consulting the document, and it is
+the outcome we would now lead with.
+
 \subsection{What is not claimed}
 It is important to say this before a reader infers otherwise. The base
 paper's RLM already pairs a frontier root model with cheaper sub-model calls,
@@ -1103,12 +1160,12 @@ the finding.
 
 \section{Results and Discussion}
 \label{sec:results}
-% >>> PENDING: no number in this section is real yet. Nothing may be written
-% here that does not trace to a logged run. After the results freeze, numbers
-% are written up and never re-run; a wrong result receives a limitation
-% paragraph, not a second attempt.
+% Results are frozen. Every number below traces to a logged run directory;
+% none may be re-run. A wrong result receives a limitation paragraph, not a
+% second attempt.
 
 \subsection{Isolating the envelope}
+\label{sec:isolate}
 Table~\ref{tab:main} reports the four configurations on the primary document,
 three repeated runs each, at matched recursion depth. Task score is
 objective-weighted per-chapter coverage of the document's own learning
@@ -1797,6 +1854,34 @@ does so silently. Presenting a prerequisite graph to a reader requires a view
 that admits multiple parents and cross-branch edges; adopting an existing
 containment renderer unchanged would preserve the appearance of the
 contribution while deleting its substance.
+A seventh direction is compositional, and we name it because it is the
+shortest route from the artefact measured here to one a learner would open.
+MARD's plan states precedence over concepts; it does not state what a concept
+is made of. Containment structure at \emph{atomic} granularity---definitions,
+theorems, worked examples, notation, each carried with the source text it was
+lifted from---is what the tool in Fig.~\ref{fig:trees}(b) emits, by rendering
+the document into a typed tree in a single long-context call. That call is
+bounded by the context window in exactly the way Section~\ref{sec:intro}
+describes, which is why the panel shows one branch and not the book. The two
+limitations are complementary rather than shared: recursive decomposition
+removes the context bound but returns concepts rather than atoms, and
+single-call extraction returns atoms but only over what fits. Composing them
+would run atomic extraction \emph{per concept}, over the span MARD has already
+assigned that concept---each call sized to fit by construction---and hang the
+resulting atoms beneath the precedence ordering, yielding one structure that
+carries both edge semantics: contained-in within a concept, must-precede
+between concepts. Such a composition would also close the grounding gap named
+above as a side effect rather than as a separate repair, since extraction over
+an assigned span is by definition performed against the prose. Whether the
+resulting structure helps a learner is the same open question as before and
+inherits the same requirement of a controlled study; what is testable without
+one is whether the composition holds structurally---whether per-concept
+extraction over MARD-assigned spans recovers the atoms a whole-document call
+finds, on a document small enough for both to run. We repeat here the interest
+declared in the footnote to Fig.~\ref{fig:trees}: one of the authors builds
+that tool, and naming it as a composition target is not a performance claim
+for it.
+
 % >>> PENDING: revisit this list after the results freeze; drop any item
 % that the full study has by then absorbed.
 

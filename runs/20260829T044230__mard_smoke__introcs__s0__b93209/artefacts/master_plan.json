@@ -1,0 +1,171 @@
+{
+  "schema_version": "1",
+  "document_id": "introcs",
+  "concept_graph": {
+    "concepts": [
+      {
+        "id": "abstraction-and-modeling",
+        "label": "Abstraction and Modeling",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computation-and-algorithms",
+        "label": "Computation and Algorithms",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computer-systems-and-architecture",
+        "label": "Computer Systems and Architecture (hardware\u2013software stack)",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-and-information-representation",
+        "label": "Data and Information Representation",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "programming-languages-and-software",
+        "label": "Programming Languages and Software",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "subfields-and-big-questions",
+        "label": "CS Subfields and Their Big Questions",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      }
+    ],
+    "edges": [
+      {
+        "prerequisite": "computation-and-algorithms",
+        "dependent": "abstraction-and-modeling",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "computation-and-algorithms",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "abstraction-and-modeling",
+        "dependent": "computer-systems-and-architecture",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computation-and-algorithms",
+        "dependent": "programming-languages-and-software",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computer-systems-and-architecture",
+        "dependent": "programming-languages-and-software",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computation-and-algorithms",
+        "dependent": "subfields-and-big-questions",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      }
+    ]
+  },
+  "study_sequence": [
+    {
+      "position": 1,
+      "concept_id": "data-and-information-representation",
+      "directive": "Define data vs. information and summarize why representation (encoding, structure, and meaning) matters for computation. Give examples of representing the same information in different forms and the tradeoffs those forms impose on processing."
+    },
+    {
+      "position": 2,
+      "concept_id": "computation-and-algorithms",
+      "directive": "Explain what computation is and how algorithms specify computational steps that can be executed by a machine. Provide at least one example of an algorithmic solution to a problem and identify the inputs, outputs, and step-by-step procedure."
+    },
+    {
+      "position": 3,
+      "concept_id": "abstraction-and-modeling",
+      "directive": "Describe abstraction as the practice of hiding detail to manage complexity and building models that capture what matters for a task. Show how the same real-world problem can be represented at different abstraction levels and why that affects solution design."
+    },
+    {
+      "position": 4,
+      "concept_id": "computer-systems-and-architecture",
+      "directive": "Characterize the major components of a computer system (hardware, operating system, applications) and how they cooperate to execute programs. Outline how system design choices (e.g., memory, processing, I/O) constrain or enable algorithms."
+    },
+    {
+      "position": 5,
+      "concept_id": "programming-languages-and-software",
+      "directive": "Explain how programs realize algorithms using programming languages and how software is developed, tested, and maintained. Distinguish at a high level between source code, compilation/interpretation, and execution."
+    },
+    {
+      "position": 6,
+      "concept_id": "subfields-and-big-questions",
+      "directive": "Identify the major subfields of computer science and state the kinds of questions/problems each subfield addresses. Map example real-world problems to the subfields that would most directly contribute solutions."
+    }
+  ],
+  "reordering_rationale": [
+    {
+      "concept_id": "data-and-information-representation",
+      "from_book_position": 3,
+      "to_plan_position": 1,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "abstraction-and-modeling",
+      "from_book_position": 3,
+      "to_plan_position": 3,
+      "reason": "Book order teaches this before 'computation-and-algorithms', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "computer-systems-and-architecture",
+      "from_book_position": 3,
+      "to_plan_position": 4,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    }
+  ],
+  "run_id": null
+}

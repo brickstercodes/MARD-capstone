@@ -1,0 +1,23 @@
+[
+  {
+    "pass": 1,
+    "chapter_id": "introcs.ch01",
+    "prompt_version": "pass1-concepts-v1",
+    "prompt_chars": 17709,
+    "envelope": {
+      "document_id": "introcs",
+      "provenance": "derived_from_text",
+      "skeleton_sections": 120,
+      "findings_total": 0,
+      "findings_shown": 0,
+      "suppress_findings": false,
+      "target_section_id": "introcs.ch01",
+      "has_directive": true,
+      "is_stripped": false,
+      "rendered_chars": 16149
+    },
+    "concepts_accepted": 6,
+    "edges_accepted": 6,
+    "rejected": []
+  }
+]

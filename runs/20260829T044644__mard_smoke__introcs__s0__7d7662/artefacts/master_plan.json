@@ -1,0 +1,177 @@
+{
+  "schema_version": "1",
+  "document_id": "introcs",
+  "concept_graph": {
+    "concepts": [
+      {
+        "id": "algorithms",
+        "label": "Algorithms",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computation-and-problems",
+        "label": "Computation and Problems",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "computer-systems-and-abstraction",
+        "label": "Computer Systems and Levels of Abstraction",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "data-and-information-representation",
+        "label": "Data and Information Representation",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "efficiency-and-complexity-intuition",
+        "label": "Efficiency and Complexity (Intuition)",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      },
+      {
+        "id": "programs-as-algorithm-implementations",
+        "label": "Programs as Implementations of Algorithms",
+        "source": {
+          "section_id": "introcs.1-1-computer-science",
+          "book_position": 3,
+          "page_start": 20,
+          "page_end": 30
+        },
+        "aliases": []
+      }
+    ],
+    "edges": [
+      {
+        "prerequisite": "computation-and-problems",
+        "dependent": "algorithms",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "computation-and-problems",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms",
+        "dependent": "programs-as-algorithm-implementations",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "computer-systems-and-abstraction",
+        "dependent": "programs-as-algorithm-implementations",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "algorithms",
+        "dependent": "efficiency-and-complexity-intuition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      },
+      {
+        "prerequisite": "data-and-information-representation",
+        "dependent": "efficiency-and-complexity-intuition",
+        "evidence": "inferred",
+        "quote": null,
+        "located_at": null
+      }
+    ]
+  },
+  "study_sequence": [
+    {
+      "position": 1,
+      "concept_id": "computer-systems-and-abstraction",
+      "directive": "Explain how computer systems are organized as interacting components (hardware and software) and how abstraction layers let us reason about complex systems by hiding lower-level details."
+    },
+    {
+      "position": 2,
+      "concept_id": "data-and-information-representation",
+      "directive": "Explain that computation operates over representations of information (data), and summarize why choosing an appropriate representation affects what operations are possible and how efficiently they run."
+    },
+    {
+      "position": 3,
+      "concept_id": "computation-and-problems",
+      "directive": "Define computation as a process of transforming inputs to outputs and explain what it means to frame a real-world goal as a well-specified problem that can be computed."
+    },
+    {
+      "position": 4,
+      "concept_id": "algorithms",
+      "directive": "Describe an algorithm as a finite, unambiguous sequence of steps for solving a problem, and distinguish the problem statement from a particular algorithm that solves it."
+    },
+    {
+      "position": 5,
+      "concept_id": "efficiency-and-complexity-intuition",
+      "directive": "Introduce why resource usage (time/space) matters, give an informal account of how input size affects running time, and connect efficiency concerns to algorithm and data-structure choices."
+    },
+    {
+      "position": 6,
+      "concept_id": "programs-as-algorithm-implementations",
+      "directive": "State how programs encode algorithms in a programming language for execution by a computer system, and clarify the relationship among algorithm, program, and machine execution."
+    }
+  ],
+  "reordering_rationale": [
+    {
+      "concept_id": "computer-systems-and-abstraction",
+      "from_book_position": 3,
+      "to_plan_position": 1,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "data-and-information-representation",
+      "from_book_position": 3,
+      "to_plan_position": 2,
+      "reason": "Displaced by concepts that had to move ahead of it to satisfy their own prerequisites. Its own prerequisites still precede it, so its position is a consequence of another move rather than a claim about this concept."
+    },
+    {
+      "concept_id": "computation-and-problems",
+      "from_book_position": 3,
+      "to_plan_position": 3,
+      "reason": "Book order teaches this before 'data-and-information-representation', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    },
+    {
+      "concept_id": "algorithms",
+      "from_book_position": 3,
+      "to_plan_position": 4,
+      "reason": "Book order teaches this before 'computation-and-problems', which it depends on. Moved after its prerequisites so the sequence never asks the reader to use a concept before meeting it."
+    }
+  ],
+  "run_id": null
+}
